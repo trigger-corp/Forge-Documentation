@@ -20,4 +20,3 @@ This documentation contains information on how to set up your development enviro
   /concepts
   /weather/index
   /facenote/index
-  /api/index

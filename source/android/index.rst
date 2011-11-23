@@ -18,4 +18,3 @@ Before you get started you will need to download the `Android tools <http://www.
    /android/getting-started
    /weather/index
    /android/troubleshooting
-   /api/index
