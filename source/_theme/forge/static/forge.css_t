@@ -1,0 +1,356 @@
+/*
+ * :copyright: Copyright 2011 WebMynd Corp.
+ */
+
+{% set page_width = 940 %}
+{% set sidebar_width = 220 %}
+{% set body_font_stack = 'museo, Arial, Helvetica, sans-serif' %}
+{% set headline_font_stack = 'museo, Arial, Helvetica, sans-serif' %}
+{% set code_font_stack = "'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace" %}
+{% set strip_style = "background:#008299 url(f/bg-cross-hatching.png) repeat top left; border-top:1px solid #016375; border-bottom:1px solid #016375; color:#fff; font-weight:normal;" %}
+
+@import url("basic.css");
+@font-face {font-family: 'museo';
+	src: url('fonts/museosans-webfont.eot?') format('eot'), 
+		 url('fonts/museosans-webfont.woff') format('woff'), 
+		 url('fonts/museosans-webfont.ttf') format('truetype'),
+		 url('fonts/museosans-webfont.svg#svgFontName') format('svg');}
+ 
+/* -- page layout ----------------------------------------------------------- */
+ 
+body {
+	font-family: {{ body_font_stack }};
+	color:#2e2e2e;
+	-webkit-font-smoothing:antialiased;
+	-moz-font-smoothing:antialiased;
+	-o-font-smoothing:antialiased;
+	font-smooth:auto;
+	font-size: 16px;
+	background-color: black;
+	margin: 0px;
+}
+
+div.document {
+	width: {{ page_width }}px;
+	margin: 30px auto;
+	background-color: #E0E0E0;
+}
+
+div.deck {
+	font-size: 18px;
+}
+
+p.developmentversion {
+	color: red;
+}
+
+div.related {
+	width: {{ page_width - 20 }}px;
+	padding: 5px 10px;
+	background: #F2FCEE;
+	margin: 0px auto;
+}
+
+div.documentwrapper {
+	float: left;
+	width: 100%;
+}
+
+div.bodywrapper {
+	margin: 0 0 0 {{ sidebar_width }}px;
+}
+
+div.sphinxsidebar {
+	width: {{ sidebar_width }}px;
+	background-color: #;
+}
+
+hr {
+	border: 1px solid #B1B4B6;
+}
+ 
+div.body {
+	background-color: #EFEFEF;
+	width: 660px;
+	padding: 0 30px 20px 30px;
+}
+
+div.footer {
+	width: {{ page_width - 15 }}px;
+	margin: 10px auto 30px auto;
+	padding-right: 15px;
+	font-size: 14px;
+	color: #888;
+	text-align: right;
+}
+
+div.footer a {
+	color: #888;
+}
+
+div.sphinxsidebar a {
+	color: #444;
+}
+
+div.sphinxsidebar {
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+div.sphinxsidebarwrapper {
+	padding: 7px 10px;
+}
+
+div.sphinxsidebarwrapper img.logo {
+	width: 180px;
+}
+
+div.sphinxsidebarwrapper p.logo {
+	padding: 0 0 20px 0;
+	margin: 0;
+}
+ 
+div.sphinxsidebar h3,
+div.sphinxsidebar h4 {
+	font-family: {{ headline_font_stack }};
+	color: #444;
+	font-size: 24px;
+	font-weight: normal;
+	margin: 0 0 5px 0;
+	padding: 0;
+}
+
+div.sphinxsidebar h4 {
+	font-size: 20px;
+}
+
+div.sphinxsidebar h3 a {
+	color: #444;
+}
+
+div.sphinxsidebar p.logo a,
+div.sphinxsidebar h3 a,
+div.sphinxsidebar p {
+	color: #555;
+	margin: 10px 0;
+}
+
+div.sphinxsidebar ul {
+	margin: 10px 0;
+	padding: 0;
+	color: #000;
+}
+ 
+div.sphinxsidebar input {
+	border: 1px solid #ccc;
+	font-family: {{ body_font_stack }};
+	font-size: 1em;
+}
+ 
+/* -- body styles ----------------------------------------------------------- */
+ 
+a {color:#008299; text-decoration:none; outline:0;}
+a:hover {color:#07d5f9;}
+a:hover, a:active {outline:0;}
+
+.highlight {-moz-box-shadow:0px -1px #fff, 0px 1px #fff; -webkit-box-shadow:0px -1px #fff, 0px 1px #fff; box-shadow:0px -1px #fff, 0px 1px #fff;}
+div.related { {{ strip_style }} }
+div.related a {color: white;}
+.stripe span {color:#b3d740;}
+
+div.body h1,
+div.body h2,
+div.body h3,
+div.body h4,
+div.body h5,
+div.body h6 {
+	font-family: {{ headline_font_stack }};
+	font-weight: normal;
+	margin: 30px 0px 10px 0px;
+	padding: 0px 0px 0px 30px;
+	position: relative;
+	left: -30px;
+	width: 690px;
+	line-height: 35px;
+	background-color: #008299;
+	border-top:1px solid #016375;
+	border-bottom:1px solid #016375;
+	color:#fff;
+}
+div.body h1 { {{ strip_style }}; line-height: 65px;}
+div.body h2 { {{ strip_style }}; line-height: 50px;}
+ 
+div.body h1 { margin-top: 0; padding-top: 0; font-size: 200%; }
+div.body h2 { font-size: 180%; }
+div.body h3 { font-size: 150%; }
+div.body h4 { font-size: 130%; }
+div.body h5 { font-size: 100%; }
+div.body h6 { font-size: 100%; }
+
+div.body h1 a.toc-backref,
+div.body h2 a.toc-backref,
+div.body h3 a.toc-backref,
+div.body h4 a.toc-backref,
+div.body h5 a.toc-backref,
+div.body h6 a.toc-backref {
+	color: inherit!important;
+	text-decoration: none;
+}
+ 
+a.headerlink {
+	color: #ddd;
+	padding: 0 4px;
+	text-decoration: none;
+}
+ 
+a.headerlink:hover {
+	color: #444;
+	background: #eaeaea;
+}
+ 
+div.body p, div.body dd, div.body li {
+	line-height: 1.4em;
+}
+
+div.admonition {
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+div.admonition p.admonition-title {
+	font-family: {{ headline_font_stack }};
+	font-weight: normal;
+	font-size: 1.2em;
+	margin: 0 0 10px 0;
+	padding: 0;
+	line-height: 1;
+}
+
+div.admonition p.last {
+	margin-bottom: 0;
+}
+
+div.highlight{
+	padding: 0px 5px;
+	background-color: white;
+}
+
+dt:target, .highlight {
+	background: #FAF3E8;
+}
+
+div.admonition.note {
+	background-color: #DFD;
+	border: 1px solid #9C9;
+}
+ 
+div.seealso {
+	background-color: #ffc;
+	border: 1px solid #ff6;
+}
+ 
+div.topic {
+	background-color: #eee;
+}
+ 
+div.admonition.important {
+	background-color: #ffe4e4;
+	border: 1px solid #f66;
+}
+ 
+p.admonition-title {
+	display: inline;
+}
+ 
+p.admonition-title:after {
+	content: ":";
+}
+
+pre, tt {
+	font-family: {{ code_font_stack }};
+	font-size: 0.9em;
+}
+
+div.body img {
+	max-width: 600px;
+}
+
+tt.descname, tt.descclassname {
+	font-size: 0.95em;
+}
+
+tt.descname {
+	padding-right: 0.08em;
+}
+
+table.docutils {
+	border: 1px solid #888;
+	-moz-box-shadow: 2px 2px 4px #eee;
+	-webkit-box-shadow: 2px 2px 4px #eee;
+	box-shadow: 2px 2px 4px #eee;
+}
+
+table.docutils td, table.docutils th {
+	border: 1px solid #888;
+	padding: 0.25em 0.7em;
+}
+
+table.field-list, table.footnote {
+	border: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+table.footnote {
+	margin: 15px 0;
+	width: 100%;
+	border: 1px solid #eee;
+	background: #fdfdfd;
+	font-size: 0.9em;
+}
+
+table.footnote + table.footnote {
+	margin-top: -15px;
+	border-top: none;
+}
+
+table.field-list th {
+	padding: 0 0.8em 0 0;
+}
+
+table.field-list td {
+	padding: 0;
+}
+
+table.footnote td.label {
+	width: 0px;
+	padding: 0.3em 0 0.3em 0.5em;
+}
+
+table.footnote td {
+	padding: 0.3em 0.5em;
+}
+
+dl {
+	margin: 0;
+	padding: 0;
+}
+
+dl dd {
+	margin-left: 30px;
+}
+
+blockquote {
+	margin: 0 0 0 30px;
+	padding: 0;
+}
+
+ul {
+	margin: 10px 0 10px 30px;
+	padding: 0;
+}
+
+strong {
+	color: black;
+}

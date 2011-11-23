@@ -1,0 +1,45 @@
+.. _android-weather-troubleshooting:
+
+Troubleshooting
+===============
+
+This page seeks to help troubleshoot common issues that have been encountered.
+
+Building
+---------
+.. _android-weather-troucleshooting-build-fail:
+
+**Problem: When running wm-dev-build you receive a stack track with the error "Cannot create a file when that file already exists"**
+	.. image:: /_static/android/weather/images/troubleshooting/wm-dev-build-fail.png
+
+This might be caused because an AVD is currently running which has a hold of the resources you are trying to replace.
+Close any running AVD. On Windows it may be necessary to open Task Manager and end ``adb.exe`` manually.
+
+
+Catalyst
+--------
+.. _android-weather-troubleshooting-catalyst-device-not-detected:
+
+**Problem: Catalyst does not recognize the device**
+    .. image:: /_static/android/weather/images/troubleshooting/catalyst-no-device.png
+
+Catalyst generates a unique id for the script tag every time the page is loaded.
+Compare the hash(#) tag in the generated link and the script tag that you appended to the head element to make sure they're the same.
+:ref:`Run your app <android-getting-started-run>` and once the emulator has loaded your code you should see the device picked up by Catalyst.
+More information can be found on the `Catalyst home page <http://catalyst.webmynd.com>`_
+
+    .. image:: /_static/android/weather/images/troubleshooting/catalyst-device-found.png
+
+.. _android-weather-troubleshooting-catalyst-no-logging:
+
+**No logging shows up in the Catalyst console**
+
+Logging calls may execute before the Catalyst console is ready.
+To display logging in Catalyst make sure you include ``window.forge.debug = true;`` at the top of your Javascript. ::
+
+	window.forge.debug = true;
+
+This will prevent logging until the Catalyst console is ready.
+For more information check out the **Advanced usage** section of the `Catalyst homepage <http://catalyst.webmynd.com>`_
+
+.. _andoroid-troubleshooting-running:
