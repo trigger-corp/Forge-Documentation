@@ -17,5 +17,4 @@ API Documentation
    /api/user-interface
    /api/button
    /api/file
-   /api/gmail
    /partners/index

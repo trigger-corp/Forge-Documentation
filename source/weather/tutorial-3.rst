@@ -22,9 +22,9 @@ Remove Test Dummy Code
 In this part of the tutorial we are going to be fetching live data, so we can remove the dummy data.
 Open ``weather.js`` and ...
 
-* Remove ``mountainViewForecast``, ``forecast``, ``currentConditions``, ``tuesdayConditions``, ``wednesdayConditions``, ``thursdayConditions``, ``fridayConditions`` vars and the ``forecastConditionMaker`` function
+* Remove ``mountainViewForecast``, ``forecast``, ``currentConditions``, ``tuesdayConditions``, ``wednesdayConditions``, ``thursdayConditions``, ``fridayConditions`` vars
 * Remove the ``forge.logging.log(mountainViewForecast)`` call
-* Remove ``populateWeatherConditions`` invocation from the document ready listener.
+* Remove ``populateWeatherConditions`` call, just the call not the function.
   You do not need to remove the entire jQuery document ready listener as it will be used again in the following sections
 
 Understanding the Data
@@ -65,7 +65,20 @@ The data returned should look something like the following:
                 <icon data="/ig/images/weather/mostly_sunny.gif"/>
                 <condition data="Mostly Sunny"/>
             </forecast_conditions>
-            ...
+            <forecast_conditions>
+                <day_of_week data="Tue"/>
+                <low data="63"/>
+                <high data="77"/>
+                <icon data="/ig/images/weather/sunny.gif"/>
+                <condition data="Clear"/>
+            </forecast_conditions>
+            <forecast_conditions>
+                <day_of_week data="Wed"/>
+                <low data="67"/>
+                <high data="79"/>
+                <icon data="/ig/images/weather/sunny.gif"/>
+                <condition data="Clear"/>
+            </forecast_conditions>
             <forecast_conditions>
                 <day_of_week data="Thu"/>
                 <low data="68"/>
@@ -85,17 +98,15 @@ Open up ``config.json`` and make sure that ``http://www.google.com/*`` is includ
 
     "permissions": ["tabs", "http://www.google.com/*"],
 
-At this point, rebuilding your app will take longer than usual: changing the configuration of your app means we need to do some work server-side.
-
 Fetching Data
 -------------
-**Goal: Using forge.request.ajax**
+**Goal: Using forge.ajax**
 
 Now that you have a feel for what the returned data looks like, let's add a function to ``weather.js`` that will retrieve this data::
 
     function getWeatherInfo(location) {
         forge.logging.log('[getWeatherInfo] getting weather for for '+location);
-        forge.request.ajax({
+        forge.ajax({
             url:"http://www.google.com/ig/api?weather="+encodeURIComponent(location),
             dataType: 'xml',
             success: function(data, textStatus, jqXHR){
@@ -116,7 +127,7 @@ The returned data is a Document object which can be easily parsed with jQuery.
 At this point the function doesn't actually do anything with the data but you can test to see if the ajax call succeeded.
 For example to look up the forecast in Boston add the following code to the :ref:`document ready listener<weather-tutorial-1-ready-listener>`::
 
-    $(function() {
+    $(function(){
         getWeatherInfo('Boston');
     });
 
@@ -130,76 +141,71 @@ Parsing the Data
 
 Now we are going to add some more functions to ``weather.js`` which will extract information from the data we retrieve.
 
-First, a utility function to transform XML from the Google API into equivalent JSON::
+This code will parse relevant information from forecast_information in the returned xml to create a  :ref:`ForecastInformation <weather-tutorial-1-forecast-information>` object::
 
-    var xmlToJson = function(doc, keys) {
-        /** Transforms an XML document into JSON
-    
-        doc is a document
-        keys is an array of strings, specifying the names of XML nodes to pull from the document
-        */
-        var result = {};
-    
-        for (var counter=0; counter<keys.length; counter+=1) {
-            result[keys[counter]] = $(keys[counter], doc).attr('data');
-        }
-        return result;
-    }
+    function buildForecastInformation(forecastInformation){
+        forge.logging.log('[buildForecastInformation] building internal forecast information object');
+        
+        var city = $('city', forecastInformation).attr('data');
+        var forecastDate = $('forecast_date', forecastInformation).attr('data');
+        
+        return new ForecastInformation(city, forecastDate);
+    };
 
-Secondly, include this helper function to re-point references to icons at the right location::
+The following code is just a helper function to extract the icon name and return the URL of the resource::
 
-    function formatImgSrc(imgURL) {
+    function formatImgSrc(imgURL){
         return 'resources/'+/[a-z_]*.gif/.exec(imgURL)[0];
     };
 
-Next, we'll use ``xmlToJson`` to pull data out of the XML response and into objects with the same structure as the dummy JSON we had originally::
+To parse the ``current_conditions`` information and create :ref:`CurrentConditions <weather-tutorial-1-current-conditions>` object::
 
-    function buildForecastInformation(forecastInformation) {
-        forge.logging.log('[buildForecastInformation] building internal forecast information object');
-    
-        return xmlToJson(forecastInformation, ['city', 'forecast_date']);
-    };
-    
-    function buildCurrentCondition(currentCondition) {
-        forge.logging.log('building current conditions object');
+    function buildCurrentCondition(currentCondition){
+        forge.logging.log('building internal current conditions object');
         
-        var currentCondition = xmlToJson(currentCondition, ['condition', 'temp_f', 'humidity', 'icon', 'wind_condition']);
-        currentCondition['icon'] = formatImgSrc(currentCondition['icon']);
+        var condition = $('condition', currentCondition).attr('data');
+        var tempF = $('temp_f', currentCondition).attr('data');
+        var humidity = $('humidity', currentCondition).attr('data');
+        var imgURL = $('icon', currentCondition).attr('data');
+        var img = formatImgSrc(imgURL);
+        var windCondition = $('wind_condition', currentCondition).attr('data');
         
-        return currentCondition;
+        return new CurrentConditions(condition, tempF, humidity, img, windCondition);
     };
-    
-    function buildForecastConditions(forecastConditions) {
+
+
+Since there are multiple forecast_conditions we can iterate over them and return an array of :ref:`ForecastConditions <weather-tutorial-1-forecast-conditions>` ::
+
+    function buildForecastConditions(forecastConditions){
         var convertedForecastConditions = [];
-        $(forecastConditions).each(function(index, element) {
+        $(forecastConditions).each(function(index, element){
             convertedForecastConditions.push(buildForecastCondition(element));
         });
         return convertedForecastConditions;
     };
     
-    function buildForecastCondition(forecastCondition) {
-        forge.logging.log('[buildForecastCondition] building forecast condition');
+    function buildForecastCondition(forecastCondition){
+        forge.logging.log('[buildForecastCondition] building internal forecast condition');
         
-        var forecastCondition = xmlToJson(forecastCondition, ['day_of_week', 'low', 'high', 'icon', 'condition']);
-        forecastCondition['icon'] = formatImgSrc(forecastCondition['icon']);
+        var dayOfWeek = $('day_of_week', forecastCondition).attr('data');
+        var low = $('low', forecastCondition).attr('data');
+        var high = $('high', forecastCondition).attr('data');
+        var imgURL = $('icon', forecastCondition).attr('data');
+        var img = formatImgSrc(imgURL);
+        var condition = $('condition', forecastCondition).attr('data');
         
-        return forecastCondition;
+        return new ForecastConditions(dayOfWeek, low, high, img, condition);
     };
 
-We can use these functions to create a full weather forecast objects::
+Tying it all together ::
 
-    function buildWeather(parsedData) {
+    function buildWeather(parsedData){
         forge.logging.log('[buildWeather] converting data to internal representation');
         
         var forecastInformation = buildForecastInformation($('forecast_information', parsedData));
         var currentConditions = buildCurrentCondition($('current_conditions', parsedData))
         var forecastConditions = buildForecastConditions($('forecast_conditions', parsedData));
-        
-        return {
-            forecast: forecastInformation,
-            currentConditions: currentConditions,
-            forecastConditions: forecastConditions
-        }
+        return new WeatherForecast(forecastInformation, currentConditions, forecastConditions);
     };
 
 Getting and Parsing Data for a US City

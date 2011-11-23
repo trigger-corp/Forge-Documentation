@@ -39,11 +39,7 @@ Below is a template of a ``config.json`` file with links to a detailed descripti
             ":ref:`default_icons <field-default_icons>`": {
                 "firefox": "my-icon-for-firefox.ico"
             }
-        },
-        ":ref:`libs <field-libs>`": {
-            "gmail": {}
-        },
-        ":ref:`cs_options <field-cs_options>`": ["frames"]
+        }
     }
 
 
@@ -158,8 +154,7 @@ activations
 
 *Optional*. *Browsers only*.
 
-This field specifies when and how your foreground files will be embedded into pages. 
-It is an array of objects with three required keys:
+This field specifies when and how your foreground files will be embedded into pages. It is an object with three required keys:
 
 .. _field-activations-patterns:
 
@@ -170,8 +165,6 @@ It is an array of objects with three required keys:
 * ``patterns`` is an array of `Match Patterns <http://code.google.com/chrome/extensions/match_patterns.html>`_ which control on which URLs your app will activate
 * ``scripts`` is an array of Javascript files which will be embedded
 * ``styles`` is an array of CSS files which will be embedded
-
-.. important:: Safari only supports a single object in the activations array.
 
 .. _field-browser_action:
 
@@ -191,33 +184,3 @@ The ``browser_action`` configuration controls the appearance and function of too
 * ``default_popup`` should refer to a local HTML file, included in your app, which will be displayed after the button is clicked; for more information, see :ref:`part I of the tutorial <weather-tutorial-1-setting-up-the-UI>`
 * ``default_icon`` should refer to a local image file, included in your app, to be used as the button icon
 * ``default_icons`` allows you to override the ``default_icon`` icon, one platform at a time: the object keys should be one or more of ``chrome``, ``firefox``, ``safari`` or ``ie``
-
-
-.. _field-libs:
-
-libs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-*Optional*. *Browsers only*.
-
-For convenience, Forge comes with a number of libraries which you can choose to include with your app. The format of ``libs`` is an object, where the keys are the names of a library, and the values are extra configuration directives specific to each included library, e.g.::
-
-    "libs": {
-        "gmail": {}
-    }
-
-Currently, the only library you can enable here is called "gmail". The Forge gmail library gives the developer access to special functions which can interact with and manipulate the Gmail composition pane. This allows for a more flexible alternative to developing Gmail gadgets. Check the API section for :ref:`a detailed explanation of the Gmail library <api-gmail>`.
-
-.. _field-cs_options:
-
-cs_options
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-*Optional*. *Browsers only*.
-
-This array controls the details of behaviour for content scripts. Currently, only one option is available: ``frames``, e.g.::
-
-    "cs_options": ["frames"]
-
-When used, ``frames`` means that your extension may also activate inside iframes. When specified, if the ``src`` of an iframe matches one of your ``patterns``, your scripts and CSS files will be embedded in that iframe; not just in the top-level document.
-

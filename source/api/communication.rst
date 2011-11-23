@@ -59,6 +59,8 @@ Sends a message to be received by listeners in your background code: similar to 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Browser only**
 
+**Restrictions: Only available from the background page**
+
 Like :ref:`broadcast <api-broadcast>`, this method sends a message to be received by content script listeners.
 
 However, not all listeners are passed the message: only the currently focused tab's listeners will receive this message. If the currently focussed tab is not displaying a page your add-on has activated on, no listeners will receive this message.

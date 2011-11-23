@@ -71,42 +71,31 @@ The ``emptyContent`` function is simply clears the old weather information from 
 This function should be called every time new data is about to be displayed, which is handled by the ``populateWeatherConditions``.
 Add the call to ``emptyContent`` at the top of the ``populateWeatherConditions`` function, which should then look like::
 
-    function populateWeatherConditions(weatherCondition) {
-        var tmpl, output;
-        
-        emptyContent();
-        
-        forge.logging.log('beginning populating weather conditions');
-        
-        tmpl = $('#forecast_information_tmpl').html();
-        output = Mustache.to_html(tmpl, weatherCondition.forecast);
-        $('#forecast_information').append(output);
-        forge.logging.log('finished populating forecast information');
-        
-        tmpl = $('#current_conditions_tmpl').html();
-        output = Mustache.to_html(tmpl, weatherCondition.currentConditions);
-        $('#current_conditions').append(output);
-        forge.logging.log('finished populating current conditions');
-        
-        tmpl = $('#forecast_conditions_tmpl').html();
-        output = Mustache.to_html(tmpl, {conditions: weatherCondition.forecastConditions});
-        $('#forecast_conditions table tr').append(output);
-        forge.logging.log('finished populating forecast conditions');
-        
-        forge.logging.log('finished populating weather conditions');
-    };
+	function populateWeatherConditions(weatherCondition){
+		emptyContent();
+		forge.logging.log('beginning populating weather conditions');
 
-Remembering the previous location
---------------------------------------
-**Goal: show different weather reports based on the selected city; and remember the previous selected city**
+		$('#forecast_information_tmpl').tmpl(weatherCondition.forecast).appendTo($('#forecast_information'));
+		forge.logging.log('finished populating forecast information');
+
+		$('#current_conditions_tmpl').tmpl(weatherCondition.currentConditions).appendTo($('#current_conditions'));
+		forge.logging.log('finished populating current conditions');
+
+		$('#forecast_conditions_tmpl').tmpl(weatherCondition.forecastConditions).appendTo($('#forecast_conditions table tr'));
+		forge.logging.log('finished populating forecast conditions');
+
+		forge.logging.log('finished populating weather conditions');
+	};
+
+Handling City Selection Change
+------------------------------
 The following code should be placed inside of the document ready listener.
 When a new city is selected we want to store it in local storage, so if the application is restarted the last selected city will be the default selection.
-
 The following code sets up a handler which listens for city change.
 When a new city is selected it is saved to preferences, the old content is cleared from the page, and the forecast for the new city is retrieved and displayed.
 
 ``forge.prefs.set`` call takes four parameters, the name of the preference to store, the value, success callback, and error callback.
-The last two parameters can be omitted in this context::
+The last two parameters can be omitted in this context because the following code can run asynchronously::
 
     $('#city_menu').change(function() {
         var city = $("#city_menu option:selected").html();
@@ -114,32 +103,26 @@ The last two parameters can be omitted in this context::
         getWeatherInfo(city, populateWeatherConditions);
     });
 
+The following code should be placed inside of the document ready listener.
 When the application first runs we want to check if a city has already been saved from a previous run.
 The first time the app is run, this preference will be ``null``.
 
 If a city has been saved to preferences, it is set as the selection and a change event is fired.
 **Note:** Even if the selection changes the change event is not fired until focus is lost, so we fire this event programatically.
 
-``forge.prefs.get`` takes 3 parameters, the name of the preference, a success callback which will be invoked with the value of the requested preference, and a callback if an error occurred retrieving the resource. The following code should be placed inside of the document ready listener.::
+``forge.prefs.get`` takes 3 parameters, the name of the preference, a success callback which has the form of function(resource), and a callback if an error occurred retrieving the resource. ::
 
-    forge.prefs.get('city', function(resource) {
-            if(resource) {
-                if ($('#city_menu').val() == resource) {
-                    $('#city_menu').change();
-                } else {
-                    //change event is not fired until focus is lost
-                    $('#city_menu').val(resource).change();
-                }
-            }
-            else { //default
-                getWeatherInfo('Boston', populateWeatherConditions);
-            }
-        },
-        function() {
-            forge.logging.log('ERROR! failed when retrieving city preferences');
-            $('#city_menu').val('Boston'); //default;
+    forge.prefs.get('city', function(resource){
+        if(resource) {
+            if ($('#city_menu').val() == resource) $('#city_menu').change();
+            else $('#city_menu').val(resource).change(); //change event is not fired until focus is lost
         }
-    );
+        else getWeatherInfo('Boston', populateWeatherConditions); //default
+    },
+    function(){
+        forge.logging.log('ERROR! failed when retrieving city preferences');
+        $('#city_menu').val('Boston'); //default;
+    });
 
 The weather app should now be complete.
 

@@ -9,7 +9,7 @@ Chrome to Android
 ------------------
 If you did the Weather App tutorial using a Chrome extension you do not need to make any modifications at all.
 Simply go through the :ref:`Android getting started<android-getting-started>` section which will show you how to set up the development environment.
-Once you have the JDK, SDK, and AVD configured simply follow the directions on how to :ref:`build<android-getting-started-build>` and :ref:`run<android-getting-started-build>` the app.
+Once you have the JDK, SDK, and AVD configured simply follow the directs on how to :ref:`build<android-getting-started-build>` and :ref:`run<android-getting-started-build>` the app.
 
 
 Android to Chrome

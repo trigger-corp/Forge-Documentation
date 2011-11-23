@@ -27,6 +27,7 @@ Preparation
   This will help you set up the basics and teach you how to build and run your code.
 * Remove any files in the ``src`` directory except ``config.json``, the rest of the files will not be needed for the rest of this tutorial.
 * Download `resources.zip <../_static/weather/resources.zip>`_, which contains images and other resources needed for this tutorial; extract the ``resources`` directory to the ``src`` directory.
+* **(Chrome Only)** Empty the *background_files* array in ``config.json`` by removing the ``background.js`` reference.
 * Create a new javascript file called ``weather.js`` inside the ``src`` directory. This file will contain all of the JavaScript code for the rest of the tutorial.
 * Create a file called ``index.html`` inside the ``src`` directory. This will be the html page that displays the forecast information.
 
@@ -67,68 +68,90 @@ Open ``config.json`` and add the following configuration to set up the toolbar b
     "browser_action": {
         "default_popup": "index.html",
         "default_icon": "resources/sun_19.png"
-    },
+    }
+
 
 Build and run the code.
 Instructions on how to build and load an extension for Chrome can be found :ref:`here<chrome-getting-started-build>`\ .
 Instruction on how to build and run an Android app can be found :ref:`here <android-getting-started-build>`\ .
 
-On Chrome, a new toolbar icon should be visible!
-
-Create dummy data
--------------------------------------------
-**Goal: Set up some dummy data for a weather forecast**
+Internal Data Representation
+----------------------------
+**Goal: Design data representation of a weather forecast**
 
 .. _weather-tutorial-1-forecast-information:
+
+Open ``weather.js`` and paste the following code, which will hold forecast information::
+
+    function ForecastInformation(city, forecastDate) {
+        this.city = city;
+        this.forecastDate = forecastDate;
+        
+        return this;
+    };
+
 .. _weather-tutorial-1-current-conditions:
 
-First, we will create some dummy data in JSON format - open ``weather.js`` and paste the following code::
+Create an object to hold the current conditions. ::
 
-    var forecast = {
-        city: "Mountain View, CA",
-        forecast_date: "2011-08-09"
-    };
-    
-    var currentConditions = {
-        condition: "Clear",
-        temp_f: "73",
-        humidity: "Humidity: 57%",
-        icon: "resources/sunny.gif",
-        wind_condition: "Wind: N at 9 mph"
+    function CurrentConditions(condition, tempF, humidity, iconSrc, windCondition) {
+        this.condition = condition;
+        this.tempF = tempF;
+        this.humidity = humidity;
+        this.img = iconSrc;
+        this.windCondition = windCondition;
+        
+        return this;
     };
 
 .. _weather-tutorial-1-forecast-conditions:
 
-We'll use a helper function to create daily forecast objects::
+We also need an object to hold forecast conditions for the next few days. ::
 
-    var forecastConditionMaker = function(day_of_week, low, high, icon, condition) {
-        return {
-            day_of_week: day_of_week,
-            low: low,
-            high: high,
-            icon: icon,
-            condition: condition
-        }
+    function ForecastConditions(dayOfWeek, low, high, imgSrc, condition){
+        this.dayOfWeek = dayOfWeek;
+        this.low = low;
+        this.high = high;
+        this.img = imgSrc;
+        this.condition = condition;
+        
+        return this;
     };
 
-    var tuesdayConditions = forecastConditionMaker("Tue", "58","72", "resources/mostly_sunny.gif","Clear");
-    var wednesdayConditions = forecastConditionMaker("Wed", "58", "72", "resources/sunny.gif", "Clear");
-    var thursdayConditions = forecastConditionMaker("Thu", "56", "72", "resources/chance_of_rain.gif", "Chance of Rain");
-    var fridayConditions = forecastConditionMaker("Fri", "58", "74", "resources/sunny.gif", "Clear");
+To keep things organized lets have another object that holds all of this information. (Note: ``forecastConditions`` in ``WeatherForecast`` is an array of ``ForecastConditions``) ::
 
-Bringing the data together, we have a dummy weather forecast for Mountain View, CA::
-
-    var mountainViewForecast = {
-        forecast: forecast, currentConditions: currentConditions,
-        forecastConditions: [tuesdayConditions, wednesdayConditions, thursdayConditions, fridayConditions]
+    function WeatherForecast(forecast, currentConditions, forecastConditions) {
+        this.forecast = forecast;
+        this.currentConditions = currentConditions;
+        this.forecastConditions = forecastConditions;
+        
+        return this;
     };
 
-Check the data
+Populate the Data
 -----------------
-**Goal: Confirm our data has been correctly populated by using logging**
+**Goal: Populate the weather forecast objects with dummy data. Using forge.logging.log**
+
+Now that we have some objects to represent a weather forecast, let's populate them with some dummy data.
+At this point make sure that the ``resources`` directory is inside the the ``src`` directory.
+It contains icons for displaying weather conditions.
+If it is missing or you have accidentally removed it, download `resources.zip <../_static/weather/resources.zip>`_; extract the ``resources`` directory to the ``src`` directory.
+
+**Note: The imgSrc arguments to** :ref:`CurrentConditions<weather-tutorial-1-current-conditions>`
+**and** :ref:`ForecastConditions<weather-tutorial-1-forecast-conditions>` **are relative URLs.** ::
+
+    var forecast = new ForecastInformation("Mountain View, CA", "2011-08-09");
+    var currentConditions = new CurrentConditions("Clear", "73", "Humidity: 57%", "resources/sunny.gif", "Wind: N at 9 mph");
+    var tuesdayConditions = new ForecastConditions("Tue", "58","72", "resources/mostly_sunny.gif","Clear");
+    var wednesdayConditions = new ForecastConditions("Wed", "58", "72", "resources/sunny.gif", "Clear");
+    var thursdayConditions = new ForecastConditions("Thu", "56", "72", "resources/chance_of_rain.gif", "Chance of Rain");
+    var fridayConditions = new ForecastConditions("Fri", "58", "74", "resources/sunny.gif", "Clear");
+    
+    var mountainViewForecast = new WeatherForecast(forecast, currentConditions,
+        [tuesdayConditions, wednesdayConditions, thursdayConditions, fridayConditions]);
 
 At this point we've already got quite a bit of code and its worth making sure we haven't made any mistakes.
-Using ``forge.logging.log``, we can inspect all the properties of the dummy objects that we've created. ::
+Using ``forge.logging.log`` we can inspect all the properties of the dummy objects that we've created. ::
 
     forge.logging.log(mountainViewForecast);
 
@@ -165,7 +188,7 @@ Remote Debugging on Android
 As you've already seen in :ref:`Android Getting Started<android-getting-started>` ``forge.logging.log`` prints output to console/terminal.
 You can also use remote debugging which provides some helpful tools for troubleshooting and examining the app at runtime.
 
-#. Open up a browser and go to `<https://webmynd.com/catalyst/>`_.
+#. Open up a browser and go to `<http://catalyst.webmynd.com/>`_.
 #. On this page there will be a generated ``script`` tag which you copy and insert into the head element of your ``index.html`` file.
 #. Click on the auto-generated link which takes you to a page that looks similar to Chrome's debugging tools.
 #. Try :ref:`running <android-getting-started-build>` the code.

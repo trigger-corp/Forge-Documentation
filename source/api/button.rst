@@ -25,7 +25,7 @@ Sets the path to the HTML page that should be opened when the toolbar button is 
 
 .. js:function:: button.setUrl(url)
 
-    :param string url: relative URL to the HTML to set as the toolbar button popup
+    :param string url: the URL of the icon
     :param function success: callback to be invoked when no errors occur
     :param function error: callback to be invoked when an error occurs
 
@@ -39,21 +39,21 @@ Sets a function to be executed when the toolbar button is clicked
 
     :param function fn: function to be invoked
 
-``setBadge``
+``setBadgeText``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Browser only**
 
-Sets a number to appear as a notification badge on the toolbar button.
+Sets notification text to appear on the toolbar button. Only about four characters can fit on the button.
 
-.. js:function:: button.setBadge(number, success, error)
+.. js:function:: button.setBadgeText(text, success, error)
 
-    :param long number: number to display as badge
+    :param string text: new text
     :param function success: callback to be invoked when no errors occur
     :param function error: callback to be invoked when an error occurs
 
 ``setBadgeBackgroundColor``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**Platforms: Browser only (Not supported on Safari)**
+**Platforms: Browser only**
 
 Sets the background color for the badge.
 

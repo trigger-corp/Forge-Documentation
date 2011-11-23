@@ -27,4 +27,3 @@ Your feedback is very important to us. Please send an email to support@webmynd.c
    /config
    /api/index
    /partners/index.rst
-   /release-notes
