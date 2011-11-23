@@ -1,6 +1,6 @@
 .. _config:
 
-Config file documentation
+Config File Reference
 ================================================================================
 
 ``config.json`` is a JSON file which contains meta-data about your app. It determines how your app looks and functions by specifying which Javascript, image and HTML files are to be used.

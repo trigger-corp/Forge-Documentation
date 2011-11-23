@@ -7,6 +7,7 @@ It is often useful to be able to send and receive messages between components of
 
 ``listen``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Browser only**
 
 Sets up a handler function which will receive messages sent ("broadcast") by your extension.
 
