@@ -107,8 +107,8 @@ highlight_language = 'js'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 # html_theme = 'sphinxdoc'
-# html_theme = 'forge'
-html_theme = 'haiku'
+html_theme = 'forge'
+# html_theme = 'haiku'
 # haiku: no sidebar, nice notes
 # agogo: good sidebar, too much vspace, bit messy
 # scrolls: narrow, no sidebar
@@ -127,7 +127,7 @@ html_theme_path = ['_theme']
 html_title = 'Forge - Cross-platform App Development Tools'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
-html_short_title = 'WebMynd Forge Documentation'
+html_short_title = 'Forge Documentation'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
@@ -189,7 +189,7 @@ html_show_sourcelink = False
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'Cross-browserAdd-onDevelopmentdoc'
+htmlhelp_basename = 'Forge'
 
 
 # -- Options for LaTeX output --------------------------------------------------
