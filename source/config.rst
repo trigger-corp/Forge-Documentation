@@ -30,7 +30,8 @@ Below is a template of a ``config.json`` file with links to a detailed descripti
           {
             ":ref:`patterns <field-activations-patterns>`": ["http://mail.google.com"],
             ":ref:`scripts <field-activations-scripts>`": ["gmail.js"],
-            ":ref:`styles <field-activations-styles>`": ["gmail.css"]
+            ":ref:`styles <field-activations-styles>`": ["gmail.css"],
+			":ref:`run_at <field-activations-run_at>`": "start",
           }
         ],
         ":ref:`browser_action <field-browser_action>`": {
@@ -167,9 +168,17 @@ It is an array of objects with three required keys:
 
 .. _field-activations-styles:
 
+
 * ``patterns`` is an array of `Match Patterns <http://code.google.com/chrome/extensions/match_patterns.html>`_ which control on which URLs your app will activate
 * ``scripts`` is an array of Javascript files which will be embedded
 * ``styles`` is an array of CSS files which will be embedded
+
+As well as an optional key:
+
+* ``run_at`` optionally defines when your included scripts will be added to the page, must be one of the following:
+ * ``"start"`` scripts will be run immediately, potentially before the DOM is ready
+ * ``"ready"`` scripts will run as soon as the DOM is ready
+ * ``"end"`` (default) scripts will run at some point after the DOM is ready, with no guarantees as to whether or not ``window.onload`` will have fired yet or not.
 
 .. important:: Safari only supports a single object in the activations array.
 
