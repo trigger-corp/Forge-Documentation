@@ -31,7 +31,7 @@ Below is a template of a ``config.json`` file with links to a detailed descripti
             ":ref:`patterns <field-activations-patterns>`": ["http://mail.google.com"],
             ":ref:`scripts <field-activations-scripts>`": ["gmail.js"],
             ":ref:`styles <field-activations-styles>`": ["gmail.css"],
-			":ref:`run_at <field-activations-run_at>`": "start",
+            ":ref:`run_at <field-activations-runat>`": "start",
           }
         ],
         ":ref:`browser_action <field-browser_action>`": {
@@ -174,6 +174,8 @@ It is an array of objects with three required keys:
 * ``styles`` is an array of CSS files which will be embedded
 
 As well as an optional key:
+
+.. _field-activations-runat:
 
 * ``run_at`` optionally defines when your included scripts will be added to the page, must be one of the following:
  * ``"start"`` scripts will be run immediately, potentially before the DOM is ready
