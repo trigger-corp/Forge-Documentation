@@ -25,7 +25,7 @@ Reference:
 #. :ref:`forge.gmail.getComposeDoc <api-gmail-getComposeDoc>`
 #. :ref:`forge.gmail.createLinkInComposePane <api-gmail-createLinkInComposePane>`
 
-**Platforms: Browser only**
+**Platforms: Chrome only**
 
 .. _api-gmail-injectCSS:
 
@@ -49,8 +49,7 @@ Polls the page and calls a function when it detects that user is in a compositio
 
 .. js:function:: gmail.pollForComposePane(loadFn, continuous)
 
-    :param function loadFn: function to call when compose pane is detected and active
-    :param boolean continuous: if true, function continues to poll even after first detection of the compose pane. This is useful because Gmail's compose pane may refresh from time-to-time (i.e. on draft auto-save, on expanding 'CC' and 'BCC', on attaching files) which eliminates manually added elements.
+    :param function loadFn: function to call once when compose pane is detected and active
 
 .. _api-gmail-getActivePane:
 
