@@ -45,9 +45,9 @@ Inserts a given stylesheet to the Gmail page. Referencing the stylesheet through
 ``pollForComposePane``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Polls the page and calls a function when it detects that user is in a composition pane, either through 'Compose New Mail' or 'Reply'/'Forward'.
+Polls the page and calls a function once when it detects that user is in a composition pane, either through 'Compose New Mail' or 'Reply'/'Forward'.
 
-.. js:function:: gmail.pollForComposePane(loadFn, continuous)
+.. js:function:: gmail.pollForComposePane(loadFn)
 
     :param function loadFn: function to call once when compose pane is detected and active
 
