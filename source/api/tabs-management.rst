@@ -17,8 +17,8 @@ On mobile this will display a :ref:`modal view <forge-modal>`.
 
     :param string url: The URL to open in the new tab
     :param boolean keepFocus: (optional) If true keeps the current tab focused
-    :param function success: callback to be invoked when no errors occurs
-    :param function error: callback to be invoked when an error occurs
+    :param function() success: callback to be invoked when no errors occurs
+    :param function(content) error: called with details of any error which may occur
 
 ``closeCurrent``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -28,4 +28,6 @@ On mobile this will display a :ref:`modal view <forge-modal>`.
 
 Close the tab which makes the call.
 
-.. js:function:: tabs.closeCurrent()
+.. js:function:: tabs.closeCurrent(error)
+
+    :param function(content) error: called with details of any error which may occur

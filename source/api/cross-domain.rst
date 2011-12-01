@@ -18,8 +18,8 @@ Normal in-page JavaScript is only able to make HTTP requests to the same server 
 .. js:function:: request.get(url, callback, error)
 
     :param string url: the URL to GET
-    :param function callback: called with the retrieved content body as the only argument
-    :param function error: callback to be invoked when an error occurs
+    :param function(content) callback: called with the retrieved content body as the only argument
+    :param function(content) error: called with details of any error which may occur
 
 The callback function *callback* is invoked with the content body of the requested URL as a string.
 As it is limited to ``GET`` requests and lacks the more advanced options of *forge.request.ajax*, it's recommended that *forge.request.get* is only used in very simple scenarios.
@@ -28,9 +28,9 @@ As it is limited to ``GET`` requests and lacks the more advanced options of *for
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: All**
 
-.. js:function:: request.ajax(xhrOptions)
+.. js:function:: request.ajax(options)
 
-  :param object xhrOptions: jQuery-style parameters to control the request
+  :param object options: jQuery-style parameters to control the request
 
 This function is closer to the `jQuery.ajax <http://api.jquery.com/jQuery.ajax/>`_ method than *forge.request.get*. However, the full range of jQuery options are **not supported** for this method, due to the structure of browser and mobile apps.
 

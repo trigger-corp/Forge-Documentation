@@ -10,11 +10,11 @@ Preferences are used to save state in your extension, state is persisted between
 ``get``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. js:function:: prefs.get(name, callback, error)
+.. js:function:: prefs.get(name, success, error)
 
     :param string name: the name of the preference you want to query
-    :param function callback: will be invoked as the preference value as its only parameter
-    :param function error: callback to be invoked when an error occurs
+    :param function(value) success: will be invoked as the preference value as its only parameter
+    :param function(content) error: called with details of any error which may occur
 
 **Platforms: All**
 
@@ -30,8 +30,8 @@ If the preference has not been set (with :ref:`api-prefs-set`), and there is no 
 
     :param string name: the name of the preference you want to save
     :param value: the value to save
-    :param function success: callback to be invoked when no errors occurs
-    :param function error: callback to be invoked when an error occurs
+    :param function() success: callback to be invoked when no errors occurs
+    :param function(content) error: called with details of any error which may occur
 
 The preference value given here will override a default value (if one was given).
 
@@ -39,11 +39,11 @@ The preference value given here will override a default value (if one was given)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: All**
 
-.. js:function:: prefs.clear(name, callback, error)
+.. js:function:: prefs.clear(name, success, error)
 
     :param string name: the name of the preference to un-set
-    :param function callback: a callback to be invoked (with no arguments) when the operation is complete
-    :param function error: callback to be invoked when an error occurs
+    :param function() success: a callback to be invoked (with no arguments) when the operation is complete
+    :param function(content) error: called with details of any error which may occur
 
 Un-sets the given preference name, so that future calls to :ref:`api-prefs-set` will return ``undefined`` (or the default preference value, if given).
 
@@ -51,10 +51,10 @@ Un-sets the given preference name, so that future calls to :ref:`api-prefs-set` 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: All**
 
-.. js:function:: prefs.clearAll(callback, error)
+.. js:function:: prefs.clearAll(success, error)
 
-    :param function callback: a callback to be invoked (with no arguments) when the operation is complete
-    :param function error: callback to be invoked when an error occurs
+    :param function() success: a callback to be invoked (with no arguments) when the operation is complete
+    :param function(content) error: called with details of any error which may occur
 
 Un-sets all preference names, so that calls to :ref:`api-prefs-set` will return ``undefined`` (or the default value for a preference, if given).
 
@@ -62,9 +62,9 @@ Un-sets all preference names, so that calls to :ref:`api-prefs-set` will return 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: All**
 
-.. js:function:: prefs.keys(callback, error)
+.. js:function:: prefs.keys(success, error)
 
-    :param function callback: invoked with an array of the set key names as its only argument
-    :param function error: callback to be invoked when an error occurs
+    :param function(keysArray) success: invoked with an array of the set key names as its only argument
+    :param function(content) error: called with details of any error which may occur
 
 Find which preferences have been set.

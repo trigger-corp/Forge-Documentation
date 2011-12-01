@@ -3,6 +3,7 @@
 Component communication: ``forge.message``
 =======================================================
 **Platforms: Browser only**
+
 It is often useful to be able to send and receive messages between components of your extension. To achieve this in a cross-browser manner, use these methods to broadcast and listen for messages.
 
 ``listen``
@@ -18,8 +19,8 @@ The *callback* parameter will be invoked when a message is to be delivered, with
 .. js:function:: message.listen([type, ]callback, error)
 
     :param string type: (optional) if included, the callback will only be fired for messages broadcast with the same type; if omitted, the callback will be fired for all messages
-    :param function callback: will be called with the contents of relevant broadcast messages as its first parameter and a reply function as its second parameter
-    :param function error: callback to be invoked when an error occurs
+    :param function(content, reply) callback: will be called with the contents of relevant broadcast messages as its first parameter and a reply function as its second parameter
+    :param function(content) error: called with details of any error which may occur
 
 .. _api-broadcast:
 
@@ -33,11 +34,12 @@ The *type* parameter can be used to indicate the purpose of the message and limi
 
 The *callback* parameter will be invoked with any responses from listeners; it may be called multiple times, depending on whether your listeners use the "reply function".
 
-.. js:function:: message.broadcast(type, content, callback)
+.. js:function:: message.broadcast(type, content, callback, error)
 
     :param string type: limits the listeners which will receive this message
     :param any content: the message body
-    :param function callback: invoked each time a listener returns a response to the broadcaster, with the response as its only argument
+    :param function(content) callback: invoked each time a listener returns a response to the broadcaster, with the response as its only argument
+    :param function(content) error: called with details of any error which may occur
 
 .. _api-broadcastBackground:
 
@@ -47,14 +49,14 @@ The *callback* parameter will be invoked with any responses from listeners; it m
 
 **Restrictions: Not available from the background page**
 
-
 Sends a message to be received by listeners in your background code: similar to :ref:`broadcast <api-broadcast>`, except that listeners created in individual browser pages will not receive this message; only listeners created in your ``onStart`` methods (see :ref:`extension-concept-background`).
 
-.. js:function:: message.broadcastBackground(type, content, callback)
+.. js:function:: message.broadcastBackground(type, content, callback, error)
 
     :param string type: limits the listeners which will receive this message
     :param any content: the message body
-    :param function callback: invoked each time a listener returns a response to the broadcaster, with the response as its only argument
+    :param function(content) callback: invoked each time a listener returns a response to the broadcaster, with the response as its only argument
+    :param function(content) error: called with details of any error which may occur
 
 ``toFocussed``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -66,8 +68,9 @@ However, not all listeners are passed the message: only the currently focused ta
 
 The callback may be invoked a number of times if several message listeners have been set up per page.
 
-.. js:function:: message.toFocussed(type, content, callback)
+.. js:function:: message.toFocussed(type, content, callback, error)
 
     :param string type: limits the listeners which will receive this message
     :param any content: the message body
-    :param function callback: invoked each time a listener returns a response to the broadcaster, with the response as its only argument
+    :param function(content) callback: invoked each time a listener returns a response to the broadcaster, with the response as its only argument
+    :param function(content) error: called with details of any error which may occur

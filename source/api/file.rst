@@ -27,10 +27,10 @@ Returns a file object for a image selected by the user from their phone gallery 
 
 Returned files will be accessible to the app as long as they exist on the device.
 
-.. js:function:: file.getImage(success[, error])
+.. js:function:: file.getImage(success, error)
 
-    :param function success: callback to be invoked when no errors occur, first argument is the returned file.
-    :param function error: callback to be invoked when an error occurs
+    :param function(file) success: callback to be invoked when no errors occur, first argument is the returned file.
+    :param function(content) error: called with details of any error which may occur
 
 ``isFile``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -38,11 +38,11 @@ Returned files will be accessible to the app as long as they exist on the device
 
 Returns true or false based on whether a given object is a file object and points to an existing file on the current device.
 
-.. js:function:: file.isFile(file, success[, error])
+.. js:function:: file.isFile(file, success, error)
 
     :param file file: the file object to check.
-    :param function success: callback to be invoked when no errors occur, first argument a boolean value
-    :param function error: callback to be invoked when an error occurs
+    :param function(isFile) success: callback to be invoked when no errors occur, first argument a boolean value.
+    :param function(content) error: called with details of any error which may occur
 
 ``isImage``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -50,11 +50,11 @@ Returns true or false based on whether a given object is a file object and point
 
 Returns true or false based on whether a given object is a file object, points to an existing file on the current device and the file is an image. If attempting to access an image from a previously saved file object it is recommended you use this method to check it still exists first.
 
-.. js:function:: file.isImage(file, success[, error])
+.. js:function:: file.isImage(file, success, error)
 
     :param file file: the file object to check.
-    :param function success: callback to be invoked when no errors occur, first argument a boolean value
-    :param function error: callback to be invoked when an error occurs
+    :param function(isImage) success: callback to be invoked when no errors occur, first argument a boolean value.
+    :param function(content) error: called with details of any error which may occur
 
 ``imageURL``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -66,12 +66,12 @@ This is the recommended way of displaying an image captured from the device. On 
 
 Not setting a width and height property will cause iOS apps to become slow and potentially run out of memory.
 
-.. js:function:: file.imageURL(file,[ properties,] success[, error])
+.. js:function:: file.imageURL(file,[ properties,] success, error)
 
     :param file file: the file object to load data from.
     :param object properties: an object containing option settings for this method, in this case ``height`` and/or ``width``.
-    :param function success: callback to be invoked when no errors occur, first argument is the returned file.
-    :param function error: callback to be invoked when an error occurs
+    :param function(url) success: callback to be invoked when no errors occur, first argument is the image URL.
+    :param function(content) error: called with details of any error which may occur
 
 ``imageBase64``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -79,12 +79,12 @@ Not setting a width and height property will cause iOS apps to become slow and p
 
 Returns the base64 encoded data for an image, with the option to set a maximum height and/or width.
 
-.. js:function:: file.imageBase64(file,[ properties,] success[, error])
+.. js:function:: file.imageBase64(file,[ properties,] success, error)
 
     :param file file: the file object to load data from.
     :param object properties: an object containing option settings for this method, in this case ``height`` and/or ``width``.
-    :param function success: callback to be invoked when no errors occur, first argument is the returned file.
-    :param function error: callback to be invoked when an error occurs
+    :param function(base64String) success: callback to be invoked when no errors occur.
+    :param function(content) error: called with details of any error which may occur
 
 ``base64``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -92,8 +92,8 @@ Returns the base64 encoded data for an image, with the option to set a maximum h
 
 Returns the base64 value for a files content.
 
-.. js:function:: file.base64(file, success[, error])
+.. js:function:: file.base64(file, success, error)
 
     :param file file: the file object to load data from.
-    :param function success: callback to be invoked when no errors occur, first argument is the returned file.
-    :param function error: callback to be invoked when an error occurs
+    :param function(base64String) success: callback to be invoked when no errors occur.
+    :param function(content) error: called with details of any error which may occur

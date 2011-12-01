@@ -14,7 +14,6 @@ API Reference
    /api/logging
    /api/tabs-management
    /api/preferences
-   /api/user-interface
    /api/button
    /api/file
    /api/gmail

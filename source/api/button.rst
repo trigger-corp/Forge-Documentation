@@ -11,11 +11,11 @@ Adding and manipulating a toolbar button near the browser's address bar.
 
 Sets the icon for the toolbar button.
 
-.. js:function:: button.setIcon(url)
+.. js:function:: button.setIcon(url, success, error)
 
     :param string url: the URL of the icon
-    :param function success: callback to be invoked when no errors occur
-    :param function error: callback to be invoked when an error occurs
+    :param function() success: callback to be invoked when no errors occur
+    :param function(content) error: called with details of any error which may occur
 
 ``setURL``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -23,11 +23,11 @@ Sets the icon for the toolbar button.
 
 Sets the path to the HTML page that should be opened when the toolbar button is clicked
 
-.. js:function:: button.setUrl(url)
+.. js:function:: button.setUrl(url, success, error)
 
     :param string url: relative URL to the HTML to set as the toolbar button popup
-    :param function success: callback to be invoked when no errors occur
-    :param function error: callback to be invoked when an error occurs
+    :param function() success: callback to be invoked when no errors occur
+    :param function(content) error: called with details of any error which may occur
 
 ``onClicked.addListener``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -35,9 +35,9 @@ Sets the path to the HTML page that should be opened when the toolbar button is 
 
 Sets a function to be executed when the toolbar button is clicked
 
-.. js:function:: button.onClicked.addListener(fn)
+.. js:function:: button.onClicked.addListener(callback)
 
-    :param function fn: function to be invoked
+    :param function() callback:
 
 ``setBadge``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -47,9 +47,9 @@ Sets a number to appear as a notification badge on the toolbar button.
 
 .. js:function:: button.setBadge(number, success, error)
 
-    :param long number: number to display as badge
-    :param function success: callback to be invoked when no errors occur
-    :param function error: callback to be invoked when an error occurs
+    :param number number: number to display as badge
+    :param function() success:
+    :param function(content) error: called with details of any error which may occur
 
 ``setBadgeBackgroundColor``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -62,5 +62,5 @@ Sets the background color for the badge.
     :param array color: an array of four integers in the range [0,255]
     			  that make up the RGBA color of the badge.
     			  For example, opaque red is [255, 0, 0, 255].
-    :param function success: callback to be invoked when no errors occur
-    :param function error: callback to be invoked when an error occurs
+    :param function() success:
+    :param function(content) error: called with details of any error which may occur
