@@ -48,7 +48,7 @@ Sets a number to appear as a notification badge on the toolbar button.
 .. js:function:: button.setBadge(number, success, error)
 
     :param number number: number to display as badge
-    :param function() success:
+    :param function() success: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
 
 ``setBadgeBackgroundColor``
@@ -62,5 +62,18 @@ Sets the background color for the badge.
     :param array color: an array of four integers in the range [0,255]
     			  that make up the RGBA color of the badge.
     			  For example, opaque red is [255, 0, 0, 255].
-    :param function() success:
+    :param function() success: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
+
+``setTitle``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Browser only**
+
+Set the tooltip text for a toolbar button
+
+.. js:function:: button.setTitle(title, success, error)
+
+    :param string title: title text to set as the toolbar tooltip
+    :param function() success: callback to be invoked when no errors occur
+    :param function(content) error: called with details of any error which may occur
+    

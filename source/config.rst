@@ -178,6 +178,7 @@ As well as an optional key:
 .. _field-activations-runat:
 
 * ``run_at`` optionally defines when your included scripts will be added to the page, must be one of the following:
+
  * ``"start"`` scripts will be run immediately, potentially before the DOM is ready
  * ``"ready"`` scripts will run as soon as the DOM is ready
  * ``"end"`` (default) scripts will run at some point after the DOM is ready, with no guarantees as to whether or not ``window.onload`` will have fired yet or not.

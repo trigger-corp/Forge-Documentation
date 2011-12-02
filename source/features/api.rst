@@ -40,7 +40,7 @@ The most commonly used callback is the ``success`` callback, this is the penulti
 The ``success`` callback will only ever be called once, and will only be called if the API method completes successfully.
 
 ``callback``
------------
+----------------
 
 The ``callback`` callback is similar to ``success`` in that it appears as the penultimate parameter, however unlike the ``success`` callback it may be called multiple times. An example of its use it adding a listener to a button being clicked, as the button can be clicked multiple times the callback may be called multiple times.
 
