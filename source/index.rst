@@ -24,6 +24,7 @@ Your feedback is very important to us. Please send an email to support@webmynd.c
    /forge/index.rst
    /android/index.rst
    /chrome/index.rst
+   /best_practice/index
    /features/index
    /config
    /api/index
