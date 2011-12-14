@@ -119,7 +119,8 @@ We'll use a helper function to create daily forecast objects::
 Bringing the data together, we have a dummy weather forecast for Mountain View, CA::
 
     var mountainViewForecast = {
-        forecast: forecast, currentConditions: currentConditions,
+        forecast: forecast,
+        currentConditions: currentConditions,
         forecastConditions: [tuesdayConditions, wednesdayConditions, thursdayConditions, fridayConditions]
     };
 
