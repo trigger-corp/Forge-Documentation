@@ -32,6 +32,7 @@ Below is a template of a ``config.json`` file with links to a detailed descripti
             ":ref:`scripts <field-activations-scripts>`": ["gmail.js"],
             ":ref:`styles <field-activations-styles>`": ["gmail.css"],
             ":ref:`run_at <field-activations-runat>`": "start",
+            ":ref:`all_frames <field-activations-allframes>`": false
           }
         ],
         ":ref:`browser_action <field-browser_action>`": {
@@ -43,8 +44,7 @@ Below is a template of a ``config.json`` file with links to a detailed descripti
         },
         ":ref:`libs <field-libs>`": {
             "gmail": {}
-        },
-        ":ref:`cs_options <field-cs_options>`": ["frames"]
+        }
     }
 
 
@@ -173,7 +173,7 @@ It is an array of objects with three required keys:
 * ``scripts`` is an array of Javascript files which will be embedded
 * ``styles`` is an array of CSS files which will be embedded
 
-As well as an optional key:
+As well as an optional keys:
 
 .. _field-activations-runat:
 
@@ -182,6 +182,10 @@ As well as an optional key:
  * ``"start"`` scripts will be run immediately, potentially before the DOM is ready
  * ``"ready"`` scripts will run as soon as the DOM is ready
  * ``"end"`` (default) scripts will run at some point after the DOM is ready, with no guarantees as to whether or not ``window.onload`` will have fired yet or not.
+
+.. _field-activations-allframes:
+
+* ``all_frames`` optionally defines whether activations will be run in all frames or just the top level document, by default it is false.
 
 .. important:: Safari only supports a single object in the activations array.
 
