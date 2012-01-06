@@ -37,9 +37,9 @@ Open ``config.json`` from the ``src`` folder created above, and change the name 
 
 Building the app
 ---------------------------------
-To build the extension, bring up your terminal, and enter the ``wm-dev-build`` command::
+To build the extension, bring up your terminal, and enter the ``forge dev-build`` command::
 
-    $ wm-dev-build
+    $ forge dev-build
     [   INFO] WebMynd tools running at version 1.0.1
     [   INFO] configuration has changed: creating new templates
     [   INFO] starting new build
@@ -49,11 +49,11 @@ To build the extension, bring up your terminal, and enter the ``wm-dev-build`` c
     [   INFO] fetching new WebMynd templates
     [   INFO] fetching unpackaged artefacts for build 532 into ".template"
     [WARNING] creating output directory ".template"
-    [   INFO] Development build created. Use wm-run to run your app.
+    [   INFO] Development build created. Use forge run to run your app.
 
 Underneath the ``development/chrome`` directory, you now have a development Chrome extension which can be installed from the ``chrome://extensions`` screen, following these instructions `create and load an extension <http://code.google.com/chrome/extensions/getstarted.html>`.
 
-.. warning:: Whenever you make changes to files in the ``src`` directory, you will need to rebuild the app with ``wm-dev-build``, then reload the extension by going to ``chrome://extensions`` and clicking on *Reload* in the relevant section.
+.. warning:: Whenever you make changes to files in the ``src`` directory, you will need to rebuild the app with ``forge dev-build``, then reload the extension by going to ``chrome://extensions`` and clicking on *Reload* in the relevant section.
 
 Activating on the right pages
 ----------------------------------
@@ -93,7 +93,7 @@ to this::
     "/fb-note-demo.js"
   ]
 
-Now, rebuild your extension with ``wm-dev-build``, reload it in Chrome, and when you go to a Facebook page, you should see your own alert popup.
+Now, rebuild your extension with ``forge dev-build``, reload it in Chrome, and when you go to a Facebook page, you should see your own alert popup.
 
 Reference extension
 -------------------

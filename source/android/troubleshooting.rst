@@ -9,8 +9,8 @@ Building
 ---------
 .. _android-weather-troucleshooting-build-fail:
 
-**Problem: When running wm-dev-build you receive a stack track with the error "Cannot create a file when that file already exists"**
-	.. image:: /_static/android/weather/images/troubleshooting/wm-dev-build-fail.png
+**Problem: When running forge dev-build you receive a stack track with the error "Cannot create a file when that file already exists"**
+	.. image:: /_static/android/weather/images/troubleshooting/dev-build-fail.png
 
 This might be caused because an AVD is currently running which has a hold of the resources you are trying to replace.
 Close any running AVD. On Windows it may be necessary to open Task Manager and end ``adb.exe`` manually.

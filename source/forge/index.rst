@@ -31,16 +31,16 @@ Creating your first app
 
 At this point, you should have a command terminal open that looks something like::
 
-  (webmynd-environment)
+  (forge-environment)
 
 To keep each of your apps separate, we expect that you will want to work on them in different directories. In the terminal, we'll create a new directory and move into it::
 
     mkdir "../demo-app"
     cd "../demo-app"
 
-Now, we'll create our app, with the ``wm-create`` command::
+Now, we'll create our app, with the ``forge create`` command::
 
-  (webmynd-environment)wm-create
+  (forge-environment) forge create
   [   INFO] WebMynd tools running at version 1
   Enter app name: 
 
@@ -48,15 +48,15 @@ At this point a descriptive name for your new app: if you're planning on followi
 
 If this is the first time you're running this command, you will be prompted to log in with the email address and password that you signed up with at the Forge website::
 
-  (webmynd-environment)wm-create 
-  [   INFO] WebMynd tools running at version 0.9.9
+  (forge-environment) forge create 
+  [   INFO] Forge tools running at version 2.3.1
   Enter app name: Weather Demo
   Your email address: james@webmynd.com
   Password: 
   [   INFO] authenticating as "james@webmynd.com"
   [   INFO] authentication successful
   [   INFO] fetching initial project template
-  (webmynd-environment)
+  (forge-environment)
 
 At this point, you're ready to edit your app and start running builds!
 
@@ -66,7 +66,7 @@ If you're starting your app in Chrome, take a look at our :ref:`Chrome tutorial 
 
 Working with an existing app
 -----------------------------------------------
-If you are already working with an app on your machine, after activating the ``webmynd-environment``, simply change directory to where the app is::
+If you are already working with an app on your machine, after activating the ``forge-environment``, simply change directory to where the app is::
 
     cd "../my-existing-app"
 

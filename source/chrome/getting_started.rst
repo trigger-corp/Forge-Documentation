@@ -26,7 +26,7 @@ Building Chrome Extensions Using Forge
 * Windows users open a command prompt. OSX/Linux users open terminal.
 * Navigate to the directory where you extracted the build tools
 * Windows users run ``go.bat``. OSX/Linux users run ``source go.sh``. This will ensure all dependencies are installed and start the virtual environment.
-* Run ``wm-dev-build``
+* Run ``forge dev-build``
 * Whenever the configuration file changes the entire extension needs to be rebuilt.
   The initial build will take longer than regular builds.
   Also when the configuration file has been altered you must be connected to the internet to run the build tool.
