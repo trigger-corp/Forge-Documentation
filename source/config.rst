@@ -51,7 +51,7 @@ Below is a template of a ``config.json`` file with links to a detailed descripti
 Fields
 --------------------------------------------------------------------------------
 
-This section includes more detailed information on the contents of each file, with links to other documentation where appropriate.
+This section includes more detailed information on the contents of each field, with links to other documentation where appropriate.
 
 .. _field-uuid:
 

@@ -17,5 +17,6 @@ API Reference
    /api/button
    /api/file
    /api/event
+   /api/contact
    /api/gmail
    /partners/index
