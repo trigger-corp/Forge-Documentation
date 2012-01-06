@@ -7,7 +7,7 @@ Notifications allow you to send alerts.
 
 ``create``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**Platforms: Chrome, Firefox, Safari, IE, Android**
+**Platforms: All**
 
 .. js:function:: notification.create(title, text, success, error)
 
