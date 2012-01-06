@@ -3,7 +3,7 @@
 Tutorial Part 1
 =================
 
-In this tutorial, we will step through building a basic weather app using the WebMynd Android tools.
+In this tutorial, we will step through building a basic weather app using the Forge tools.
 This section of the tutorial will guide you through setting up the display,
 creating internal data representation, and doing some basic debugging using logging.
 The code in this tutorial is platform agnostic, but different configuration steps are be necessary for Chrome and Android.
@@ -152,8 +152,8 @@ Since ``weather.js`` is running inside ``index.html`` we need to inspect that pa
 The :ref:`background <extension-concept-background>` context also receives the logging call for debugging convenience.
 
 * Navigate to `<chrome:extensions>`_
-* You should see a *Inspect active views* with ``webmynd.html`` link
-* Click ``webmynd.html`` which will open up Chrome tools
+* You should see a *Inspect active views* with ``forge.html`` link
+* Click ``forge.html`` which will open up Chrome tools
 * The console may not be displayed automatically, but it can be opened by pressing the Esc key or clicking the console button on the bottom left.
 * The background tracks all logging
 
@@ -166,7 +166,7 @@ Remote Debugging on Android
 As you've already seen in :ref:`Android Getting Started<android-getting-started>` ``forge.logging.log`` prints output to console/terminal.
 You can also use remote debugging which provides some helpful tools for troubleshooting and examining the app at runtime.
 
-#. Open up a browser and go to `<https://webmynd.com/catalyst/>`_.
+#. Open up a browser and go to `<https://trigger.io/catalyst/>`_.
 #. On this page there will be a generated ``script`` tag which you copy and insert into the head element of your ``index.html`` file.
 #. Click on the auto-generated link which takes you to a page that looks similar to Chrome's debugging tools.
 #. Try :ref:`running <android-getting-started-build>` the code.
@@ -191,7 +191,7 @@ Things to check:
 * Make sure that the properties of the dummy objects were populated correctly
 * If you used any custom code go back to basics and make modifications only after the tutorial code is running correctly
 * Make sure you include the script tag inside ``index.html`` to the correct JavaScript code
-* If the documentation is at all unclear or if you're still having issues contact support@webmynd.com with "Weather Tutorial" as the subject
+* If the documentation is at all unclear or if you're still having issues contact support@trigger.io with "Weather Tutorial" as the subject
 
 .. **Chrome only**
 

@@ -16,14 +16,14 @@ Below is a template of a ``config.json`` file with links to a detailed descripti
         ":ref:`uuid <field-uuid>`": "ABCD-1234",
         ":ref:`platform_version <field-platform-version>`": "v1",
         ":ref:`name <field-name>`": "My App",
-        ":ref:`author <field-author>`": "WebMynd",
+        ":ref:`author <field-author>`": "Trigger",
         ":ref:`version <field-version>`": "1.0",
-        ":ref:`description <field-description>`": "My First WebMynd App.",
+        ":ref:`description <field-description>`": "My First Forge App.",
         ":ref:`icons <field-icons>`": {
           "16": "icon16.png",
           "32": "icon32.png"
         },
-        ":ref:`permissions <field-permissions>`": ["tabs", "http://webmynd.com/"],
+        ":ref:`permissions <field-permissions>`": ["tabs", "http://trigger.io/"],
         ":ref:`trigger <field-trigger>`": "document_end",
         ":ref:`background_files <field-background_files>`": ["background.js"],
         ":ref:`activations <field-activations>`": [

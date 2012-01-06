@@ -203,8 +203,8 @@ htmlhelp_basename = 'Forge'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'WebMyndDocumentation.tex', u'WebMynd - Cross-browser Add-on Development Tools',
-   u'WebMynd', 'manual'),
+  ('index', 'WebMyndDocumentation.tex', u'Forge - Cross-browser Add-on Development Tools',
+   u'Forge', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of

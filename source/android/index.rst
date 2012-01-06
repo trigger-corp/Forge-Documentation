@@ -10,8 +10,6 @@ The only things needed is a basic understanding of HTML and JavaScript.
 
 The generated code can be tested on an Android emulator or Android device with debugging mode enabled.
 
-Before you get started you will need to download the `Android tools <http://www.webmynd.com/html/WebMynd_Android_Tools.zip>`_.
-
 .. toctree::
    :maxdepth: 2
 

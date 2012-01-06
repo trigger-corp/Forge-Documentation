@@ -5,7 +5,7 @@ Concepts
 
 **NB** this documentation only concerns browser extensions, not mobile apps.
 
-Extensions built on the WebMynd platform have two main aspects:
+Extensions built on the Forge platform have two main aspects:
 
 #. code to run when the browser is started
 #. code to run when a page loads

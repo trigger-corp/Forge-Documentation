@@ -1,5 +1,5 @@
 ==========================================
-WebMynd Forge Documentation
+Forge Documentation
 ==========================================
 
 Forge is a development framework which enables you to create native apps for multiple platforms from a single HTML5 codebase.
@@ -16,7 +16,7 @@ Using Forge is quite simple and does not require you to write a single line of O
 
 .. note:: You can start development in Chrome then generate native mobile apps, or start in Android then generate an iPhone app and browser add-ons. The choice is yours: both directions are supported.
 
-Your feedback is very important to us. Please send an email to support@webmynd.com with any questions or concerns.
+Your feedback is very important to us. Please send an email to support@trigger.io with any questions or concerns.
 
 .. toctree::
    :maxdepth: 2

@@ -46,14 +46,14 @@ We need to create an html file that will be displayed as the pop-up when the ico
 	</script>
 
 All we've pretty much done here is create a button element inside the html.
-When the page loads it will run the code inside of the WebMynd wrapper, which simply adds a click listener to the button.
+When the page loads it will run the code inside of the Forge wrapper, which simply adds a click listener to the button.
 When the button is clicked the code inside the handler executes and uses Mixpanel API to track a "My Button Clicked" event
 
 Configuration file
 --------------------
 All that is left to do now is to plug in the pop-up page to display and configure Mixpanel.
 
-* Open up webmynd_configuration.json that was included in the package you :ref:`downloaded<chrome-mixpanel-download>` for this tutorial
+* Open up forge_configuration.json that was included in the package you :ref:`downloaded<chrome-mixpanel-download>` for this tutorial
 * Replace "your pop-up page relative url" with the relative url for the html page you've created ::
 
 	"browser_action": {

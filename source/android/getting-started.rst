@@ -23,7 +23,7 @@ Hello Android
 * After going through the :ref:`forge-index` section you should see a ``src`` directory created.
   This is where all of your app files should be placed
 * The ``src`` directory should contain a ``config.json`` file which holds all of the configuration settings for the app
-* Create a file called ``index.html``. **Important: WebMynd looks for index.html as the entry point of your Android application.**
+* Create a file called ``index.html``. **Important: Forge looks for index.html as the entry point of your Android application.**
   **This file must be present and the name cannot be changed.**
 
 * Open ``index.html`` and append the following:
@@ -114,7 +114,7 @@ Hopefully you've made it this far without any issues, but if there are any probl
   go back to basics and once the code is functional make any desired changes.
 * Make sure you include the script tag inside ``index.html`` to the correct JavaScript file.
 * If the documentation is at all unclear or if you're still having issues contact
-  support@webmynd.com with "Android Tutorial" as the subject.
+  support@trigger.io with "Android Tutorial" as the subject.
 
 If everything went well and you're ready to move on to some more fancy things you can try writing an
 :ref:`Android Weather App <weather-tutorial-1>`.

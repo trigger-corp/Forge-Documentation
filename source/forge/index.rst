@@ -2,17 +2,17 @@
 
 .. _forge-index:
 
-Getting Started with WebMynd Forge
+Getting Started with Forge
 ==================================
 
-To use Forge, you will first need to sign up for the service at http://webmynd.com/forge/
+To use Forge, you will first need to sign up for the service at http://trigger.io/forge/
 
 After completing the registration process, you will be prompted to download the Forge development environment. This is distributed as a zip file, and can be extracted anywhere you please.
 
 Windows users
 -------------
 * run ``go.bat`` by double-clicking on it
-* if you don't have Python installed you will need to install a recent `2.x version <http://webmynd.com/forge/requirements/>`_ first (see `here <http://www.python.org/getit/>`_ for other releases and options)
+* if you don't have Python installed you will need to install a recent `2.x version <http://trigger.io/forge/requirements/>`_ first (see `here <http://www.python.org/getit/>`_ for other releases and options)
 * now go on to :ref:`creating your first app <forge-create-app>`
 
 Mac and Linux users
@@ -20,7 +20,7 @@ Mac and Linux users
 * open a terminal
 * change directory to wherever you extracted the zip file
 * run ``source go.sh``
-* if you don't have Python installed you will need to install a recent `2.x version <http://webmynd.com/forge/requirements/>`_ first (see `here <http://www.python.org/getit/>`_ for other releases and options)
+* if you don't have Python installed you will need to install a recent `2.x version <http://trigger.io/forge/requirements/>`_ first (see `here <http://www.python.org/getit/>`_ for other releases and options)
 
 .. _forge-create-app:
 
@@ -41,7 +41,7 @@ To keep each of your apps separate, we expect that you will want to work on them
 Now, we'll create our app, with the ``forge create`` command::
 
   (forge-environment) forge create
-  [   INFO] WebMynd tools running at version 1
+  [   INFO] Forge tools running at version 1
   Enter app name: 
 
 At this point a descriptive name for your new app: if you're planning on following along with our tutorial, "Weather Demo" would be a reasonable choice.
@@ -51,9 +51,9 @@ If this is the first time you're running this command, you will be prompted to l
   (forge-environment) forge create 
   [   INFO] Forge tools running at version 2.3.1
   Enter app name: Weather Demo
-  Your email address: james@webmynd.com
+  Your email address: james@trigger.io
   Password: 
-  [   INFO] authenticating as "james@webmynd.com"
+  [   INFO] authenticating as "james@trigger.io"
   [   INFO] authentication successful
   [   INFO] fetching initial project template
   (forge-environment)

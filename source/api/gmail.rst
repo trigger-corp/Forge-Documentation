@@ -9,7 +9,7 @@ To access the Gmail library, add the following to the libs array of your ``confi
 
     "libs": { "gmail":{} },
 
-The WebMynd Forge Gmail library allows you to interact with the following elements of the Gmail composition pane:
+The Forge Gmail library allows you to interact with the following elements of the Gmail composition pane:
 
 .. image:: /_static/gmail/gmail.png
 
@@ -96,7 +96,7 @@ Retrieves the 'to' input element of the composition pane.
 
 To change the 'to' input element, use::
 
-    forge.gmail.getTo().val("example@webmynd.com");
+    forge.gmail.getTo().val("example@trigger.io");
 
 .. js:function:: gmail.getTo()
 
@@ -109,7 +109,7 @@ Retrieves the 'CC' input element of the composition pane.
 
 To change the 'CC' input element, use::
 
-    forge.gmail.getCC().val("example@webmynd.com");
+    forge.gmail.getCC().val("example@trigger.io");
 
 .. js:function:: gmail.getCC()
 
@@ -122,7 +122,7 @@ Retrieves the 'BCC' input element of the composition pane.
 
 To change the 'BCC' input element, use::
 
-    forge.gmail.getBCC().val("example@webmynd.com");
+    forge.gmail.getBCC().val("example@trigger.io");
 
 .. js:function:: gmail.getBCC()
 

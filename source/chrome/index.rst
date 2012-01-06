@@ -3,7 +3,7 @@
 Forge and Browser Add-ons
 ======================================================
 
-WebMynd's platform enables you to easily and quickly write add-ons that run on multiple different browsers. With the WebMynd platform:
+The Forge platform enables you to easily and quickly write add-ons that run on multiple different browsers. With Forge:
 
 * you are able to modify the behavior or appearance of any web page using :ref:`"content scripts"<extension-concept-content-scripts>`
 * you can have long-running :ref:`"background processes"<extension-concept-background>` which co-ordinate behaviour across your whole app
@@ -11,7 +11,7 @@ WebMynd's platform enables you to easily and quickly write add-ons that run on m
 * you do not need to understand extension development or different browser APIs
 * you can access the most-used browser add-on functionality through one consistent API
 
-This documentation contains information on how to set up your development environment, a simple tutorial to build your first WebMynd application and API documentation.
+This documentation contains information on how to set up your development environment, a simple tutorial to build your first Forge application and API documentation.
 
 .. toctree::
   :maxdepth: 2

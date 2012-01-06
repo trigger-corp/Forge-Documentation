@@ -3,7 +3,7 @@
 Tutorial Part 1
 ==============================================================================
 
-In this tutorial, we will use the WebMynd platform to create a browser extension which lets users attach text notes to profiles on Facebook.
+In this tutorial, we will use the Forge platform to create a browser extension which lets users attach text notes to profiles on Facebook.
 
 As this particular app is based around modifying the contents of web pages on-the-fly, it is not applicable to mobile app development: see :ref:`our weather app tutorial <weather-tutorial-1>` for how to get started with a mobile app.
 
@@ -40,13 +40,13 @@ Building the app
 To build the extension, bring up your terminal, and enter the ``forge dev-build`` command::
 
     $ forge dev-build
-    [   INFO] WebMynd tools running at version 1.0.1
+    [   INFO] Forge tools running at version 1.0.1
     [   INFO] configuration has changed: creating new templates
     [   INFO] starting new build
     [   INFO] build 11 started...
     [   INFO] build completed successfully
     [   INFO] current configuration hash is 564c9ef0ede72b76ce06b823047f075a
-    [   INFO] fetching new WebMynd templates
+    [   INFO] fetching new Forge templates
     [   INFO] fetching unpackaged artefacts for build 532 into ".template"
     [WARNING] creating output directory ".template"
     [   INFO] Development build created. Use forge run to run your app.
@@ -108,4 +108,4 @@ Things to check:
 * on Facebook, use `Chrome's Developer Tools <http://code.google.com/chrome/devtools/docs/overview.html>`_ to see which scripts have been embedded in the page: do you see a HTTP 404 for your JavaScript file?
 * on Facebook, use the console in Chrome's Developer Tools to check for JavaScript errors: uncaught exceptions may cause the alert messages not to appear
 * clearing your browser cache (at ``chrome://history/#e=1&p=0``) will flush out any old resources
-* still not working? Get in touch at support@webmynd.com!
+* still not working? Get in touch at support@trigger.io!

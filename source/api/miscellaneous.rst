@@ -7,7 +7,7 @@ Miscellaneous tools: ``forge.tools``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: All**
 
-A `UUID <http://en.wikipedia.org/wiki/Uuid>`_ is a globally unique token; when represented as a string, they look something like ``18ADF182-7B12-4FA1-AF0B-6032108C0AE8``. WebMynd already uses UUIDs internally to ensure your extension doesn't conflict with others; this method returns a new UUID for you to use as a unique token.
+A `UUID <http://en.wikipedia.org/wiki/Uuid>`_ is a globally unique token; when represented as a string, they look something like ``18ADF182-7B12-4FA1-AF0B-6032108C0AE8``. Forge already uses UUIDs internally to ensure your extension doesn't conflict with others; this method returns a new UUID for you to use as a unique token.
 
 .. note:: This function is synchronous and returns a value rather than taking a callback.
 
