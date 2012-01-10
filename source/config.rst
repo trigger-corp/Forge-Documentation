@@ -24,7 +24,6 @@ Below is a template of a ``config.json`` file with links to a detailed descripti
           "32": "icon32.png"
         },
         ":ref:`permissions <field-permissions>`": ["tabs", "http://trigger.io/"],
-        ":ref:`trigger <field-trigger>`": "document_end",
         ":ref:`background_files <field-background_files>`": ["background.js"],
         ":ref:`activations <field-activations>`": [
           {
@@ -124,23 +123,9 @@ permissions
 
 TODO
 
-.. _field-trigger:
 
 Fields only used in browser apps
 --------------------------------------------------------------------------------
-
-trigger
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-*Optional*. *Browsers only*.
-
-This field specifies when your browser app becomes active on a page. Permissible values are:
-
-* ``"document_start"`` - your code is loaded and run before any other scripts on the page
-* ``"document_end"`` - your code is loaded and run after the DOM has been constructed
-* ``"document_idle"`` - your code is loaded and run before, or just after the ``window.onload`` event
-
-These values range from activating the earliest to the latest.
 
 .. _field-background_files:
 
