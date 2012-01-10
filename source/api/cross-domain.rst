@@ -50,6 +50,10 @@ Currently supported options:
  * url
  * username
  * files (Android only, see :ref:`forge.file <api-file>`)
+ 
+Error values (see :ref:`error callback docs <forge-features-api-error>` for more detail):
+ * ``type``: ``"UNAVAILABLE"``
+  * ``subtype``: ``"NO_INTERNET_CONNECTION"`` No internet connection is currently available, on iOS it is required you inform the user of this if it impacts their current experience.
 
 Example::
 
