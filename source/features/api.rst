@@ -44,7 +44,26 @@ The ``success`` callback will only ever be called once, and will only be called 
 
 The ``callback`` callback is similar to ``success`` in that it appears as the penultimate parameter, however unlike the ``success`` callback it may be called multiple times. An example of its use it adding a listener to a button being clicked, as the button can be clicked multiple times the callback may be called multiple times.
 
+.. _forge-features-api-error:
+
 ``error``
 -----------
 
-The ``error`` callback is always the final paramter passed to a method. The error callback will always be called with exactly one paramter, which will be an object which is guaranteed to contain a ``message`` property, with a human readable description of the error which has occurred. Other properties may be available depending on the API method being called. When errors happen the message property will always be logged by Forge, whether a callback handler exists or not.
+The ``error`` callback is always the final paramter passed to a method. The error callback will always be called with exactly one paramter, which will be an object containing several properties.
+
+The returned object will always contain:
+
+* A ``message`` property, which is a printable, human readable string describing the error which has occurred.
+
+It will usually also contain:
+
+* A ``type`` property, this will be one of the following strings and can be used to determine what type of error occurred and how to appropriately deal with it.
+ * ``"BAD_INPUT"`` - returned when an API doesn't exist or the parameters passed to it are invalid, this kind of error should be eliminated before releasing your app.
+ * ``"UNEXPECTED_FAILURE"`` - returned when an unexpected error causes the API call to fail, this generally means an error in the forge API and we would be grateful if you could report this kind of error to us.
+ * ``"EXPECTED_FAILURE"`` - returned when an expected situation occurs which means the API call is not successful, examples could be a user cancelled action or a timeout. These types of errors should be handled appropriately within your application.
+ * ``"UNAVAILABLE"`` - returned when an API method is currently unavailable, this could mean unavailable on the current platform or unavailable at this time (i.e. if there is no Internet connection). Your application may also expected some errors of this type.
+* A ``subtype`` property which will give a more precise description of the error than the ``type``, the strings which this may contain are documented with each API method.
+
+It may also contain additional properties which are relevant to the API method, these properties will be documented per method in the API reference.
+
+When errors happen the message property will always be logged by Forge, whether a callback handler exists or not.

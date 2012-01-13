@@ -2,17 +2,17 @@
 
 .. _forge-index:
 
-Getting Started with WebMynd Forge
+Getting Started with Forge
 ==================================
 
-To use Forge, you will first need to sign up for the service at http://webmynd.com/forge/
+To use Forge, you will first need to sign up for the service at https://webmynd.com/forge/
 
 After completing the registration process, you will be prompted to download the Forge development environment. This is distributed as a zip file, and can be extracted anywhere you please.
 
 Windows users
 -------------
 * run ``go.bat`` by double-clicking on it
-* if you don't have Python installed you will need to install a recent `2.x version <http://webmynd.com/forge/requirements/>`_ first (see `here <http://www.python.org/getit/>`_ for other releases and options)
+* if you don't have Python installed you will need to install a recent `2.x version <https://webmynd.com/forge/requirements/>`_ first (see `here <http://www.python.org/getit/>`_ for other releases and options)
 * now go on to :ref:`creating your first app <forge-create-app>`
 
 Mac and Linux users
@@ -31,32 +31,32 @@ Creating your first app
 
 At this point, you should have a command terminal open that looks something like::
 
-  (webmynd-environment)
+  (forge-environment)
 
 To keep each of your apps separate, we expect that you will want to work on them in different directories. In the terminal, we'll create a new directory and move into it::
 
     mkdir "../demo-app"
     cd "../demo-app"
 
-Now, we'll create our app, with the ``wm-create`` command::
+Now, we'll create our app, with the ``forge create`` command::
 
-  (webmynd-environment)wm-create
-  [   INFO] WebMynd tools running at version 1
+  (forge-environment) forge create
+  [   INFO] Forge tools running at version 1
   Enter app name: 
 
 At this point a descriptive name for your new app: if you're planning on following along with our tutorial, "Weather Demo" would be a reasonable choice.
 
 If this is the first time you're running this command, you will be prompted to log in with the email address and password that you signed up with at the Forge website::
 
-  (webmynd-environment)wm-create 
-  [   INFO] WebMynd tools running at version 0.9.9
+  (forge-environment) forge create 
+  [   INFO] Forge tools running at version 2.3.1
   Enter app name: Weather Demo
   Your email address: james@webmynd.com
   Password: 
   [   INFO] authenticating as "james@webmynd.com"
   [   INFO] authentication successful
   [   INFO] fetching initial project template
-  (webmynd-environment)
+  (forge-environment)
 
 At this point, you're ready to edit your app and start running builds!
 
@@ -66,7 +66,7 @@ If you're starting your app in Chrome, take a look at our :ref:`Chrome tutorial 
 
 Working with an existing app
 -----------------------------------------------
-If you are already working with an app on your machine, after activating the ``webmynd-environment``, simply change directory to where the app is::
+If you are already working with an app on your machine, after activating the ``forge-environment``, simply change directory to where the app is::
 
     cd "../my-existing-app"
 

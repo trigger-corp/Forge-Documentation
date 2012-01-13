@@ -89,7 +89,7 @@ Well, to do this we will create a small HTML snippet, to be inserted into the Fa
   noteEl.appendChild(textarea);
   document.body.insertBefore(noteEl, document.body.firstChild);
 
-Rebuild your app with ``wm-dev-build``, reload the extension and on profile pages you should now see a ``<textarea>`` inserted right at the top of the page. We will cover how to *save* the note in a short while.
+Rebuild your app with ``forge build``, reload the extension and on profile pages you should now see a ``<textarea>`` inserted right at the top of the page. We will cover how to *save* the note in a short while.
 
 Using jQuery instead of plain JavaScript
 ----------------------------------------

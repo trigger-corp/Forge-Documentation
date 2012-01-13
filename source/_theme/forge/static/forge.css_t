@@ -4,17 +4,12 @@
 
 {% set page_width = 940 %}
 {% set sidebar_width = 220 %}
-{% set body_font_stack = 'museo, Arial, Helvetica, sans-serif' %}
-{% set headline_font_stack = 'museo, Arial, Helvetica, sans-serif' %}
+{% set body_font_stack = 'Trebuchet MS, Arial, Helvetica, sans-serif' %}
+{% set headline_font_stack = 'Trebuchet MS, Arial, Helvetica, sans-serif' %}
 {% set code_font_stack = "'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace" %}
-{% set strip_style = "background:#008299 url(f/bg-cross-hatching.png) repeat top left; border-top:1px solid #016375; border-bottom:1px solid #016375; color:#fff; font-weight:normal;" %}
+{% set strip_style = "background:#008299; border-top:1px solid #016375; border-bottom:1px solid #016375; color:#fff; font-weight:normal;" %}
 
 @import url("basic.css");
-@font-face {font-family: 'museo';
-	src: url('fonts/museosans-webfont.eot?') format('eot'), 
-		 url('fonts/museosans-webfont.woff') format('woff'), 
-		 url('fonts/museosans-webfont.ttf') format('truetype'),
-		 url('fonts/museosans-webfont.svg#svgFontName') format('svg');}
  
 /* -- page layout ----------------------------------------------------------- */
  

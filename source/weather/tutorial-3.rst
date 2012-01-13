@@ -2,7 +2,7 @@
 
 Tutorial Part 3
 ================
-This part of the tutorial will demonstrate how to use the WebMynd Ajax functionality to retrieve data from the Google weather API.
+This part of the tutorial will demonstrate how to use the Forge Ajax functionality to retrieve data from the Google weather API.
 We will then parse the data to pull the necessary information to generate our internal representation.
 
 .. contents::

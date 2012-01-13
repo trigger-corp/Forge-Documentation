@@ -1,5 +1,5 @@
 ==========================================
-WebMynd Forge Documentation
+Forge Documentation
 ==========================================
 
 Forge is a development framework which enables you to create native apps for multiple platforms from a single HTML5 codebase.
@@ -30,3 +30,4 @@ Your feedback is very important to us. Please send an email to support@webmynd.c
    /api/index
    /partners/index.rst
    /release-notes
+   /command-line

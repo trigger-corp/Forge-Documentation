@@ -16,15 +16,20 @@ Below is a template of a ``config.json`` file with links to a detailed descripti
         ":ref:`uuid <field-uuid>`": "ABCD-1234",
         ":ref:`platform_version <field-platform-version>`": "v1",
         ":ref:`name <field-name>`": "My App",
-        ":ref:`author <field-author>`": "WebMynd",
+        ":ref:`author <field-author>`": "Forger",
         ":ref:`version <field-version>`": "1.0",
-        ":ref:`description <field-description>`": "My First WebMynd App.",
+        ":ref:`description <field-description>`": "My First Forge App.",
         ":ref:`icons <field-icons>`": {
           "16": "icon16.png",
           "32": "icon32.png"
         },
+        ":ref:`launch_images <field-launch_images>`": {
+          "iphone": "iphone.png",
+          "iphone-retina": "iphone-retina.png",
+          "ipad": "ipad.png",
+          "ipad-landscape": "ipad-landscape.png"
+        },
         ":ref:`permissions <field-permissions>`": ["tabs", "http://webmynd.com/"],
-        ":ref:`trigger <field-trigger>`": "document_end",
         ":ref:`background_files <field-background_files>`": ["background.js"],
         ":ref:`activations <field-activations>`": [
           {
@@ -51,7 +56,7 @@ Below is a template of a ``config.json`` file with links to a detailed descripti
 Fields
 --------------------------------------------------------------------------------
 
-This section includes more detailed information on the contents of each file, with links to other documentation where appropriate.
+This section includes more detailed information on the contents of each field, with links to other documentation where appropriate.
 
 .. _field-uuid:
 
@@ -86,7 +91,7 @@ This text will be displayed as the author or creator of the app, depending on th
 version
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The version of your app. It must be formatted as up to four dot-separated numbers, e.g. ``1.0.1`` or ``0.99.9.9``.
+The version of your app. It must be formatted as up to three dot-separated numbers, e.g. ``1.1`` or ``0.99.9``.
 
 .. _field-description:
 
@@ -112,7 +117,7 @@ Icons are defined as the size of the icon (the width and height as all icons are
 * Chrome: 16px, 48px and 128px
 * Firefox: 32px and 64px
 * Internet Explorer: TODO
-* iOS: 57px, 72px and 114px
+* iOS: 57px, 72px and 114px for home screen icons, 512px to be shown in iTunes.
 * Safari: 32px, 48px and 64px
 
 .. important:: Some platforms (such as Android and Safari) will not use any of your icons unless you specify icons of all the required sizes.
@@ -124,23 +129,29 @@ permissions
 
 TODO
 
-.. _field-trigger:
+Fields only used in mobile apps
+--------------------------------------------------------------------------------
+
+.. _field-launch_images:
+
+launch_images
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Optional*.
+
+Images to be displayed during launch as required on iOS, for further details see the `Apple documentation <http://developer.apple.com/library/ios/#documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html#//apple_ref/doc/uid/TP40007072-CH6-SW12>`_: 
+
+All 4 images must be defined if this section is included
+
+Properties and image sizes are:
+
+* ``iphone``: 320x480px
+* ``iphone-retina``: 640x960px
+* ``ipad``: 768x1004px
+* ``ipad-landscape``: 1024x748px
 
 Fields only used in browser apps
 --------------------------------------------------------------------------------
-
-trigger
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-*Optional*. *Browsers only*.
-
-This field specifies when your browser app becomes active on a page. Permissible values are:
-
-* ``"document_start"`` - your code is loaded and run before any other scripts on the page
-* ``"document_end"`` - your code is loaded and run after the DOM has been constructed
-* ``"document_idle"`` - your code is loaded and run before, or just after the ``window.onload`` event
-
-These values range from activating the earliest to the latest.
 
 .. _field-background_files:
 
