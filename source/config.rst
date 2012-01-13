@@ -144,6 +144,7 @@ Images to be displayed during launch as required on iOS, for further details see
 All 4 images must be defined if this section is included
 
 Properties and image sizes are:
+
 * ``iphone``: 320x480px
 * ``iphone-retina``: 640x960px
 * ``ipad``: 768x1004px
