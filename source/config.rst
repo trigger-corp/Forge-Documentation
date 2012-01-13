@@ -85,7 +85,7 @@ This text will be displayed as the author or creator of the app, depending on th
 version
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The version of your app. It must be formatted as up to four dot-separated numbers, e.g. ``1.0.1`` or ``0.99.9.9``.
+The version of your app. It must be formatted as up to three dot-separated numbers, e.g. ``1.1`` or ``0.99.9``.
 
 .. _field-description:
 
