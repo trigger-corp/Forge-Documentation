@@ -16,7 +16,7 @@ Supported Platforms
 * Firefox
 * iOS
 
-For API information, see http://docs.trigger.io/en/v1.1/api/index.html
+For API information, see http://docs.webmynd.com/en/v1.1/api/index.html
 
 v1.2 (*current version*)
 -------------------------------------------------------------------------------
@@ -52,4 +52,4 @@ You should now include::
 
 .. note:: ``libs`` has also been made optional, so you can remove it from your configuration file entirely if you wish
 
-For API information, see http://docs.trigger.io/en/v1.2/api/index.html
+For API information, see http://docs.webmynd.com/en/v1.2/api/index.html
