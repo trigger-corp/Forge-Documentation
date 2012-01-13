@@ -53,7 +53,7 @@ For more information click :ref:`here<android-weather-troucleshooting-build-fail
 * Windows users open a command prompt. OSX/Linux users open a terminal.
 * Navigate to the directory where you extracted the build tools
 * Windows users run ``go.bat``. OSX/Linux users run ``source go.sh``. This will ensure all dependencies are installed and start the virtual environment.
-* Run ``forge dev-build``
+* Run ``forge build``
 * Whenever the configuration file changes the entire app needs to be rebuilt.
   The initial build will take longer than regular builds.
   Also when the configuration file has been altered you must be connected to the internet to run the build tool.
