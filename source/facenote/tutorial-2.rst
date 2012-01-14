@@ -104,7 +104,7 @@ So, we can replace the code from :ref:`the previous section <change-note-tut>` w
     var noteEl = $("<div class='fb-note' style='z-index: 1000; position: absolute'>"+
       "<textarea class='fb-note-content'></textarea>"+
       "</div>");
-    $(".fb-note-content", noteEl).val(notes[personID]);
+    $(".fb-note-content", noteEl).val(existingNotes[personID]);
     $("body").first().prepend(noteEl);
 
 .. _write-pref-tut:
