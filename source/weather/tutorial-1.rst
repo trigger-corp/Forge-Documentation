@@ -142,8 +142,8 @@ Debugging on Chrome
 ``forge.logging.log`` output can be seen in the Chrome console.
 Since ``weather.js`` is running inside ``index.html`` we need to inspect that page to see the logged output.
 
-* Open up a Chrome browser and go to `<chrome:extensions>`_.
-* You should reload the extension to pick up any changes.
+* Open up a Chrome browser and go to `<chrome:extensions>`_
+* You should reload the extension to pick up any changes
 * Right click on the toolbar button that is added by the extension and click **Inspect pop-up**
 * This will open up Chrome tools in a new window
 * At the bottom is the console section, which should contain the output from ``forge.logging.log``
@@ -154,7 +154,7 @@ The :ref:`background <extension-concept-background>` context also receives the l
 * Navigate to `<chrome:extensions>`_
 * You should see a *Inspect active views* with ``forge.html`` link
 * Click ``forge.html`` which will open up Chrome tools
-* The console may not be displayed automatically, but it can be opened by pressing the Esc key or clicking the console button on the bottom left.
+* The console may not be displayed automatically, but it can be opened by pressing the Esc key or clicking the console button on the bottom left
 * The background tracks all logging
 
 .. _weather-tutorial-1-catalyst-debugging:
@@ -198,6 +198,6 @@ Things to check:
 **Android Only**
 
 * Sometimes the emulator can be buggy and the script hangs on the ``Available device`` section. Simply rerunning the script usually fixes this.
-* This :ref:`page<android-weather-troubleshooting>` shows how to troubleshoot some previously encountered errors
+* This :ref:`page<android-weather-troubleshooting>` shows how to troubleshoot some previously encountered errors.
 
 Continue on to :ref:`weather-tutorial-2`

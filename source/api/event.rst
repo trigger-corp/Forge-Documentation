@@ -13,5 +13,5 @@ Triggered when the menu button is pressed on an Android device.
 
 .. js:function:: event.menuPressed.addListener(callback, error)
 
-    :param function() success: callback to be invoked when no errors occur.
+    :param function() success: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur

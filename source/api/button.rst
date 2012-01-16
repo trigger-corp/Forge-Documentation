@@ -21,7 +21,7 @@ Sets the icon for the toolbar button.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Browser only**
 
-Sets the path to the HTML page that should be opened when the toolbar button is clicked
+Sets the path to the HTML page that should be opened when the toolbar button is clicked.
 
 .. js:function:: button.setUrl(url, success, error)
 
@@ -33,11 +33,11 @@ Sets the path to the HTML page that should be opened when the toolbar button is 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Browser only**
 
-Sets a function to be executed when the toolbar button is clicked
+Sets a function to be executed when the toolbar button is clicked.
 
 .. js:function:: button.onClicked.addListener(callback)
 
-    :param function() callback:
+    :param function() callback: function to be executed when the toolbar button is clicked.
 
 ``setBadge``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -69,7 +69,7 @@ Sets the background color for the badge.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Browser only**
 
-Set the tooltip text for a toolbar button
+Set the tooltip text for a toolbar button.
 
 .. js:function:: button.setTitle(title, success, error)
 

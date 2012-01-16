@@ -24,8 +24,8 @@ Open ``weather.js`` and ...
 
 * Remove ``mountainViewForecast``, ``forecast``, ``currentConditions``, ``tuesdayConditions``, ``wednesdayConditions``, ``thursdayConditions``, ``fridayConditions`` vars and the ``forecastConditionMaker`` function
 * Remove the ``forge.logging.log(mountainViewForecast)`` call
-* Remove ``populateWeatherConditions`` invocation from the document ready listener.
-  You do not need to remove the entire jQuery document ready listener as it will be used again in the following sections
+* Remove ``populateWeatherConditions`` invocation from the document ready listener
+  (Note you do not need to remove the entire jQuery document ready listener as it will be used again in the following sections)
 
 Understanding the Data
 ----------------------

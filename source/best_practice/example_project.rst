@@ -4,8 +4,8 @@ Example Project
 ===============
 
 Putting all these concepts into practice, we've developed
-a little example project with a css reset, backbone, a couple of pages with transitions.
-Please feel free to base your own projects on this, it's a great springboard for a new project
+a little example project with a css reset, backbone and a couple of pages with transitions.
+Please feel free to base your own projects on this - it's a great springboard for a new project.
 
 Features:
 
@@ -28,12 +28,12 @@ defined in demo.js::
 		});
 	}
 
-The inner three lines are the most important here, they are just wrapped in
-``parseRSS()`` to get the rss feed. First we create the router::
+The inner three lines are the most important here (they are just wrapped in
+``parseRSS()`` to get the rss feed). First we create the router::
 
 	Demo.router = new Demo.Router();
 	
-This is the backbone of... backbone, the router is where the urls are defined,
+This is the backbone of... backbone. The router is where the urls are defined,
 and handed over to the view code.
 
 the ``Demo.Collections.Items`` collection is defined in models.js as::

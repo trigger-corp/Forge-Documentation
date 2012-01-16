@@ -18,7 +18,7 @@ Prompts the user to select a contact and returns a contact object.
 
 .. js:function:: contact.select(success, error)
 
-    :param function(contact) success: callback to be invoked when no errors occur.
+    :param function(contact) success: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
 
 
