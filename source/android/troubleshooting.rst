@@ -4,6 +4,7 @@ Troubleshooting
 ===============
 
 This page seeks to help troubleshoot common issues that have been encountered.
+If it does not solve your issue, please contact support@trigger.io with "Android Tutorial" as the subject.
 
 Building
 ---------
@@ -40,6 +41,6 @@ To display logging in Catalyst make sure you include ``window.forge.debug = true
 	window.forge.debug = true;
 
 This will prevent logging until the Catalyst console is ready.
-For more information check out the **Advanced usage** section of the `Catalyst homepage <http://trigger.io/catalyst/>`_
+For more information check out the **Advanced usage** section of the `Catalyst homepage <http://trigger.io/catalyst/>`_.
 
 .. _andoroid-troubleshooting-running:

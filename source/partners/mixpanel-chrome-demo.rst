@@ -8,11 +8,11 @@ This page will contain a single button which will send Mixpanel tracking event.
 
 .. _chrome-mixpanel-download:
 
-To get started first download some resources needed for this tutorial
+To get started first download some resources needed for this tutorial.
 
 Pop-up Page
 -----------
-We need to create an html file that will be displayed as the pop-up when the icon is clicked
+We need to create an html file that will be displayed as the pop-up when the icon is clicked.
 
 * Create a file popup.htm and add the basic html tags. It should look something like:
 
@@ -47,7 +47,7 @@ We need to create an html file that will be displayed as the pop-up when the ico
 
 All we've pretty much done here is create a button element inside the html.
 When the page loads it will run the code inside of the Forge wrapper, which simply adds a click listener to the button.
-When the button is clicked the code inside the handler executes and uses Mixpanel API to track a "My Button Clicked" event
+When the button is clicked the code inside the handler executes and uses Mixpanel API to track a "My Button Clicked" event.
 
 Configuration file
 --------------------

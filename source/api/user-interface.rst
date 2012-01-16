@@ -15,7 +15,7 @@ Allows you to modify the current user interface. **NB** This module is not final
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	js:function:: ui.formStyle()
 
-	Applies css reset styling to form elements
+	Applies css reset styling to form elements.
 
 	``createPage``
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -53,7 +53,7 @@ Currently supported options:
  
 Error values (see :ref:`error callback docs <forge-features-api-error>` for more detail):
  * ``type``: ``"UNAVAILABLE"``
-  * ``subtype``: ``"NO_INTERNET_CONNECTION"`` No internet connection is currently available, on iOS it is required you inform the user of this if it impacts their current experience.
+  * ``subtype``: ``"NO_INTERNET_CONNECTION"`` No internet connection is currently available (on iOS it is required you inform the user of this if it impacts their current experience).
 
 Example::
 

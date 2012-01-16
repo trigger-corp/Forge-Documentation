@@ -102,8 +102,8 @@ Reference extension
 It's not working!
 -----------------
 * if there's a problem with your CSS not being applied properly, check that you can access the stylesheet at the URL specified in ``src/config.json``
-* for JavaScript problems, setting a debugger breakpoint at the start of your *onLoad* function is often the best place to start
-* are you seeing the wrong note for people? It's due to Facebook's strange page transitions: reloading the page should show the right note. In a real application, you could add a simple poller on ``document.URL``
+* for JavaScript problems, setting a debugger breakpoint at the start of your *onLoad* function is often the best place to start.
+* are you seeing the wrong note for people? It's due to Facebook's strange page transitions: reloading the page should show the right note. In a real application, you could add a simple poller on ``document.URL``.
 
 .. note:: ``api.log(message)`` is a useful function which outputs messages to the console; we find it much more convenient than having ``alert()`` calls everywhere!
 

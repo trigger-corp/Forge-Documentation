@@ -31,7 +31,7 @@ Populating City Selection
 **Goal: Running code which modifies page content**
 
 * Open ``weather.js`` and remove ``getWeatherInfo('Boston', populateWeatherConditions);`` from the document :ref:`ready listener <weather-tutorial-1-ready-listener>`\ .
-* Since we will be modifying the page to add cities we need to make sure the page is fully loaded ::	
+* Since we will be modifying the page to add cities we need to make sure the page is fully loaded::	
 
     $(function(){
         //city population code
@@ -43,7 +43,7 @@ Populating City Selection
     var cities = ['Boston', 'New York', 'Washington DC', 'Tampa', 'Houston', 'Montreal',
         'Los Angeles', 'Miami', 'West Palm Beach']; //and a few others
 
-* Add the following code which will put each city from the array in the drop down ::
+* Add the following code which will put each city from the array in the drop down::
 
     cities.forEach(function(city){
         $('#city_menu').append('<option>'+city+'</option>');
@@ -52,6 +52,7 @@ Populating City Selection
 Clearing Displayed Data
 ------------------------------
 **Goal: Displaying new data when city selection changes**
+
 When the user selects a new city the first thing we want to do is get rid of the old content.
 The ``emptyContent`` function is simply clears the old weather information from the html page.
 
@@ -99,13 +100,14 @@ Add the call to ``emptyContent`` at the top of the ``populateWeatherConditions``
 Remembering the previous location
 --------------------------------------
 **Goal: show different weather reports based on the selected city; and remember the previous selected city**
+
 The following code should be placed inside of the document ready listener.
 When a new city is selected we want to store it in local storage, so if the application is restarted the last selected city will be the default selection.
 
 The following code sets up a handler which listens for city change.
 When a new city is selected it is saved to preferences, the old content is cleared from the page, and the forecast for the new city is retrieved and displayed.
 
-``forge.prefs.set`` call takes four parameters, the name of the preference to store, the value, success callback, and error callback.
+``forge.prefs.set`` call takes four parameters, the name of the preference to store, the value, success callback and error callback.
 The last two parameters can be omitted in this context::
 
     $('#city_menu').change(function() {
@@ -160,7 +162,7 @@ Things to check:
 
 **Chrome only**
 
-* Use chromes development tools to set breakpoint, step thorough the code, and evaluate expressions as necessary
+* Use Chrome's development tools to set breakpoint, step thorough the code, and evaluate expressions as necessary
 
 **Android Only**
 

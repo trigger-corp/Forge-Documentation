@@ -3,7 +3,7 @@
 Preferences: ``forge.prefs``
 ================================================================================
 
-Preferences are used to save state in your extension, state is persisted between restarts and is consistent across all parts of your app.
+Preferences are used to save state in your extension. State is persisted between restarts and is consistent across all parts of your app.
 
 .. _api-prefs-get:
 
