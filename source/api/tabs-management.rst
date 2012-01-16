@@ -3,7 +3,7 @@
 Tabs Management: ``forge.tabs``
 ================================================================================
 
-Tabs management provides functionality specific to tabs
+Tabs management provides functionality specific to tabs.
 
 ``open``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

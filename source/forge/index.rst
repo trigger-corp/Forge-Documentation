@@ -7,7 +7,7 @@ Getting Started with Forge
 
 To use Forge, you will first need to sign up for the service at https://trigger.io/forge/
 
-After completing the registration process, you will be prompted to download the Forge development environment. This is distributed as a zip file, and can be extracted anywhere you please.
+After completing the registration process, you will be prompted to download the Forge development environment. This is distributed as a zip file and can be extracted anywhere you please.
 
 Windows users
 -------------

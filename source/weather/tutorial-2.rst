@@ -46,7 +46,7 @@ Using Mustache, it is quite simple to display the data.
         <span>{{forecast_date}}</span>
     </div>
 
-* Next we need a template to render the :ref:`current conditions <weather-tutorial-1-current-conditions>` object :
+* Next we need a template to render the :ref:`current conditions <weather-tutorial-1-current-conditions>` object:
 
 .. code-block:: html
 
@@ -64,7 +64,7 @@ Using Mustache, it is quite simple to display the data.
         </table>
     </div>
 
-* And finally add a template for :ref:`forecast conditions <weather-tutorial-1-forecast-conditions>`. Here, we're using `Mustache's Enumerable syntax <https://github.com/janl/mustache.js>`_ to loop through a few days's conditions.:
+* And finally add a template for :ref:`forecast conditions <weather-tutorial-1-forecast-conditions>`. Here, we're using `Mustache's Enumerable syntax <https://github.com/janl/mustache.js>`_ to loop through a few days' conditions:
 
 .. code-block:: html
 
@@ -139,7 +139,7 @@ Adding CSS
 -----------
 You can make the display a bit more pleasant by adding some custom CSS.
 The ``resources`` directory contains a file called ``style.css`` which you can use for this purpose.
-Link this file in the head element of ``index.html`` to add some basic styling to the Weather App. :
+Link this file in the head element of ``index.html`` to add some basic styling to the Weather App:
 
 .. code-block:: html
 
@@ -158,7 +158,7 @@ Things to check:
 * The best debugging tool is to add logging using ``forge.logging.log()`` throughout the code to track progress
 * Make sure that you have downloaded the :ref:`resources<weather-tutorial-1-preparation>` and that the paths to the specific resources are correct
 * Check that the jQuery script tags appear before the ``weather.js`` script tag inside of ``index.html`` head tag
-* ``populateWeatherConditions`` invocation should be inside the document ready listener. Modifications to the page should not be made until it finishes loading.
+* ``populateWeatherConditions`` invocation should be inside the document ready listener (modifications to the page should not be made until it finishes loading)
 
 **Chrome only**
 

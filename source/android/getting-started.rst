@@ -8,11 +8,11 @@ Preparing to run Android apps
 
 **Goal: Set up development environment**
 
-Before we start using the Forge Android tools, there is a minimum requirement of having python and Java installed (you should already have python to run any of the command line tool commands). Both commands should be installed and made available on your path.
+Before we start using the Forge Android tools, there is a minimum requirement of having Python and Java installed (you should already have Python to run any of the command line tool commands). Both commands should be installed and made available on your path.
 
-At this point you can simply run the commands as explained below, in order to run your build app an attached phone with debug drivers installed or an active Android emulator device are required. If you do not set this up yourself the command line tools will do so automatically, simply follow any instructions given to you by the commands.
+At this point you can simply run the commands as explained below. In order to run your built app an attached phone with debug drivers installed or an active Android emulator device are required. If you do not set this up yourself the command line tools will do so automatically - simply follow any instructions given to you by the commands.
 
-If you wish to manually manage your Android emulator you can use the ``-sdk`` flag when using ``forge run`` to point to your Android SDK location and run your own emulator AVD, all automatic installation procedures will prompt before making any changes to your system.
+If you wish to manually manage your Android emulator you can use the ``-sdk`` flag when using ``forge run`` to point to your Android SDK location and run your own emulator AVD. All automatic installation procedures will prompt before making any changes to your system.
    
 .. important:: There is a bug in the Android 2.3 emulator that will render your apps unusable: if you manage your own Android AVD you **must** use an Android 2.2 level AVD.
 
@@ -47,11 +47,11 @@ If everything goes well you should see the text "Hello Android" displayed when t
 
 Building the code
 -----------------
-Make sure no AVD is running when you try to build the code, else you might see "Cannot create a file when that file already exists" error.
+Make sure no AVD is running when you try to build the code or you might see "Cannot create a file when that file already exists" error.
 For more information click :ref:`here<android-weather-troucleshooting-build-fail>`
 
 * Windows users open a command prompt. OSX/Linux users open a terminal.
-* Navigate to the directory where you extracted the build tools
+* Navigate to the directory where you extracted the build tools.
 * Windows users run ``go.bat``. OSX/Linux users run ``source go.sh``. This will ensure all dependencies are installed and start the virtual environment.
 * Run ``forge build``
 * Whenever the configuration file changes the entire app needs to be rebuilt.
@@ -65,7 +65,7 @@ Running the Code
 ----------------
 **Goal: Launching the Emulator and seeing your custom code running**
 
-#. Optionally connect your Android device with **USB Debugging** enabled and the appropriate drivers installed, or start your Android emulator AVD, if you do not do this the tools will prompt you to automatically create and run an AVD.
+#. Optionally connect your Android device with **USB Debugging** enabled and the appropriate drivers installed, or start your Android emulator AVD. If you do not do this the tools will prompt you to automatically create and run an AVD.
 #. Run ``forge run android``
 
    **Note: You can optionally pass a -s flag to specify the location of the Android SDK, this is only required if you installed the Android SDK manually.**
@@ -78,7 +78,7 @@ Dynamic Hello
 --------------
 **Goal: Running dynamic JavaScript code and using logging**
 
-Ok perhaps that wasn't all too impressive, let's add some dynamic functionality next.
+Ok perhaps that wasn't all too impressive - let's add some dynamic functionality next.
 
 * Remove the “Hello Android!” text from the body of ``index.html``
 * Create a file called ``content.js`` and add the following code::
