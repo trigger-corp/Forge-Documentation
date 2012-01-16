@@ -29,7 +29,7 @@ Below is a template of a ``config.json`` file with links to a detailed descripti
           "ipad": "ipad.png",
           "ipad-landscape": "ipad-landscape.png"
         },
-        ":ref:`permissions <field-permissions>`": ["tabs", "http://webmynd.com/"],
+        ":ref:`permissions <field-permissions>`": ["tabs", "http://trigger.io/"],
         ":ref:`background_files <field-background_files>`": ["background.js"],
         ":ref:`activations <field-activations>`": [
           {

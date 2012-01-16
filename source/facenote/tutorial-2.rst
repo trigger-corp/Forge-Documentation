@@ -150,4 +150,4 @@ It's not working!
 Common gotchas:
 
 * remember to rebuild and reload your extension after changing any config or code
-* can't figure out the problem? Get in touch at support@webmynd.com!
+* can't figure out the problem? Get in touch at support@trigger.io!

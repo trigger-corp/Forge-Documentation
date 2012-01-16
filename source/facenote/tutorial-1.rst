@@ -108,4 +108,4 @@ Things to check:
 * on Facebook, use `Chrome's Developer Tools <http://code.google.com/chrome/devtools/docs/overview.html>`_ to see which scripts have been embedded in the page: do you see a HTTP 404 for your JavaScript file?
 * on Facebook, use the console in Chrome's Developer Tools to check for JavaScript errors: uncaught exceptions may cause the alert messages not to appear
 * clearing your browser cache (at ``chrome://history/#e=1&p=0``) will flush out any old resources
-* still not working? Get in touch at support@webmynd.com!
+* still not working? Get in touch at support@trigger.io!

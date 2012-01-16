@@ -50,7 +50,7 @@ Below is an example of a returned contact object, with details for some field ty
       ],
       ":ref:`emails <field-contact-emails>`": [
         {
-          "value": "joe-bloggs@webmynd.com",
+          "value": "joe-bloggs@trigger.io",
           "type": "work",
           "pref": false
       ],
@@ -68,7 +68,7 @@ Below is an example of a returned contact object, with details for some field ty
       ],
       ":ref:`ims <field-contact-ims>`": [
         {
-          "value": "joe-bloggs@webmynd.com",
+          "value": "joe-bloggs@trigger.io",
           "type": "gtalk",
           "pref": false
         }
@@ -94,7 +94,7 @@ Below is an example of a returned contact object, with details for some field ty
       ":ref:`categories <field-contact-categories>`": null,
       ":ref:`urls <field-contact-urls>`": [
         {
-          "value": "http://webmynd.com",
+          "value": "http://trigger.io",
           "type": "homepage",
           "pref": false
         }
