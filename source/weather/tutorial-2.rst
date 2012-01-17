@@ -149,7 +149,9 @@ At this point, your app should display static weather data for Mountain View, CA
 
 Reference extension
 -------------------
-`part-2.zip <../_static/weather/part-2.zip>`_ contains the code you should have at this point. Feel free to check your code against it, or use it to resume the tutorial from this point.
+`part-2.zip <../_static/weather/part-2.zip>`_ contains the code you should have in your app's src directory at this point.
+Feel free to check your code against it or use it to resume the tutorial from this point
+(remember to replace the 'author' email in config.json with your own).
 
 It's not working!
 -----------------

@@ -20,7 +20,7 @@ Hello Android
 -------------
 **Goal: Adding static content**
 
-* After going through the :ref:`forge-index` section you should see a ``src`` directory created.
+* After going through the :ref:`forge-index` section you should see a ``src`` directory created inside your app directory.
   This is where all of your app files should be placed
 * The ``src`` directory should contain a ``config.json`` file which holds all of the configuration settings for the app
 * Create a file called ``index.html``. **Important: Forge looks for index.html as the entry point of your Android application.**
@@ -53,7 +53,8 @@ For more information click :ref:`here<android-weather-troucleshooting-build-fail
 * Windows users open a command prompt. OSX/Linux users open a terminal.
 * Navigate to the directory where you extracted the build tools.
 * Windows users run ``go.bat``. OSX/Linux users run ``source go.sh``. This will ensure all dependencies are installed and start the virtual environment.
-* Run ``forge build``
+* Navigate to your app directory (if you followed the :ref:`forge-index` section, this will be ``../demo-app``).
+* Run ``forge build``.
 * Whenever the configuration file changes the entire app needs to be rebuilt.
   The initial build will take longer than regular builds.
   Also when the configuration file has been altered you must be connected to the internet to run the build tool.
@@ -86,7 +87,7 @@ Ok perhaps that wasn't all too impressive - let's add some dynamic functionality
     function writeGreeting(name){
         window.forge.logging.log('Hello '+name);
     };
-    writeGreeting("Sahil");
+    writeGreeting('Sahil');
 
 * Open ``index.html`` and add a script tag to reference ``contents.js``:
 
@@ -102,8 +103,8 @@ Ok perhaps that wasn't all too impressive - let's add some dynamic functionality
 
 Reference extension
 -------------------
-The files in ``/demo/android/weather/hello android`` folder represent the code you should have at this point.
-If you run into any issues this is a good place to look.
+The files in `getting-started.zip <../_static/weather/getting-started.zip>`_ represent the code you should have in your src folder at this point.
+If you run into any issues this is a good place to look (remember to replace the 'author' email in config.json with your own).
 
 Troubleshooting
 ---------------
