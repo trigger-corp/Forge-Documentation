@@ -104,7 +104,7 @@ Ok perhaps that wasn't all too impressive - let's add some dynamic functionality
 Reference extension
 -------------------
 The files in `getting-started.zip <../_static/weather/getting-started.zip>`_ represent the code you should have in your src folder at this point.
-If you run into any issues this is a good place to look (remember to replace the 'author' email in config.json with your own).
+If you run into any issues this is a good place to look (remember to replace the 'author' and 'uuid' values in config.json with your own).
 
 Troubleshooting
 ---------------
