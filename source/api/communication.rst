@@ -14,12 +14,12 @@ Sets up a handler function which will receive messages sent ("broadcast") by you
 
 By supplying the optional *type* parameter, you can filter the messages on which your callback will be invoked; see the *type* parameter to the :ref:`broadcast <api-broadcast>` and :ref:`broadcastBackground <api-broadcastBackground>` methods. If the *type* parameter is omitted, your callback will be invoked for all broadcast messages.
 
-The *callback* parameter will be invoked when a message is to be delivered, with the message contents as its first parameter, and a "reply function" as its second parameter, used to send responses back to the code which broadcast the original message.
+The *callback* parameter will be invoked when a message is to be delivered, with the message contents as its first parameter and a "reply function" as its second parameter. The "reply function" is used to send responses back to the code which broadcast the original message.
 
 .. js:function:: message.listen([type, ]callback, error)
 
     :param string type: (optional) if included, the callback will only be fired for messages broadcast with the same type; if omitted, the callback will be fired for all messages
-    :param function(content, reply) callback: will be called with the contents of relevant broadcast messages as its first parameter and a reply function as its second parameter
+    :param function(content,reply) callback: will be called with the contents of relevant broadcast messages as its first parameter and a reply function as its second parameter
     :param function(content) error: called with details of any error which may occur
 
 .. _api-broadcast:

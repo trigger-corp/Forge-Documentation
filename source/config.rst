@@ -29,7 +29,7 @@ Below is a template of a ``config.json`` file with links to a detailed descripti
           "ipad": "ipad.png",
           "ipad-landscape": "ipad-landscape.png"
         },
-        ":ref:`permissions <field-permissions>`": ["tabs", "http://webmynd.com/"],
+        ":ref:`permissions <field-permissions>`": ["tabs", "http://trigger.io/"],
         ":ref:`background_files <field-background_files>`": ["background.js"],
         ":ref:`activations <field-activations>`": [
           {
@@ -40,6 +40,11 @@ Below is a template of a ``config.json`` file with links to a detailed descripti
             ":ref:`all_frames <field-activations-allframes>`": false
           }
         ],
+        ":ref:`orientations <field-orientations>`": {
+          ":ref:`default <field-orientations_default>`": ["landscape-left", "landscape-right"],
+          ":ref:`iphone <field-orientations_iphone>`": ["portrait-up", "portrait-down"],
+          ":ref:`ipad <field-orientations_ipad>`": ["landscape-left"]
+        },
         ":ref:`browser_action <field-browser_action>`": {
             ":ref:`default_popup <field-default_popup>`": "popup.html",
             ":ref:`default_icon <field-default_icon>`": "my-default-icon.ico",
@@ -149,6 +154,37 @@ Properties and image sizes are:
 * ``iphone-retina``: 640x960px
 * ``ipad``: 768x1004px
 * ``ipad-landscape``: 1024x748px
+
+.. _field-orientations:
+
+orientations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Optional*.
+
+This controls how your app will be displayed as the device is moved around. The default is to allow for any orientation, with the content being re-drawn as the screen is rotated.
+
+.. _field-orientations_default:
+
+You can limit this behaviour by specifying the desired supported orientations as ``orientations.default``, choosing from ``"portrait-up"``, ``"portrait-down"``, ``"landscape-left"`` and ``"landscape-right"``.
+
+.. _field-orientations_iphone:
+
+.. _field-orientations_ipad:
+
+You can further customise this behaviour by specifying orientation support for different devices, e.g. ``orientations.iphone`` and ``orientations.ipad``. For example::
+
+  "orientations": {
+    "default": ["landscape-left", "landscape-right"],
+    "iphone": ["portrait-up", "portrait-down"],
+    "ipad": ["landscape-left"]
+  },
+
+This configuration means
+
+* by default, only display your app in landscape mode, either way up
+* ... but on iPhones, only display your app in portrait mode, either way up
+* ... and on iPads, your app will be permanently fixed in a single landscape position
 
 Fields only used in browser apps
 --------------------------------------------------------------------------------

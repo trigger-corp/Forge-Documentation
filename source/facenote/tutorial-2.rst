@@ -82,7 +82,7 @@ How do users change the note?
 -----------------------------
 Now we can read in existing notes, but how do we let users edit them?
 
-Well, to do this we will create a small HTML snippet, to be inserted into the Facebook page, that lets users edit the note. Add this code to the end of the ``forge.prefs.get`` callback::
+Well, to do this we will create a small HTML snippet to be inserted into the Facebook page, which lets users edit the note. Add this code to the end of the ``forge.prefs.get`` callback::
 
   var noteEl = document.createElement("div"),
     textarea = document.createElement("textarea");
@@ -132,7 +132,7 @@ Then add a ``click()`` handler to that link::
 
 Bringing it together
 --------------------
-Now, when you go to a Facebook profile page, you should see a ``textarea`` at the top of the page, along with a **save note** link. Editing the text and saving it should pop up an alert box, and the next time you visit that profile page, the saved message should be displayed.
+Now, when you go to a Facebook profile page, you should see a ``textarea`` at the top of the page, along with a **save note** link. Editing the text and saving it should pop up an alert box - and the next time you visit that profile page, the saved message should be displayed.
 
 You should be able to save different notes for different people.
 
@@ -145,9 +145,9 @@ It's not working!
 * You can use the standard Chrome JavaScript debugger to check for logic problems in your code
 * JavaScript files can be cached, clear this out at ``chrome://history/#e=1&p=0``
 * are you seeing the wrong note for people? It's due to Facebook's strange page transitions: reloading the page should show the right note. In a real application, you could add a simple poller on ``document.URL``
-* if your JavaScript file has not been embedded in the page (i.e. you don't see it in the list of available scripts in the debugger), there's either a syntax error in your file (which will show up on the console), or there's a problem reading the file (which will show up as an 404 error in the *Resources* panel)
+* if your JavaScript file has not been embedded in the page (i.e. you don't see it in the list of available scripts in the debugger), there's either a syntax error in your file (which will show up on the console) or there's a problem reading the file (which will show up as an 404 error in the *Resources* panel)
 
 Common gotchas:
 
 * remember to rebuild and reload your extension after changing any config or code
-* can't figure out the problem? Get in touch at support@webmynd.com!
+* can't figure out the problem? Get in touch at support@trigger.io!

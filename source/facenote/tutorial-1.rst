@@ -51,7 +51,7 @@ To build the extension, bring up your terminal, and enter the ``forge build`` co
     [WARNING] creating output directory ".template"
     [   INFO] Development build created. Use forge run to run your app.
 
-Underneath the ``development/chrome`` directory, you now have a development Chrome extension which can be installed from the ``chrome://extensions`` screen, following these instructions `create and load an extension <http://code.google.com/chrome/extensions/getstarted.html>`.
+Underneath the ``development/chrome`` directory, you now have a development Chrome extension which can be installed from the ``chrome://extensions`` screen. Following these instructions, `create and load an extension <http://code.google.com/chrome/extensions/getstarted.html>`.
 
 .. warning:: Whenever you make changes to files in the ``src`` directory, you will need to rebuild the app with ``forge build``, then reload the extension by going to ``chrome://extensions`` and clicking on *Reload* in the relevant section.
 
@@ -93,7 +93,7 @@ to this::
     "/fb-note-demo.js"
   ]
 
-Now, rebuild your extension with ``forge build``, reload it in Chrome, and when you go to a Facebook page, you should see your own alert popup.
+Now, rebuild your extension with ``forge build`` and reload it in Chrome. When you go to a Facebook page, you should see your own alert popup.
 
 Reference extension
 -------------------
@@ -108,4 +108,4 @@ Things to check:
 * on Facebook, use `Chrome's Developer Tools <http://code.google.com/chrome/devtools/docs/overview.html>`_ to see which scripts have been embedded in the page: do you see a HTTP 404 for your JavaScript file?
 * on Facebook, use the console in Chrome's Developer Tools to check for JavaScript errors: uncaught exceptions may cause the alert messages not to appear
 * clearing your browser cache (at ``chrome://history/#e=1&p=0``) will flush out any old resources
-* still not working? Get in touch at support@webmynd.com!
+* still not working? Get in touch at support@trigger.io!

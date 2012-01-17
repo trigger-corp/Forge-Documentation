@@ -3,7 +3,7 @@
 Best practice for app development
 ======================================================
 
-While Forge provides as consistent as possible an environment to develop across multiple platforms, there are still differences between different platforms, and devices. This section of documentation attempts to highlight common issues you can run into and describe some of the best practices for dealing with them.
+While Forge provides as consistent as possible an environment to develop across multiple platforms, there are still differences between different platforms and devices. This section of documentation attempts to highlight common issues you can run into and describe some of the best practices for dealing with them.
 
 Internal documentation
 ----------------------

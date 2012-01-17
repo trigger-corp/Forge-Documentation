@@ -24,8 +24,8 @@ Open ``weather.js`` and ...
 
 * Remove ``mountainViewForecast``, ``forecast``, ``currentConditions``, ``tuesdayConditions``, ``wednesdayConditions``, ``thursdayConditions``, ``fridayConditions`` vars and the ``forecastConditionMaker`` function
 * Remove the ``forge.logging.log(mountainViewForecast)`` call
-* Remove ``populateWeatherConditions`` invocation from the document ready listener.
-  You do not need to remove the entire jQuery document ready listener as it will be used again in the following sections
+* Remove ``populateWeatherConditions`` invocation from the document ready listener
+  (Note you do not need to remove the entire jQuery document ready listener as it will be used again in the following sections)
 
 Understanding the Data
 ----------------------
@@ -233,7 +233,9 @@ Rebuild and run the code to see live forecast data displayed.
 
 Reference extension
 -------------------
-`part-3.zip <../_static/weather/part-3.zip>`_ contains the code you should have at this point. Feel free to check your code against it, or use it to resume the tutorial from this point.
+`part-3.zip <../_static/weather/part-3.zip>`_ contains the code you should have in your app's src directory at this point.
+Feel free to check your code against it or use it to resume the tutorial from this point
+(remember to replace the 'author' and 'uuid' values in config.json with your own).
 
 It's not working!
 -----------------

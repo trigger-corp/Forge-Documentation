@@ -142,8 +142,8 @@ Debugging on Chrome
 ``forge.logging.log`` output can be seen in the Chrome console.
 Since ``weather.js`` is running inside ``index.html`` we need to inspect that page to see the logged output.
 
-* Open up a Chrome browser and go to `<chrome:extensions>`_.
-* You should reload the extension to pick up any changes.
+* Open up a Chrome browser and go to `<chrome:extensions>`_
+* You should reload the extension to pick up any changes
 * Right click on the toolbar button that is added by the extension and click **Inspect pop-up**
 * This will open up Chrome tools in a new window
 * At the bottom is the console section, which should contain the output from ``forge.logging.log``
@@ -154,7 +154,7 @@ The :ref:`background <extension-concept-background>` context also receives the l
 * Navigate to `<chrome:extensions>`_
 * You should see a *Inspect active views* with ``forge.html`` link
 * Click ``forge.html`` which will open up Chrome tools
-* The console may not be displayed automatically, but it can be opened by pressing the Esc key or clicking the console button on the bottom left.
+* The console may not be displayed automatically, but it can be opened by pressing the Esc key or clicking the console button on the bottom left
 * The background tracks all logging
 
 .. _weather-tutorial-1-catalyst-debugging:
@@ -166,7 +166,7 @@ Remote Debugging on Android
 As you've already seen in :ref:`Android Getting Started<android-getting-started>` ``forge.logging.log`` prints output to console/terminal.
 You can also use remote debugging which provides some helpful tools for troubleshooting and examining the app at runtime.
 
-#. Open up a browser and go to `<https://webmynd.com/catalyst/>`_.
+#. Open up a browser and go to `<https://trigger.io/catalyst/>`_.
 #. On this page there will be a generated ``script`` tag which you copy and insert into the head element of your ``index.html`` file.
 #. Click on the auto-generated link which takes you to a page that looks similar to Chrome's debugging tools.
 #. Try :ref:`running <android-getting-started-build>` the code.
@@ -181,7 +181,9 @@ This will ensure that Catalyst is connected and ready before the code runs, prev
 
 Reference extension
 -------------------
-`part-1.zip <../_static/weather/part-1.zip>`_ contains the code you should have at this point. Feel free to check your code against it, or use it to resume the tutorial from this point.
+`part-1.zip <../_static/weather/part-1.zip>`_ contains the code you should have in your app's src directory at this point.
+Feel free to check your code against it or use it to resume the tutorial from this point
+(remember to replace the 'author' and 'uuid' values in config.json with your own).
 
 It's not working!
 -----------------
@@ -191,13 +193,13 @@ Things to check:
 * Make sure that the properties of the dummy objects were populated correctly
 * If you used any custom code go back to basics and make modifications only after the tutorial code is running correctly
 * Make sure you include the script tag inside ``index.html`` to the correct JavaScript code
-* If the documentation is at all unclear or if you're still having issues contact support@webmynd.com with "Weather Tutorial" as the subject
+* If the documentation is at all unclear or if you're still having issues contact support@trigger.io with "Weather Tutorial" as the subject
 
 .. **Chrome only**
 
 **Android Only**
 
 * Sometimes the emulator can be buggy and the script hangs on the ``Available device`` section. Simply rerunning the script usually fixes this.
-* This :ref:`page<android-weather-troubleshooting>` shows how to troubleshoot some previously encountered errors
+* This :ref:`page<android-weather-troubleshooting>` shows how to troubleshoot some previously encountered errors.
 
 Continue on to :ref:`weather-tutorial-2`

@@ -3,7 +3,7 @@
 Using API methods
 =================
 
-Most API methods provided by Forge operate asynchronously (exceptions include ``forge.is`` methods and ``forge.tools.UUID``). This means the result of the method is not returned immediately, instead you must provide a function which will be called with the result. Care must therefore be taken when using the methods, as the order in which code is executed can be less obvious.
+Most API methods provided by Forge operate asynchronously (exceptions include ``forge.is`` methods and ``forge.tools.UUID``). This means the result of the method is not returned immediately; instead you must provide a function which will be called with the result. Care must therefore be taken when using the methods, as the order in which code is executed can be less obvious.
 
 Here is a simplified example:
 
@@ -42,14 +42,14 @@ The ``success`` callback will only ever be called once, and will only be called 
 ``callback``
 ----------------
 
-The ``callback`` callback is similar to ``success`` in that it appears as the penultimate parameter, however unlike the ``success`` callback it may be called multiple times. An example of its use it adding a listener to a button being clicked, as the button can be clicked multiple times the callback may be called multiple times.
+The ``callback`` callback is similar to ``success`` in that it appears as the penultimate parameter - however, unlike the ``success`` callback, it may be called multiple times. An example of its use it adding a listener to a button being clicked, as the button can be clicked multiple times the callback may be called multiple times.
 
 .. _forge-features-api-error:
 
 ``error``
 -----------
 
-The ``error`` callback is always the final paramter passed to a method. The error callback will always be called with exactly one paramter, which will be an object containing several properties.
+The ``error`` callback is always the final parameter passed to a method. The error callback will always be called with exactly one paramter, which will be an object containing several properties.
 
 The returned object will always contain:
 
