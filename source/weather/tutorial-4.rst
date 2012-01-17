@@ -150,7 +150,9 @@ The weather app should now be complete.
 
 Reference extension
 -------------------
-`part-4.zip <../_static/weather/part-4.zip>`_ contains the code you should have at this point. Feel free to check your code against it, or use it to resume the tutorial from this point.
+`part-4.zip <../_static/weather/part-4.zip>`_ contains the code you should have in your app's src directory at this point.
+Feel free to check your code against it or use it to resume the tutorial from this point
+(remember to replace the 'author' and 'uuid' values in config.json with your own).
 
 It's not working!
 -----------------
