@@ -1,9 +1,9 @@
 .. _api-file:
 
-File access: ``forge.file``
+File and Camera access: ``forge.file``
 ================================================================================
 
-Selecting and using files on the user's filesystem.
+Selecting files for the user's filesystem, or capturing images with the camera.
 
 Notes
 ~~~~~
