@@ -17,10 +17,31 @@ A simple use case for modal views is to display an options page at any point whe
 External authentication
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-A more advanced use of modal views is to send the user to an external site (potentially your own website), to allow them to authenticate in some way. In this scenario it is possible to close the modal view and redirect the user to a new local page once the authentication process is complete by redirecting the user to a ``forge:///`` url. An example of how this could be used would be:
+A more advanced use of modal views is to send the user to an external site (potentially your own website), to allow them to authenticate in some way. At this point there are two options, if you control the remote server you can redirect to a ``forge:///`` url, or whether you control the remote server or not you can watch for a url match pattern and close the modal view when it is found.
+
+Remote redirect
+---------------
+
+In this scenario it is possible to close the modal view and redirect the user to a new local page once the authentication process is complete by redirecting the user to a ``forge:///`` url. An example of how this could be used would be:
 
 #. Call ``forge.tabs.open("https://example.com/login/")``
 #. The user logs in to your website
 #. Assuming the login is successful your website sets a cookie and redirects the user to ``forge:///loggedin.html``
 #. The modal view will close automatically, and the original web view will load the local page ``loggedin.html``
 #. ``forge.request.ajax()`` requests made by your app will send the cookie your website set (any requests can then be checked against the previous authentication)
+
+Match pattern
+-------------
+
+To watch for a math pattern use code similar to:
+
+Example::
+
+  forge.tabs.openWithOptions({
+    url: 'http://my.server.com/login/',
+    pattern: 'http://my.server.com/loggedin/*'
+  }, function (data) {
+    forge.logging.log(data.url);
+  });
+
+In this example the final url in the modal view will be logged, data could also be extracted from it and used to authenticate the user, such as the query string (used for OAuth 1) or the hash fragment (in OAuth 2).
