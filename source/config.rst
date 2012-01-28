@@ -54,6 +54,9 @@ Below is a template of a ``config.json`` file with links to a detailed descripti
         },
         ":ref:`libs <field-libs>`": {
             "gmail": {}
+        },
+        ":ref:`logging <field-logging>`": {
+            "level": "DEBUG"
         }
     }
 
@@ -133,6 +136,13 @@ permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 TODO
+
+.. _field-logging:
+
+logging
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The logging level defines the level of log messages which will appear in the console output for your app, see :ref:`the logging api docs <logging>` for more detail.
 
 Fields only used in mobile apps
 --------------------------------------------------------------------------------
