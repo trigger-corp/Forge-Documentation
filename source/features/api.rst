@@ -58,10 +58,10 @@ The returned object will always contain:
 It will usually also contain:
 
 * A ``type`` property, this will be one of the following strings and can be used to determine what type of error occurred and how to appropriately deal with it.
- * ``"BAD_INPUT"`` - returned when an API doesn't exist or the parameters passed to it are invalid, this kind of error should be eliminated before releasing your app.
+ * ``"BAD_INPUT"`` - returned when an API is given invalid parameters, this kind of error should be eliminated before releasing your app.
  * ``"UNEXPECTED_FAILURE"`` - returned when an unexpected error causes the API call to fail, this generally means an error in the forge API and we would be grateful if you could report this kind of error to us.
  * ``"EXPECTED_FAILURE"`` - returned when an expected situation occurs which means the API call is not successful, examples could be a user cancelled action or a timeout. These types of errors should be handled appropriately within your application.
- * ``"UNAVAILABLE"`` - returned when an API method is currently unavailable, this could mean unavailable on the current platform or unavailable at this time (i.e. if there is no Internet connection). Your application may also expected some errors of this type.
+ * ``"UNAVAILABLE"`` - returned when an API method is currently unavailable, this could mean unavailable on the current platform, in the current context, or at this time (i.e. if there is no Internet connection). Your application may also expected some errors of this type. Also returned for non-existant API calls.
 * A ``subtype`` property which will give a more precise description of the error than the ``type``, the strings which this may contain are documented with each API method.
 
 It may also contain additional properties which are relevant to the API method, these properties will be documented per method in the API reference.
