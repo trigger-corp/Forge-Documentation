@@ -43,9 +43,10 @@ Below is a template of a ``config.json`` file with links to a detailed descripti
           }
         ],
         ":ref:`orientations <field-orientations>`": {
-          ":ref:`default <field-orientations_default>`": ["landscape-left", "landscape-right"],
-          ":ref:`iphone <field-orientations_iphone>`": ["portrait-up", "portrait-down"],
-          ":ref:`ipad <field-orientations_ipad>`": ["landscape-left"]
+          ":ref:`default <field-orientations_default>`": "any",
+          ":ref:`iphone <field-orientations_iphone>`": "portrait",
+          ":ref:`ipad <field-orientations_ipad>`": "landscape",
+          ":ref:`android <field-orientations_android>`": "landscape",
         },
         ":ref:`browser_action <field-browser_action>`": {
             ":ref:`default_popup <field-default_popup>`": "popup.html",
@@ -182,25 +183,28 @@ This controls how your app will be displayed as the device is moved around. The 
 
 .. _field-orientations_default:
 
-You can limit this behaviour by specifying the desired supported orientations as ``orientations.default``, choosing from ``"portrait-up"``, ``"portrait-down"``, ``"landscape-left"`` and ``"landscape-right"``.
+You can limit this behaviour by specifying the desired supported orientations as ``orientations.default``, choosing from ``"any"``, ``"portrait"`` or ``"landscape"``.
 
 .. _field-orientations_iphone:
+
+.. _field-orientations_android:
 
 .. _field-orientations_ipad:
 
 You can further customise this behaviour by specifying orientation support for different devices, e.g. ``orientations.iphone`` and ``orientations.ipad``. For example::
 
   "orientations": {
-    "default": ["landscape-left", "landscape-right"],
-    "iphone": ["portrait-up", "portrait-down"],
-    "ipad": ["landscape-left"]
+    "default": "any",
+    "iphone": "portrait",
+    "ipad": "landscape"
   },
 
 This configuration means
 
-* by default, only display your app in landscape mode, either way up
+* by default, display your app in any orientation
 * ... but on iPhones, only display your app in portrait mode, either way up
 * ... and on iPads, your app will be permanently fixed in a single landscape position
+* ... on Android the default will apply and any orientation allowed by the device will be used
 
 Fields only used in browser apps
 --------------------------------------------------------------------------------
