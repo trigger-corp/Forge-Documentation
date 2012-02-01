@@ -27,7 +27,9 @@ Below is a template of a ``config.json`` file with links to a detailed descripti
           "iphone": "iphone.png",
           "iphone-retina": "iphone-retina.png",
           "ipad": "ipad.png",
-          "ipad-landscape": "ipad-landscape.png"
+          "ipad-landscape": "ipad-landscape.png",
+          "android": "android.png",
+          "android-landscape": "android-landscape.png"
         },
         ":ref:`permissions <field-permissions>`": ["tabs", "http://trigger.io/"],
         ":ref:`background_files <field-background_files>`": ["background.js"],
@@ -41,9 +43,10 @@ Below is a template of a ``config.json`` file with links to a detailed descripti
           }
         ],
         ":ref:`orientations <field-orientations>`": {
-          ":ref:`default <field-orientations_default>`": ["landscape-left", "landscape-right"],
-          ":ref:`iphone <field-orientations_iphone>`": ["portrait-up", "portrait-down"],
-          ":ref:`ipad <field-orientations_ipad>`": ["landscape-left"]
+          ":ref:`default <field-orientations_default>`": "any",
+          ":ref:`iphone <field-orientations_iphone>`": "portrait",
+          ":ref:`ipad <field-orientations_ipad>`": "landscape",
+          ":ref:`android <field-orientations_android>`": "landscape",
         },
         ":ref:`browser_action <field-browser_action>`": {
             ":ref:`default_popup <field-default_popup>`": "popup.html",
@@ -154,9 +157,11 @@ launch_images
 
 *Optional*.
 
-Images to be displayed during launch as required on iOS, for further details see the `Apple documentation <http://developer.apple.com/library/ios/#documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html#//apple_ref/doc/uid/TP40007072-CH6-SW12>`_: 
+Images to be displayed during launch as required on iOS, for further details see the `Apple documentation <http://developer.apple.com/library/ios/#documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html#//apple_ref/doc/uid/TP40007072-CH6-SW12>`_.
 
-All 4 images must be defined if this section is included
+On Android the image will be displayed centered on a black background while the first page is loading, as Android device sizes vary a pixel perfect loading image cannot be used. 
+
+All 4 iOS images must be defined for any to be included in iOS builds. Both Android images must be defined for Android builds.
 
 Properties and image sizes are:
 
@@ -164,6 +169,8 @@ Properties and image sizes are:
 * ``iphone-retina``: 640x960px
 * ``ipad``: 768x1004px
 * ``ipad-landscape``: 1024x748px
+* ``android``
+* ``android-landscape``
 
 .. _field-orientations:
 
@@ -176,25 +183,28 @@ This controls how your app will be displayed as the device is moved around. The 
 
 .. _field-orientations_default:
 
-You can limit this behaviour by specifying the desired supported orientations as ``orientations.default``, choosing from ``"portrait-up"``, ``"portrait-down"``, ``"landscape-left"`` and ``"landscape-right"``.
+You can limit this behaviour by specifying the desired supported orientations as ``orientations.default``, choosing from ``"any"``, ``"portrait"`` or ``"landscape"``.
 
 .. _field-orientations_iphone:
+
+.. _field-orientations_android:
 
 .. _field-orientations_ipad:
 
 You can further customise this behaviour by specifying orientation support for different devices, e.g. ``orientations.iphone`` and ``orientations.ipad``. For example::
 
   "orientations": {
-    "default": ["landscape-left", "landscape-right"],
-    "iphone": ["portrait-up", "portrait-down"],
-    "ipad": ["landscape-left"]
+    "default": "any",
+    "iphone": "portrait",
+    "ipad": "landscape"
   },
 
 This configuration means
 
-* by default, only display your app in landscape mode, either way up
+* by default, display your app in any orientation
 * ... but on iPhones, only display your app in portrait mode, either way up
-* ... and on iPads, your app will be permanently fixed in a single landscape position
+* ... and on iPads, your app will only use the landscape orientation
+* ... on Android the default will apply and any orientation allowed by the device will be used
 
 Fields only used in browser apps
 --------------------------------------------------------------------------------
