@@ -203,7 +203,7 @@ This configuration means
 
 * by default, display your app in any orientation
 * ... but on iPhones, only display your app in portrait mode, either way up
-* ... and on iPads, your app will be permanently fixed in a single landscape position
+* ... and on iPads, your app will only use the landscape orientation
 * ... on Android the default will apply and any orientation allowed by the device will be used
 
 Fields only used in browser apps
