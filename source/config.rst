@@ -112,7 +112,7 @@ The version of your app. It must be formatted as up to three dot-separated numbe
 package_names
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, we create a package name for your app, something like ``io.trigger.forge.appname*``. Although your users aren't going to see this value, it can sometimes be useful if you need to use a particular package name, for example when updating a previous app that wasn't built on Forge.
+By default, we create a package name for your app, something like ``io.trigger.forge.appname*``. Although your users aren't going to see this value, it can sometimes be useful to be able to control it manually, for example when updating a previous app that wasn't built on Forge.
 
 ``package_names`` should be an object mapping a target name onto a package name, e.g.::
 
