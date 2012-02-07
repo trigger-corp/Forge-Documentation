@@ -18,6 +18,9 @@ Below is a template of a ``config.json`` file with links to a detailed descripti
         ":ref:`name <field-name>`": "My App",
         ":ref:`author <field-author>`": "Forger",
         ":ref:`version <field-version>`": "1.0",
+        ":ref:`package_names <field-package_names>`": {
+            "android": "com.example.app"
+        },
         ":ref:`description <field-description>`": "My First Forge App.",
         ":ref:`icons <field-icons>`": {
           "16": "icon16.png",
@@ -103,6 +106,19 @@ version
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The version of your app. It must be formatted as up to three dot-separated numbers, e.g. ``1.1`` or ``0.99.9``.
+
+.. _field-package_names:
+
+package_names
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+By default, we create a package name for your app, something like ``io.trigger.forge.appname*``. Although your users aren't going to see this value, it can sometimes be useful to be able to control it manually, for example when updating a previous app that wasn't built on Forge.
+
+``package_names`` should be an object mapping a target name onto a package name, e.g.::
+
+    "android": "com.example.my_app_name"
+
+Currently, only ``android`` is supported.
 
 .. _field-description:
 
