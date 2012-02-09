@@ -19,7 +19,8 @@ Below is a template of a ``config.json`` file with links to a detailed descripti
         ":ref:`author <field-author>`": "Forger",
         ":ref:`version <field-version>`": "1.0",
         ":ref:`package_names <field-package_names>`": {
-            "android": "com.example.app"
+            "android": "com.example.app",
+            "ios": "com.example.ios.app"
         },
         ":ref:`description <field-description>`": "My First Forge App.",
         ":ref:`icons <field-icons>`": {
@@ -117,8 +118,9 @@ By default, we create a package name for your app, something like ``io.trigger.f
 ``package_names`` should be an object mapping a target name onto a package name, e.g.::
 
     "android": "com.example.my_app_name"
+    "ios": "com.example.ios.app"
 
-Currently, only ``android`` is supported.
+Currently, only ``android`` and ``ios`` are supported.
 
 .. _field-description:
 
