@@ -1,4 +1,4 @@
-.. _best-practice-tips
+.. _best-practice-tips:
 
 General tips
 ============
