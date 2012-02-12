@@ -20,11 +20,11 @@ Common screen sizes
 Some of the most common screen sizes to be considered for mobile development are given below. All sizes are given in the number of points (or CSS pixels) which are available to the webview.
 
 * iPhone
- * Vertical: 320x460
- * Horizontal: 480x300
+* Vertical: 320x460
+* Horizontal: 480x300
 * iPad
- * Vertical: 768x1004
- * Horizonal: 1024x748
+* Vertical: 768x1004
+* Horizonal: 1024x748
 
 Glossary
 --------

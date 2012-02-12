@@ -1,4 +1,4 @@
-.. _best-practice-example_project
+.. _best-practice-example_project:
 
 Example Project
 ===============

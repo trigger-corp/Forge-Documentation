@@ -10,6 +10,7 @@ Notes
 
 - File objects are simple Javascript objects which contain both a ``uri`` and ``name``. They can be serialised using JSON.stringify and safely stored in Forge preferences.
 - The ``uri`` parameter can be used directly on some platforms. This is not recommended - instead use one of the provided helper functions such as ``forge.file.imageURL``.
+- Image orientation is automatically handled where possible, if a camera photo contains rotation information it will be correctly rotated before it is displayed or uploaded.
 - Files can be uploaded by including them as an array in ``request.ajax()``. For example if ``myFile1`` and ``myFile2`` were images returned by ``file.getImage()``:
 
 ::
@@ -25,10 +26,13 @@ Notes
 
 Returns a file object for a image selected by the user from their phone gallery or (if possible on the device) taken using their camera. If an image is taken using their camera it will be saved in the default photo album on the device.
 
+Images will be stored at their full resolution but resized when displayed or uploaded using the height and width parameters given as the maximum size. Not setting a width and height property can cause apps to become slow and potentially run out of memory.
+
 Returned files will be accessible to the app as long as they exist on the device.
 
-.. js:function:: file.getImage(success, error)
+.. js:function:: file.getImage([params, ]success, error)
 
+    :param object params: object optionally containing a height and or width parameter which images will be resized to ensure they are no larger than.
     :param function(file) success: callback to be invoked when no errors occur (argument is the returned file)
     :param function(content) error: called with details of any error which may occur
 
@@ -60,30 +64,14 @@ Returns true or false based on whether a given object is a file object, points t
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Mobile**
 
-Returns a URL which can be used to display an image. Optionally takes a properties object which height and/or width can be set.
+Returns a URL which can be used to display an image. Height and width will be limited by the values given when originally selecting the image.
 
-This is the recommended way of displaying an image captured from the device. On iOS devices this will return a ``data`` URI with the image encoded as a base64 string. This can be very large for large images, so it is highly recommended to set a maximum width and height for the image (based on how you wish to display it). On Android the height and width properties will not be used but the URL returned allows direct access to the image from the webpage so even a full sized image will load quickly. It is however important to also set the height and width of the image when you display it in your html.
+This is the recommended way of displaying an image captured from the device. On iOS devices this will return a ``data`` URI with the image encoded as a base64 string. This can be very large for large images, so it is highly recommended to set a maximum width and height for the image (based on how you wish to display it).
 
-Not setting a width and height property will cause iOS apps to become slow and potentially run out of memory.
-
-.. js:function:: file.imageURL(file,[ properties,] success, error)
+.. js:function:: file.imageURL(file, success, error)
 
     :param file file: the file object to load data from
-    :param object properties: an object containing option settings for this method, in this case ``height`` and/or ``width``
     :param function(url) success: callback to be invoked when no errors occur, first argument is the image URL
-    :param function(content) error: called with details of any error which may occur
-
-``imageBase64``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**Platforms: Mobile**
-
-Returns the base64 encoded data for an image, with the option to set a maximum height and/or width.
-
-.. js:function:: file.imageBase64(file,[ properties,] success, error)
-
-    :param file file: the file object to load data from
-    :param object properties: an object containing option settings for this method, in this case ``height`` and/or ``width``
-    :param function(base64String) success: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
 
 ``base64``

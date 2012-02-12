@@ -49,7 +49,7 @@ The *callback* parameter will be invoked with any responses from listeners; it m
 
 **Restrictions: Not available from the background page**
 
-Sends a message to be received by listeners in your background code: similar to :ref:`broadcast <api-broadcast>`, except that listeners created in individual browser pages will not receive this message; only listeners created in your ``onStart`` methods (see :ref:`extension-concept-background`).
+Sends a message to be received by listeners in your background code: similar to :ref:`broadcast <api-broadcast>`, except that listeners created in individual browser pages will not receive this message; only listeners created in your background page (see :ref:`extension-concept-background`).
 
 .. js:function:: message.broadcastBackground(type, content, callback, error)
 
