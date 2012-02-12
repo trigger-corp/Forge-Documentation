@@ -97,7 +97,7 @@ div.sphinxsidebarwrapper {
 }
 
 div.sphinxsidebarwrapper img.logo {
-	width: 180px;
+	width: 200px;
 }
 
 div.sphinxsidebarwrapper p.logo {
