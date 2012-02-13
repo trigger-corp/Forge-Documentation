@@ -53,6 +53,7 @@ Below is an example of a returned contact object, with details for some field ty
           "value": "joe-bloggs@trigger.io",
           "type": "work",
           "pref": false
+        }
       ],
       ":ref:`addresses <field-contact-addresses>`": [
         {
