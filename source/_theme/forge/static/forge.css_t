@@ -40,11 +40,12 @@ p.developmentversion {
 }
 
 div.related {
+	{{ strip_style }}
 	width: {{ page_width - 20 }}px;
 	padding: 5px 10px;
-	background: #F2FCEE;
 	margin: 0px auto;
 }
+div.related a {color: white;}
 
 div.documentwrapper {
 	float: left;
@@ -149,8 +150,6 @@ a:hover {color:#07d5f9;}
 a:hover, a:active {outline:0;}
 
 .highlight {-moz-box-shadow:0px -1px #fff, 0px 1px #fff; -webkit-box-shadow:0px -1px #fff, 0px 1px #fff; box-shadow:0px -1px #fff, 0px 1px #fff;}
-div.related { {{ strip_style }} }
-div.related a {color: white;}
 .stripe span {color:#b3d740;}
 
 div.body h1,
@@ -162,7 +161,7 @@ div.body h6 {
 	font-family: {{ headline_font_stack }};
 	{{ strip_style }}
 }
-div.body h1 { line-height: 65px;}
+div.body h1 { line-height: 65px; margin-top: 0px}
 div.body h2 { line-height: 50px;}
  
 div.body h1 { font-size: 200%; }

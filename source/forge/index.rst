@@ -70,4 +70,4 @@ If you are already working with an app on your machine, after activating the ``f
 
     cd "../my-existing-app"
 
-In that directory, you should have a ``src`` directory, containing the code for your app. For further documentation, follow our :ref:`Chrome tutorial <chrome-index>`, :ref:`Android tutorial <android-index>` or see our :ref:`api`:.
+In that directory, you should have a ``src`` directory, containing the code for your app. For further documentation, follow our :ref:`Chrome tutorial <chrome-index>`, :ref:`Android tutorial <android-index>` or see our :ref:`api`.
