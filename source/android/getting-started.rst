@@ -23,8 +23,9 @@ Hello Android
 * After going through the :ref:`forge-index` section you should see a ``src`` directory created inside your app directory.
   This is where all of your app files should be placed
 * The ``src`` directory should contain a ``config.json`` file which holds all of the configuration settings for the app
-* Create a file called ``index.html``. **Important: Forge looks for index.html as the entry point of your Android application.**
-  **This file must be present and the name cannot be changed.**
+* Create a file called ``index.html``
+
+.. note:: Forge looks for index.html as the entry point of your Android application. **This file must be present and the name cannot be changed.**
 
 * Open ``index.html`` and append the following:
 
@@ -54,7 +55,7 @@ For more information click :ref:`here<android-weather-troucleshooting-build-fail
 * Navigate to the directory where you extracted the build tools.
 * Windows users run ``go.bat``. OSX/Linux users run ``source go.sh``. This will ensure all dependencies are installed and start the virtual environment.
 * Navigate to your app directory (if you followed the :ref:`forge-index` section, this will be ``../demo-app``).
-* Run ``forge build``.
+* Run ``forge build``
 * Whenever the configuration file changes the entire app needs to be rebuilt.
   The initial build will take longer than regular builds.
 * When the build finishes take a look inside the ``development`` directory and you should see an ``android`` directory
@@ -65,28 +66,30 @@ Running the Code
 ----------------
 **Goal: Launching the Emulator and seeing your custom code running**
 
-#. Optionally connect your Android device with **USB Debugging** enabled and the appropriate drivers installed, or start your Android emulator AVD. If you do not do this the tools will prompt you to automatically create and run an AVD.
+#. You can run your app on an actual device, or use the Android emulator
+   * To use an Android device, connect it with **USB Debugging** enabled and the appropriate drivers installed
+   * If no device is available, we will automatically start an Android emulator for you
 #. Run ``forge run android``
 
-   **Note: You can optionally pass a -s flag to specify the location of the Android SDK, this is only required if you installed the Android SDK manually.**
+.. important:: The ``adb`` tool that we rely on here is quite unreliable: you may need to detach and re-attach your device for it to be recognised.
 
 .. image:: /_static/android/weather/images/windows-forge-run-android.png
 
-If something goes wrong take a look :ref:`here <android-weather-troubleshooting>`
+If something goes wrong take a look :ref:`at our troubleshooting instructions <android-weather-troubleshooting>`.
 
 Dynamic Hello
 --------------
 **Goal: Running dynamic JavaScript code and using logging**
 
-Ok perhaps that wasn't all too impressive - let's add some dynamic functionality next.
+Ok, perhaps that wasn't all too impressive - let's add some dynamic functionality next.
 
 * Remove the “Hello Android!” text from the body of ``index.html``
 * Create a file called ``content.js`` and add the following code::
 
     function writeGreeting(name){
-        window.forge.logging.log('Hello '+name);
+        forge.logging.info('Hello '+name);
     };
-    writeGreeting('Sahil');
+    writeGreeting('Forge user!');
 
 * Open ``index.html`` and add a script tag to reference ``contents.js``:
 
@@ -97,13 +100,12 @@ Ok perhaps that wasn't all too impressive - let's add some dynamic functionality
     </head>
 
 * :ref:`Rerun <android-getting-started-run>` the application
-* Take a look at the command prompt/terminal running the code and you should see the greeting
+* Take a look at the command prompt/terminal running the code and you should see the log message from ``writeGreeting``.
 * **Important: Now that you know how to use logging it is highly encouraged to use it frequently for debugging purposes**
 
 Reference extension
 -------------------
-The files in `getting-started.zip <../_static/weather/getting-started.zip>`_ represent the code you should have in your src folder at this point.
-If you run into any issues this is a good place to look (remember to replace the 'author' and 'uuid' values in config.json with your own).
+The files in `getting-started.zip <../_static/weather/getting-started.zip>`_ represent the code you should have in your src folder at this point.  If you run into any issues this is a good place to look.
 
 Troubleshooting
 ---------------
