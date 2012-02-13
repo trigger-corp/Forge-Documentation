@@ -7,7 +7,7 @@
 {% set body_font_stack = 'Trebuchet MS, Arial, Helvetica, sans-serif' %}
 {% set headline_font_stack = 'Trebuchet MS, Arial, Helvetica, sans-serif' %}
 {% set code_font_stack = "'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace" %}
-{% set strip_style = "background:#008299; border-top:1px solid #016375; border-bottom:1px solid #016375; color:#fff; font-weight:normal;" %}
+{% set strip_style = "border-top:1px solid #E5E5E5; border-bottom:1px solid #E5E5E5; font-weight:normal;" %}
 
 @import url("basic.css");
  
@@ -40,11 +40,12 @@ p.developmentversion {
 }
 
 div.related {
+	{{ strip_style }}
 	width: {{ page_width - 20 }}px;
 	padding: 5px 10px;
-	background: #F2FCEE;
 	margin: 0px auto;
 }
+div.related a {color: white;}
 
 div.documentwrapper {
 	float: left;
@@ -149,8 +150,6 @@ a:hover {color:#07d5f9;}
 a:hover, a:active {outline:0;}
 
 .highlight {-moz-box-shadow:0px -1px #fff, 0px 1px #fff; -webkit-box-shadow:0px -1px #fff, 0px 1px #fff; box-shadow:0px -1px #fff, 0px 1px #fff;}
-div.related { {{ strip_style }} }
-div.related a {color: white;}
 .stripe span {color:#b3d740;}
 
 div.body h1,
@@ -160,22 +159,12 @@ div.body h4,
 div.body h5,
 div.body h6 {
 	font-family: {{ headline_font_stack }};
-	font-weight: normal;
-	margin: 30px 0px 10px 0px;
-	padding: 0px 0px 0px 30px;
-	position: relative;
-	left: -30px;
-	width: 690px;
-	line-height: 35px;
-	background-color: #008299;
-	border-top:1px solid #016375;
-	border-bottom:1px solid #016375;
-	color:#fff;
+	{{ strip_style }}
 }
-div.body h1 { {{ strip_style }}; line-height: 65px;}
-div.body h2 { {{ strip_style }}; line-height: 50px;}
+div.body h1 { line-height: 65px; margin-top: 0px}
+div.body h2 { line-height: 50px;}
  
-div.body h1 { margin-top: 0; padding-top: 0; font-size: 200%; }
+div.body h1 { font-size: 200%; }
 div.body h2 { font-size: 180%; }
 div.body h3 { font-size: 150%; }
 div.body h4 { font-size: 130%; }
