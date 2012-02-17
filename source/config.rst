@@ -2,19 +2,15 @@
 
 Config File Reference
 ================================================================================
-
 ``config.json`` is a JSON file which contains meta-data about your app. It determines how your app looks and functions by specifying which Javascript, image and HTML files are to be used.
 
 Field summary
 --------------------------------------------------------------------------------
-
 Below is a template of a ``config.json`` file with links to a detailed description of each field.
 
 .. parsed-literal::
-
     {
-        ":ref:`uuid <field-uuid>`": "ABCD-1234",
-        ":ref:`platform_version <field-platform-version>`": "v1",
+        ":ref:`platform_version <field-platform-version>`": "v1.2",
         ":ref:`name <field-name>`": "My App",
         ":ref:`author <field-author>`": "Forger",
         ":ref:`version <field-version>`": "1.0",
@@ -24,33 +20,39 @@ Below is a template of a ``config.json`` file with links to a detailed descripti
         },
         ":ref:`description <field-description>`": "My First Forge App.",
         ":ref:`icons <field-icons>`": {
-          "16": "icon16.png",
-          "32": "icon32.png"
+            "16": "icon16.png",
+            "32": "icon32.png",
+            "android": {
+                "48": "icon48-android.png"
+            },
+            "chrome": {
+                "48": "icon48-chrome.png"
+            }
         },
         ":ref:`launch_images <field-launch_images>`": {
-          "iphone": "iphone.png",
-          "iphone-retina": "iphone-retina.png",
-          "ipad": "ipad.png",
-          "ipad-landscape": "ipad-landscape.png",
-          "android": "android.png",
-          "android-landscape": "android-landscape.png"
+            "iphone": "iphone.png",
+            "iphone-retina": "iphone-retina.png",
+            "ipad": "ipad.png",
+            "ipad-landscape": "ipad-landscape.png",
+            "android": "android.png",
+            "android-landscape": "android-landscape.png"
         },
         ":ref:`permissions <field-permissions>`": ["tabs", "http://trigger.io/"],
         ":ref:`background_files <field-background_files>`": ["background.js"],
         ":ref:`activations <field-activations>`": [
-          {
-            ":ref:`patterns <field-activations-patterns>`": ["http://mail.google.com"],
-            ":ref:`scripts <field-activations-scripts>`": ["gmail.js"],
-            ":ref:`styles <field-activations-styles>`": ["gmail.css"],
-            ":ref:`run_at <field-activations-runat>`": "start",
-            ":ref:`all_frames <field-activations-allframes>`": false
-          }
+            {
+                ":ref:`patterns <field-activations-patterns>`": ["http://mail.google.com"],
+                ":ref:`scripts <field-activations-scripts>`": ["gmail.js"],
+                ":ref:`styles <field-activations-styles>`": ["gmail.css"],
+                ":ref:`run_at <field-activations-runat>`": "start",
+                ":ref:`all_frames <field-activations-allframes>`": false
+            }
         ],
         ":ref:`orientations <field-orientations>`": {
-          ":ref:`default <field-orientations_default>`": "any",
-          ":ref:`iphone <field-orientations_iphone>`": "portrait",
-          ":ref:`ipad <field-orientations_ipad>`": "landscape",
-          ":ref:`android <field-orientations_android>`": "landscape",
+            ":ref:`default <field-orientations_default>`": "any",
+            ":ref:`iphone <field-orientations_iphone>`": "portrait",
+            ":ref:`ipad <field-orientations_ipad>`": "landscape",
+            ":ref:`android <field-orientations_android>`": "landscape",
         },
         ":ref:`browser_action <field-browser_action>`": {
             ":ref:`default_popup <field-default_popup>`": "popup.html",
@@ -72,13 +74,6 @@ Fields
 --------------------------------------------------------------------------------
 
 This section includes more detailed information on the contents of each field, with links to other documentation where appropriate.
-
-.. _field-uuid:
-
-uuid
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This is a unique identifier for your app, used internally by the Forge platform. This field must be left intact for your app to function properly.
 
 .. _field-platform-version:
 
@@ -138,9 +133,20 @@ icons
 
 *Optional*.
 
-This part of the config allows you to define the icons to be used for your app.
+This part of the config allows you to define the icons to be used for your app. All icons are square, and must be placed in your ``src`` directory.
 
-Icons are defined as the size of the icon (the width and height as all icons are square) and the image to be used for the icon in your src directory. In order to provide high quality icons on all platforms you may need to provide a fair number of different icon sizes, the icons required for each platform are listed below:
+Define your desired icons with ``"size": "path"`` attributes, where ``size`` is the pixel height (and width) of the icon, and ``path`` is where the image has been placed under the ``src`` directory.
+
+You can specify different icons for different platforms as so::
+
+    "icons": {
+        "android": { "48": "special-android-icon.png" },
+        "48": "plain-old-icon.png"
+    }
+
+Here, all platforms which require a 48px icon use ``plain-old-icon.png`` in your ``src`` directory. However, for Android, we will use ``special-android-icon.png``, in the same directory.
+
+The icons required for each platform are listed below:
 
 * Android: 36px, 48px and 72px
 * Chrome: 16px, 48px and 128px
@@ -149,7 +155,7 @@ Icons are defined as the size of the icon (the width and height as all icons are
 * iOS: 57px, 72px and 114px for home screen icons, 512px to be shown in iTunes.
 * Safari: 32px, 48px and 64px
 
-.. important:: Some platforms (such as Android and Safari) will not use any of your icons unless you specify icons of all the required sizes.
+.. important:: Some platforms (such as Android and Safari) will not use **any** of your icons unless you specify icons of all the required sizes.
 
 .. _field-permissions:
 

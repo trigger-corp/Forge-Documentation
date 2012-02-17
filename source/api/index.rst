@@ -10,6 +10,7 @@ API Reference
    /api/communication
    /api/notifications
    /api/cross-domain
+   /api/geolocation
    /api/miscellaneous
    /api/logging
    /api/tabs-management

@@ -49,7 +49,7 @@ Currently supported options:
  * type
  * url
  * username
- * files (Android only, see :ref:`forge.file <api-file>`)
+ * files (Mobile only, see :ref:`forge.file <api-file>`)
  
 Error values (see :ref:`error callback docs <forge-features-api-error>` for more detail):
  * ``type``: ``"UNAVAILABLE"``
