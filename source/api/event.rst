@@ -26,3 +26,14 @@ Triggered when the device is rotated, use forge.is.orientation.portrait() and  f
 
     :param function() callback: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
+
+``messagePushed.addListener``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Mobile**
+
+Triggered when a push notification is received both while the application is running or if the application is launched via that notification.
+
+.. js:function:: event.messagePushed.addListener(callback, error)
+
+    :param function(data) callback: callback to be invoked when no errors occur
+    :param function(content) error: called with details of any error which may occur
