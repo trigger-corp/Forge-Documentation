@@ -13,5 +13,16 @@ Triggered when the menu button is pressed on an Android device.
 
 .. js:function:: event.menuPressed.addListener(callback, error)
 
-    :param function() success: callback to be invoked when no errors occur
+    :param function() callback: callback to be invoked when no errors occur
+    :param function(content) error: called with details of any error which may occur
+
+``orientationChange.addListener``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Mobile**
+
+Triggered when the device is rotated, use forge.is.orientation.portrait() and  forge.is.orientation.landscape() to determine orientation.
+
+.. js:function:: event.orientationChange.addListener(callback, error)
+
+    :param function() callback: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur

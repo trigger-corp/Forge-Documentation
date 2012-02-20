@@ -53,3 +53,19 @@ The following methods allow you to determine what platform that is.
 .. js:function:: is.ie()
 
     :return boolean: Returns true if running on IE browser
+
+``orientation``
+---------------
+**Platforms: Mobile**
+
+``portrait``
+~~~~~~~~~~~~
+.. js:function:: is.orientation.portrait()
+
+    :return boolean: Returns true if a mobile device has a portrait orientation
+
+``landscape``
+~~~~~~~~~~~~
+.. js:function:: is.orientation.landscape()
+
+    :return boolean: Returns true if a mobile device has a landscape orientation
