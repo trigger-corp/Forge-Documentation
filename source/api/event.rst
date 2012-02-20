@@ -33,6 +33,8 @@ Triggered when the device is rotated, use forge.is.orientation.portrait() and  f
 
 Triggered when a push notification is received both while the application is running or if the application is launched via that notification.
 
+Currently available as part of our :ref:`integration with Parse <partner-parse>`.
+
 .. js:function:: event.messagePushed.addListener(callback, error)
 
     :param function(data) callback: callback to be invoked when no errors occur

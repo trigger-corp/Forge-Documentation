@@ -1,9 +1,9 @@
-.. _parse:
+.. _partner-parse:
 
 Parse
 ===============================================================================
 
-"Add a Backend to Your Mobile App in Minutes" - Parse allows you to add backend features to your mobile app without a server.
+"Add a Backend to Your Mobile App in Minutes" - `Parse <https://parse.com/>`_ allows you to add backend features to your mobile app without a server.
 
 Currently Parse push notifications are integrated with Forge.
 
@@ -25,7 +25,7 @@ In order for your app to communicate with the Parse servers you must specifiy bo
 API: ``forge.partners.parse``
 -----------------------------
 
-Push notification received through Parse can be used with the generic push notification event in Forge, see the :ref:`event api <api-event>` for more details. The following code is an example of how to show an alert to a user when a push notification is recieved.
+Push notification received through Parse can be used with the generic push notification event in Forge, see the :ref:`event API <api-event>` for more details. The following code is an example of how to show an alert to a user when a push notification is recieved.
 
 Example::
 
