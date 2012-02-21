@@ -66,8 +66,6 @@ Returns true or false based on whether a given object is a file object, points t
 
 Returns a URL which can be used to display an image. Height and width will be limited by the values given when originally selecting the image.
 
-This is the recommended way of displaying an image captured from the device. On iOS devices this will return a ``data`` URI with the image encoded as a base64 string. This can be very large for large images, so it is highly recommended to set a maximum width and height for the image (based on how you wish to display it).
-
 .. js:function:: file.imageURL(file, success, error)
 
     :param file file: the file object to load data from
