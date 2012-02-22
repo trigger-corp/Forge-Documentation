@@ -64,9 +64,16 @@ Below is a template of a ``config.json`` file with links to a detailed descripti
         ":ref:`libs <field-libs>`": {
             "gmail": {}
         },
+        ":ref:`update_url <field-update_url>`": {
+            "chrome": "url",
+            "firefox": "url"
+        },
         ":ref:`logging <field-logging>`": {
-            "level": "DEBUG"
-        }
+            "level": ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"]
+        },
+        ":ref:`parameters <field-parameters>`": {},
+        ":ref:`homepage <field-homepage>`": "http://example.com"",
+        ":ref:`partners <field-partners>`": {},
     }
 
 
@@ -170,6 +177,28 @@ logging
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The logging level defines the level of log messages which will appear in the console output for your app, see :ref:`the logging api docs <logging>` for more detail.
+
+.. _field-parameters:
+
+parameters
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Arbitrary extra configuration which will be available as ``forge.config.parameters`` in your JavaScript
+
+.. _field-homepage:
+
+homepage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Your website, or location of more information about this app.
+
+.. _field-partners:
+
+partners
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Configuration for 3rd party integration. For more information check :ref:`our partners <partners>`.
+
 
 Fields only used in mobile apps
 --------------------------------------------------------------------------------
@@ -314,6 +343,20 @@ For convenience, Forge comes with a number of libraries which you can choose to 
     }
 
 Currently, the only library you can enable here is called "gmail". The Forge gmail library gives the developer access to special functions which can interact with and manipulate the Gmail composition pane. This allows for a more flexible alternative to developing Gmail gadgets. Check the API section for :ref:`a detailed explanation of the Gmail library <api-gmail>`.
+
+.. _field-update_url:
+
+update_url
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Optional*. *Browsers only*.
+
+URLs to check for application updates from::
+
+    "update_url": {
+        "chrome": "url",
+        "firefox": "url"
+    }
 
 .. _field-cs_options:
 
