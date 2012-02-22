@@ -48,3 +48,23 @@ The ``Demo.Collections.Items`` collection is defined in models.js as::
 Simply a collection of Item models, easy enough! In the context of
 ``Demo.Utils.parseRSS(rss_url, function(data) {``, data is our RSS object, with
 ``data.entries`` 
+
+``Backbone.history.start()`` kicks off backbone's window.onhashchange event subscribtion.
+If the browser doesn't support onhashchange, it monitors window.location periodically.
+When the url changes, the routes defined in ``routes.js`` are used::
+
+    routes: {
+        "" : "index",         // entry point
+        "item/:item_id":"item"// #item/id
+    },
+
+lets say the user visits /, the routes run index()::
+
+
+    index: function() {
+        var index = new Demo.Views.Index({
+            collection: Demo.feeds,
+            back      : false
+        });
+        index.show();
+    },

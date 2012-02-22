@@ -14,6 +14,7 @@ Internal documentation
   tips
   screen_size
   libraries
+  example_project
   
 External resources
 ------------------
