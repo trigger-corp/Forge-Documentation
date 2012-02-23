@@ -15,6 +15,8 @@ On Android, use ``forge package android``. You can run ``forge package android -
 
 To package Android apps, you need to have created a "keystore" with which to sign your app. You should keep this keystore safe, and observe the normal password safety precautions to prevent others from being to update your own apps.
 
+.. _releasing-keystore:
+
 Creating a keystore
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Full instructions on creating a keystore are available here: http://developer.android.com/guide/publishing/app-signing.html, in the "Obtain a suitable private key" section.
