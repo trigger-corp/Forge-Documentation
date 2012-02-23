@@ -10,3 +10,4 @@ This section documents Forge specific development features.
 
    /features/api
    /features/modal
+   /features/cache
