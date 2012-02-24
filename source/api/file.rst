@@ -20,6 +20,8 @@ Notes
         files: [myFile1, myFile2]
     });
 
+.. note:: For more information about how to cache remote files in your app, see :ref:`forge-cache`.
+
 ``getImage``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Mobile**

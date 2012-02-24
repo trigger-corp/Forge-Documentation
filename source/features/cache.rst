@@ -75,7 +75,9 @@ Complete example
 
 Putting those functions together we get an example which will cache a logo and display it from the cache:
 
-Example::
+Example:
+
+.. code-block:: html
 
   <!DOCTYPE html>
   <html>
