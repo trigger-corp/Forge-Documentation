@@ -41,6 +41,7 @@ Example::
       if (!file) {
         // Logo never cached
         cacheLogo();
+        return;
       }
       forge.file.isFile(file, function (isFile) {
         if (!isFile) {
@@ -106,6 +107,7 @@ Example::
             if (!file) {
               // Logo never cached
               cacheLogo();
+              return;
             }
             forge.file.isFile(file, function (isFile) {
               if (!isFile) {
