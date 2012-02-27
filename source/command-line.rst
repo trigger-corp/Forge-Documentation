@@ -66,7 +66,7 @@ There is a *general* section, for parameters which are not linked to any particu
 
 Profiles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In the target-specific sections (e.g. *ios*, *android*), there is an object called *profiles*.
+In the target-specific sections (e.g. *ios*, *android*), you can use *profiles*.
 
 Profiles allow for quick switching between configuration settings at different phases of your development.
 
@@ -115,7 +115,7 @@ Config Option            Command-line Switch                 Meaning
 sdk                      --android.sdk                       Path to the Android SDK on your machine.
 ======================== =================================== ===============================================
 
-The other settings should be in a profile:
+The other settings should be in a :ref:`profile <local_conf-profiles>`:
 
 ======================== =================================== ===============================================
 Profile Config Option    Command-line Switch                 Meaning
