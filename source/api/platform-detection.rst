@@ -65,7 +65,7 @@ The following methods allow you to determine what platform that is.
     :return boolean: Returns true if a mobile device has a portrait orientation
 
 ``landscape``
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. js:function:: is.orientation.landscape()
 
     :return boolean: Returns true if a mobile device has a landscape orientation
