@@ -109,11 +109,13 @@ Use this section for settings relating to building and running Forge apps for An
 
 The location of the Android SDK is not profile-specific:
 
-======================== =================================== ===============================================
+======================== =================================== =====================================================
 Config Option            Command-line Switch                 Meaning
-======================== =================================== ===============================================
+======================== =================================== =====================================================
 sdk                      --android.sdk                       Path to the Android SDK on your machine.
-======================== =================================== ===============================================
+device                   --android.device                    Device identifier to run your app on.
+purge                    --android.purge                     Completely reset all state of the app before running.
+======================== =================================== =====================================================
 
 The other settings should be in a :ref:`profile <local_conf-profiles>`:
 
