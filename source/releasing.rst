@@ -41,10 +41,12 @@ After you have created your keystore, you can use ``forge package android`` to p
 For example to use the keystore we created in the previous step, we would run something like this::
 
     forge package android \
-      --keystore my_keystore.keystore \
-      --storepass MY_KEYSTORE_PASSWORD \
-      --keypass MY_KEY_PASSWORD \
-      --keyalias MY_KEY_NAME
+      --android.profile.keystore my_keystore.keystore \
+      --android.profile.storepass MY_KEYSTORE_PASSWORD \
+      --android.profile.keypass MY_KEY_PASSWORD \
+      --android.profile.keyalias MY_KEY_NAME
+
+.. note:: For a convenient way to specify and these options in a file, see :ref:`parameters-in-a-file`.
 
 A ``release`` directory has now been created; you will find your release-ready APK file in the ``android`` sub-directory.
 
