@@ -15,7 +15,7 @@ Features
 * Transitions
 
 Please feel free to base your own projects on this - it's a great springboard for a new project.
-The code is hosted on gihub here: https://github.com/trigger-corp/Forge-Bootstrap
+The code is hosted on github here: https://github.com/trigger-corp/Forge-Bootstrap
 
 Included files
 ..............
