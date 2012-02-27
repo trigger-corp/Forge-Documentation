@@ -12,9 +12,7 @@ Here are few benefits of Forge:
 * Rapid development
 * Reduced maintenance costs
 
-Using Forge is quite simple and does not require you to write a single line of Objective-C or Java, or learn platform-specific APIs. You can get started by developing your app in Android or Chrome.
-
-.. note:: You can start development in Chrome then generate native mobile apps, or start in Android then generate an iPhone app and browser add-ons. The choice is yours: both directions are supported.
+Offering simplicity was our main goal when developing Forge: we do not require you to write a single line of Objective-C or Java, or learn platform-specific APIs.
 
 Your feedback is very important to us. Please send an email to support@trigger.io with any questions or concerns.
 
