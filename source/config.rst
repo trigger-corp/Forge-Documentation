@@ -20,13 +20,15 @@ Below is a template of a ``config.json`` file with links to a detailed descripti
         },
         ":ref:`description <field-description>`": "My First Forge App.",
         ":ref:`icons <field-icons>`": {
-            "16": "icon16.png",
-            "32": "icon32.png",
             "android": {
+                "16": "icon16.png",
+                "32": "icon32.png",
                 "48": "icon48-android.png"
             },
             "chrome": {
+                "16": "icon16.png",
                 "48": "icon48-chrome.png"
+                "128": "icon128.png
             }
         },
         ":ref:`launch_images <field-launch_images>`": {
@@ -144,14 +146,22 @@ This part of the config allows you to define the icons to be used for your app. 
 
 Define your desired icons with ``"size": "path"`` attributes, where ``size`` is the pixel height (and width) of the icon, and ``path`` is where the image has been placed under the ``src`` directory.
 
+.. highlight:: js
+
 You can specify different icons for different platforms as so::
 
-    "icons": {
-        "android": { "48": "special-android-icon.png" },
-        "48": "plain-old-icon.png"
+    "android": {
+        "16": "icon16.png",
+        "32": "icon32.png",
+        "48": "icon48-android.png"
+    },
+    "chrome": {
+        "16": "icon16.png",
+        "48": "icon48-chrome.png"
+        "128": "icon128.png
     }
 
-Here, all platforms which require a 48px icon use ``plain-old-icon.png`` in your ``src`` directory. However, for Android, we will use ``special-android-icon.png``, in the same directory.
+Here, Android and Chrome will share their 16x16 pixel icon, but use different 48x48 pixel icons.
 
 The icons required for each platform are listed below:
 
@@ -162,7 +172,7 @@ The icons required for each platform are listed below:
 * iOS: 57px, 72px and 114px for home screen icons, 512px to be shown in iTunes.
 * Safari: 32px, 48px and 64px
 
-.. important:: Some platforms (such as Android and Safari) will not use **any** of your icons unless you specify icons of all the required sizes.
+.. note:: If you specify *any* icons for a particular platform, you **must** specify all required icons!
 
 .. _field-permissions:
 
