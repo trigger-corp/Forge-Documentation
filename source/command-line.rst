@@ -100,7 +100,7 @@ All settings should be placed inside a :ref:`profile <local_conf-profiles>`: ava
 Profile Config Option    Command-line Switch                 Meaning
 ======================== =================================== ===============================================
 provisioning_profile     --ios.profile.provisioning_profile  Provisioning Profile to embed into your iOS app
-certificate_to_sign_with --ios.profile.developer_certificate Name of certificate to sign iOS app with
+developer_certificate    --ios.profile.developer_certificate Name of certificate to sign iOS app with
 ======================== =================================== ===============================================
 
 .. _local_conf-android:
