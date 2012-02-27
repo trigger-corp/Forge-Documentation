@@ -21,4 +21,5 @@ API Reference
    /api/user-interface
    /api/contact
    /api/gmail
+   /api/sms
    /partners/index
