@@ -3,22 +3,33 @@
 Example Project
 ===============
 
-Putting all these concepts into practice, we've developed
-a little example project with a CSS reset, Backbone and a couple of pages with transitions.
+We've developed a little example project with a CSS reset,
+Backbone and a couple of pages with transitions.
 
-Please feel free to base your own projects on this - it's a great springboard for a new project.
-
-Features:
+Features
+--------
 
 * Backbone.js
 * CSS reset
 * RSS feed parsing
 * Transitions
 
-Overview
---------
+Please feel free to base your own projects on this - it's a great springboard for a new project.
+The code is hosted on gihub here: https://github.com/trigger-corp/Forge-Bootstrap
 
-The entry point for the application is in index.html, ``$(Demo.init)`` calls ``init()``,
+Included files
+..............
+
+We're using the css reset from `html5boilerplate.com <http://html5boilerplate.com>`_
+to keep things sane. For mobile development, jQuery can be a quite heavyweight
+so we've included `Zepto <http://zeptojs.com/>`_, a "minimalist JavaScript framework for modern web browsers" We've found that it's a great jQuery-inspired js framework.
+
+We use Zepto throughout the views in the tutorial.
+
+Lets get stuck in
+-----------------
+
+The entry point for the javascript application is in index.html, ``$(Demo.init)`` calls ``init()``,
 defined in demo.js::
 
     init: function () {
@@ -77,29 +88,32 @@ This function creates an ``Index`` view, passing in our feeds collection
 Becuase ``Index`` extends ``Page``, we can use the ``show()`` function,
 which we'll look at after looking at the ``index`` view.
 
+Index View
+----------
+
 The index view looks like this::
 
     Demo.Views.Index = Demo.Views.Page.extend({
-	
+    
         initialize: function() {
             this.render();
         },
-	
+    
         render: function() {
             var that = this;
             this.collection.each(function(feed_item, index){
-                    if (index % 2 === 1) {
-                        var new_view = new Demo.Views.Feed({
-                            model: feed_item,
-                            odd: true}
-                        );
-                    } else {
-                        var new_view = new Demo.Views.Feed({
-                            model: feed_item,
-                            odd: false
-                        });
-                    }
-                    $(that.el).append(new_view.el);
+                if (index % 2 === 1) {
+                    var new_view = new Demo.Views.Feed({
+                        model: feed_item,
+                        odd: true}
+                    );
+                } else {
+                    var new_view = new Demo.Views.Feed({
+                        model: feed_item,
+                        odd: false
+                    });
+                }
+                $(that.el).append(new_view.el);
             });
             return this;
         }
@@ -111,6 +125,10 @@ which we use to kick of our ``render()`` function.
 creating a ``Feed`` view for each, and appends it to the ``Index`` view's el.
 
 Because we used ``Page's`` ``show()`` function, we'd better look at that too::
+
+Page View
+---------
+::
 
     Demo.Views.Page = Backbone.View.extend({
         className: "page",
@@ -147,7 +165,9 @@ and removing the old when it is done.
 Our ``index`` view creates a new ``Feed`` view for each iteam in the collection,
 and appends it to the page element.
 
-The ``Feed`` view::
+Feed view
+---------
+::
 
     Demo.Views.Feed = Backbone.View.extend({
 
@@ -192,7 +212,12 @@ the router passes ``[id]`` to ``item()``::
 
 ``Item`` is a very simple view that grabs title and date from the model and displays them nicely. Note that we're passing in the ``back``
 bool, which ``Page`` uses to work out which way the page should slide in.
-``Item`` is reproduced here for clarity::
+``Item`` is reproduced here for clarity
+
+Item View
+---------
+
+::
 
     Demo.Views.Item = Demo.Views.Page.extend({
     
@@ -233,8 +258,11 @@ bool, which ``Page`` uses to work out which way the page should slide in.
     });
 
 In ``expand_item()``, we are using ``forge.tabs.open()`` to open a new tab in
-a cross-platform manner. Our documentation for ``open()`` is `here <http://docs.trigger.io/en/v1.2/api/tabs-management.html?highlight=tabs#tabs.open>`_.
+a cross-platform manner. Our documentation for ``open()`` is :ref:`here <tabs-management>`.
 
-That's it! Play with the source for yourself, we hope everything is clear.
+That's it
+---------
+
+Play with the source for yourself, we hope everything is clear.
 
 Still unsure? Want to ask for help? Spotted a mistake in this tutorial? Drop us a line at support@trigger.io and we'll be happy to help.
