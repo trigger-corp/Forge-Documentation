@@ -6,6 +6,7 @@ Tutorial Part 2
 In the second part of this tutorial, we build on the previous steps to add the JavaScript code which lets users attach text notes to profiles on Facebook.
 
 .. contents::
+   :backlinks: none
 
 Goal
 ----

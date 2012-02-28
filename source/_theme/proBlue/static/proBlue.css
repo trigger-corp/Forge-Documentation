@@ -1,0 +1,380 @@
+/**
+ * Sphinx stylesheet -- default theme
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ */
+ 
+@import url("basic.css");
+ 
+/* -- fontfaces ----------------------------------------------------------- */
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans+Mono);
+
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans+Std+Light);
+/* -- page layout ----------------------------------------------------------- */
+
+body {
+    font-family: arial, sans-serif;
+    font-size: 81.25%;
+    color: #333;
+    line-height: 1.67em;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+li a {
+    cursor: pointer;
+}
+
+a.internal em {
+    font-style: normal;
+}
+
+table {
+    line-height: 2em;
+}
+
+div.documentwrapper {
+    float: left;
+    width: 100%;
+}
+
+div.bodywrapper {
+    margin: 0 0 0 300px;
+    max-width: 850px;
+}
+
+hr {
+    border: 1px solid #B1B4B6;
+}
+
+div.document {
+    margin: 9px auto 0 auto;
+    max-width: 1430px;
+    min-width: 400px;
+}
+
+span.api-header {
+    font-family: Museo, 'Trebuchet MS', Helvetica, sans-serif;
+    font-size: 36px;
+    margin: -5px 0 10px 16px;
+    display: inline-block;
+}
+
+div.body {
+    background-color: #fff;
+    padding: 1em 30px 30px 20px;
+}
+ 
+div.footer {
+    color: #999;
+    width: 100%;
+    padding: 9px 0 18px;
+    text-align: center;
+    font-size: 60%;
+    background: #fff;
+    clear: both;
+}
+
+div.footer a {
+    color: #444;
+}
+
+div.related {
+  background-color: #000;
+  line-height: 50px;
+  height: 50px;
+  color: #ffffff;
+  font-size: 1.1em;
+  border-bottom: 1px solid #fff; 
+  padding-left: 20px;
+}
+
+div.related img {
+    border: 0;
+    margin-top: 15px;
+}
+
+div.related a {
+    color: #fff;
+}
+
+div.related .right {
+    font-size: 0.9em;
+}
+
+div.colorband {
+    width: 100%;
+    color: white;
+    background: #2A2A2A url(https://trigger.io/forge-static/css/trigger/f/bg-hatched.png) repeat top left;
+    padding: 20px 0;
+}
+
+div.sphinxsidebar {
+    font-size: 1em;
+    line-height: 2.2em;
+    width: 300px
+}
+div.sphinxsidebar a{
+
+}
+
+div.sphinxsidebarwrapper{
+    padding: 10px 5px 10px 18px;
+}
+
+div.sphinxsidebar h3,
+div.sphinxsidebar h4 {
+    font-family: arial, serif;
+    font-weight: normal;
+    margin: 0;
+}
+
+div.sphinxsidebar p {
+    color: #888888;
+    margin: 0.5em 0px;
+}
+ 
+div.sphinxsidebar p.topless {
+}
+ 
+div.sphinxsidebar ul {
+    list-style: none;
+    margin: 0 10px 10px 0;
+    padding: 0;
+}
+
+div.sphinxsidebar ul ul, div.sphinxsidebar ul.want-points {
+    list-style: none;
+}
+
+div.sphinxsidebar ul li {
+    margin-top: 0.7em;
+}
+
+div.sphinxsidebar ul li li{
+    line-height: 1.5em;
+    margin: 0.3em 0 0.7em 0;
+}
+
+div.sphinxsidebar li a {
+    color: #666;
+}
+/*    border-bottom:1px solid #ccc;*/
+
+div.sphinxsidebar a:hover {
+    text-decoration: none;    
+}
+
+div.sphinxsidebar li:hover a,
+div.sphinxsidebar li.current li:hover a {
+    color: #000;
+}
+
+div.sphinxsidebar li:hover li a {
+    color: #666;
+}
+
+div.sphinxsidebar input {
+    border: 1px solid #dadada;
+    font-family: helvetica, arial, serif;
+    font-size: 1.3em;
+    padding: 0.2em 0.4em;
+    -moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.1);
+}
+
+div.sphinxsidebar form {
+    margin: 0;
+}
+
+/*     border-bottom: 1px solid #bbb; */
+div.sphinxsidebar input:focus {
+    border: 1px solid #bbb;
+}
+
+/*     border-bottom: 1px solid #999;*/
+div.sphinxsidebar input[type=text]{
+    padding: 0.23em 0.4em;
+	color:#333;
+}
+div.sphinxsidebar input[type=submit]{
+  background-color: #168DA2;
+  color:#fff;
+  cursor: pointer;
+  width: 2.5em;
+}
+
+div.sphinxsidebar p.searchtip {
+    line-height: 1.5em;   
+}
+
+/* -- body styles ----------------------------------------------------------- */
+ 
+a {
+    color: #168DA2;
+    text-decoration: none;
+}
+
+div.body ul.simple,
+div.body div.toctree-wrapper ul ul li,
+div.body div.contents ul ul li {
+    list-style: disc;
+    margin: 0 0 0 2em;
+    padding-left: 0;
+}
+
+div.body div.toctree-wrapper ul,
+div.body div.contents ul {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+div.body li.toctree-l1,
+div.body div.contents li {
+    list-style: none;
+    margin-top: 1em;
+}
+
+div.sphinxsidebar li.toctree-l1:before {
+    content: "▸ ";
+    color: #666;
+}
+
+div.sphinxsidebar ul li.current:before {
+    content: "▸ ";
+    color: #DD4B39;
+}
+
+div.sphinxsidebar li.current ul li:before {
+    content: "";
+}
+
+div.sphinxsidebar li.current a,
+div.sphinxsidebar li.current li.current a {
+    color: #DD4B39;
+}
+
+div.sphinxsidebar li.current li a {
+    color: #666;
+}
+
+div.sphinxsidebar li.current:before {
+    color: #666;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+div.body h1,
+div.body h2,
+div.body h3,
+div.body h4,
+div.body h5,
+div.body h6 {
+    font-family: arial, serif;
+    font-weight: normal;
+    margin: 24px 0 0 0;
+}
+ 
+div.body h1 { border-bottom: 1px solid #ddd; margin-top: 0; font-size: 160%; }
+div.body h2 { border-bottom: 1px solid #ddd; font-size: 130%; margin-bottom: 6px; }
+div.body h3 { font-size: 120%; }
+div.body h4 { font-size: 110%; }
+div.body h5 { font-size: 100%; }
+div.body h6 { font-size: 100%; }
+
+a.headerlink {
+    color: #168DA2;
+    font-size: 0.8em;
+    padding: 0 4px 0 4px;
+    text-decoration: none;
+}
+ 
+a.headerlink:hover {
+    background-color: #168DA2;
+    color: white;
+}
+ 
+div.body p, div.body dd, div.body li {
+    line-height: 1.6em;
+}
+div.body p{
+margin:1.2em 0;
+} 
+div.body p.topic-title {
+    margin: 0.6em 0;
+}
+div.admonition {
+    background-color: #eeeeee;
+    border-left: 5px solid #ccc;
+    padding: 10px;
+}
+
+p.admonition-title + p, p.admonition-title {
+    display: inline;
+}
+ 
+p.admonition-title:after {
+    content: ":";
+}
+
+div.highlight{
+    background-color: white;
+}
+ 
+div.seealso {
+    background-color: #ffffcc;
+    border: 1px solid #ffff66;
+}
+ 
+div.topic {
+    border-width: 0;
+    padding-left: 0;
+}
+ 
+div.warning {
+    background-color: #ffe4e4;
+    border: 1px solid #ff6666;
+}
+ 
+pre {
+    font-size: 1.3em;
+    padding: 10px;
+    background-color: #fcfadd;
+    border:1px solid #ddd;
+    color: #007000;
+    line-height: 1.5em;
+    font-size: 1.1em;
+    margin: 1.5em 0 1.5em 0;
+}
+
+div.body tt {
+    color: #007000;
+    font-size: 1.3em;
+    padding: 2px 2px;
+    font-size: 1.3em;
+    padding: 2px 2px;
+}
+
+div.body h1 tt,
+div.body h2 tt,
+div.body h3 tt,
+div.body h4 tt,
+div.body li tt,
+div.body li a tt {
+    color: #333;
+    font-family: arial, sans-serif;
+    font-size: 1em;
+    font-weight: normal;
+}
+
+div.body div.toctree-wrapper tt {
+    background-color: #fff;
+}
+
+#table-of-contents ul {
+    padding-left: 2em;
+}

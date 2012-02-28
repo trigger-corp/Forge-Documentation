@@ -6,6 +6,7 @@ This part of the tutorial will demonstrate how to use the Forge Ajax functionali
 We will then parse the data to pull the necessary information to generate our internal representation.
 
 .. contents::
+   :backlinks: none
 
 Goal
 -----

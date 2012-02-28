@@ -6,6 +6,7 @@ Tutorial Part 3
 In the final part of this tutorial, we build on Part II to improve the appearance and functionality of the notes interface.
 
 .. contents::
+   :backlinks: none
 
 Goal
 ----
