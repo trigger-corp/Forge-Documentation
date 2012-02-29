@@ -4,7 +4,7 @@ Forge Documentation
 
 Forge is a development framework which enables you to create native apps for multiple platforms from a single HTML5 codebase.
 
-Here are few benefits of Forge:
+Here are a few benefits of Forge:
 
 * Single code base
 * Ability to generate mobile applications for Android and iPhone

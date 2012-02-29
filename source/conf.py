@@ -37,10 +37,12 @@ source_suffix = '.rst'
 
 # The master toctree document.
 master_doc = 'index'
+maxdepth = 1
+titlesonly = True
 
 # General information about the project.
 project = u'Forge Documentation'
-copyright = u'2011, Trigger Corp.'
+copyright = u'2012, Trigger Corp.'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -84,8 +86,8 @@ show_authors = False
 # pygments_style = 'perldoc'
 # pygments_style = 'borland'
 # pygments_style = 'colorful'
-# pygments_style = 'default'
-pygments_style = 'murphy'
+pygments_style = 'default'
+# pygments_style = 'murphy'
 # pygments_style = 'vs'
 # pygments_style = 'trac'
 # pygments_style = 'tango'
@@ -105,7 +107,7 @@ highlight_language = 'js'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 # html_theme = 'sphinxdoc'
-html_theme = 'forge'
+html_theme = 'proBlue'
 # html_theme = 'haiku'
 # haiku: no sidebar, nice notes
 # agogo: good sidebar, too much vspace, bit messy
@@ -129,12 +131,12 @@ html_short_title = 'Forge Documentation'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-html_logo = '_static/images/trigger-forge.png'
+# html_logo = '_static/images/trigger-forge.png'
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
-html_favicon = '_static/images/favicon-trigger.ico'
+html_favicon = '_static/images/favicon.ico'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

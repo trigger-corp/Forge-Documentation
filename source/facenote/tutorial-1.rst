@@ -8,6 +8,7 @@ In this tutorial, we will use the Forge platform to create a browser extension w
 As this particular app is based around modifying the contents of web pages on-the-fly, it is not applicable to mobile app development: see :ref:`our weather app tutorial <weather-tutorial-1>` for how to get started with a mobile app.
 
 .. contents::
+   :backlinks: none
 
 Goal
 ----

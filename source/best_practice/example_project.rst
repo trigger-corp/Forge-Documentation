@@ -171,12 +171,11 @@ Feed view
 
     Demo.Views.Feed = Backbone.View.extend({
 
-        events: {
-            //TODO: click is sub-optimal on phones, use forge.is to use tap on phones
-            "click .feed-even": "expand_item",
-            "click .feed-odd" : "expand_item"
-        },
-
+        events: Demo.Utils.click_or_tap({
+            ".feed-even": "expand_item",
+            ".feed-odd" : "expand_item"
+	    }),
+		
         expand_item: function () {
             console.log(this.model.cid);
             Demo.router.navigate("item/" + this.model.cid.split("").slice(1), true);
@@ -221,10 +220,7 @@ Item View
 
     Demo.Views.Item = Demo.Views.Page.extend({
     
-        events: {
-            //TODO: click is sub-optimal on phones, use forge.is to use tap on phones
-            "click #back": "go_back"
-        },
+        events: Demo.Utils.click_or_tap({"#back": "go_back"}),
     
         expand_item: function () {
             forge.tabs.open(this.model.get("link"));
@@ -259,6 +255,30 @@ Item View
 
 In ``expand_item()``, we are using ``forge.tabs.open()`` to open a new tab in
 a cross-platform manner. Our documentation for ``open()`` is :ref:`here <tabs-management>`.
+
+One last thing, the ``click_or_tap()`` function we have been using in the Views' events
+is a simple function that uses a ``tap`` event if we're on :ref:`forge.is.mobile <api-platform-detection>`
+or a ``click`` event if we are not mobile.
+::
+
+    click_or_tap: function(obj) {
+        //for property in obj, add "click " to property and use original value
+        var new_obj = {};
+        for(var property in obj) {
+            if (obj.hasOwnProperty(property)) {
+                if (forge.is.mobile()) {
+                    new_obj["tap " + property] = obj[property];
+                }
+                else {
+                    new_obj["click " + property] = obj[property];
+                }
+            }
+        }
+        return new_obj
+    }
+
+This is important because the ``click`` event is less responsive on mobile than
+``tap``.
 
 That's it
 ---------

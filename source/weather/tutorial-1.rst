@@ -1,7 +1,7 @@
 .. _weather-tutorial-1:
 
 Tutorial Part 1
-=================
+================
 
 In this tutorial, we will step through building a basic weather app using the Forge tools.
 This section of the tutorial will guide you through setting up the display,
@@ -10,6 +10,7 @@ The code in this tutorial is platform agnostic, but different configuration step
 The parts that are specific to a platform will be marked with **(Chrome Only)** or **(Android Only)**
 
 .. contents::
+   :backlinks: none
 
 Goal
 ----
