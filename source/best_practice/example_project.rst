@@ -165,34 +165,6 @@ and removing the old when it is done.
 Our ``index`` view creates a new ``Feed`` view for each iteam in the collection,
 and appends it to the page element.
 
-Feed view
----------
-::
-
-    Demo.Views.Feed = Backbone.View.extend({
-
-        events: Demo.Utils.click_or_tap({
-            ".feed-even": "expand_item",
-            ".feed-odd" : "expand_item"
-        }),
-        
-        expand_item: function () {
-            console.log(this.model.cid);
-            Demo.router.navigate("item/" + this.model.cid.split("").slice(1), true);
-        },
-
-        initialize: function() {
-            this.render();
-        },
-
-        render: function() {
-            var feed_class = (this.options.odd? "feed-odd" : "feed-even");
-            $(this.el).append('<div class="' + feed_class + '">' +
-                                this.model.get("title") +
-                                "</div>");
-            return this;
-        },
-    });
 
 The ``Feed`` view simply formats each item's title nicely, binding a ``click`` event
 to navigate the user to the ``/item/`` page.
@@ -211,47 +183,6 @@ the router passes ``[id]`` to ``item()``::
 
 ``Item`` is a very simple view that grabs title and date from the model and displays them nicely. Note that we're passing in the ``back``
 bool, which ``Page`` uses to work out which way the page should slide in.
-``Item`` is reproduced here for clarity
-
-Item View
----------
-
-::
-
-    Demo.Views.Item = Demo.Views.Page.extend({
-    
-        events: Demo.Utils.click_or_tap({"#back": "go_back"}),
-    
-        expand_item: function () {
-            forge.tabs.open(this.model.get("link"));
-        },
-    
-        initialize: function() {
-            this.render();
-        },
-    
-        go_back: function() {
-            Demo.router.navigate("", true);
-        },
-        
-        render: function() {
-            var author = this.model.get("author");
-            var author_line = (author ? " by " + author : "");
-    
-            $(this.el).append('<div id="back", class="feed-even">Back</div>');
-            
-            $(this.el).append('<li class="feed-odd">' +
-                                this.model.get("title") +
-                                '<div class="author">' +
-                                    author_line +
-                                '</div>' +
-                                '<div class="date">' +
-                                    this.model.get("publishedDate").split(" ").slice(0, -1).join(" ") +
-                                '</div>' +
-                              '</li>');
-            return this;
-        }
-    });
 
 In ``expand_item()``, we are using ``forge.tabs.open()`` to open a new tab in
 a cross-platform manner. Our documentation for ``open()`` is :ref:`here <tabs-management>`.
