@@ -47,7 +47,7 @@ There is a *general* section, for parameters which are not linked to any particu
         "release": {
           "provisioning_profile": "/home/trigger/release.mobileprovision",
           "developer_certificate": "iPhone Developer: James Brady (5W89HYT9F3)"
-        },
+        }
       }
     },
     ":ref:`android <local_conf-android>`": {
