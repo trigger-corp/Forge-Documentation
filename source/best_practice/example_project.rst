@@ -27,7 +27,10 @@ so we've included `Zepto <http://zeptojs.com/>`_, a "minimalist JavaScript frame
 We use Zepto throughout the views in the tutorial.
 
 Let's get stuck in
------------------
+------------------
+
+It's best to have one entry point for your application, with other included
+javascript files being just libraries, containing functions and objects.
 
 The entry point for the Javascript application is in index.html, ``$(Demo.init)`` calls ``init()`` when the page has loaded,
 defined in demo.js::
@@ -63,14 +66,22 @@ wrap with Underscore.js's
 `excellent <http://documentcloud.github.com/underscore/#collections>`_
 functions for working with collections of data.
 
-``Backbone.history.start()`` kicks off Backbone's window.onhashchange event subscribtion.
-If the browser doesn't support onhashchange, it monitors window.location periodically.
+Using Backbone.js
+-----------------
+
+``Backbone.history.start()`` kicks off Backbone's ``window.onhashchange`` event subscribtion.
+If the browser doesn't support ``onhashchange``, it monitors ``window.location`` periodically.
 When the url changes, the routes defined in ``routes.js`` are used::
 
     routes: {
         "" : "index",         // entry point
         "item/:item_id":"item"// #item/id
     },
+
+the routes map a url to a function. We have two routes defined here, one that
+matches ``/`` and one that matches ``/item/[item_id]``. ``item_id`` is then
+passed into ``item()`` as a parameter. Routes map out the URLs for your whole
+app.
 
 Let's say the user visits /, the router calls index()::
 
@@ -85,46 +96,13 @@ Let's say the user visits /, the router calls index()::
 
 This function creates an ``Index`` view, passing in our feeds collection
 (that we created back in ``init()``) and a boolean describing the direction of the animation.
-Because ``Index`` extends ``Page``, we can use the ``show()`` function,
-which we'll look at after looking at the ``index`` view.
+Because ``Index`` extends ``Page``, we can use the ``show()`` function.
 
-Index View
-----------
-
-The index view looks like this::
-
-    Demo.Views.Index = Demo.Views.Page.extend({
-    
-        initialize: function() {
-            this.render();
-        },
-    
-        render: function() {
-            var that = this;
-            this.collection.each(function(feed_item, index){
-                if (index % 2 === 1) {
-                    var new_view = new Demo.Views.Feed({
-                        model: feed_item,
-                        odd: true}
-                    );
-                } else {
-                    var new_view = new Demo.Views.Feed({
-                        model: feed_item,
-                        odd: false
-                    });
-                }
-                $(that.el).append(new_view.el);
-            });
-            return this;
-        }
-    });
 
 The entry point for every view is the ``initialize()`` function,
 which we use to kick of our ``render()`` function.
 ``render()`` iterates through each item in the collection,
 creating a ``Feed`` view for each, and appends it to the ``Index`` view's el.
-
-Because we used ``Page's`` ``show()`` function, we'd better look at that too::
 
 Page View
 ---------
@@ -159,8 +137,14 @@ Page View
         }
     });
 
-``pages`` are indended to be ``extend()`` ed by views, the ``show()`` function handles the business of animating the new element over the old
-and removing the old when it is done.
+``pages`` are indended to be ``extend()`` ed by views (including the ``Index`` view
+the routes just created).
+They have a ``show()`` function, which animates the new element over the old.
+The way it does this is worth highlighting:
+  #. Append the new element to the body, but hidden
+  #. Show the new element, but offset to the right of the viewport
+  #. Simultaneously slide the new element in from the right, and slide the old element off to the left
+  #. Finally, remove the old element from the DOM
 
 Our ``index`` view creates a new ``Feed`` view for each iteam in the collection,
 and appends it to the page element.
@@ -209,7 +193,8 @@ or a ``click`` event if we are not mobile.
     }
 
 This is important because the ``click`` event is less responsive on mobile than
-``tap``.
+``tap``. Backbone.js has excelent event integration, using jQuery's ``delegate``
+function within the views.
 
 That's it
 ---------
