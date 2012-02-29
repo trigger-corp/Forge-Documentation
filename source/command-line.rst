@@ -29,7 +29,7 @@ The file must be located along side the ``src/`` directory, for example::
         local_config.json
 
 Format of ``local_config.json``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------------------------------------
 ``local_config.json`` is a JSON file which specifies various runtime parameters of the ``forge`` commands.
 
 There is a *general* section, for parameters which are not linked to any particular target, and then per-target sections: *ios*, *android* and so on:
@@ -39,6 +39,7 @@ There is a *general* section, for parameters which are not linked to any particu
     ":ref:`general <local_conf-general>`": {
     },
     ":ref:`ios <local_conf-ios>`": {
+      "device": "simulator",
       "profiles": {
         "DEFAULT": {
           "provisioning_profile": "/home/trigger/development.mobileprovision"
@@ -64,10 +65,27 @@ There is a *general* section, for parameters which are not linked to any particu
     }
   }
 
+A note on file paths
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+You can specify files using a path relative to the current directory, or you can use an absolute path.
+
+On Windows, you will need to escape the backslashes in paths for your configuration file, e.g.::
+
+    {
+        "andoid": {
+            "sdk": "C:\\Users\\Tim Monks\\android-sdk-windows"
+        },
+        "profiles": {
+            "DEFAULT": {
+                "keystore": "..\\default.keystore"
+            }
+        }
+    }
+
 .. _local_conf-profiles:
 
 Profiles
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------------------------------------------------
 In the target-specific sections (e.g. *ios*, *android*), you can use *profiles*.
 
 Profiles allow for quick switching between configuration settings at different phases of your development.
@@ -76,7 +94,7 @@ For example, you need to use different credentials to sign iOS apps when creatin
 
 By creating a different profile in this section, you can quickly change between collections of configuration settings by naming a profile with the ``--profile`` command-line argument.
 
-If no ``--profile`` argument is given, Forge attempts to use a profile called ``DEFAULT``.
+If no ``--profile`` argument is given, Forge attempts to use a profile called ``DEFAULT`` - it's case sensitive, so you can create and use a profile called ``default`` if you wish, for example.
 
 .. important:: When supplying command-line overrides to profile settings, they take a form like ``--ios.profile.name value``, where ``name`` is the setting name to be overidden, and ``value`` is the setting value.
 
@@ -94,7 +112,15 @@ ios
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This section contains settings pertaining to building and running Forge apps for iOS.
 
-All settings should be placed inside a :ref:`profile <local_conf-profiles>`: available settings are shown below:
+The device to use when running iOS apps is not profile-specific:
+
+======================== =================================== ===============================================================
+Config Option            Command-line Switch                 Meaning
+======================== =================================== ===============================================================
+device                   --ios.device                        Either ``simulator``, ``device`` or a specific device ID
+======================== =================================== ===============================================================
+
+All other settings should be placed inside a :ref:`profile <local_conf-profiles>`: available settings are shown below:
 
 ======================== =================================== ===============================================
 Profile Config Option    Command-line Switch                 Meaning
@@ -111,13 +137,13 @@ Use this section for settings relating to building and running Forge apps for An
 
 The location of the Android SDK is not profile-specific:
 
-======================== =================================== =====================================================
+======================== =================================== ===============================================================
 Config Option            Command-line Switch                 Meaning
-======================== =================================== =====================================================
+======================== =================================== ===============================================================
 sdk                      --android.sdk                       Path to the Android SDK on your machine.
-device                   --android.device                    Device identifier to run your app on.
+device                   --android.device                    Device identifier to run your app on, e.g. ``323406C1AD9090EC``
 purge                    --android.purge                     Completely reset all state of the app before running.
-======================== =================================== =====================================================
+======================== =================================== ===============================================================
 
 The other settings should be in a :ref:`profile <local_conf-profiles>`:
 
