@@ -3,8 +3,8 @@
 Example Project
 ===============
 
-We've developed a little example project with a CSS reset,
-Backbone and a couple of pages with transitions.
+We've developed a little example project, using a CSS reset,
+Backbone.js and a couple of pages with transitions.
 
 Features
 --------
@@ -20,16 +20,16 @@ The code is hosted on github here: https://github.com/trigger-corp/Forge-Bootstr
 Included files
 ..............
 
-We're using the css reset from `html5boilerplate.com <http://html5boilerplate.com>`_
-to keep things sane. For mobile development, jQuery can be a quite heavyweight
-so we've included `Zepto <http://zeptojs.com/>`_, a "minimalist JavaScript framework for modern web browsers" We've found that it's a great jQuery-inspired js framework.
+We're using the CSS reset from `html5boilerplate.com <http://html5boilerplate.com>`_
+to reduce the impact of inconsistent rendering defaults on different platforms. For mobile development, jQuery can be a quite heavyweight
+so we've included `Zepto <http://zeptojs.com/>`_, a "minimalist JavaScript framework for modern web browsers". We've found that it's a great jQuery-inspired JS framework.
 
 We use Zepto throughout the views in the tutorial.
 
-Lets get stuck in
+Let's get stuck in
 -----------------
 
-The entry point for the javascript application is in index.html, ``$(Demo.init)`` calls ``init()``,
+The entry point for the Javascript application is in index.html, ``$(Demo.init)`` calls ``init()`` when the page has loaded,
 defined in demo.js::
 
     init: function () {
@@ -59,11 +59,11 @@ The ``Demo.Collections.Items`` collection is defined in models.js as::
 Simply a collection of Item models, easy enough! In the context of
 ``parseRSS()``, data is our RSS object, with
 ``data.entries`` being an array of entries, which we pass into the collection to
-wrap with underscore.js's
+wrap with Underscore.js's
 `excellent <http://documentcloud.github.com/underscore/#collections>`_
 functions for working with collections of data.
 
-``Backbone.history.start()`` kicks off backbone's window.onhashchange event subscribtion.
+``Backbone.history.start()`` kicks off Backbone's window.onhashchange event subscribtion.
 If the browser doesn't support onhashchange, it monitors window.location periodically.
 When the url changes, the routes defined in ``routes.js`` are used::
 
@@ -72,7 +72,7 @@ When the url changes, the routes defined in ``routes.js`` are used::
         "item/:item_id":"item"// #item/id
     },
 
-lets say the user visits /, the router calls index()::
+Let's say the user visits /, the router calls index()::
 
 
     index: function() {
@@ -85,7 +85,7 @@ lets say the user visits /, the router calls index()::
 
 This function creates an ``Index`` view, passing in our feeds collection
 (that we created back in ``init()``) and a boolean describing the direction of the animation.
-Becuase ``Index`` extends ``Page``, we can use the ``show()`` function,
+Because ``Index`` extends ``Page``, we can use the ``show()`` function,
 which we'll look at after looking at the ``index`` view.
 
 Index View
@@ -118,7 +118,7 @@ The index view looks like this::
             return this;
         }
     });
-	
+
 The entry point for every view is the ``initialize()`` function,
 which we use to kick of our ``render()`` function.
 ``render()`` iterates through each item in the collection,
@@ -141,10 +141,10 @@ Page View
             var el = this.el;
             if ($('.page').length) {
                 var $old = $('.page').not(el);
-				
+                
                 $old.get(0).style["margin-left"] = ""
                 $old.get(0).style["-webkit-transform"] = ""
-				
+            
                 $(el).appendTo('body').hide();
                 $(el).show().css({"margin-left": 320 * direction_coefficiant});
                 $(el).anim({translate3d: -320 * direction_coefficiant +'px,0,0'}, 0.3, 'linear');
@@ -174,8 +174,8 @@ Feed view
         events: Demo.Utils.click_or_tap({
             ".feed-even": "expand_item",
             ".feed-odd" : "expand_item"
-	    }),
-		
+        }),
+        
         expand_item: function () {
             console.log(this.model.cid);
             Demo.router.navigate("item/" + this.model.cid.split("").slice(1), true);
@@ -183,7 +183,7 @@ Feed view
 
         initialize: function() {
             this.render();
-        },    
+        },
 
         render: function() {
             var feed_class = (this.options.odd? "feed-odd" : "feed-even");
