@@ -20,7 +20,7 @@ Please feel free to base your own projects on this - it's a great springboard fo
 The code is hosted on github here: https://github.com/trigger-corp/Forge-Bootstrap
 
 Included files
-..............
+--------------------------------------------------------------------------------
 
 * `Backone.js <http://documentcloud.github.com/backbone/>`_ to handle history, user actions, and to structure our JavaScript in general
 * `HTML5 Boilerplate <http://html5boilerplate.com>`_ to reduce the impact of inconsistent rendering defaults on different platforms
@@ -92,7 +92,7 @@ However, especially on mobile platforms, your users will expect some form of dyn
 
 Page View
 ---------
-This snippet shows how we implement pages in this project, with an animated transition as one page becomes active.
+This snippet shows how we implement pages in this project, with an animated transition as one page becomes active. You can also see us using Zepto for DOM manipulation here.
 
 ::
 
