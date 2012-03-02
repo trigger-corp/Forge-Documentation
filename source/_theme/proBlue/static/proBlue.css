@@ -87,11 +87,12 @@ div.related {
   color: #ffffff;
   font-size: 1.1em;
   border-bottom: 1px solid #fff; 
+  padding-left: 20px;
 }
 
 div.related img {
     border: 0;
-    margin: 15px 0 0 20px;
+    margin-top: 15px;
 }
 
 div.related a {
