@@ -24,6 +24,8 @@ Normal in-page JavaScript is only able to make HTTP requests to the same server 
 The callback function *callback* is invoked with the content body of the requested URL as a string.
 As it is limited to ``GET`` requests and lacks the more advanced options of *forge.request.ajax*, it's recommended that *forge.request.get* is only used in very simple scenarios.
 
+.. _request_ajax:
+
 ``ajax``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: All**

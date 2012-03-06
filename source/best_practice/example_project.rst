@@ -1,264 +1,145 @@
 .. _best-practice-example_project:
 
+.. highlight:: js
+   :linenothreshold: 5
+
 Example Project
 ===============
 
-We've developed a little example project with a CSS reset,
-Backbone and a couple of pages with transitions.
+We've developed a little example project, using a CSS reset,
+Backbone.js and a couple of pages with transitions.
 
-Features
---------
+This project will show you how to:
 
-* Backbone.js
-* CSS reset
-* RSS feed parsing
-* Transitions
+* include your JavaScript files in your app
+* use Backbone.js to present a responsive interface
+* use a CSS reset
+* implement an example transition between views in your app
 
 Please feel free to base your own projects on this - it's a great springboard for a new project.
 The code is hosted on github here: https://github.com/trigger-corp/Forge-Bootstrap
 
 Included files
-..............
+--------------------------------------------------------------------------------
 
-We're using the css reset from `html5boilerplate.com <http://html5boilerplate.com>`_
-to keep things sane. For mobile development, jQuery can be a quite heavyweight
-so we've included `Zepto <http://zeptojs.com/>`_, a "minimalist JavaScript framework for modern web browsers" We've found that it's a great jQuery-inspired js framework.
+* `Backone.js <http://documentcloud.github.com/backbone/>`_ to handle history, user actions, and to structure our JavaScript in general
+* `HTML5 Boilerplate <http://html5boilerplate.com>`_ to reduce the impact of inconsistent rendering defaults on different platforms
+* `Zepto <http://zeptojs.com/>`_, a light-weight, mobile-focussed alternative to jQuery, for DOM manipulation
 
-We use Zepto throughout the views in the tutorial.
+Let's get stuck in
+------------------
 
-Lets get stuck in
------------------
+To work with your JavaScripts and CSS in the app, just include them in your index.html as you might in a normal website:
 
-The entry point for the javascript application is in index.html, ``$(Demo.init)`` calls ``init()``,
-defined in demo.js::
+.. code-block:: html
 
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/demo.css">
+
+    <script type="text/javascript" src="js/lib/zepto.min.js"></script>
+    <script type="text/javascript" src="js/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="js/lib/backbone-min.js"></script>
+    <script type="text/javascript" src="js/demo.js"></script>
+
+Here, we have simply used the HTML5 Boilerplate reset (``reset.css``), JavaScript libraries and two of our own files, ``demo.css`` and ``demo.js``.
+
+It's best to have one entry point for your application, with other included
+JavaScript files being just libraries, containing functions and objects. When using Backbone, your entry point should set up whatever your app requires to function, then start Backbone's history system.
+
+For example, in this project, we use ``$(Demo.init)`` to run the following function once, at app startup::
+
+    // Called once, at app startup
     init: function () {
-        Demo.Utils.parseRSS(rss_url, function(data) {
-            Demo.router = new Demo.Router();
-            Demo.feeds = new Demo.Collections.Items(data.entries);
-            Backbone.history.start();
+        // Grab the Trigger twitter feed
+        forge.request.ajax({
+            url: "https://twitter.com/statuses/user_timeline/14972793.json",
+            dataType: "json",
+            success: showIndex
         });
+
+        // to be called once we have the Trigger twitter feed
+        function showIndex(data) {
+            // Save away initial data
+            Demo.items = new Demo.Collections.Items(data);
+
+            // Set up Backbone
+            Demo.router = new Demo.Router();
+            Backbone.history.start();
+        }
     }
 
-The inner three lines are the most important here (they are just wrapped in
-``parseRSS()`` to get the RSS Feed). First we create the router::
+Here we're using the `Trigger twitter feed <http://twitter.com/#!/triggercorp>`_ as example data to work with: we use our :ref:`request.ajax <request_ajax>` function to retreive our tweets, store the data into a collection then start Backbone.
 
-    Demo.router = new Demo.Router();
+Using Backbone.js
+-----------------
 
-This is the backbone of... Backbone. The router is where the urls are defined,
-and handed over to the view code.
-
-The ``Demo.Collections.Items`` collection is defined in models.js as::
-
-    Demo.Models.Item = Backbone.Model.extend();
-    
-    Demo.Collections.Items = Backbone.Collection.extend({
-        model: Demo.Models.Item
-    });
-
-Simply a collection of Item models, easy enough! In the context of
-``parseRSS()``, data is our RSS object, with
-``data.entries`` being an array of entries, which we pass into the collection to
-wrap with underscore.js's
-`excellent <http://documentcloud.github.com/underscore/#collections>`_
-functions for working with collections of data.
-
-``Backbone.history.start()`` kicks off backbone's window.onhashchange event subscribtion.
-If the browser doesn't support onhashchange, it monitors window.location periodically.
-When the url changes, the routes defined in ``routes.js`` are used::
+``Backbone.history.start()`` kicks off Backbone's ``window.onhashchange`` event subscription.
+When the `fragment <http://en.wikipedia.org/wiki/Fragment_identifier>`_ of the URL changes, the routes defined in ``routes.js`` are used::
 
     routes: {
-        "" : "index",         // entry point
+        "" : "index",         // entry point: no hash fragment or #
         "item/:item_id":"item"// #item/id
     },
 
-lets say the user visits /, the router calls index()::
+The routes map a URL to a function. We have two routes defined here: one that
+matches ``#`` (or URLs with no hash fragment) and invokes ``index()``, and one that matches ``#item/[item_id]``.
+``item_id`` is then passed into ``item()`` as a parameter. Routes map out the URLs for your whole
+app.
 
+Using Backbone to manage views inside a Forge app is a great strategy: not only do we build URLs in the history stack (meaning the back button works as expected on Android, for example), we are also able to take complete control over what is displayed in the app, without having to resort to sluggish page loads.
 
-    index: function() {
-        var index = new Demo.Views.Index({
-            collection: Demo.feeds,
-            back      : false
-        });
-        index.show();
-    },
-
-This function creates an ``Index`` view, passing in our feeds collection
-(that we created back in ``init()``) and a boolean describing the direction of the animation.
-Becuase ``Index`` extends ``Page``, we can use the ``show()`` function,
-which we'll look at after looking at the ``index`` view.
-
-Index View
-----------
-
-The index view looks like this::
-
-    Demo.Views.Index = Demo.Views.Page.extend({
-    
-        initialize: function() {
-            this.render();
-        },
-    
-        render: function() {
-            var that = this;
-            this.collection.each(function(feed_item, index){
-                if (index % 2 === 1) {
-                    var new_view = new Demo.Views.Feed({
-                        model: feed_item,
-                        odd: true}
-                    );
-                } else {
-                    var new_view = new Demo.Views.Feed({
-                        model: feed_item,
-                        odd: false
-                    });
-                }
-                $(that.el).append(new_view.el);
-            });
-            return this;
-        }
-    });
-	
-The entry point for every view is the ``initialize()`` function,
-which we use to kick of our ``render()`` function.
-``render()`` iterates through each item in the collection,
-creating a ``Feed`` view for each, and appends it to the ``Index`` view's el.
-
-Because we used ``Page's`` ``show()`` function, we'd better look at that too::
+However, especially on mobile platforms, your users will expect some form of dynamic transition from one view to the next; to do that, you can organise your Backbone views into pages.
 
 Page View
 ---------
+This snippet shows how we implement pages in this project, with an animated transition as one page becomes active. You can also see us using Zepto for DOM manipulation here.
+
 ::
 
     Demo.Views.Page = Backbone.View.extend({
         className: "page",
-    
+
         initialize: function () {
             this.render();
         },
         show: function () {
-            direction_coefficiant = this.options.back? 1 : -1
-            var el = this.el;
+            $('.page').css({"position": "absolute"});
+            var direction_coefficient = this.options.back? 1 : -1;
             if ($('.page').length) {
-                var $old = $('.page').not(el);
-				
+                
+                var $old = $('.page').not(this.el);
+                
+                //This fix was hard-won, just doing .css(property, '') doesn't work!
                 $old.get(0).style["margin-left"] = ""
                 $old.get(0).style["-webkit-transform"] = ""
-				
-                $(el).appendTo('body').hide();
-                $(el).show().css({"margin-left": 320 * direction_coefficiant});
-                $(el).anim({translate3d: -320 * direction_coefficiant +'px,0,0'}, 0.3, 'linear');
-                $old.anim({translate3d: -320 * direction_coefficiant + 'px,0,0'}, 0.3, 'linear', function() {
+                
+                this.$el.appendTo('body').hide();
+                this.$el.show().css({"margin-left": 320 * direction_coefficient});
+                this.$el.anim({translate3d: -320 * direction_coefficient +'px,0,0'}, 0.3, 'linear');
+                $old.anim({translate3d: -320 * direction_coefficient + 'px,0,0'}, 0.3, 'linear', function() {
                     $old.remove();
+                    $('.page').css({"position": "static"});
                 });
             } else {
-                $(el).appendTo('body').hide();
-                $(el).show();
+                this.$el.appendTo('body').hide();
+                this.$el.show();
             }
             window.scrollTo(0, 0);
         }
     });
 
-``pages`` are indended to be ``extend()`` ed by views, the ``show()`` function handles the business of animating the new element over the old
-and removing the old when it is done.
+You can ``extend()`` this page in your own views if you wish, and use the ``show()`` method to switch from one to another.
 
-Our ``index`` view creates a new ``Feed`` view for each iteam in the collection,
-and appends it to the page element.
+For example, in this project, we create a page for the initial view of all the tweets, and a page for each individual tweet when the user selects it.
 
-Feed view
----------
-::
+Using other parts of the Forge API
+--------------------------------------------------------------------------------
+We have already seen the use of ``forge.request.ajax`` to easily make a request to a remote server. This project makes use of some other Forge APIs too.
 
-    Demo.Views.Feed = Backbone.View.extend({
+In ``expand_item()``, we use ``forge.tabs.open()`` to open an external page new tab in a cross-platform manner. Our documentation for ``open()`` is :ref:`here <tabs-management>`.
 
-        events: Demo.Utils.click_or_tap({
-            ".feed-even": "expand_item",
-            ".feed-odd" : "expand_item"
-	    }),
-		
-        expand_item: function () {
-            console.log(this.model.cid);
-            Demo.router.navigate("item/" + this.model.cid.split("").slice(1), true);
-        },
+Lastly, we use ``forge.is`` in the ``click_or_tap()`` function so that we can listen for tap events on mobile devices, but click events otherwise. Documentation for easy platform detection can be found here :ref:`forge.is.mobile <api-platform-detection>`
 
-        initialize: function() {
-            this.render();
-        },    
-
-        render: function() {
-            var feed_class = (this.options.odd? "feed-odd" : "feed-even");
-            $(this.el).append('<div class="' + feed_class + '">' +
-                                this.model.get("title") +
-                                "</div>");
-            return this;
-        },
-    });
-
-The ``Feed`` view simply formats each item's title nicely, binding a ``click`` event
-to navigate the user to the ``/item/`` page.
-
-When the user naviages to ``/item/[id]`` (where id is the index of the collection)
-the router passes ``[id]`` to ``item()``:: 
-
-    item: function(item_id) {
-            var item = new Demo.Models.Item(Demo.feeds.models[item_id]);
-            var item_view = new Demo.Views.Item({
-                model: item,
-                back : true
-            });
-            item_view.show();
-    }
-
-``Item`` is a very simple view that grabs title and date from the model and displays them nicely. Note that we're passing in the ``back``
-bool, which ``Page`` uses to work out which way the page should slide in.
-``Item`` is reproduced here for clarity
-
-Item View
----------
-
-::
-
-    Demo.Views.Item = Demo.Views.Page.extend({
-    
-        events: Demo.Utils.click_or_tap({"#back": "go_back"}),
-    
-        expand_item: function () {
-            forge.tabs.open(this.model.get("link"));
-        },
-    
-        initialize: function() {
-            this.render();
-        },
-    
-        go_back: function() {
-            Demo.router.navigate("", true);
-        },
-        
-        render: function() {
-            var author = this.model.get("author");
-            var author_line = (author ? " by " + author : "");
-    
-            $(this.el).append('<div id="back", class="feed-even">Back</div>');
-            
-            $(this.el).append('<li class="feed-odd">' +
-                                this.model.get("title") +
-                                '<div class="author">' +
-                                    author_line +
-                                '</div>' +
-                                '<div class="date">' +
-                                    this.model.get("publishedDate").split(" ").slice(0, -1).join(" ") +
-                                '</div>' +
-                              '</li>');
-            return this;
-        }
-    });
-
-In ``expand_item()``, we are using ``forge.tabs.open()`` to open a new tab in
-a cross-platform manner. Our documentation for ``open()`` is :ref:`here <tabs-management>`.
-
-One last thing, the ``click_or_tap()`` function we have been using in the Views' events
-is a simple function that uses a ``tap`` event if we're on :ref:`forge.is.mobile <api-platform-detection>`
-or a ``click`` event if we are not mobile.
 ::
 
     click_or_tap: function(obj) {
