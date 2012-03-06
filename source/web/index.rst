@@ -54,7 +54,7 @@ Deploying your web app to any node.js platform
 The web application created by ``forge build`` lives in <your-app-folder>/release/web/heroku. You can take
 the code from here and deploy to your favorite node.js platform like any other node.js web app.
 
-Best Practices
+Best practices
 --------------
 * Use ``forge.is.web()`` in the Forge Javascript framework to detect whether your app is running in a
   mobile browser and make any functionality or layout changes required. For example, a photo sharing app may
