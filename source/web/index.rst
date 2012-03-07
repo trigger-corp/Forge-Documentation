@@ -24,8 +24,8 @@ your mobile apps in just a few seconds (see
 `Building the Code <http://docs.trigger.io/en/v1.2/android/getting-started.html#building-the-code>`_
 if this is your first time building a Forge app).
 
-You can view the web app in your desktop browser by running ``forge run web``. This will open a new tab
-in your browser displaying your app.
+To run the web app locally you'll need to install `node.js <http://www.nodejs.org>`_ on your machine.
+Then type ``forge run web``. This will open a new tab in your browser displaying your app.
 
 .. note:: Even if you don't plan to deploy to the web, this is a great place to inspect the DOM and debug your
    Javascript using the Chrome Developer Tools or the Firebug plugin for Firefox
