@@ -12,12 +12,6 @@ The following methods allow you to determine what platform that is.
 
     :return boolean: Returns true if running on a mobile device
 
-``desktop``
--------------------------------------------------------------------------
-.. js:function:: is.desktop()
-
-    :return boolean: Returns true if running on a desktop/laptop computer
-
 ``android``
 -------------------------------------------------------------------------
 .. js:function:: is.android()
