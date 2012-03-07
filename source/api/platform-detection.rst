@@ -17,6 +17,12 @@ The following methods allow you to determine what platform that is.
 .. js:function:: is.desktop()
 
     :return boolean: Returns true if running on a desktop/laptop computer
+
+``web``
+-------------------------------------------------------------------------
+.. js:function:: is.web()
+
+    :return boolean: Returns true if running on as a hosted web app
  
 ``android``
 -------------------------------------------------------------------------

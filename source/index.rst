@@ -21,6 +21,7 @@ Your feedback is very important to us. Please send an email to support@trigger.i
    
    /forge/index.rst
    /android/index.rst
+   /web/index.rst
    /chrome/index.rst
    /best_practice/index
    /features/index
