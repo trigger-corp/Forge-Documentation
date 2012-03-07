@@ -12,14 +12,25 @@ There are four main commands when using forge:
 
 Run any command with the ``--help`` argument to see more information about the particular command.
 
-.. note:: All command line commands can be run with the ``--verbose`` parameter, to enable the display of more output.
+.. note:: All commands can be run with the ``--verbose`` parameter, to enable the display of more output.
+
+.. _command-line-notes-arguments:
+
+Command-line parameters
+------------------------------------------
+Parameters to the ``forge`` commands can be given as command-line options, or :ref:`stored in a file <parameters-in-a-file>`.
+
+Command-line options are dot-separated names, like ``--android.sdk /path/to/android-sdk``.
+
+A complete list of command-line options, is given in :ref:`command_line_notes_available_params`.
 
 .. _parameters-in-a-file:
 
 Storing parameters to Forge commands in a file
 ----------------------------------------------
 
-As an alternative to passing parameters to the various ``forge`` commands, it is possible to store these values in a file called ``local_config.json``. This is convenient for reuse of e.g. Keystores/Provisioning Profiles during ``forge package``.
+As an alternative to passing parameters to the various ``forge`` commands, it is possible to store these values in a file called ``local_config.json``.
+This is convenient for reuse of e.g. Keystores and Provisioning Profiles during ``forge package``.
 
 The file must be located along side the ``src/`` directory, for example::
 
@@ -85,7 +96,7 @@ On Windows, you will need to escape the backslashes in paths for your configurat
 .. _local_conf-profiles:
 
 Profiles
---------------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In the target-specific sections (e.g. *ios*, *android*), you can use *profiles*.
 
 Profiles allow for quick switching between configuration settings at different phases of your development.
@@ -98,11 +109,16 @@ If no ``--profile`` argument is given, Forge attempts to use a profile called ``
 
 .. important:: When supplying command-line overrides to profile settings, they take a form like ``--ios.profile.name value``, where ``name`` is the setting name to be overidden, and ``value`` is the setting value.
 
+.. _command_line_notes_available_params:
+
+Available Forge Parameters
+------------------------------------------
+
 .. _local_conf-general:
 
 general
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This section will contain configuration settings not related to any particular target.
+General parameters are configuration settings not related to any particular target.
 
 There are no settings currently used in this section.
 
@@ -115,7 +131,7 @@ This section contains settings pertaining to building and running Forge apps for
 The device to use when running iOS apps is not profile-specific:
 
 ======================== =================================== ===============================================================
-Config Option            Command-line Switch                 Meaning
+Config Option            Command-line Option                 Meaning
 ======================== =================================== ===============================================================
 device                   --ios.device                        Either ``simulator``, ``device`` or a specific device ID
 ======================== =================================== ===============================================================
@@ -123,7 +139,7 @@ device                   --ios.device                        Either ``simulator`
 All other settings should be placed inside a :ref:`profile <local_conf-profiles>`: available settings are shown below:
 
 ======================== =================================== ===============================================
-Profile Config Option    Command-line Switch                 Meaning
+Profile Config Option    Command-line Option                 Meaning
 ======================== =================================== ===============================================
 provisioning_profile     --ios.profile.provisioning_profile  Provisioning Profile to embed into your iOS app
 developer_certificate    --ios.profile.developer_certificate Name of certificate to sign iOS app with
@@ -138,7 +154,7 @@ Use this section for settings relating to building and running Forge apps for An
 The location of the Android SDK is not profile-specific:
 
 ======================== =================================== ===============================================================
-Config Option            Command-line Switch                 Meaning
+Config Option            Command-line Option                 Meaning
 ======================== =================================== ===============================================================
 sdk                      --android.sdk                       Path to the Android SDK on your machine.
 device                   --android.device                    Device identifier to run your app on, e.g. ``323406C1AD9090EC``
@@ -148,7 +164,7 @@ purge                    --android.purge                     Completely reset al
 The other settings should be in a :ref:`profile <local_conf-profiles>`:
 
 ======================== =================================== ===============================================
-Profile Config Option    Command-line Switch                 Meaning
+Profile Config Option    Command-line Option                 Meaning
 ======================== =================================== ===============================================
 keystore                 --android.profile.keystore          Path to your :ref:`keystore <releasing-keystore>`
 keyalias                 --android.profile.keyalias          Alias given to your key in the keystore
