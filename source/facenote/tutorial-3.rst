@@ -98,7 +98,7 @@ Finally, add some CSS styling for the close button in ``fb-note-demo.css``::
 
 Reference extension
 -------------------
-`fb-part-2.zip <../_static/facenote/fb-part-2.zip>`_ contains the code you should have at the end of this tutorial. Feel free to check your code against it, or build on it to improve the Facebook note demo add-on!
+`fb-part-3.zip <../_static/facenote/fb-part-3.zip>`_ contains the code you should have at the end of this tutorial. Feel free to check your code against it, or build on it to improve the Facebook note demo add-on!
 
 It's not working!
 -----------------
