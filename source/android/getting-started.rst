@@ -83,8 +83,6 @@ Dynamic Hello
 
 Ok, perhaps that wasn't all too impressive - let's add some dynamic functionality next.
 
-.. note:: logging currently doesn't work with the iOS emulator. We are fixing this as a high priority.
-
 * Remove the “Hello Android!” text from the body of ``index.html``
 * Create a file called ``content.js`` and add the following code::
 
