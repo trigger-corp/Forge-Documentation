@@ -76,6 +76,9 @@ Below is a template of a ``config.json`` file with links to a detailed descripti
         ":ref:`parameters <field-parameters>`": {},
         ":ref:`homepage <field-homepage>`": "http://example.com"",
         ":ref:`partners <field-partners>`": {},
+        ":ref:`modules <field-modules>`": {
+            "topbar": true
+        },
     }
 
 
@@ -201,6 +204,14 @@ homepage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Your website, or location of more information about this app.
+
+.. _field-modules:
+
+modules
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Enable and optionally configure optional modules.
+
 
 .. _field-partners:
 
