@@ -27,7 +27,7 @@ Your feedback is very important to us. Please send an email to support@trigger.i
    /features/index
    /config
    /api/index
+   /tools/index
    /partners/index.rst
-   /command-line
    /releasing
    /release-notes
