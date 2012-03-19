@@ -1,4 +1,4 @@
-.. _weather-extensions:
+.. _tutorials-weather-extensions:
 
 Possible Extensions
 ===================

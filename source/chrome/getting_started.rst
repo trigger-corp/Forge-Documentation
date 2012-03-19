@@ -44,4 +44,4 @@ Loading Chrome Extensions
 * You should see 'Hello Chrome' alert window as soon as the extension has loaded.
 
 
-Now that you're familiar with some basics try going through the :ref:`Weather App tutorial<weather-tutorial-1>`\ .
+Now that you're familiar with some basics try going through the :ref:`Weather App tutorial<tutorials-weather-tutorial-index>`\ .

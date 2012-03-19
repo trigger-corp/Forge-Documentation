@@ -1,4 +1,4 @@
-.. _best-practice-libraries
+.. _best-practice-libraries:
 
 Using Javascript libraries
 ==========================

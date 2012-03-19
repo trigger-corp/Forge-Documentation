@@ -30,7 +30,7 @@ Populating City Selection
 -----------------------------
 **Goal: Running code which modifies page content**
 
-* Open ``weather.js`` and remove ``getWeatherInfo('Boston', populateWeatherConditions);`` from the document :ref:`ready listener <weather-tutorial-1-ready-listener>`\ .
+* Open ``weather.js`` and remove ``getWeatherInfo('Boston', populateWeatherConditions);`` from the document ready listener.
 * Since we will be modifying the page to add cities we need to make sure the page is fully loaded::	
 
     $(function(){
@@ -39,7 +39,7 @@ Populating City Selection
 
 * Inside of the document ready wrapper create an array and populated with some cities, for example::
 
-    //places I've been
+    // places I've been
     var cities = ['Boston', 'New York', 'Washington DC', 'Tampa', 'Houston', 'Montreal',
         'Los Angeles', 'Miami', 'West Palm Beach']; //and a few others
 
@@ -162,16 +162,16 @@ Things to check:
 * Any code that modified the page should be inside the page ready listener.
   This includes city selection population, checking preferences on startup, and city change handling code.
 
+**Mobile Only**
+
+* Use :ref:`Catalyst<tutorials-weather-tutorial-1-catalyst-debugging>` to inspect logging output and html of ``index.html``
+* This :ref:`page<mobile-troubleshooting>` shows how to troubleshoot some previously encountered errors
+
 **Chrome only**
 
 * Use Chrome's development tools to set breakpoint, step thorough the code, and evaluate expressions as necessary
 
-**Android Only**
-
-* Use :ref:`Catalyst<weather-tutorial-1-catalyst-debugging>` to inspect logging output and html of ``index.html``
-* This :ref:`page<android-weather-troubleshooting>` shows how to troubleshoot some previously encountered errors
-
 What's next?
 ------------
-It's easy to run the Weather App on a :ref:`different platform<weather-conversion>`
-Here are some :ref:`suggestions<weather-extensions>` on how to extend the weather app
+It's easy to run the Weather App on a :ref:`different platform<tutorials-weather-conversion>`
+Here are some :ref:`suggestions<tutorials-weather-extensions>` on how to extend the weather app

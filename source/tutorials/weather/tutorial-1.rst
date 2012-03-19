@@ -1,13 +1,16 @@
-.. _weather-tutorial-1:
+.. _tutorials-weather-tutorial-1:
 
 Tutorial Part 1
 ================
 
 In this tutorial, we will step through building a basic weather app using the Forge tools.
+
 This section of the tutorial will guide you through setting up the display,
 creating internal data representation, and doing some basic debugging using logging.
-The code in this tutorial is platform agnostic, but different configuration steps are be necessary for Chrome and Android.
-The parts that are specific to a platform will be marked with **(Chrome Only)** or **(Android Only)**
+
+You have the option of creating either mobile (native iOS, native Android and website) output or Chrome browser-plugin output. The code is platform agnostic, but different configuration steps are necessary for mobile and Chrome.
+
+The parts that are specific to a platform will be marked with **(Mobile Only)** or **(Chrome Only)**.
 
 .. contents::
    :backlinks: none
@@ -20,18 +23,18 @@ This part of the tutorial is intended to:
 * Set up weather forecast data structures
 * Familiarize you with developing and running a basic app using Forge
 
-.. _weather-tutorial-1-preparation:
+.. _tutorials-weather-tutorial-1-preparation:
 
 Preparation
 -----------
-* Firstly, if you haven't already done so go through the :ref:`Chrome getting started <chrome-getting-started>` or :ref:`android-getting-started` instructions.
+* Firstly, if you haven't already done so go through the :ref:`mobile-getting-started` or :ref:`chrome-getting-started` instructions.
   This will help you set up the basics and teach you how to build and run your code.
-* Remove any files in the ``src`` directory except ``config.json``, the rest of the files will not be needed for the rest of this tutorial.
+* Remove any files in the ``src`` directory except ``config.json`` (the remaining files will not be needed for the rest of this tutorial).
 * Download `resources.zip <../_static/weather/resources.zip>`_, which contains images and other resources needed for this tutorial; extract the ``resources`` directory to the ``src`` directory.
 * Create a new javascript file called ``weather.js`` inside the ``src`` directory. This file will contain all of the JavaScript code for the rest of the tutorial.
 * Create a file called ``index.html`` inside the ``src`` directory. This will be the html page that displays the forecast information.
 
-.. _weather-tutorial-1-setting-up-the-UI:
+.. _tutorials-weather-tutorial-1-setting-up-the-UI:
 
 Setting up the UI
 -----------------
@@ -71,8 +74,8 @@ Open ``config.json`` and add the following configuration to set up the toolbar b
     },
 
 Build and run the code.
-Instructions on how to build and load an extension for Chrome can be found :ref:`here<chrome-getting-started-build>`\ .
-Instruction on how to build and run an Android app can be found :ref:`here <android-getting-started-build>`\ .
+Instruction on how to build and run a mobile app can be found :ref:`here <mobile-getting-started-build>`.
+Instructions on how to build and load an extension for Chrome can be found :ref:`here<chrome-getting-started-build>`.
 
 On Chrome, a new toolbar icon should be visible!
 
@@ -80,8 +83,8 @@ Create dummy data
 -------------------------------------------
 **Goal: Set up some dummy data for a weather forecast**
 
-.. _weather-tutorial-1-forecast-information:
-.. _weather-tutorial-1-current-conditions:
+.. _tutorials-weather-tutorial-1-forecast-information:
+.. _tutorials-weather-tutorial-1-current-conditions:
 
 First, we will create some dummy data in JSON format - open ``weather.js`` and paste the following code::
 
@@ -98,7 +101,7 @@ First, we will create some dummy data in JSON format - open ``weather.js`` and p
         wind_condition: "Wind: N at 9 mph"
     };
 
-.. _weather-tutorial-1-forecast-conditions:
+.. _tutorials-weather-tutorial-1-forecast-conditions:
 
 We'll use a helper function to create daily forecast objects::
 
@@ -134,7 +137,27 @@ Using ``forge.logging.log``, we can inspect all the properties of the dummy obje
 
     forge.logging.log(mountainViewForecast);
 
-.. _weather-tutorial-1-chrome-debugging:
+.. _tutorials-weather-tutorial-1-chrome-debugging:
+
+Remote Debugging on Mobile
+-----------------------------
+**Goal getting started with Catalyst**
+
+As you've already seen in :ref:`mobile-getting-started` ``forge.logging.log`` prints output to console/terminal.
+You can also use remote debugging which provides some helpful tools for troubleshooting and examining the app at runtime.
+
+#. Open up a browser and go to `<https://trigger.io/catalyst/>`_.
+#. On this page there will be a generated ``script`` tag which you copy and insert into the head element of your ``index.html`` file.
+#. Click on the auto-generated link which takes you to a page that looks similar to Chrome's debugging tools.
+#. Try :ref:`running <mobile-getting-started-build>` the code.
+   In a few moments you should see the device get picked up in the **Catalyst** section.
+#. Open ``weather.js`` and add the following at the **beginning** of the file::
+
+    window.forge.debug = true;
+
+This will ensure that Catalyst is connected and ready before the code runs, preventing any logging from being lost.
+
+.. note:: Catalyst is a great tool, especially for debugging mobile apps: check out the "Elements" view to inspect and modify the DOM, and the "Network" view to diagnose performance problems.
 
 Debugging on Chrome
 ---------------------
@@ -158,27 +181,7 @@ The :ref:`background <extension-concept-background>` context also receives the l
 * The console may not be displayed automatically, but it can be opened by pressing the Esc key or clicking the console button on the bottom left
 * The background tracks all logging
 
-.. _weather-tutorial-1-catalyst-debugging:
-
-Remote Debugging on Android
------------------------------
-**Goal getting started with Catalyst**
-
-As you've already seen in :ref:`Android Getting Started<android-getting-started>` ``forge.logging.log`` prints output to console/terminal.
-You can also use remote debugging which provides some helpful tools for troubleshooting and examining the app at runtime.
-
-#. Open up a browser and go to `<https://trigger.io/catalyst/>`_.
-#. On this page there will be a generated ``script`` tag which you copy and insert into the head element of your ``index.html`` file.
-#. Click on the auto-generated link which takes you to a page that looks similar to Chrome's debugging tools.
-#. Try :ref:`running <android-getting-started-build>` the code.
-   In a few moments you should see the device get picked up in the **Catalyst** section.
-#. Open ``weather.js`` and add the following at the **beginning** of the file::
-
-    window.forge.debug = true;
-
-This will ensure that Catalyst is connected and ready before the code runs, preventing any logging from being lost.
-
-.. note:: Catalyst is a great tool, especially for debugging mobile apps: check out the "Elements" view to inspect and modify the DOM, and the "Network" view to diagnose performance problems.
+.. _tutorials-weather-tutorial-1-catalyst-debugging:
 
 Reference extension
 -------------------
@@ -201,6 +204,6 @@ Things to check:
 **Android Only**
 
 * Sometimes the emulator can be buggy and the script hangs on the ``Available device`` section. Simply rerunning the script usually fixes this.
-* This :ref:`page<android-weather-troubleshooting>` shows how to troubleshoot some previously encountered errors.
+* This :ref:`page<mobile-troubleshooting>` shows how to troubleshoot some previously encountered errors.
 
 Continue on to :ref:`weather-tutorial-2`

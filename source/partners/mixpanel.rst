@@ -3,7 +3,7 @@
 Mixpanel
 ===============================================================================
 Mixpanel is a real-time analytics service that can help you understand how users interact with your application.
-See the `Mixpanel <http://www.mixpanel.com>`_ home page to find out what sort of functionality is provided and how the specific API is used.
+See the `Mixpanel home page <http://www.mixpanel.com>`_ to find out what sort of functionality is provided and how the specific API is used.
 
 ``mpq``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

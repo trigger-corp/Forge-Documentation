@@ -15,7 +15,7 @@ Testing your web app
 --------------------
 First off you'll need a Forge application. If you're not yet set up in Forge, try our
 :ref:`Getting Started Guide <forge-index>` then our :ref:`Chrome <chrome-index>` or
-:ref:`Android <android-index>` tutorials to learn the basics - or you could download one of our
+:ref:`Mobile <mobile-index>` tutorials to learn the basics - or you could download one of our
 `demo apps <http://docs.trigger.io/en/v1.2/android/getting-started.html#building-the-code>`_
 from GitHub.
 

@@ -23,4 +23,3 @@ API Reference
    /api/gmail
    /api/sms
    /api/topbar
-   /partners/index
