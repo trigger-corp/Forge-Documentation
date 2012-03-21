@@ -44,7 +44,7 @@ Example::
 
    forge.topbar.addButton({
      icon: "search.png",
-	 text: "Search",
+     text: "Search",
      position: "left"
    }, function () {
      alert("Search pressed");
@@ -52,7 +52,7 @@ Example::
 
 .. js:function:: topbar.addButton(params, callback, error)
 
-    :param object params: Button options, must contain an ``icon`` and optionally ``position``
+    :param object params: Button options, must contain an ``icon`` and optionally ``position`` and ``text``
     :param function() callback: callback to be invoked each time the button is pressed
     :param function(content) error: called with details of any error which may occur
 
