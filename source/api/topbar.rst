@@ -38,7 +38,7 @@ Set the title displayed in the top bar.
 
 Add a button with an icon to the top bar. The first parameter is an object containing a ``icon`` property.
 
-On iOS the first paramater may also contain a ``position`` property, set to ``left`` or ``right`` determining the location of the button. As well as a ``text`` property, which will define text to be shown in place of an icon for the button.
+On iOS the first paramater may also contain a ``position`` property, set to ``left`` or ``right`` determining the location of the button. As well as a ``text`` property, which will define text to be shown in place of an icon for the button. If the ``text`` property is defined then the ``icon`` will not be used on iOS, however on Android the ``icon`` will always be used as text is not supported.
 
 Example::
 
