@@ -154,11 +154,11 @@ div.sphinxsidebar ul li {
 
 div.sphinxsidebar ul li li{
     line-height: 1.5em;
-    margin: 0.3em 0 0.7em 0;
+    margin: 0.5em 0;
 }
 
 div.sphinxsidebar li a {
-    color: #666;
+    color: #333;
 }
 /*    border-bottom:1px solid #ccc;*/
 
@@ -166,13 +166,8 @@ div.sphinxsidebar a:hover {
     text-decoration: none;    
 }
 
-div.sphinxsidebar li:hover a,
-div.sphinxsidebar li.current li:hover a {
-    color: #000;
-}
-
 div.sphinxsidebar li:hover li a {
-    color: #666;
+    color: #333;
 }
 
 div.sphinxsidebar input {
@@ -197,7 +192,7 @@ div.sphinxsidebar input:focus {
 /*     border-bottom: 1px solid #999;*/
 div.sphinxsidebar input[type=text]{
     padding: 0.23em 0.4em;
-	color:#333;
+    color:#333;
 }
 div.sphinxsidebar input[type=submit]{
   background-color: #168DA2;
@@ -239,30 +234,35 @@ div.body div.contents li {
 
 div.sphinxsidebar li.toctree-l1:before {
     content: "▸ ";
-    color: #666;
-}
-
-div.sphinxsidebar ul li.current:before {
-    content: "▸ ";
-    color: #DD4B39;
+    color: #333;
 }
 
 div.sphinxsidebar li.current ul li:before {
     content: "";
 }
 
+div.sphinxsidebar li a,
+div.sphinxsidebar li.current li a,
+div.sphinxsidebar li.current li.current li a {
+    color: #333;
+}
+
 div.sphinxsidebar li.current a,
-div.sphinxsidebar li.current li.current a {
+div.sphinxsidebar li.current li.current a,
+div.sphinxsidebar li.current li.current li.current a {
     color: #DD4B39;
 }
 
-div.sphinxsidebar li.current li a {
-    color: #666;
+div.sphinxsidebar a:hover {
+    color: #000;
 }
 
-div.sphinxsidebar li.current:before {
-    color: #666;
+/*
+div.sphinxsidebar ul li.current:before {
+    content: "▸ ";
+    color: #DD4B39;
 }
+*/
 
 a:hover {
     text-decoration: underline;

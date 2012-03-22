@@ -5,7 +5,7 @@ Tutorial Part 1
 
 In this tutorial, we will use the Forge platform to create a browser extension which lets users attach text notes to profiles on Facebook.
 
-As this particular app is based around modifying the contents of web pages on-the-fly, it is not applicable to mobile app development: see :ref:`our weather app tutorial <weather-tutorial-1>` for how to get started with a mobile app.
+As this particular app is based around modifying the contents of web pages on-the-fly, it is not applicable to mobile app development: see :ref:`our weather app tutorial <tutorials-weather-tutorial-1>` for how to get started with a mobile app.
 
 .. contents::
    :backlinks: none

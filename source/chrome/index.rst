@@ -18,4 +18,3 @@ This documentation contains information on how to set up your development enviro
 
   getting_started
   /concepts
-  /facenote/index

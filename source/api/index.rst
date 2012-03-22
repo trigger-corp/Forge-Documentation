@@ -22,4 +22,4 @@ API Reference
    /api/contact
    /api/gmail
    /api/sms
-   /partners/index
+   /api/topbar

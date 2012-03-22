@@ -10,3 +10,4 @@ The Forge platform is lightweight and flexible: if you wish, you can include som
 
   /partners/parse.rst  
   /partners/mixpanel.rst
+  /partners/mixpanel-chrome-demo.rst  

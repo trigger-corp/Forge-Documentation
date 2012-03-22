@@ -76,6 +76,9 @@ Below is a template of a ``config.json`` file with links to a detailed descripti
         ":ref:`parameters <field-parameters>`": {},
         ":ref:`homepage <field-homepage>`": "http://example.com"",
         ":ref:`partners <field-partners>`": {},
+        ":ref:`modules <field-modules>`": {
+            "topbar": true
+        },
     }
 
 
@@ -201,6 +204,14 @@ homepage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Your website, or location of more information about this app.
+
+.. _field-modules:
+
+modules
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Enable and optionally configure optional modules.
+
 
 .. _field-partners:
 
@@ -334,7 +345,7 @@ The ``browser_action`` configuration controls the appearance and function of too
 
 .. _field-default_icons:
 
-* ``default_popup`` should refer to a local HTML file, included in your app, which will be displayed after the button is clicked; for more information, see :ref:`part I of the tutorial <weather-tutorial-1-setting-up-the-UI>`
+* ``default_popup`` should refer to a local HTML file, included in your app, which will be displayed after the button is clicked; for more information, see :ref:`part I of the tutorial <tutorials-weather-tutorial-1-setting-up-the-UI>`
 * ``default_icon`` should refer to a local image file, included in your app, to be used as the button icon
 * ``default_icons`` allows you to override the ``default_icon`` icon, one platform at a time: the object keys should be one or more of ``chrome``, ``firefox``, ``safari`` or ``ie``
 

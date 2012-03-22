@@ -38,20 +38,20 @@ Using Mustache, it is quite simple to display the data.
 
 * Open ``index.html``
 * Remove "Weather forecast here." from the body tag
-* Append to the body tag a Mustache template to represent :ref:`forecast information <weather-tutorial-1-forecast-information>`:
+* Append to the body tag a Mustache template to represent :ref:`forecast information <tutorials-weather-tutorial-1-forecast-information>`:
 
 .. code-block:: html
 
-    <div class="template" id="forecast_information_tmpl">
+    <script type="x-mustache-template" id="forecast_information_tmpl">
         <span>Forecast for {{city}}</span><br/>
         <span>{{forecast_date}}</span>
-    </div>
+    </script>
 
-* Next we need a template to render the :ref:`current conditions <weather-tutorial-1-current-conditions>` object:
+* Next we need a template to render the :ref:`current conditions <tutorials-weather-tutorial-1-current-conditions>` object:
 
 .. code-block:: html
 
-    <div class="template" id="current_conditions_tmpl">
+    <script type="x-mustache-template" id="current_conditions_tmpl">
         <table>
             <tr>
                 <td><img src="{{icon}}"></td>
@@ -63,13 +63,13 @@ Using Mustache, it is quite simple to display the data.
                 </td>
             </tr>
         </table>
-    </div>
+    </script>
 
-* And finally add a template for :ref:`forecast conditions <weather-tutorial-1-forecast-conditions>`. Here, we're using `Mustache's Enumerable syntax <https://github.com/janl/mustache.js>`_ to loop through a few days' conditions:
+* And finally add a template for :ref:`forecast conditions <tutorials-weather-tutorial-1-forecast-conditions>`. Here, we're using `Mustache's Enumerable syntax <https://github.com/janl/mustache.js>`_ to loop through a few days' conditions:
 
 .. code-block:: html
 
-    <div class="template" id="forecast_conditions_tmpl">
+    <script type="x-mustache-template" id="forecast_conditions_tmpl">
         {{#conditions}}
         <td>
             <h2>{{day_of_week}}</h2>
@@ -79,7 +79,7 @@ Using Mustache, it is quite simple to display the data.
             <h6>High: {{high}}&deg;F</h6>
         </td>
         {{/conditions}}
-    </div>
+    </script>
 
 * Next we need designated elements where the templated information will be appended. Add the following tags following the templates inside the body element:
 
@@ -130,11 +130,10 @@ Using Mustache, it is quite simple to display the data.
 
 .. important:: Any code that modifies the page should only be run when the page is finished loading. The above achieves this using jQuery's document ready listener ``$(function () { //Code here })``.
 
+**(Mobile Only)** :ref:`Build <mobile-getting-started-build>` the code and :ref:`run <mobile-getting-started-run>` the app and you should see the dummy weather forecast displayed automatically.
 
 **(Chrome Only)** :ref:`Build <chrome-getting-started-build>` the code and :ref:`reload <chrome-getting-started-load-extension>` the extension.
 When you click on the toolbar button you should see the weather forecast displayed in a pop-up window.
-
-**(Android Only)** :ref:`Build <android-getting-started-build>` the code and :ref:`run <android-getting-started-run>` the app and you should see the dummy weather forecast displayed automatically.
 
 Adding CSS
 -----------
@@ -159,17 +158,17 @@ It's not working!
 Things to check:
 
 * The best debugging tool is to add logging using ``forge.logging.log()`` throughout the code to track progress
-* Make sure that you have downloaded the :ref:`resources<weather-tutorial-1-preparation>` and that the paths to the specific resources are correct
+* Make sure that you have downloaded the :ref:`resources<tutorials-weather-tutorial-1-preparation>` and that the paths to the specific resources are correct
 * Check that the jQuery script tags appear before the ``weather.js`` script tag inside of ``index.html`` head tag
 * ``populateWeatherConditions`` invocation should be inside the document ready listener (modifications to the page should not be made until it finishes loading)
+
+**Mobile Only**
+
+* Use :ref:`Catalyst<tutorials-weather-tutorial-1-catalyst-debugging>` to inspect logging output and html of ``index.html``
+* This :ref:`page<mobile-troubleshooting>` shows how to troubleshoot some previously encountered errors
 
 **Chrome only**
 
 * Use chromes development tools to set breakpoint, step thorough the code, and evaluate expressions as necessary
-
-**Android Only**
-
-* Use :ref:`Catalyst<weather-tutorial-1-catalyst-debugging>` to inspect logging output and html of ``index.html``
-* This :ref:`page<android-weather-troubleshooting>` shows how to troubleshoot some previously encountered errors
 
 Continue on to :ref:`weather-tutorial-3`

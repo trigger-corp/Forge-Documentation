@@ -1,33 +1,7 @@
-.. _command-line-notes:
-
-Command-line Notes
-===============================================================================
-
-There are four main commands when using forge:
-
-* ``forge create``
-* ``forge build``
-* ``forge run``
-* ``forge package``
-
-Run any command with the ``--help`` argument to see more information about the particular command.
-
-.. note:: All commands can be run with the ``--verbose`` parameter, to enable the display of more output.
-
-.. _command-line-notes-arguments:
-
-Command-line parameters
-------------------------------------------
-Parameters to the ``forge`` commands can be given as command-line options, or :ref:`stored in a file <parameters-in-a-file>`.
-
-Command-line options are dot-separated names, like ``--android.sdk /path/to/android-sdk``.
-
-A complete list of command-line options, is given in :ref:`command_line_notes_available_params`.
-
 .. _parameters-in-a-file:
 
 Storing parameters to Forge commands in a file
-----------------------------------------------
+==============================================
 
 As an alternative to passing parameters to the various ``forge`` commands, it is possible to store these values in a file called ``local_config.json``.
 This is convenient for reuse of e.g. Keystores and Provisioning Profiles during ``forge package``.

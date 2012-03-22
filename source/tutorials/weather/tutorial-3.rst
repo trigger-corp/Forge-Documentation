@@ -77,7 +77,7 @@ The data returned should look something like the following:
         </weather>
     </xml_api_reply>
 
-.. _weather-tutorial-3-permissions:
+.. _tutorials-weather-tutorial-3-permissions:
 
 Adding Permissions
 -------------------
@@ -115,15 +115,15 @@ Now that you have a feel for what the returned data looks like, let's add a func
 The returned data is a Document object which can be easily parsed with jQuery.
 
 At this point the function doesn't actually do anything with the data but you can test to see if the ajax call succeeded.
-For example to look up the forecast in Boston add the following code to the :ref:`document ready listener<weather-tutorial-1-ready-listener>`::
+For example to look up the forecast in Boston add the following code to the document ready listener::
 
     $(function() {
         getWeatherInfo('Boston');
     });
 
 You can verify that this call is working by checking the console output.
-**(Chrome Only)** Check the console of the :ref:`pop-up<weather-tutorial-1-chrome-debugging>`:
-**(Android Only)** Check either the command prompt/terminal or console of :ref:`Catalyst <weather-tutorial-1-catalyst-debugging>`
+**(Mobile Only)** Check either the command prompt/terminal or console of :ref:`Catalyst <tutorials-weather-tutorial-1-catalyst-debugging>`
+**(Chrome Only)** Check the console of the :ref:`pop-up<tutorials-weather-tutorial-1-chrome-debugging>`:
 
 Parsing the Data
 ----------------
@@ -244,16 +244,16 @@ Things to check:
 
 * Make sure all of the dummy code from the previous sections is removed
 * The best debugging tool is to add logging using forge.logging.log() throughout the code to track progress
-* If the ``forge.request.ajax`` call is failing make sure you've added to appropriate :ref:`permissions<weather-tutorial-3-permissions>` to the configuration
+* If the ``forge.request.ajax`` call is failing make sure you've added to appropriate :ref:`permissions<tutorials-weather-tutorial-3-permissions>` to the configuration
 * You can validate that the parsing is working as expected by logging out the generated objects and inspecting their properties
+
+**Mobile Only**
+
+* Use :ref:`Catalyst<tutorials-weather-tutorial-1-catalyst-debugging>` to inspect logging output and html of ``index.html``
+* This :ref:`page<mobile-troubleshooting>` shows how to troubleshoot some previously encountered errors
 
 **Chrome only**
 
 * Use chromes development tools to set breakpoint, step thorough the code, and evaluate expressions as necessary
-
-**Android Only**
-
-* Use :ref:`Catalyst<weather-tutorial-1-catalyst-debugging>` to inspect logging output and html of ``index.html``
-* This :ref:`page<android-weather-troubleshooting>` shows how to troubleshoot some previously encountered errors
 
 Continue on to :ref:`weather-tutorial-4`
