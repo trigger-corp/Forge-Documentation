@@ -26,15 +26,20 @@ Notes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Mobile**
 
-Returns a file object for a image selected by the user from their photo gallery or (if possible on the device) taken using their camera. If an image is taken using their camera it will be saved in the default photo album on the device.
+Returns a file object for a image selected by the user from their photo gallery or (if possible on the device) taken using their camera. 
 
-Images will be stored at their full resolution but resized when displayed or uploaded using the height and width parameters given as the maximum size. Not setting a width and height property can cause apps to become slow and potentially run out of memory.
+The optional parameters can contain any combination of the following:
+
+- ``width``: The maximum height of the image when used, if the returned image is larger than this it will be automatically resized before display. The stored image will not be resized.
+- ``height``: As ``width`` but sets a maximum height, both ``height`` and ``width`` can be set.
+- ``source``: By default the user will be prompted to use the camera or select an image from the photo gallery, if you want to limit this choice you can set this to ``"camera"`` or ``"gallery"``.
+- ``saveLocation``: By default camera photos will be saved to the device photo album, with this setting they can be forced to be saved within your application by using ``"file"``.
 
 Returned files will be accessible to the app as long as they exist on the device.
 
 .. js:function:: file.getImage([params, ]success, error)
 
-    :param object params: object optionally containing a height and or width parameter which images will be resized to ensure they are no larger than.
+    :param object params: object optional parameters.
     :param function(file) success: callback to be invoked when no errors occur (argument is the returned file)
     :param function(content) error: called with details of any error which may occur
 
@@ -88,13 +93,13 @@ Returns the base64 value for a files content.
     :param function(base64String) success: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
 
-``delete``
+``remove``
 ~~~~~~~~~~
 **Platforms: Mobile**
 
 Delete a file from the local filesystem, will work for cached files but not images stored in the users photo gallery.
 
-.. js:function:: file.delete(file, success, error)
+.. js:function:: file.remove(file, success, error)
 
     :param file file: the file object to delete
     :param function() success: callback to be invoked when no errors occur
