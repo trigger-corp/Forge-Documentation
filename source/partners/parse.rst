@@ -25,7 +25,7 @@ In order for your app to communicate with the Parse servers you must specifiy bo
 API: ``forge.partners.parse``
 -----------------------------
 
-Push notification received through Parse can be used with the generic push notification event in Forge, see the :ref:`event API <api-event>` for more details. The following code is an example of how to show an alert to a user when a push notification is recieved.
+Push notifications received through Parse can be used with the generic push notification event in Forge, see the :ref:`event API <api-event>` for more details. The following code is an example of how to show an alert to a user when a push notification is recieved.
 
 Example::
 
@@ -33,10 +33,10 @@ Example::
         alert(msg.alert);
     });
 
-Parse uses channels to send push notifications to specific groups of users, by default all users are subscribed to the empty channel, if you wish to send push notifications to specific users you can use the following methods to manage the channels a user is subscribed to:
+Parse uses channels to send push notifications to specific groups of users, by default all users are subscribed to the empty channel; if you wish to send push notifications to specific users you can use the following methods to manage the channels a user is subscribed to:
 
-subscribe
-~~~~~~~~~
+push.subscribe
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Mobile**
 
 .. js:function:: parse.subscribe(channel, success, error)
@@ -45,8 +45,8 @@ subscribe
     :param function() success: success
     :param function(content) error: called with details of any error which may occur
 
-unsubscribe
-~~~~~~~~~~~
+push.unsubscribe
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Mobile**
 
 .. js:function:: parse.unsubscribe(channel, success, error)
@@ -55,8 +55,8 @@ unsubscribe
     :param function() success: success
     :param function(content) error: called with details of any error which may occur
 
-subscribedChannels
-~~~~~~~~~~~~~~~~~~
+push.subscribedChannels
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Mobile**
 
 .. js:function:: parse.subscribedChannels(success, error)
