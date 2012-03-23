@@ -39,7 +39,7 @@ push.subscribe
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Mobile**
 
-.. js:function:: parse.subscribe(channel, success, error)
+.. js:function:: parse.push.subscribe(channel, success, error)
 
     :param string channel: Identifier of the channel to subscribe to
     :param function() success: success
@@ -49,7 +49,7 @@ push.unsubscribe
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Mobile**
 
-.. js:function:: parse.unsubscribe(channel, success, error)
+.. js:function:: parse.push.unsubscribe(channel, success, error)
 
     :param string channel: Identifier of the channel to unsubscribe from
     :param function() success: success
@@ -59,7 +59,7 @@ push.subscribedChannels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Mobile**
 
-.. js:function:: parse.subscribedChannels(success, error)
+.. js:function:: parse.push.subscribedChannels(success, error)
 
     :param function(channels) success: Called with an array of subscribed channels
     :param function(content) error: called with details of any error which may occur
