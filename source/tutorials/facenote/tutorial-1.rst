@@ -98,7 +98,7 @@ Now, rebuild your extension with ``forge build`` and reload it in Chrome. When y
 
 Reference extension
 -------------------
-`fb-part-1.zip <../_static/facenote/part-1.zip>`_ contains the code you should have at this point. Feel free to check your code against it, or use it to resume the tutorial from this point.
+`fb-part-1.zip <../../_static/facenote/part-1.zip>`_ contains the code you should have at this point. Feel free to check your code against it, or use it to resume the tutorial from this point.
 
 It's not working!
 -----------------
