@@ -139,7 +139,7 @@ You should be able to save different notes for different people.
 
 Reference extension
 -------------------
-`fb-part-2.zip <../_static/facenote/fb-part-2.zip>`_ contains the code you should have at this point. Feel free to check your code against it, or use it to resume the tutorial from here.
+`fb-part-2.zip <../../_static/facenote/fb-part-2.zip>`_ contains the code you should have at this point. Feel free to check your code against it, or use it to resume the tutorial from here.
 
 It's not working!
 -----------------
