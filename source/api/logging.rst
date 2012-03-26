@@ -9,8 +9,6 @@ The ``logging.level`` configuration directive controls the verbosity of the logg
 It should be set to one of ``DEBUG``, ``INFO``, ``WARNING``, ``ERROR`` or ``CRITICAL``.
 A setting of ``DEBUG`` means that all messages will be logged, whereas a setting of ``CRITICAL`` means that only messages of level ``CRITICAL`` will be logged.
 
-.. note:: logging currently doesn't work with the iOS emulator. We are fixing this as a high priority.
-
 ``log``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: All**
