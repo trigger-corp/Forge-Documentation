@@ -43,6 +43,18 @@ Returned files will be accessible to the app as long as they exist on the device
     :param function(file) success: callback to be invoked when no errors occur (argument is the returned file)
     :param function(content) error: called with details of any error which may occur
 
+``getLocal``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Mobile**
+
+Returns a file object for a file included in the ``src`` folder of your app
+
+.. js:function:: file.getImage(path, success, error)
+
+    :param string path: Path to the file, i.e. ``"images/home.png"``.
+    :param function(file) success: callback to be invoked when no errors occur (argument is the returned file)
+    :param function(content) error: called with details of any error which may occur
+
 ``cacheURL``
 ~~~~~~~~~~~~
 **Platforms: Mobile**
@@ -93,6 +105,17 @@ Returns the base64 value for a files content.
     :param function(base64String) success: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
 
+``string``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Mobile**
+
+Returns the string value for a files content.
+
+.. js:function:: file.string(file, success, error)
+
+    :param file file: the file object to load data from
+    :param function(string) success: callback to be invoked when no errors occur
+    :param function(content) error: called with details of any error which may occur
 ``remove``
 ~~~~~~~~~~
 **Platforms: Mobile**
