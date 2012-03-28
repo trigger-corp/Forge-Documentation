@@ -49,7 +49,7 @@ Returned files will be accessible to the app as long as they exist on the device
 
 Returns a file object for a file included in the ``src`` folder of your app
 
-.. js:function:: file.getImage(path, success, error)
+.. js:function:: file.getLocal(path, success, error)
 
     :param string path: Path to the file, i.e. ``"images/home.png"``.
     :param function(file) success: callback to be invoked when no errors occur (argument is the returned file)
@@ -87,7 +87,7 @@ Returns true or false based on whether a given object is a file object and point
 
 Returns a URL which can be used to display an image. Height and width will be limited by the values given when originally selecting the image.
 
-.. js:function:: file.imageURL(file, success, error)
+.. js:function:: file.URL(file, success, error)
 
     :param file file: the file object to load data from
     :param function(url) success: callback to be invoked when no errors occur, first argument is the image URL
