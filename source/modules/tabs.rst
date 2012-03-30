@@ -1,9 +1,24 @@
-.. _tabs-management:
+.. _modules-tabs:
 
-Tabs Management: ``forge.tabs``
+``tabs``: Tabs Management
 ================================================================================
 
 Tabs management provides functionality specific to tabs.
+
+Config
+------
+
+The ``tabs`` module must be enabled in ``config.json``
+
+.. parsed-literal::
+    {
+        "modules": {
+            "tabs": true
+        }
+    }
+
+API
+---
 
 ``open``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

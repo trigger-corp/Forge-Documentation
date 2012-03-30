@@ -1,7 +1,22 @@
-.. _notifications:
+.. _modules-notifications:
 
-Notifications: ``forge.notification``
-================================================================================
+``notification``: Notifications
+===============================
+
+Config
+------
+
+The ``notification`` module must be enabled in ``config.json``
+
+.. parsed-literal::
+    {
+        "modules": {
+            "notification": true
+        }
+    }
+
+API
+---
 
 Notifications allow you to send alerts.
 

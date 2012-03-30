@@ -1,11 +1,27 @@
-.. _geolocation:
+.. _modules-geolocation:
 
-Geolocation: ``forge.geolocation``
+``geolocation``: Geolocation
 ================================================================================
 
 Although geolocation APIs are part of the HTML5 specification, on some platforms, the default permissions dialogs can be cumbersome and annoying to your users.
 
 For that reason, we offer an alternative way to get geolocation data.
+
+
+Config
+------
+
+The ``geolocation`` module must be enabled in ``config.json``
+
+.. parsed-literal::
+    {
+        "modules": {
+            "geolocation": true
+        }
+    }
+
+API
+---
 
 .. js:function:: geolocation.getCurrentPosition(options, success, error)
 

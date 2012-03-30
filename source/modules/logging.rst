@@ -1,13 +1,28 @@
-.. _logging:
+.. _modules-logging:
 
-Logging: ``forge.logging``
+``logging``: Logging
 ================================================================================
 
 Allows you to log a message, and optionally an exception, to the console service provided by the underlying platform.
 
+Config
+------
+
 The ``logging.level`` configuration directive controls the verbosity of the logging system.
 It should be set to one of ``DEBUG``, ``INFO``, ``WARNING``, ``ERROR`` or ``CRITICAL``.
 A setting of ``DEBUG`` means that all messages will be logged, whereas a setting of ``CRITICAL`` means that only messages of level ``CRITICAL`` will be logged.
+
+.. parsed-literal::
+    {
+        "modules": {
+            "logging": {
+                "level": ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"]
+            },
+        }
+    }
+
+API
+---
 
 ``log``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

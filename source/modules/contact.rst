@@ -1,14 +1,28 @@
-.. _api-contact:
+.. _modules-contact:
 
-Accessing contacts: ``forge.contact``
+``contact``: Accessing contacts
 ================================================================================
+
+**Platforms: Mobile**
 
 The ``forge.contact`` namespace allows access to the native contact address book on the device the app is running on.
 
 Contacts are represented by a simple Javascript object which follows the `W3C Contacts API <http://www.w3.org/TR/contacts-api/#contact-interface>`_ as much as possible.
 
-Methods
--------
+Config
+------
+
+The ``contact`` module must be enabled in ``config.json``
+
+.. parsed-literal::
+    {
+        "modules": {
+            "contact": true
+        }
+    }
+
+API
+---
 
 ``select``
 ~~~~~~~~~~

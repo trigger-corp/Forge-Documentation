@@ -1,7 +1,22 @@
-.. _miscellaneous:
+.. _modules-tools:
 
-Miscellaneous tools: ``forge.tools``
---------------------------------------------------------------------------------
+``tools``: Miscellaneous tools
+==============================
+
+Config
+------
+
+The ``tools`` module must be enabled in ``config.json``
+
+.. parsed-literal::
+    {
+        "modules": {
+            "tools": true
+        }
+    }
+
+API
+---
 
 ``UUID``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

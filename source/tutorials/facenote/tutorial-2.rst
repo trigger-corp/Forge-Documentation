@@ -60,7 +60,7 @@ We've used a regular expression which matches URLs like http://www.facebook.com/
 
 Reading in existing notes
 -------------------------
-Of course, we want to save notes away so that we can see them again next time we visit a profile page. To do that, we will use a feature of the Forge platform which lets us persist data between browser windows and across page loads and browser restarts; we call these data :ref:`preferences <preferences>`.
+Of course, we want to save notes away so that we can see them again next time we visit a profile page. To do that, we will use a feature of the Forge platform which lets us persist data between browser windows and across page loads and browser restarts; we call these data :ref:`preferences <modules-prefs>`.
 
 To read a preference, we will use the :ref:`forge.prefs.get <api-prefs-get>` method in ``fb-note-demo.js``: add the following code inside the to the end of the ``handleProfilePage`` function::
 

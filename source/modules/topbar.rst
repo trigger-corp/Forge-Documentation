@@ -1,7 +1,7 @@
-.. _api-topbar:
+.. _modules-topbar:
 
-Native top bar: ``forge.topbar``
-================================================================================
+``topbar``: Native top bar
+==========================
 
 The ``topbar`` module displays a fixed native header bar in mobile apps and provides a Javascript API to modify it at runtime.
 

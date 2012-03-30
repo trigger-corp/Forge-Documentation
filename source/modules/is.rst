@@ -1,10 +1,28 @@
-.. _api-platform-detection:
+.. _modules-is:
 
-Platform Detection: ``forge.is``
+``is``: Platform Detection
 =========================================================================
 Forge allows you to build cross-platform mobile apps and browser extensions from the same code.
 Sometimes it may be necessary to do a specific action based on the platform that is running the code.
 The following methods allow you to determine what platform that is.
+
+Config
+``````
+
+The ``is`` module must be enabled in ``config.json``
+
+.. parsed-literal::
+    {
+        "modules": {
+            "is": true
+        }
+    }
+
+API
+---
+
+API
+```
 
 ``mobile``
 -------------------------------------------------------------------------

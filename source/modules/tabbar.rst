@@ -1,6 +1,6 @@
-.. _api-tabbar:
+.. _modules-tabbar:
 
-Native tab bar: ``forge.tabbar``
+``tabbar``: Native tab bar
 ================================================================================
 
 The ``tabbar`` module shows a fixed footer as part of your app which can show multiple "tab" buttons, these buttons can be selected by the user or activated by Javascript.

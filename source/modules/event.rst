@@ -1,7 +1,22 @@
-.. _api-event:
+.. _modules-event:
 
-Events: ``forge.event``
+``event``: Events
 ================================================================================
+
+Config
+------
+
+The ``event`` module must be enabled in ``config.json``
+
+.. parsed-literal::
+    {
+        "modules": {
+            "event": true
+        }
+    }
+
+API
+---
 
 The ``forge.event`` namespace allows app to listen for events of interest, which may be triggered multiple times (or potentially not at all) depending on the situation.
 

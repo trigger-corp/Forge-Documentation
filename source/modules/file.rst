@@ -1,12 +1,12 @@
-.. _api-file:
+.. _modules-file:
 
-File and Camera access: ``forge.file``
-================================================================================
+``file``: File and Camera access
+================================
 
 The file API allows storage of files on the local system as well as capturing images with the camera or selecting them from the users saved photos.
 
 Notes
-~~~~~
+-----
 
 - File objects are simple Javascript objects which contain at least a ``uri``. They can be serialised using JSON.stringify and safely stored in Forge preferences.
 - The ``uri`` parameter can be used directly on some platforms. This is not recommended - instead use one of the provided helper functions such as ``forge.file.URL``.
@@ -21,6 +21,21 @@ Notes
     });
 
 .. note:: For more information about how to cache remote files in your app, see :ref:`forge-cache`.
+
+Config
+------
+
+The ``file`` module must be enabled in ``config.json``
+
+.. parsed-literal::
+    {
+        "modules": {
+            "file": true
+        }
+    }
+
+API
+---
 
 ``getImage``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -116,6 +131,7 @@ Returns the string value for a files content.
     :param file file: the file object to load data from
     :param function(string) success: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
+
 ``remove``
 ~~~~~~~~~~
 **Platforms: Mobile**

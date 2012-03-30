@@ -1,9 +1,12 @@
-.. _cross-domain:
+.. _modules-request:
 
-Cross-domain requests: ``forge.request``
-================================================================================
+``request``: Cross-domain requests
+==================================
 
 Normal in-page JavaScript is only able to make HTTP requests to the same server as one hosting the current web page. These methods allow you to work around this restriction.
+
+Config
+------
 
 .. note:: For security reasons, you must specify the remote URLs you will send requests to in the ``permissions`` array of your JSON configuration file.
 
@@ -11,6 +14,17 @@ Normal in-page JavaScript is only able to make HTTP requests to the same server 
 
     To protect your users, make these match patterns as restrictive as possible.
 
+.. parsed-literal::
+    {
+        "modules": {
+            "requests": {
+                "permissions": ["https://trigger.io/*"]
+            }
+        }
+    }
+
+API
+---
 ``get``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: All**
@@ -51,7 +65,7 @@ Currently supported options:
  * type
  * url
  * username
- * files (Mobile only, see :ref:`forge.file <api-file>`)
+ * files (Mobile only, see :ref:`forge.file <modules-file>`)
  
 Error values (see :ref:`error callback docs <forge-features-api-error>` for more detail):
  * ``type``: ``"UNAVAILABLE"``

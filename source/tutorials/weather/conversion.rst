@@ -32,4 +32,4 @@ Extensions and API
 -------------------
 This has been only a simple demo of what Forge is capable of.
 You can try extending the weather app with your own custom functionality. :ref:`Here<tutorials-weather-extensions>` are a few suggestions to get you going.
-Also take a look at the :ref:`API documentation<api>` to see what type of functionality is provided by Forge.
+Also take a look at the :ref:`API documentation<modules>` to see what type of functionality is provided by Forge.

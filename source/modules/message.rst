@@ -1,10 +1,25 @@
-.. _api-communication:
+.. _modules-message:
 
-Component communication: ``forge.message``
-=======================================================
+``message``: Component communication
+====================================
 **Platforms: Browser only**
 
 It is often useful to be able to send and receive messages between components of your extension. To achieve this in a cross-browser manner, use these methods to broadcast and listen for messages.
+
+Config
+------
+
+The ``message`` module must be enabled in ``config.json``
+
+.. parsed-literal::
+    {
+        "modules": {
+            "message": true
+        }
+    }
+
+API
+---
 
 ``listen``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

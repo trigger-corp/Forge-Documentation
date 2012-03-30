@@ -136,9 +136,9 @@ Using other parts of the Forge API
 --------------------------------------------------------------------------------
 We have already seen the use of ``forge.request.ajax`` to easily make a request to a remote server. This project makes use of some other Forge APIs too.
 
-In ``expand_item()``, we use ``forge.tabs.open()`` to open an external page new tab in a cross-platform manner. Our documentation for ``open()`` is :ref:`here <tabs-management>`.
+In ``expand_item()``, we use ``forge.tabs.open()`` to open an external page new tab in a cross-platform manner. Our documentation for ``open()`` is :ref:`here <modules-tabs>`.
 
-Lastly, we use ``forge.is`` in the ``click_or_tap()`` function so that we can listen for tap events on mobile devices, but click events otherwise. Documentation for easy platform detection can be found here :ref:`forge.is.mobile <api-platform-detection>`
+Lastly, we use ``forge.is`` in the ``click_or_tap()`` function so that we can listen for tap events on mobile devices, but click events otherwise. Documentation for easy platform detection can be found here :ref:`forge.is.mobile <modules-is>`
 
 ::
 
