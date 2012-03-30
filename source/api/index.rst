@@ -23,3 +23,4 @@ API Reference
    /api/gmail
    /api/sms
    /api/topbar
+   /api/tabbar
