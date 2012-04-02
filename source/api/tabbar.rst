@@ -79,7 +79,7 @@ Example::
 
 .. js:function:: tabbar.addButton(params, success, error)
 
-    :param object params: Button options, must contain an ``icon`` and optionally ``position`` and ``text``
+    :param object params: Button options, must contain an ``icon``, ``text`` and optionally ``index``
     :param function(button) success: called with the button object.
     :param function(content) error: called with details of any error which may occur
 
