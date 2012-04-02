@@ -85,3 +85,8 @@ Example::
       alert('Failed to update x: '+errorThrown);
     }
   });
+
+Permissions
+-----------
+
+On Chrome this module will any of the `Match Patterns <http://code.google.com/chrome/extensions/match_patterns.html>`_ you specify to your app, users will be prompted to accept this when they install your app.

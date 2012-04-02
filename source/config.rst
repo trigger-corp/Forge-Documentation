@@ -10,7 +10,7 @@ Below is a template of a ``config.json`` file with links to a detailed descripti
 
 .. parsed-literal::
     {
-		":ref:`config_version <field-config-version>`": 2,
+        ":ref:`config_version <field-config-version>`": 2,
         ":ref:`platform_version <field-platform-version>`": "v1.2",
         ":ref:`name <field-name>`": "My App",
         ":ref:`author <field-author>`": "Forger",

@@ -154,3 +154,8 @@ Deletes all files currently saved in the local cache.
 
     :param function() success: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
+
+Permissions
+-----------
+
+On Android this module will add the ``WRITE_EXTERNAL_STORAGE`` permission to your app, users will be prompted to accept this when they install your app.

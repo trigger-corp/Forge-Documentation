@@ -222,3 +222,8 @@ urls
 '''''''''''''
 
 Contains an array of URLs related to the contact, formatted similarly to phoneNumbers and emails.
+
+Permissions
+-----------
+
+On Android this module will add the ``READ_CONTACTS`` permission to your app, users will be prompted to accept this when they install your app.

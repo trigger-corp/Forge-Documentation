@@ -31,4 +31,9 @@ API
 
 .. note:: To enable easy porting from existing HTML5 code onto Forge, we also accept parameters in the order ``(success, error, options)``
 
+Permissions
+-----------
+
+On Android this module will add the ``ACCESS_FINE_LOCATION`` permission to your app, users will be prompted to accept this when they install your app.
+
 

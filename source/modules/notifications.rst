@@ -30,3 +30,10 @@ Notifications allow you to send alerts.
     :param string text: notification message
     :param function() success: success
     :param function(content) error: called with details of any error which may occur
+
+Permissions
+-----------
+
+On Chrome this module will add the ``notifications`` permission to your app, users will be prompted to accept this when they install your app.
+
+On Android this module will add the ``VIBRATE`` permission.

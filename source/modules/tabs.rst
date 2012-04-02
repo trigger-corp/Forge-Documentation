@@ -67,3 +67,8 @@ Close the tab which makes the call.
 .. js:function:: tabs.closeCurrent(error)
 
     :param function(content) error: called with details of any error which may occur
+
+Permissions
+-----------
+
+On Chrome this module will add the ``tabs`` permission to your app, users will be prompted to accept this when they install your app.
