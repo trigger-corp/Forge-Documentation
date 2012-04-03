@@ -4,7 +4,7 @@ Module Reference
 ================================================================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    /modules/activations
    /modules/background
@@ -14,6 +14,7 @@ Module Reference
    /modules/file
    /modules/geolocation
    /modules/gmail
+   /modules/icons
    /modules/is
    /modules/jquery
    /modules/launchimage
@@ -21,6 +22,8 @@ Module Reference
    /modules/message
    /modules/notifications
    /modules/orientations
+   /modules/package_names
+   /modules/parameters
    /modules/prefs
    /modules/request
    /modules/sms
@@ -28,3 +31,4 @@ Module Reference
    /modules/tabs
    /modules/tools
    /modules/topbar
+   /modules/update_url
