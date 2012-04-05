@@ -12,3 +12,4 @@ develop applications for the Forge platform.
    /tools/local-config
    /tools/proxy
    /tools/forgeignore
+   /tools/hooks
