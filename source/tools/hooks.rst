@@ -12,6 +12,8 @@ Hooks types are defined by the file extension of the hook, the following hook ty
 - ``.sh`` - Shell hooks will be run by executing ``./hook.sh`` and will not work on Windows.
 - ``.bat`` - Windows batch file hooks will be run by executing ``hook.bat`` and will only work on Windows.
 
+.. important:: For ``.sh`` hooks, you must use a `hashbang <http://en.wikipedia.org/wiki/Shebang_(Unix)>`_ as the first line, or your hook will fail to execute.
+
 Available hooks are:
 
 - ``prebuild`` - The prebuild hook executes within the ``src`` directory before a build is run, however any changes will not affect the ``src`` directory contents after the build is finished, only the built apps. This allows preprocessing of files to occur.
