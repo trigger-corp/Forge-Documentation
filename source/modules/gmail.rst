@@ -1,18 +1,31 @@
-.. _api-gmail:
+.. _modules-gmail:
 
-Gmail library: ``forge.gmail``
-================================================================================
+``gmail``: Gmail library
+========================
 
 This library makes it easy to create a browser extension to interact with Gmail. It is a useful alternative to creating Gmail gadgets.
-
-To access the Gmail library, add the following to the libs array of your ``config.json`` file::
-
-    "libs": { "gmail":{} },
 
 The Forge Gmail library allows you to interact with the following elements of the Gmail composition pane:
 
 .. image:: /_static/gmail/gmail.png
 
+Config
+------
+
+The ``gmail`` module must be enabled in ``config.json``
+
+.. parsed-literal::
+    {
+        "modules": {
+            "gmail": true
+        }
+    }
+
+API
+---
+
+API
+---
 
 Reference:
 
@@ -32,7 +45,7 @@ Reference:
 ``injectCSS``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Inserts a given stylesheet to the Gmail page. Referencing the stylesheet through ``manifest.json`` will not be recognized by Gmail. Note that if referring to a relative URL for the stylesheet, use :ref:`forge.tools.getURL <miscellaneous>` to resolve the name to a fully-qualified local or remote resource before passing into the function.
+Inserts a given stylesheet to the Gmail page. Referencing the stylesheet through ``manifest.json`` will not be recognized by Gmail. Note that if referring to a relative URL for the stylesheet, use :ref:`forge.tools.getURL <modules-tools>` to resolve the name to a fully-qualified local or remote resource before passing into the function.
 
 .. js:function:: gmail.injectCSS(url)
 

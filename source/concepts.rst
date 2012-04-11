@@ -17,7 +17,7 @@ Code run at startup: "background code"
 If your extension relies on long-running code which is not attached or associated with any particular web page, you should use background code.
 This code is loaded once when the browser is open or extensions is loaded/reloaded. It runs until the browser is closed or the extension is removed.
 It is good practice to put page independent logic/functionality in the background.
-JavaScript files which are intended to be run in the background should be added to the :ref:`background-files <field-background_files>` array of the configuration file.
+JavaScript files which are intended to be run in the background should be added to the :ref:`background-files <modules-background>` array of the configuration file.
 
 .. _extension-concept-content-scripts:
 

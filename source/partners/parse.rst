@@ -25,7 +25,7 @@ In order for your app to communicate with the Parse servers you must specifiy bo
 API: ``forge.partners.parse``
 -----------------------------
 
-Push notifications received through Parse can be used with the generic push notification event in Forge, see the :ref:`event API <api-event>` for more details. The following code is an example of how to show an alert to a user when a push notification is recieved.
+Push notifications received through Parse can be used with the generic push notification event in Forge, see the :ref:`event API <modules-event>` for more details. The following code is an example of how to show an alert to a user when a push notification is recieved.
 
 Example::
 
@@ -63,3 +63,8 @@ push.subscribedChannels
 
     :param function(channels) success: Called with an array of subscribed channels
     :param function(content) error: called with details of any error which may occur
+
+Permissions
+-----------
+
+On Android this module will add the ``VIBRATE`` and ``RECEIVE_BOOT_COMPLETED`` permissions to your app, users will be prompted to accept this when they install your app.

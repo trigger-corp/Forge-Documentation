@@ -110,4 +110,4 @@ It's not working!
 
 Other useful functions
 ----------------------
-This tutorial has not covered all of the API Forge exposes to your extensions: see the :ref:`api` documentation for a comprehensive list.
+This tutorial has not covered all of the API Forge exposes to your extensions: see the :ref:`modules` documentation for a comprehensive list.

@@ -16,4 +16,4 @@ some more improvements to the weather app here are a few suggestions
     * Using reverse geocoding determine the current city (this is a tough one, unless you pay Google to use their API)
     * Use the information to look up the forecast for the current location
 
-You could take a look at the :ref:`Forge API<api>` documentation to help you implement this functionality or as a source of inspiration.
+You could take a look at the :ref:`Forge API<modules>` documentation to help you implement this functionality or as a source of inspiration.

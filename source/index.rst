@@ -28,8 +28,8 @@ Your feedback is very important to us. Please send an email to support@trigger.i
    /best_practice/index
    /features/index
    /config
-   /api/index
-   /tools/index
+   /modules/index
    /partners/index.rst
+   /tools/index
    /releasing
    /release-notes

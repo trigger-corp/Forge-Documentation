@@ -1,9 +1,24 @@
-.. _api-sms:
+.. _modules-sms:
 
-SMS messaging: ``forge.sms``
-================================================================================
+``sms``: SMS messaging
+======================
 
 The ``forge.sms`` namespace allows you to prompt the user to send SMS messages from your app.
+
+Config
+------
+
+The ``sms`` module must be enabled in ``config.json``
+
+.. parsed-literal::
+    {
+        "modules": {
+            "sms": true
+        }
+    }
+
+API
+---
 
 ``send``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,9 +1,24 @@
-.. _preferences:
+.. _modules-prefs:
 
-Preferences: ``forge.prefs``
-================================================================================
+``prefs``: Preferences
+======================
 
 Preferences are used to save state in your extension. State is persisted between restarts and is consistent across all parts of your app.
+
+Config
+------
+
+The ``prefs`` module must be enabled in ``config.json``
+
+.. parsed-literal::
+    {
+        "modules": {
+            "prefs": true
+        }
+    }
+
+API
+---
 
 .. _api-prefs-get:
 

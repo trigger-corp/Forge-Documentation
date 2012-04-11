@@ -1,10 +1,25 @@
-.. _api-communication:
+.. _modules-message:
 
-Component communication: ``forge.message``
-=======================================================
+``message``: Component communication
+====================================
 **Platforms: Browser only**
 
 It is often useful to be able to send and receive messages between components of your extension. To achieve this in a cross-browser manner, use these methods to broadcast and listen for messages.
+
+Config
+------
+
+The ``message`` module must be enabled in ``config.json``
+
+.. parsed-literal::
+    {
+        "modules": {
+            "message": true
+        }
+    }
+
+API
+---
 
 ``listen``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -74,3 +89,8 @@ The callback may be invoked a number of times if several message listeners have 
     :param any content: the message body
     :param function(content) callback: invoked each time a listener returns a response to the broadcaster, with the response as its only argument
     :param function(content) error: called with details of any error which may occur
+
+Permissions
+-----------
+
+On Chrome this module will add the ``tabs`` permission to your app, users will be prompted to accept this when they install your app.
