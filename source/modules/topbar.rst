@@ -32,18 +32,48 @@ Set the title displayed in the top bar.
     :param function() success: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
 
+``setTitleImage``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Mobile**
+
+Set the title displayed in the top bar to an image.
+
+.. js:function:: topbar.setTitleImage(image, success, error)
+
+    :param string image: Path to image to be displayed in topbar.
+    :param function() success: callback to be invoked when no errors occur
+    :param function(content) error: called with details of any error which may occur
+
+``setTint``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Mobile**
+
+Set a colour to tint the topbar with, in effect the topbar will become this colour with a gradient effect applied.
+
+.. js:function:: topbar.setTint(color, success, error)
+
+    :param array color: an array of four integers in the range [0,255]
+                  that make up the RGBA color of the badge.
+                  For example, opaque red is [255, 0, 0, 255].
+    :param function() success: callback to be invoked when no errors occur
+    :param function(content) error: called with details of any error which may occur
+
 ``addButton``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Mobile**
 
-Add a button with an icon to the top bar. The first parameter is an object containing a ``icon`` property.
+Add a button with an icon to the top bar. The first parameter is an object describing the button with the following properties:
 
-On iOS the first paramater may also contain a ``position`` property, set to ``left`` or ``right`` determining the location of the button. As well as a ``text`` property, which will define text to be shown in place of an icon for the button. If the ``text`` property is defined then the ``icon`` will not be used on iOS, however on Android the ``icon`` will always be used as text is not supported.
+- ``icon``: An icon to be shown on the button.
+- ``text``: Text to be shown on the button, either ``text`` or ``icon`` must be set.
+- ``type``: Create a special type of button, the only option currently is ``"back"`` which means the button will cause the webview to go back when pressed.
+- ``style``: Use a predefined style for the button, currently this can only be ``"done"`` which will style a positive action. This may not work if a tint is set for the topbar.
+- ``position``: The position to display the button, either ``left`` or ``right``. If not specified the first free space will be used.
+- ``tint``: The color of the button, defined as an array similar to ``setTint``.
 
 Example::
 
    forge.topbar.addButton({
-     icon: "search.png",
      text: "Search",
      position: "left"
    }, function () {
@@ -52,7 +82,7 @@ Example::
 
 .. js:function:: topbar.addButton(params, callback, error)
 
-    :param object params: Button options, must contain an ``icon`` and optionally ``position`` and ``text``
+    :param object params: Button options, must contain at least ``icon`` or ``text``
     :param function() callback: callback to be invoked each time the button is pressed
     :param function(content) error: called with details of any error which may occur
 
@@ -65,15 +95,4 @@ Remove currently added buttons from the top bar.
 .. js:function:: topbar.removeButtons(success, error)
 
     :param function() success: callback to be invoked when no errors occur
-    :param function(content) error: called with details of any error which may occur
-
-``homePressed.addListener``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**Platforms: Android**
-
-Triggered when the home button on the top bar is pressed on an Android device
-
-.. js:function:: topbar.homePressed.addListener(callback, error)
-
-    :param function() callback: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
