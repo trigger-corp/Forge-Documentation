@@ -93,3 +93,15 @@ Remove all buttons from the tabbar.
 
     :param function() success: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
+	
+
+``setInactive``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Mobile**
+
+Unselect any currently active tab, leaving the tabbar with no tabs selected.
+
+.. js:function:: tabbar.setInactive(success, error)
+
+    :param function() success: callback to be invoked when no errors occur
+    :param function(content) error: called with details of any error which may occur
