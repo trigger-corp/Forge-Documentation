@@ -1,4 +1,4 @@
-.. _api-button:
+.. _modules-button:
 
 ``button``: Toolbar button
 ================================================================================
@@ -7,7 +7,7 @@
 Config
 ------
 
-The ``browser_action`` configuration controls the appearance and function of toolbar icons in the browsers. With this directive, you can specify a HTML file which will be displayed when the button is clicked, a default button icon as well as platform-specific icons.
+The ``button`` configuration controls the appearance and function of toolbar icons in the browsers. With this directive, you can specify a HTML file which will be displayed when the button is clicked, a default button icon as well as platform-specific icons.
 
 .. parsed-literal::
     {

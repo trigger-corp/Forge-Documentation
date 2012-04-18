@@ -67,6 +67,8 @@ Currently supported options:
  * username
  * files (Mobile only, see :ref:`forge.file <modules-file>`)
  
+.. important:: If you wish to send complex JavaScript objects with ``request.ajax``, you must encode them as JSON first.
+
 Error values (see :ref:`error callback docs <forge-features-api-error>` for more detail):
  * ``type``: ``"UNAVAILABLE"``
  * ``subtype``: ``"NO_INTERNET_CONNECTION"`` No internet connection is currently available (on iOS it is required you inform the user of this if it impacts their current experience).
