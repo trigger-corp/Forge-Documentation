@@ -78,10 +78,10 @@ Example::
     url: 'http://my.server.com/update/,
     data: {x: 1, y: "2"},
     dataType: 'json',
-    success: function(data, status) {
-      alert('Updated x to '+json.x);
+    success: function(data) {
+      alert('Updated x to '+data.x);
     },
-    error: function(status, errorThrown) {
+    error: function(errorThrown) {
       alert('Failed to update x: '+errorThrown);
     }
   });
