@@ -39,11 +39,28 @@ On mobile this will display a :ref:`modal view <forge-modal>` and the success ca
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: All**
 
-As ``open`` but takes an object of parameters, additionally accepts a match pattern on mobile (see :ref:`modal views <forge-modal>` for more detail).
+As ``open`` but takes an object with the following parameters:
+
+Required:
+
+- ``url``: Required URL to open
+
+Browser only:
+
+- ``keepFocus``: Whether or not to keep focus on the current page.
+
+Mobile only:
+
+- ``pattern``: Pattern to close the modal view, see :ref:`modal views <forge-modal>` for more detail.
+- ``title``: Title of the modal view.
+- ``tint``: Colour to tint the top bar of the modal view. An array of four integers in the range [0,255] that make up the RGBA color. For example, opaque red is [255, 0, 0, 255].
+- ``buttonText``: Text to show in the button to close the modal view.
+- ``buttonIcon``: Icon to show in the button to close the modal view, if ``buttonIcon`` is specified ``buttonText`` will be ignored.
+- ``buttonTint``: Colour to tint the button of the top bar in the modal view.
 
 .. js:function:: tabs.openWithOptions(options, success, error)
 
-    :param object options: Object containing url and optionally keepFocus and pattern properties.
+    :param object options: Object containing url and optional properties.
     :param function(object) success: callback to be invoked when no errors occurs
     :param function(content) error: called with details of any error which may occur
 
@@ -51,7 +68,8 @@ Example::
 
   forge.tabs.openWithOptions({
     url: 'http://my.server.com/login/',
-    pattern: 'http://my.server.com/loggedin/*'
+    pattern: 'http://my.server.com/loggedin/*',
+    title: 'Login Page'
   }, function (data) {
     forge.logging.log(data.url);
   });
