@@ -5,6 +5,8 @@ Release Notes
 
 This file contains information about new features and capabilities of Forge versions, along with migration information for how to upgrade from one level to another.
 
+In your ``config.json`` file, you can use a major version (like ``v1.3``), which means you will receive rolling updates and fixes, or you can use a minor version (like ``v1.3.2``), which will only be updated with critical fixes and security patches.
+
 v1.3 (*current version*)
 -------------------------------------------------------------------------------
 
@@ -12,8 +14,9 @@ Supported Platforms
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Chrome
 * Android
-* Firefox
 * iOS
+* Firefox
+* Safari
 * Web
 
 Changes from v1.2
@@ -31,6 +34,43 @@ Upgrade Instructions
 To upgrade from v1.2 to v1.3 your ``config.json`` file needs to be updated, this can be done automatically by running ``forge migrate`` with the command line tools, or choosing to migrate from Trigger Toolkit.
 
 The migration process will automatically update your ``config.json`` file to v1.3, if for any reason it doesn't work a backup of your ``config.json`` file will be saved as ``config.json.bak``.
+
+v1.3.2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 19th April 2012**
+
+Bug fixes:
+
+- handle :ref:`the native top bar<modules-topbar>` not being styleable on older iPhones
+- disable troublesome Windows Phone builds temporarily
+
+v1.3.1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 17th April 2012**
+
+Features:
+
+- :ref:`pre-build hooks<tools-hooks>`
+- re-use server-side builds, improving ``forge build`` performance
+
+Bug fixes:
+
+- correct usage of ``homepage``, ``update_url``, ``author`` and ``icons`` entries from your config.json in various browser extension manifests
+- quitting Android 2.1 app with the back button was causing app crash
+- push notifications with Parse on iOS were not enabled properly
+- process suspended while looking for Android device on Linux
+- better handling of location permission denied after image capture on iOS
+
+v1.3.0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 5th April 2012**
+
+Features:
+
+- :ref:`button module <modules-button>` on IE
+- ``getLocal`` function in :ref:`file module <modules-file>`
+- native bar at bottom of app: :ref:`tabbar module <modules-tabbar>`
+- ask for the minimum set of required permissions on Android
 
 v1.2 (*previous version*)
 -------------------------------------------------------------------------------
@@ -68,18 +108,3 @@ You should now include::
 .. note:: ``libs`` has also been made optional, so you can remove it from your configuration file entirely if you wish
 
 For API information, see http://docs.trigger.io/en/v1.2/api/index.html
-
-v1.1 (*unsupported*)
--------------------------------------------------------------------------------
-Earliest available Forge platform version.
-
-.. important:: v1.1 of the platform is now unsupported and any attempt to build with this level will fail.
-
-Supported Platforms
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* Chrome
-* Android
-* Firefox
-* iOS
-
-For API information, see http://docs.trigger.io/en/v1.1/api/index.html
