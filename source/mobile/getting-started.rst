@@ -14,6 +14,8 @@ Forge can be used to generate both iOS and Android apps from a single codebase. 
 
 Setting up an iOS environment
 -----------------------------
+To build and run iOS apps, you need to be using a Mac computer.
+
 To test your app locally you will need the iOS Simulator. This is included with XCode, which you can download from https://developer.apple.com/xcode/. When this is installed, start XCode and click 'Preferences' from the XCode menu to check the iOS Simulator is listed as installed under components. If not, you may install it from that window.
 
 We have found some unresponsiveness when apps 'over scroll' in iOS Simulator 5.0 so recommend installing version 4.3 too. This lagging performance is only an issue in the simulator, not in actual devices.
@@ -78,19 +80,20 @@ Dynamic Hello
 
 Ok, perhaps that wasn't all too impressive - let's add some dynamic functionality next.
 
-* Empty the ``body`` element in ``index.html``
+* Replace the contents of the ``body`` element in ``index.html`` with::
+
+    <p>Hello World, this is HTML!</p>
+
 * Open the file ``js/default.js`` and change its contents to::
 
     forge.logging.info('Hello World, this is JavaScript');
 
-* Open ``index.html`` and make sure ``default.js`` is being included:
+* Open ``index.html`` and make sure ``default.js`` is being included::
 
-    .. code-block:: html
+    <script type="text/javascript" src="js/default.js"></script>
 
-        <script type="text/javascript" src="js/default.js"></script>
-
-* :ref:`Rerun <mobile-getting-started-run>` the application
-* On Android, look at the command prompt/terminal running the code and you should see your log message.
+* :ref:`Rebuild<mobile-getting-started-build>` and :ref:`re-run <mobile-getting-started-run>` the application: you should see your "Hello World" message in the app.
+* Look at the command prompt/terminal running the code and you should see your "Hello World" log message.
 
 .. important:: Now that you know how to use logging it is highly encouraged to use it frequently for debugging purposes.
 

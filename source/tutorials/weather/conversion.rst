@@ -15,17 +15,20 @@ Once you have the JDK, SDK and AVD configured simply follow the directions on ho
 Mobile to Chrome
 -----------------
 The code used for building the Chrome extension will be identical, but we just need a way to display ``index.html``.
-One option is to have it show up as a popup that appears when a user clicks a toolbar button.
-To configure this simply add the following browser action setting to the configuration file in the ``src`` directory::
 
-    "browser_action": {
+One option is to have it show up as a popup that appears when a user clicks a toolbar button.
+To configure this, simply add the following button configuration to the ``modules`` section in ``config.json`` directory::
+
+    "button": {
         "default_popup": "index.html",
         "default_icon": "resources/sun_19.png"
-    }
+    },
 
-The *default_popup* setting points to the html file that should be displayed when the toolbar button is clicked.
-*default_icon* is simply the image to use for the toolbar button which helps it differentiate from other extensions.
-If you want to know more about the configuration file click :ref:`here<config>`.
+- the *default_popup* setting points to the HTML file that should be displayed when the toolbar button is clicked
+- *default_icon* is simply the image to use for the toolbar button which helps it differentiate from other extensions
+
+If you want to know more about the configuration file, see the :ref:`Config File Reference<config>`.
+
 Now just :ref:`build<chrome-getting-started-build>` and :ref:`load<chrome-getting-started-load-extension>` the extension to see the Weather Demo in Chrome.
 
 Extensions and API

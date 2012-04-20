@@ -21,7 +21,7 @@ Adding jQuery
 **Goal: Embedding jQuery libraries**
 
 jQuery provides a lot of helpful functionality and in order to display the forecast information we will use Mustache Templates.
-If you've looked in the ``resources`` directory you might have noticed the jQuery and Mustache libraries. To use these simply append the following script tags in the head of ``index.html`` before the ``weather.js`` script tag:
+If you've looked in the ``resources`` directory you might have noticed the jQuery and Mustache libraries. To use these simply append the following script tags in the head of ``index.html`` before the ``js/weather.js`` script tag:
 
 .. code-block:: html
 
@@ -35,6 +35,8 @@ Displaying the Data
 **Goal: Displaying dynamic data**
 
 Using Mustache, it is quite simple to display the data.
+
+.. note:: To prevent attempts to parse Mustache or other templates as HTML, we recommend wrapping them in script tags with custom type attributes
 
 * Open ``index.html``
 * Remove "Weather forecast here." from the body tag
@@ -96,9 +98,11 @@ Using Mustache, it is quite simple to display the data.
         </table>
     </div>
 
-* Now open ``weather.js`` and add the following JavaScript code which will template and append the data ::
+* Now open ``weather.js`` and add the following JavaScript code which will template and append the data:
 
-    function populateWeatherConditions(weatherCondition) {
+.. code-block:: js
+
+    function populateWeatherConditions (weatherCondition) {
         var tmpl, output;
         forge.logging.log('beginning populating weather conditions');
         
@@ -120,15 +124,17 @@ Using Mustache, it is quite simple to display the data.
         forge.logging.log('finished populating weather conditions');
     };
 
-* Finally add a jQuery.ready listener inside ``weather.js`` which will kick things off when the page finishes loading::
+* Finally add a jQuery.ready listener inside ``weather.js`` which will kick things off when the page finishes loading:
 
-    $(function(){
+.. code-block:: js
+
+    $(function () {
         populateWeatherConditions(mountainViewForecast);
     });
 
 .. _weather-tutorial-1-ready-listener:
 
-.. important:: Any code that modifies the page should only be run when the page is finished loading. The above achieves this using jQuery's document ready listener ``$(function () { //Code here })``.
+.. important:: Any code that modifies the page should only be run when the page is finished loading. The above achieves this using jQuery's document ready listener ``$(function () { /* code here */ })``.
 
 **(Mobile Only)** :ref:`Build <mobile-getting-started-build>` the code and :ref:`run <mobile-getting-started-run>` the app and you should see the dummy weather forecast displayed automatically.
 
@@ -147,27 +153,14 @@ Link this file in the head element of ``index.html`` to add some basic styling t
 
 At this point, your app should display static weather data for Mountain View, CA when it is opened.
 
+.. image:: /_static/images/part-1_weather.png
+    :width: 200px
+
 Reference extension
 -------------------
 `part-2.zip <../../_static/weather/part-2.zip>`_ contains the code you should have in your app's src directory at this point.
 Feel free to check your code against it or use it to resume the tutorial from this point.
 
-It's not working!
------------------
-Things to check:
-
-* The best debugging tool is to add logging using ``forge.logging.log()`` throughout the code to track progress
-* Make sure that you have downloaded the :ref:`resources<tutorials-weather-tutorial-1-preparation>` and that the paths to the specific resources are correct
-* Check that the jQuery script tags appear before the ``weather.js`` script tag inside of ``index.html`` head tag
-* ``populateWeatherConditions`` invocation should be inside the document ready listener (modifications to the page should not be made until it finishes loading)
-
-**Mobile Only**
-
-* Use :ref:`Catalyst<tutorials-weather-tutorial-1-catalyst-debugging>` to inspect logging output and html of ``index.html``
-* This :ref:`page<mobile-troubleshooting>` shows how to troubleshoot some previously encountered errors
-
-**Chrome only**
-
-* Use chromes development tools to set breakpoint, step thorough the code, and evaluate expressions as necessary
-
-Continue on to :ref:`weather-tutorial-3`
+What next?
+------------------------------------
+Continue on to :ref:`weather-tutorial-3`!

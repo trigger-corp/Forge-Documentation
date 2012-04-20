@@ -30,11 +30,12 @@ Open ``weather.js`` and ...
 
 Understanding the Data
 ----------------------
-**Goal: Gain and understanding of what data is available and how it's structured**
+**Goal: Gain an understanding of what data is available and how it's structured**
 
-In order to see what the returned data will look like, you can put the following into the browser ``http://www.google.com/ig/api?weather=[cityOrZip]``\ .
-Replace ``[cityOrZip]`` by a zip code or a city name with any spaces replaced by ``+``.
-For example to look up weather in New York City, you could use ``http://www.google.com/ig/api?weather=New+York``
+In order to see what the returned data will look like, you can try the following link: http://www.google.com/ig/api?weather=cityOrZip.
+Replace ``cityOrZip`` by a zip code or a city name with any spaces replaced by ``+``.
+
+For example to look up weather in New York City, you could use http://www.google.com/ig/api?weather=New+York.
 
 The data returned should look something like the following:
 
@@ -81,12 +82,17 @@ The data returned should look something like the following:
 
 Adding Permissions
 -------------------
-Since we are getting data from Google, we need to edit the permissions configuration to allow cross-domain requests.
-Open up ``config.json`` and make sure that ``http://www.google.com/*`` is included in the ``permissions`` array::
+Since we are retreiving data from a 3rd party, we need to enable the :ref:`request<modules-request>` module and list the URLs we want to access at run-time.
 
-    "permissions": ["tabs", "http://www.google.com/*"],
+Open ``config.json`` and add the request module configuration to the ``modules`` object::
 
-At this point, rebuilding your app will take longer than usual: changing the configuration of your app means we need to do some work server-side.
+    "requests": {
+        "permissions": ["http://www.google.com/*"]
+    }
+
+The items in the ``permissions`` array are match patterns: see http://code.google.com/chrome/extensions/match_patterns.html.
+
+The next time you build, re-creating your app will take longer than usual: changing the configuration of your app means we need to do some work server-side.
 
 Fetching Data
 -------------
@@ -95,22 +101,22 @@ Fetching Data
 Now that you have a feel for what the returned data looks like, let's add a function to ``weather.js`` that will retrieve this data::
 
     function getWeatherInfo(location) {
-        forge.logging.log('[getWeatherInfo] getting weather for for '+location);
+        forge.logging.info('[getWeatherInfo] getting weather for for '+location);
         forge.request.ajax({
             url:"http://www.google.com/ig/api?weather="+encodeURIComponent(location),
             dataType: 'xml',
-            success: function(data, textStatus, jqXHR){
-                forge.logging.log('[getWeatherInfo] success');
+            success: function (data){
+                forge.logging.info('[getWeatherInfo] success');
             },
-            error: function(jqXHR, textStatus, errorThrown){
-                forge.logging.log('ERROR! [getWeatherInfo] '+textStatus);
+            error: function (error) {
+                forge.logging.error('[getWeatherInfo] '+JSON.stringify(error));
             }
         })
     };
 
 ``encodeURIComponent`` is a built-in Javascript function to prepare strings to be used in URLs.
 
-``forge.request.ajax`` mirrors the behaviour of jQuery's ``$.ajax``, where we specify the url, dataType to be returned, success and error callbacks.
+``forge.request.ajax`` is similar to the behaviour of jQuery's ``$.ajax``, where we specify the url, dataType to be returned, success and error callbacks.
 
 The returned data is a Document object which can be easily parsed with jQuery.
 
@@ -121,9 +127,13 @@ For example to look up the forecast in Boston add the following code to the docu
         getWeatherInfo('Boston');
     });
 
-You can verify that this call is working by checking the console output.
-**(Mobile Only)** Check either the command prompt/terminal or console of :ref:`Catalyst <tutorials-weather-tutorial-1-catalyst-debugging>`
-**(Chrome Only)** Check the console of the :ref:`pop-up<tutorials-weather-tutorial-1-chrome-debugging>`:
+You can verify that this call is working by checking the console output. Expect to see log output like::
+
+    [FORGE] '[getWeatherInfo] getting weather for for Boston'
+    [FORGE] '[getWeatherInfo] success'
+
+- **(Mobile Only)** Check either the command prompt/terminal or console of :ref:`Catalyst <tutorials-weather-tutorial-1-catalyst-debugging>`
+- **(Chrome Only)** Check the console of the :ref:`pop-up<tutorials-weather-tutorial-1-chrome-debugging>`
 
 Parsing the Data
 ----------------
@@ -235,25 +245,8 @@ Rebuild and run the code to see live forecast data displayed.
 Reference extension
 -------------------
 `part-3.zip <../../_static/weather/part-3.zip>`_ contains the code you should have in your app's src directory at this point.
-Feel free to check your code against it or use it to resume the tutorial from this point
-(remember to replace the 'author' and 'uuid' values in config.json with your own).
+Feel free to check your code against it or use it to resume the tutorial from this point.
 
-It's not working!
------------------
-Things to check:
-
-* Make sure all of the dummy code from the previous sections is removed
-* The best debugging tool is to add logging using forge.logging.log() throughout the code to track progress
-* If the ``forge.request.ajax`` call is failing make sure you've added to appropriate :ref:`permissions<tutorials-weather-tutorial-3-permissions>` to the configuration
-* You can validate that the parsing is working as expected by logging out the generated objects and inspecting their properties
-
-**Mobile Only**
-
-* Use :ref:`Catalyst<tutorials-weather-tutorial-1-catalyst-debugging>` to inspect logging output and html of ``index.html``
-* This :ref:`page<mobile-troubleshooting>` shows how to troubleshoot some previously encountered errors
-
-**Chrome only**
-
-* Use chromes development tools to set breakpoint, step thorough the code, and evaluate expressions as necessary
-
-Continue on to :ref:`weather-tutorial-4`
+What next?
+----------------------------
+Continue on to the last part: :ref:`weather-tutorial-4`!

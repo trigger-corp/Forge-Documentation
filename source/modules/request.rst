@@ -17,7 +17,7 @@ Config
 .. parsed-literal::
     {
         "modules": {
-            "requests": {
+            "request": {
                 "permissions": ["https://trigger.io/*"]
             }
         }

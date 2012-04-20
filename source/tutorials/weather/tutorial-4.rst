@@ -31,29 +31,22 @@ Populating City Selection
 **Goal: Running code which modifies page content**
 
 * Open ``weather.js`` and remove ``getWeatherInfo('Boston', populateWeatherConditions);`` from the document ready listener.
-* Since we will be modifying the page to add cities we need to make sure the page is fully loaded::	
+* In the document ready listener, we will populate a drop-down with some example cities::
 
     $(function(){
-        //city population code
-    });
-
-* Inside of the document ready wrapper create an array and populated with some cities, for example::
-
-    // places I've been
-    var cities = ['Boston', 'New York', 'Washington DC', 'Tampa', 'Houston', 'Montreal',
-        'Los Angeles', 'Miami', 'West Palm Beach']; //and a few others
-
-* Add the following code which will put each city from the array in the drop down::
-
-    cities.forEach(function(city){
-        $('#city_menu').append('<option>'+city+'</option>');
+        // places I've been
+        var cities = ['Boston', 'New York', 'Washington DC', 'Tampa', 'Houston', 'Montreal',
+            'Los Angeles', 'Miami', 'West Palm Beach']; //and a few others
+        cities.forEach(function(city){
+            $('#city_menu').append('<option>'+city+'</option>');
+        });
     });
 
 Clearing Displayed Data
 ------------------------------
 **Goal: Displaying new data when city selection changes**
 
-When the user selects a new city the first thing we want to do is get rid of the old content.
+When the user selects a new city the first thing we want to do is get rid of the old forecast content.
 The ``emptyContent`` function is simply clears the old weather information from the html page.
 
 .. note:: If you decided to have a different layout this function will need to be specific to your custom display.
@@ -102,13 +95,10 @@ Remembering the previous location
 **Goal: show different weather reports based on the selected city; and remember the previous selected city**
 
 The following code should be placed inside of the document ready listener.
-When a new city is selected we want to store it in local storage, so if the application is restarted the last selected city will be the default selection.
 
-The following code sets up a handler which listens for city change.
-When a new city is selected it is saved to preferences, the old content is cleared from the page, and the forecast for the new city is retrieved and displayed.
+When a city is selected from the drop-down list, we want to remember it to use it as the default city when the app is restarted.
 
-``forge.prefs.set`` call takes four parameters, the name of the preference to store, the value, success callback and error callback.
-The last two parameters can be omitted in this context::
+To do that, we listen for changes to the ``city_menu`` element::
 
     $('#city_menu').change(function() {
         var city = $("#city_menu option:selected").html();
@@ -116,32 +106,39 @@ The last two parameters can be omitted in this context::
         getWeatherInfo(city, populateWeatherConditions);
     });
 
+See :ref:`forge.prefs.set<api-prefs-set>`.
+
+Using remembered locations
+-----------------------------------------
+**Goal: default to the user's previously selected city when they re-open the app**
+
 When the application first runs we want to check if a city has already been saved from a previous run.
-The first time the app is run, this preference will be ``null``.
 
-If a city has been saved to preferences, it is set as the selection and a change event is fired.
-**Note:** Even if the selection changes the change event is not fired until focus is lost, so we fire this event programatically.
+- the first time the app is run, this preference will be ``null``, meaning its value has not been set
+- if a city has been saved previously, it is selected in the drop-down list
 
-``forge.prefs.get`` takes 3 parameters, the name of the preference, a success callback which will be invoked with the value of the requested preference, and a callback if an error occurred retrieving the resource. The following code should be placed inside of the document ready listener.::
+::
 
-    forge.prefs.get('city', function(resource) {
-            if(resource) {
-                if ($('#city_menu').val() == resource) {
-                    $('#city_menu').change();
-                } else {
-                    //change event is not fired until focus is lost
-                    $('#city_menu').val(resource).change();
-                }
+    forge.prefs.get('city',
+        function(resource) {
+            if (resource) {
+                // user has previously selected a city
+                var city = resource;
+            } else {
+                // no previous selection
+                var city = 'Boston';
             }
-            else { //default
-                getWeatherInfo('Boston', populateWeatherConditions);
-            }
+
+            $('#city_menu').val(city);
+            $('#city_menu').change();
         },
-        function() {
-            forge.logging.log('ERROR! failed when retrieving city preferences');
+        function (error) {
+            forge.logging.error('failed when retrieving city preferences');
             $('#city_menu').val('Boston'); //default;
         }
     );
+
+See :ref:`forge.prefs.get<api-prefs-get>`.
 
 The weather app should now be complete.
 
@@ -152,26 +149,9 @@ Reference extension
 -------------------
 `part-4.zip <../../_static/weather/part-4.zip>`_ contains the code you should have in your app's src directory at this point.
 Feel free to check your code against it or use it to resume the tutorial from this point
-(remember to replace the 'author' and 'uuid' values in config.json with your own).
-
-It's not working!
------------------
-Things to check:
-
-* The best debugging tool is to add logging using forge.logging.log() throughout the code to track progress
-* Any code that modified the page should be inside the page ready listener.
-  This includes city selection population, checking preferences on startup, and city change handling code.
-
-**Mobile Only**
-
-* Use :ref:`Catalyst<tutorials-weather-tutorial-1-catalyst-debugging>` to inspect logging output and html of ``index.html``
-* This :ref:`page<mobile-troubleshooting>` shows how to troubleshoot some previously encountered errors
-
-**Chrome only**
-
-* Use Chrome's development tools to set breakpoint, step thorough the code, and evaluate expressions as necessary
 
 What's next?
 ------------
-It's easy to run the Weather App on a :ref:`different platform<tutorials-weather-conversion>`
-Here are some :ref:`suggestions<tutorials-weather-extensions>` on how to extend the weather app
+It's easy to run the Weather App on a :ref:`different platform<tutorials-weather-conversion>`.
+
+Here are some :ref:`suggestions<tutorials-weather-extensions>` on how to extend the weather app.
