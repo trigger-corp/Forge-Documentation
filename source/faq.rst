@@ -28,3 +28,27 @@ Building and running apps
 Whenever possible, we don't re-generate your whole app: we cache templates locally and adapt them with your new code.
 
 If you make certain changes to your ``config.json`` file, we may have to re-generate these templates, which means a build takes longer.
+
+
+Catalyst
+--------
+
+**Problem: Catalyst does not recognize the device**
+    .. image:: /_static/android/weather/images/troubleshooting/catalyst-no-device.png
+
+Catalyst generates a unique id for the script tag every time the page is loaded.
+Compare the hash(#) tag in the generated link and the script tag that you appended to the head element to make sure they're the same.
+:ref:`Run your app <mobile-getting-started-run>` and once the emulator has loaded your code you should see the device picked up by Catalyst.
+More information can be found on the `Catalyst home page <http://trigger.io/catalyst/>`_
+
+    .. image:: /_static/android/weather/images/troubleshooting/catalyst-device-found.png
+
+**No logging shows up in the Catalyst console**
+
+Logging calls may execute before the Catalyst console is ready.
+To display logging in Catalyst make sure you include ``window.forge.debug = true;`` at the top of your Javascript. ::
+
+	window.forge.debug = true;
+
+This will prevent logging until the Catalyst console is ready.
+For more information check out the **Advanced usage** section of the `Catalyst homepage <http://trigger.io/catalyst/>`_.

@@ -12,7 +12,6 @@ We're working hard to make Forge the simplest way to make mobile apps. We hope y
 but if you get stuck at any point, just drop us a line on support@trigger.io. We'd love to help!
 
 .. toctree::
-   :maxdepth: 2
+   :glob:
 
-   /mobile/getting-started
-   /mobile/troubleshooting
+   /mobile/*
