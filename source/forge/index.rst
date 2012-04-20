@@ -21,8 +21,6 @@ Mac and Linux users
 * change directory to wherever you extracted the zip file
 * run ``source go.sh``
 
-Now go on to :ref:`creating your first app <forge-create-app>`.
-
 .. _forge-create-app:
 
 Creating your first app

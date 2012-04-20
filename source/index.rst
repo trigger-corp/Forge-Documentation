@@ -18,10 +18,10 @@ Offering simplicity was our main goal when developing Forge: we do not require y
 Your feedback is very important to us. Please send an email to support@trigger.io with any questions or concerns.
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    
-   /faq.rst
    /forge/index.rst
+   /faq.rst
    /mobile/index.rst
    /web/index.rst
    /chrome/index.rst
