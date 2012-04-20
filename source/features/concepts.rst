@@ -1,7 +1,7 @@
 .. _extension-concepts:
 
-Concepts
-========
+Browser Add-on Concepts
+=======================
 
 **NB** this documentation only concerns browser extensions, not mobile apps.
 
