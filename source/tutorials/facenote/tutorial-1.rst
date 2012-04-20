@@ -60,14 +60,17 @@ Activating on the right pages
 ----------------------------------
 This particular browser extension should only be activated on Facebook pages.
 
-To set this up, we need to change the ``patterns`` array in ``config.json``. Change this::
+To set this up, we need to make sure the :ref:`activations <modules-activations>` module is enabled and set the ``patterns`` array in ``config.json``. To do this we need to add an ``activations`` object to ``modules`` in ``config.json``, if it already exists you will need to edit it to look like this::
 
-    "patterns": ["http://*/*"],
-    
-    
-To this::
-
-  "patterns": ["http://www.facebook.com/*", "https://www.facebook.com/*"],
+  "modules": {
+    "activations": [
+      {
+        "patterns": ["http://www.facebook.com/*", "https://www.facebook.com/*"],
+        "styles": [],
+        "scripts": []
+      }
+    ]
+  }
 
 The ``"http://www.facebook.com/*"`` value is a `match pattern <http://code.google.com/chrome/extensions/match_patterns.html>`_ dictating which URLs the extension should activate on.
 
@@ -98,7 +101,7 @@ Now, rebuild your extension with ``forge build`` and reload it in Chrome. When y
 
 Reference extension
 -------------------
-`fb-part-1.zip <../../_static/facenote/part-1.zip>`_ contains the code you should have at this point. Feel free to check your code against it, or use it to resume the tutorial from this point.
+`fb-part-1.zip <../../_static/facenote/fb-part-1.zip>`_ contains the code you should have at this point. Feel free to check your code against it, or use it to resume the tutorial from this point.
 
 It's not working!
 -----------------
