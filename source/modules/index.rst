@@ -6,4 +6,4 @@ Module Reference
 .. toctree::
    :glob:
 
-   /modules/*
+   *

@@ -9,7 +9,7 @@ We help you with this process on the Android and iOS platforms with the ``forge 
 
 Updating existing apps
 --------------------------------------------------------------------------------
-If you are using Forge to update an existing app which was not built on the platform, you will need to specify the package name manually, to match the one you had in your old app. To do this, see :ref:`package_names <field-package_names>` in the configuration documentation.
+If you are using Forge to update an existing app which was not built on the platform, you will need to specify the package name manually, to match the one you had in your old app. To do this, see :ref:`package_names <modules-package_names>` in the configuration documentation.
 
 Android
 --------------------------------------------------------------------------------

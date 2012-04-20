@@ -9,12 +9,9 @@ Internal documentation
 ----------------------
 
 .. toctree::
-  :maxdepth: 2
+  :glob:
 
-  tips
-  screen_size
-  libraries
-  example_project
+  *
   
 External resources
 ------------------

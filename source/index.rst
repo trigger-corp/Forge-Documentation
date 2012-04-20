@@ -20,17 +20,17 @@ Your feedback is very important to us. Please send an email to support@trigger.i
 .. toctree::
    :maxdepth: 2
    
-   /forge/index.rst
-   /faq.rst
-   /mobile/index.rst
-   /web/index.rst
-   /browser/index.rst
-   /tutorials/index.rst
+   /getting-started
+   /faq
+   /mobile
+   /web
+   /browser
+   /tutorials/index
    /best_practice/index
    /features/index
    /config
    /modules/index
-   /partners/index.rst
+   /partners/index
    /tools/index
    /releasing
    /release-notes
