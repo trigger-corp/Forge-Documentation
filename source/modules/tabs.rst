@@ -20,6 +20,8 @@ The ``tabs`` module must be enabled in ``config.json``
 API
 ---
 
+.. _modules-tabs-open:
+
 ``open``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: All**
@@ -34,6 +36,8 @@ On mobile this will display a :ref:`modal view <forge-modal>` and the success ca
     :param boolean keepFocus: (optional) If true keeps the current tab focused
     :param function(object) success: callback to be invoked when no errors occurs
     :param function(content) error: called with details of any error which may occur
+
+.. _modules-tabs-openWithOptions:
 
 ``openWithOptions``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
