@@ -93,3 +93,19 @@ API
 .. js:function:: is.orientation.landscape()
 
     :return boolean: Returns true if a mobile device has a landscape orientation
+
+``connection``
+---------------
+**Platforms: Mobile**
+
+``connected``
+~~~~~~~~~~~~
+.. js:function:: is.connection.connected()
+
+    :return boolean: Returns true if a mobile device has an active internet connection.
+
+``wifi``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. js:function:: is.connection.wifi()
+
+    :return boolean: Returns true if a mobile device is connected via wifi.
