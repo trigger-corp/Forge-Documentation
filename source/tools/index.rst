@@ -8,8 +8,8 @@ develop applications for the Forge platform.
 .. toctree::
    :maxdepth: 2
 
-   /tools/commands
-   /tools/local-config
-   /tools/proxy
-   /tools/forgeignore
-   /tools/hooks
+   commands
+   local-config
+   proxy
+   forgeignore
+   hooks

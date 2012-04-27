@@ -10,5 +10,5 @@ We recommend the Weather tutorial if you are most interested in building for mob
 .. toctree::
   :maxdepth: 2
 
-  /tutorials/weather/index
-  /tutorials/facenote/index
+  weather/index
+  facenote/index

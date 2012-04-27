@@ -3,7 +3,7 @@
 Modal views
 ================================================================================
 
-Modal views are a mobile only feature of Forge.
+:ref:`Modal views<modules-tabs>` are a mobile only feature of Forge.
 
 Modal views allow a second webpage to be loaded "on top" of the main web view in a Forge app. This allows a second page to be displayed without reloading the original, and also provides a dedicated button on the users screen to close the second view when their interaction has ended.
 
@@ -12,7 +12,7 @@ Modal views have two main purposes. The first is to provide quick access to part
 Internal pages
 ~~~~~~~~~~~~~~
 
-A simple use case for modal views is to display an options page at any point when users are interacting with a Forge app. This means an options page can be displayed, interacted with and closed, without the current page losing its state. To achieve this simply create a separate options page and when you want to display it use ``forge.tabs.open('options.html')``.
+A simple use case for modal views is to display an options page at any point when users are interacting with a Forge app. This means an options page can be displayed, interacted with and closed, without the current page losing its state. To achieve this simply create a separate options page and when you want to display it use ``forge.tabs.open('options.html')`` (see :ref:`the API documentation<modules-tabs-open>`).
 
 External authentication
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -33,9 +33,7 @@ In this scenario it is possible to close the modal view and redirect the user to
 Match pattern
 -------------
 
-To watch for a math pattern use code similar to:
-
-Example::
+To watch for a match pattern use code similar to::
 
   forge.tabs.openWithOptions({
     url: 'http://my.server.com/login/',
@@ -43,5 +41,7 @@ Example::
   }, function (data) {
     forge.logging.log(data.url);
   });
+
+See :ref:`the openWithOptions API documentation<modules-tabs-openWithOptions>`.
 
 In this example the final url in the modal view will be logged, data could also be extracted from it and used to authenticate the user, such as the query string (used for OAuth 1) or the hash fragment (in OAuth 2).

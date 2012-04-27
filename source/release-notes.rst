@@ -35,6 +35,22 @@ To upgrade from v1.2 to v1.3 your ``config.json`` file needs to be updated, this
 
 The migration process will automatically update your ``config.json`` file to v1.3, if for any reason it doesn't work a backup of your ``config.json`` file will be saved as ``config.json.bak``.
 
+v1.3.3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 27th April 2012**
+
+Features:
+
+- styling for :ref:`modal views on mobile<modules-tabs-openWithOptions>`
+- better incremental builds: faster development cycle in normal conditions
+
+Bug fixes:
+
+- authentication loop occurring in some situations when deploying code to Heroku
+- users cancelling out of iPad gallery now fires the error callback
+- support for nested JavaScript objects sent through forge.request.ajax
+- incorrect keystore password produces clearer error message
+
 v1.3.2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 19th April 2012**
@@ -83,28 +99,6 @@ Supported Platforms
 * iOS
 * Web
 
-.. _upgrade-1.2:
-
-Upgrade Instructions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-All new apps are now created at v1.2 by default. To update an existing app, change your ``platform_version`` setting from ``v1.1`` to ``v1.2``::
-
-    "platform_version": "v1.2"
-
-In v1.2, the ``libs`` directive in the configuration file has become an object, rather than an array, to allow for future extension.
-
-Where you before had::
-
-    "libs": []
-
-You should now include::
-
-    "libs": {}
-
-.. note:: to enable the new Gmail library, ``libs`` should be::
-
-    "libs": { "gmail": {} }
-
-.. note:: ``libs`` has also been made optional, so you can remove it from your configuration file entirely if you wish
-
-For API information, see http://docs.trigger.io/en/v1.2/api/index.html
+v1.2.4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 27th April 2012**
