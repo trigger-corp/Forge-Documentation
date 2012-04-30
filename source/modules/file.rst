@@ -100,7 +100,7 @@ Downloads a file at a specified URL and returns a file object which can be used 
 
 Cached files may be removed at any time by the operating system, and it is highly recommended you use the ``isFile`` method to check a cached file is still available before using it.
 
-.. js:function:: file.cachedURL(url, success, error)
+.. js:function:: file.cacheURL(url, success, error)
 
     :param string url: URL of file to cache.
     :param function(file) success: callback to be invoked when no errors occur (argument is the returned file)
