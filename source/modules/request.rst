@@ -69,6 +69,10 @@ Currently supported options:
  
 .. important:: If you wish to send complex JavaScript objects with ``request.ajax``, you must encode them as JSON first.
 
+Error object properties:
+ * ``statusCode``: Status code returned from the server.
+ * ``content``: Content returned from the server (if available).
+
 Error values (see :ref:`error callback docs <forge-features-api-error>` for more detail):
  * ``type``: ``"UNAVAILABLE"``
  * ``subtype``: ``"NO_INTERNET_CONNECTION"`` No internet connection is currently available (on iOS it is required you inform the user of this if it impacts their current experience).
@@ -83,8 +87,8 @@ Example::
     success: function(data) {
       alert('Updated x to '+data.x);
     },
-    error: function(errorThrown) {
-      alert('Failed to update x: '+errorThrown);
+    error: function(error) {
+      alert('Failed to update x: '+error.message);
     }
   });
 
