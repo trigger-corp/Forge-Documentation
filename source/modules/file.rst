@@ -58,7 +58,7 @@ Returned files will be accessible to the app as long as they exist on the device
     :param function(file) success: callback to be invoked when no errors occur (argument is the returned file)
     :param function(content) error: called with details of any error which may occur
 
-.. note:: On iOS devices, the first time your app uses an image from the camera or gallery, the user will be prompted to allow the app to access your location. This is because the EXIF data in images could be used to infer a user's geolocation. If this happens and the user selects **Don't Allow**, the error callback of the method which uses the returned file image.
+.. note:: On iOS devices, the first time your app uses an image from the camera or gallery, the user will be prompted to allow the app to access your location. This is because the EXIF data in images could be used to infer a user's geolocation. If this happens and the user selects **Don't Allow**, the error callback of the method which *uses* the returned file image will be invoked.
 
 ``getVideo``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -78,7 +78,7 @@ Returned files will be accessible to the app as long as they exist on the device
     :param function(file) success: callback to be invoked when no errors occur (argument is the returned file)
     :param function(content) error: called with details of any error which may occur
 
-.. note:: On iOS devices, the first time your app uses a video from the camera or gallery, the user will be prompted to allow the app to access your location. This is because the EXIF data in images could be used to infer a user's geolocation. If this happens and the user selects **Don't Allow**, the error callback of the method which uses the returned file image.
+.. note:: On iOS devices, the first time your app uses a video from the camera or gallery, the user will be prompted to allow the app to access your location. This is because the EXIF data in images could be used to infer a user's geolocation. If this happens and the user selects **Don't Allow**, the error callback of the method which *uses* the returned file image will be invoked.
 
 ``getLocal``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
