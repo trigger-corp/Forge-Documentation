@@ -44,7 +44,7 @@ Features:
 - connection status information in :ref:`forge.is.connection<modules-is>`, as well as :ref:`connection state change events<modules-event>`
 - `Web SQL <http://www.w3.org/TR/webdatabase/>`_ support
 
-.. note:: Web SQL is not supported on all platforms: http://caniuse.com/#search=websql
+.. warning:: Web SQL is not supported in all browsers or on all devices: http://caniuse.com/#search=websql
 
 v1.3.4
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
