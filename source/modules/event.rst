@@ -42,11 +42,15 @@ Triggered when the device is rotated, use forge.is.orientation.portrait() and  f
     :param function() callback: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
 
+.. _modules-event-connection:
+
 ``connectionStateChange.addListener``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Mobile**
 
 Triggered when the device connection state changes, use forge.is.connection.connected() and forge.is.connection.wifi() to test new connection state.
+
+This event will also be fired once during app startup, as soon as we determine the connection status.
 
 .. js:function:: event.connectionStateChange.addListener(callback, error)
 
