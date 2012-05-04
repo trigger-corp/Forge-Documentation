@@ -101,7 +101,7 @@ API
 .. note:: These functions are not reliable during your app's initialisation: you should use :ref:`modules-event-connection`. We guarantee to fire that event as the app starts up.
 
 ``connected``
-~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. js:function:: is.connection.connected()
 
     :return boolean: Returns true if a mobile device has an active internet connection.
