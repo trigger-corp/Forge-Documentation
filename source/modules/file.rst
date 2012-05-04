@@ -58,7 +58,7 @@ Returned files will be accessible to the app as long as they exist on the device
     :param function(file) success: callback to be invoked when no errors occur (argument is the returned file)
     :param function(content) error: called with details of any error which may occur
 
-.. note:: On iOS devices, the first time your app uses an image from the camera or gallery, the user will be prompted to allow the app to access your location. This is because the EXIF data in images could be used to infer a user's geolocation. If this happens and the user selects **Don't Allow**, the error callback of the method which *uses* the returned file image will be invoked.
+.. important:: On iOS devices, the first time your app reads from the gallery, the user will be prompted to allow the app to access your location. This is because the EXIF data in images stored there could be used to infer a user's geolocation. For more information, see :ref:`modules-file-permissions`.
 
 ``getVideo``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -78,7 +78,7 @@ Returned files will be accessible to the app as long as they exist on the device
     :param function(file) success: callback to be invoked when no errors occur (argument is the returned file)
     :param function(content) error: called with details of any error which may occur
 
-.. note:: On iOS devices, the first time your app uses a video from the camera or gallery, the user will be prompted to allow the app to access your location. This is because the EXIF data in images could be used to infer a user's geolocation. If this happens and the user selects **Don't Allow**, the error callback of the method which *uses* the returned file image will be invoked.
+.. important:: On iOS devices, the first time your app reads from the gallery, the user will be prompted to allow the app to access your location. This is because the EXIF data in files stored there could be used to infer a user's geolocation. For more information, see :ref:`modules-file-permissions`.
 
 ``getLocal``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -177,7 +177,15 @@ Deletes all files currently saved in the local cache.
     :param function() success: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
 
+.. _modules-file-permissions:
+
 Permissions
 -----------
 
 On Android this module will add the ``WRITE_EXTERNAL_STORAGE`` permission to your app, users will be prompted to accept this when they install your app.
+
+On iOS, accessing files in the device's gallery causes the user to be prompted to give your app access to their location. This is because files in the gallery may contain EXIF data, including geolocation and timestamps.
+
+To avoid the user being shown this prompt, you could save your image into a file rather than the gallery, using the ``saveLocation`` parameter. This is not yet supported when capturing videos.
+
+If a user chooses not to share their location with your app, the error callback of the method trying to read files from the gallery will be invoked.

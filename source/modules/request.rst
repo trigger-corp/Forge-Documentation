@@ -14,11 +14,11 @@ Config
 
     To protect your users, make these match patterns as restrictive as possible.
 
-.. parsed-literal::
+.. parsed-literal:: 
     {
         "modules": {
             "request": {
-                "permissions": ["https://trigger.io/*"]
+                "permissions": ["https://trigger.io/\*"]
             }
         }
     }
