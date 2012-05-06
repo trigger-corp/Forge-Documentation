@@ -35,6 +35,19 @@ To upgrade from v1.2 to v1.3 your ``config.json`` file needs to be updated, this
 
 The migration process will automatically update your ``config.json`` file to v1.3, if for any reason it doesn't work a backup of your ``config.json`` file will be saved as ``config.json.bak``.
 
+v1.3.7
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 6th May 2012**
+
+Features:
+
+- Windows Phone 7 support: partial
+
+Bug fixes:
+
+- ensure iOS permission dialog shown on main thread: was sometimes not visible
+- fix segfault which occurred in some situations showing camera on iPhone running v5.1
+
 v1.3.6
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 3rd May 2012**
