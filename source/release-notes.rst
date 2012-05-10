@@ -35,6 +35,39 @@ To upgrade from v1.2 to v1.3 your ``config.json`` file needs to be updated, this
 
 The migration process will automatically update your ``config.json`` file to v1.3, if for any reason it doesn't work a backup of your ``config.json`` file will be saved as ``config.json.bak``.
 
+v1.3.10
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 10th May 2012**
+
+Features:
+
+- full video support on Android and iOS
+- topbar module on Windows Phone
+
+Bug fixes:
+
+- callbacks sometimes not invoked after tabbar.addButton
+- window.forge initialisation sometimes got stuck in a loop
+- NullPointerException sometimes occurring when using console.log on Android
+- prevent BroadcastReceiver intent leak on Android
+- prevent console windows popping up during Toolkit builds
+
+v1.3.9
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 8th May 2012**
+
+Features:
+
+- greatly improved error messages and status codes for failed HTTP requests on Android
+
+v1.3.8
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 7th May 2012**
+
+Bug fixes:
+
+- handle change in status codes returned by Heroku API
+
 v1.3.7
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 6th May 2012**
