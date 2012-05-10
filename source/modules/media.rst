@@ -29,5 +29,5 @@ Play a video at a URL fullscreen on the device.
 .. js:function:: media.videoPlay(url, success, error)
 
     :param string url: URL to video.
-    :param function(file) success: callback to be invoked when no errors occur (argument is the returned file)
+    :param function() success: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
