@@ -7,6 +7,10 @@ This file contains information about new features and capabilities of Forge vers
 
 In your ``config.json`` file, you can use a major version (like ``v1.3``), which means you will receive rolling updates and fixes, or you can use a minor version (like ``v1.3.2``), which will only be updated with critical fixes and security patches.
 
+See https://trigger.io/forge/platform_versions/ for the latest information about which platforms are currently available.
+
+.. _release-notes-v1.3:
+
 v1.3 (*current version*)
 -------------------------------------------------------------------------------
 
@@ -163,6 +167,8 @@ Features:
 - ``getLocal`` function in :ref:`file module <modules-file>`
 - native bar at bottom of app: :ref:`tabbar module <modules-tabbar>`
 - ask for the minimum set of required permissions on Android
+
+.. _release-notes-v1.2:
 
 v1.2 (*previous version*)
 -------------------------------------------------------------------------------
