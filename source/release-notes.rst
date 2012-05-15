@@ -7,6 +7,10 @@ This file contains information about new features and capabilities of Forge vers
 
 In your ``config.json`` file, you can use a major version (like ``v1.3``), which means you will receive rolling updates and fixes, or you can use a minor version (like ``v1.3.2``), which will only be updated with critical fixes and security patches.
 
+See https://trigger.io/forge/platform_versions/ for the latest information about which platforms are currently available.
+
+.. _release-notes-v1.3:
+
 v1.3 (*current version*)
 -------------------------------------------------------------------------------
 
@@ -34,6 +38,21 @@ Upgrade Instructions
 To upgrade from v1.2 to v1.3 your ``config.json`` file needs to be updated, this can be done automatically by running ``forge migrate`` with the command line tools, or choosing to migrate from Trigger Toolkit.
 
 The migration process will automatically update your ``config.json`` file to v1.3, if for any reason it doesn't work a backup of your ``config.json`` file will be saved as ``config.json.bak``.
+
+v1.3.11
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 15th May 2012**
+
+Features:
+
+- disable icon glossiness on iOS (:ref:`docs <modules-icons>`)
+- ``file.getLocal`` and ``file.string`` support in non-mobile platforms (:ref:`docs <modules-file>`)
+- `Catalyst <http://trigger.io/catalyst/>`_ shows waiting message until debugger has connected
+
+Bug fixes:
+
+- run app on Android emulator, when emulator has been started automatically
+- prebuild hooks are found and run correctly
 
 v1.3.10
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -163,6 +182,8 @@ Features:
 - ``getLocal`` function in :ref:`file module <modules-file>`
 - native bar at bottom of app: :ref:`tabbar module <modules-tabbar>`
 - ask for the minimum set of required permissions on Android
+
+.. _release-notes-v1.2:
 
 v1.2 (*previous version*)
 -------------------------------------------------------------------------------

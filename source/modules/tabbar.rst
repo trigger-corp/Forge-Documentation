@@ -20,6 +20,28 @@ The ``tabbar`` module must be enabled in config.json as follows:
 API
 ---
 
+``show``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Mobile**
+
+Shows the tabbar. The tabbar is shown by default and will only be hidden if you call ``tabbar.hide()``.
+
+.. js:function:: tabbar.show(success, error)
+
+    :param function() success: callback to be invoked when no errors occur
+    :param function(content) error: called with details of any error which may occur
+
+``hide``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Mobile**
+
+Hides the tabbar.
+
+.. js:function:: tabbar.hide(success, error)
+
+    :param function() success: callback to be invoked when no errors occur
+    :param function(content) error: called with details of any error which may occur
+
 ``setTint``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Mobile**
