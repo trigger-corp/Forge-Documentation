@@ -20,6 +20,28 @@ The ``topbar`` module must be enabled in config.json as follows:
 API
 ---
 
+``show``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Mobile**
+
+Shows the topbar. The topbar is shown by default and will only be hidden if you call ``topbar.hide()``.
+
+.. js:function:: topbar.show(success, error)
+
+    :param function() success: callback to be invoked when no errors occur
+    :param function(content) error: called with details of any error which may occur
+
+``hide``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Mobile**
+
+Hides the topbar.
+
+.. js:function:: topbar.hide(success, error)
+
+    :param function() success: callback to be invoked when no errors occur
+    :param function(content) error: called with details of any error which may occur
+
 ``setTitle``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Mobile**

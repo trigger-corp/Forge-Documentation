@@ -35,6 +35,8 @@ The icons required for each platform are listed below:
 
 .. note:: If you specify *any* icons for a particular platform, you **must** specify all required icons!
 
+.. note:: iOS includes a special ``prerendered`` option, setting this to true will stop iOS from applying the gloss effect to your icons.
+
 Config
 ------
 
@@ -47,10 +49,11 @@ Config
                     "32": "icon32.png",
                     "48": "icon48-android.png"
                 },
-                "chrome": {
-                    "16": "icon16.png",
-                    "48": "icon48-chrome.png"
-                    "128": "icon128.png
+                "ios": {
+                    "57": "icon57.png",
+                    "72": "icon72-ios.png"
+                    "114": "icon114.png",
+                    "prerendered": true
                 }
             }
         }
