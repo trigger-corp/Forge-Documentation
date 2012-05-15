@@ -39,6 +39,21 @@ To upgrade from v1.2 to v1.3 your ``config.json`` file needs to be updated, this
 
 The migration process will automatically update your ``config.json`` file to v1.3, if for any reason it doesn't work a backup of your ``config.json`` file will be saved as ``config.json.bak``.
 
+v1.3.11
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 15th May 2012**
+
+Features:
+
+- disable icon glossiness on iOS (:ref:`docs <modules-icons>`)
+- ``file.getLocal`` and ``file.string`` support in non-mobile platforms (:ref:`docs <modules-file>`)
+- `Catalyst <http://trigger.io/catalyst/>`_ shows waiting message until debugger has connected
+
+Bug fixes:
+
+- run app on Android emulator, when emulator has been started automatically
+- prebuild hooks are found and run correctly
+
 v1.3.10
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 10th May 2012**
