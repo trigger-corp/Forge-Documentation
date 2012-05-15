@@ -60,7 +60,7 @@ Purchase an in-app product identified by ``productId``. The ``success`` callback
 .. js:function:: payments.purchaseProduct(productId, success, error)
 
     :param string productId: product id registered with iTunes or Google Play.
-    :param function(content) success: Purchase approved
+    :param function() success: Purchase approved
     :param function(content) error: called with details of any error which may occur
 
 ``restoreTransactions``
@@ -71,7 +71,7 @@ If in-app products are managed by iTunes or Google Play previous transactions ma
 
 .. js:function:: payments.restoreTransactions(success, error)
 
-    :param function(content) success: Request sent
+    :param function() success: Request sent
     :param function(content) error: called with details of any error which may occur
 	
 Guide
