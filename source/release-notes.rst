@@ -54,6 +54,7 @@ Bug fixes:
 
 - index not required for tabbar.addButton
 - large number of tabbar buttons handled properly
+- callbacks firefox after tabbar and topbar buttons added
 
 v1.3.11
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
