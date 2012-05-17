@@ -7,6 +7,8 @@ This file contains information about new features and capabilities of Forge vers
 
 In your ``config.json`` file, you can use a major version (like ``v1.3``), which means you will receive rolling updates and fixes, or you can use a minor version (like ``v1.3.2``), which will only be updated with critical fixes and security patches.
 
+To see the minor version used to create a particular build, look in ``.template/platform_version.txt`` in your app directory (``.template`` sits alongside ``src``).
+
 See https://trigger.io/forge/platform_versions/ for the latest information about which platforms are currently available.
 
 .. _release-notes-v1.3:
@@ -38,6 +40,20 @@ Upgrade Instructions
 To upgrade from v1.2 to v1.3 your ``config.json`` file needs to be updated, this can be done automatically by running ``forge migrate`` with the command line tools, or choosing to migrate from Trigger Toolkit.
 
 The migration process will automatically update your ``config.json`` file to v1.3, if for any reason it doesn't work a backup of your ``config.json`` file will be saved as ``config.json.bak``.
+
+v1.3.12
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 17th May 2012**
+
+Features:
+
+- ``.template/platform_version.txt`` created as part of build process
+- button popups on IE are moved and resized intelligently
+
+Bug fixes:
+
+- index not required for tabbar.addButton
+- large number of tabbar buttons handled properly
 
 v1.3.11
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
