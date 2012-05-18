@@ -83,7 +83,7 @@ Using in-app payments
 Javascript
 ##########
 
- * In order to receive asynchronous transaction details you must register a ``transactionReceived`` listener on all pages in your app: this must deal with incoming transactions and call the confirmation function when they are dealt with. Not calling the confirm function will cause transactions events to be emitted again at a later time as iTumes/Google Play will assume your app has not handled them successfully.
+ * In order to receive asynchronous transaction details you must register a ``transactionReceived`` listener on all pages in your app: this must deal with incoming transactions and call the confirmation function when they are dealt with. Not calling the confirm function will cause transactions events to be emitted again at a later time as iTunes/Google Play will assume your app has not handled them successfully.
  * To purchase a product use ``forge.payments.purchaseProduct``. When calling ``purchaseProduct`` pass the ID of your product as created on iTunes/Google Play.
 
 Android
@@ -118,11 +118,14 @@ iOS
 When developing on iOS, there are no test product IDs - only actual products created for your app in iTunes Connect can be tested. However, apps signed with a "iPhone Developer" certificate will run in the iTunes sandbox and any purchases will be simulated (no charge will be made).
 
 In order to test in-app payments on iOS you must make sure you have completed the following steps:
- * Create a specific app ID for your app in the iOS provisioning portal, and create a provisioning profile for that app. Wildcard provisioning profiles will not work with in-app purchases. Remember to configure Forge to use this provisioning profile when you build or package your app (see :ref:`iOS parameters <local_conf-ios>`).
+ * Create a specific app ID for your app in the iOS provisioning portal, and create development and distribution provisioning profiles for that app. Wildcard provisioning profiles will not work with in-app purchases.
  * Add your app to iTunes Connect and add any in-app products you want to sell. Currently the payments module support consumable and non-consumable products only, not subscriptions.
- * You will need to submit your app (signed with a distribution certificate) to iTunes Connect at least once to enable in-app payments; if you do not wish you submit your app for approval yet you can submit it then immediately reject the binary through iTunes Connect.
+ * :ref:`Package your app <releasing-ios-ipa>` with the *distribution* provisioning profile into an IPA and submit it to iTunes Connect; if you do not wish you submit your app for approval yet you can submit it then immediately reject the binary through iTunes Connect.
+ * Run the app on a device using the *development* provisioning profile to be able to test in the sandbox with dummy transactions.
  * You cannot buy apps using a real iTunes account while testing: in order to test, you must sign out of the App Store on your device, and when using your app and prompted to login, sign in with a test user created through iTunes Connect.
  * You may need to wait several hours between submitting your app and in-app items and them being available for you to test with. If you have followed all of the above steps and still have problems you may just need to wait for the changes you have made to become active.
+
+.. note:: You can configure the provisioning profile and developer certificate to use in your ``local_config.json`` file, see :ref:`parameters-in-a-file`. Being able to switch between development and distribution environments with :ref:`Profiles <local_conf-profiles>` is a time saver.
 
 Managed products / ``restoreTransactions``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

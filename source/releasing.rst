@@ -74,6 +74,8 @@ When working with Forge, you will want to use a development wildcard provisionin
 
 The result of these instructions assume you have your two provisioning profiles stored in the current directory, called ``Development.mobileprovision`` and ``Release.mobileprovision`` respectively.
 
+.. _releasing-ios-ipa:
+
 Creating an IPA
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 After you have created your provisioning profile, use ``forge package ios`` to produce an IPA file.
@@ -82,7 +84,7 @@ Depending on your local settings, you may also need to know the exact name of yo
 
 Assuming you have a provisioning profile called ``Development.mobileprovision`` in the current directory, you would use a command like::
 
-    forge package ios --provisioning-profile Development.mobileprovision
+    forge package ios --ios.profile.provisioning-profile Development.mobileprovision
 
 In the ``release`` directory, there will now be an ``ios`` sub-directory, containing your IPA.
 
