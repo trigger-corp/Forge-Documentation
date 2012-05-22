@@ -87,7 +87,7 @@ Javascript
  * To purchase a product use ``forge.payments.purchaseProduct``. When calling ``purchaseProduct`` pass the ID of your product as created on iTunes/Google Play.
 
 Android
-#######
+#############################################################################
 
 When developing your app and not signing with a release key, you can use the following special product IDs to test in-app payments:
  * ``android.test.purchased``: This product will return a successful ``PURCHASED`` transaction if the user presses "Buy". It is not managed and so will not be restorable.
@@ -108,9 +108,11 @@ In order to test your actual products you will need to make sure you have done t
  * Install the APK you uploaded to Google Play to the device you wish to test on (and make sure your primary account on the device is a test user who has been added on Google Play).
  * You should now be able to perform in-app purchase actions in your app. Test user purchases will be charged if you allow them to go through: you can manually cancel or refund purchases through the merchant account section of Google Play.
 
-.. note:: You cannot buy your own products: test users must have a different ID to your merchant ID, and the test user must be the **primary** user account on the testing device.
+.. important:: You cannot buy your own products: test users must have a different ID to your merchant ID, and the test user must be the **primary** user account on the testing device.
 
 .. note:: You cannot use the emulator to test in-app payments: it must be a real device.
+
+.. note:: When uploading APKs and adding test users, we've found there can sometimes be a delay for the changes to take effect. If you see unexpectedly see messages like **this app is not configured for billing** or **this item is not available**, try waiting for 10 minutes.
 
 iOS
 ################################################################################
@@ -132,7 +134,7 @@ Managed products / ``restoreTransactions``
 
 If you create "managed" items on Google Play or "Non-Consumable" items on iTunes Connect then you can restore purchases the user has made at a later date, if they have reinstalled your app or moved to another device.
 
-To restore transactions made on another install or another device use ``forge.payments.restoreTransactions``, calling this may cause the user to be prompted for login details, so it is best to only call then when first setting up an application, or if a user specifically requests it. Any restored transactions will be returned through the ``transactionReceived`` listener.
+To restore transactions made on another install or another device use ``forge.payments.restoreTransactions``, calling this may cause the user to be prompted for login details, so it is best to only call it when first setting up an application, or if a user specifically requests it. Any restored transactions will be returned through the ``transactionReceived`` listener.
 
 Receipts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -142,7 +144,7 @@ In order to confirm a purchase has been legitimately made through iTunes or Goog
 Android
 #######
 
-On Android the ``receipt`` property of the transaction contains the ``type`` as ``android`` as well as a ``data`` property containing a JSON string with the receipt data, a ``signature`` property containing a base64 encoded signature and a ``signed`` property which is a boolean indicating whether or not the signature matches. Details on how to verify the signature can be found in the Android documentation: http://developer.android.com/guide/market/billing/billing_integrate.html#billing-signatures.
+On Android, the ``receipt`` property of the transaction contains the ``type`` as ``android``, as well as a ``data`` property containing a JSON string with the receipt data, a ``signature`` property containing a base64 encoded signature and a ``signed`` property which is a boolean indicating whether or not the signature matches. Details on how to verify the signature can be found in the Android documentation: http://developer.android.com/guide/market/billing/billing_integrate.html#billing-signatures.
 
 The ``signature`` property is determined on the device in Java and should not be trusted if the data can be sent to a server to be verified.
 
