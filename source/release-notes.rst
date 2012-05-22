@@ -41,6 +41,18 @@ To upgrade from v1.2 to v1.3 your ``config.json`` file needs to be updated, this
 
 The migration process will automatically update your ``config.json`` file to v1.3, if for any reason it doesn't work a backup of your ``config.json`` file will be saved as ``config.json.bak``.
 
+v1.3.13
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 22nd May 2012**
+
+Features:
+
+- show / hide topbar and tabbar programmatically
+- specify minimum version of iOS and Android
+- complete ``forge.file`` support on Windows Phone 7
+- in-app purchase support
+- updated Firefox SDK
+
 v1.3.12
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 17th May 2012**
