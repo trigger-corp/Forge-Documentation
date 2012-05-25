@@ -13,3 +13,4 @@ develop applications for the Forge platform.
    proxy
    forgeignore
    hooks
+   ios-windows
