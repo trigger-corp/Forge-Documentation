@@ -41,6 +41,21 @@ To upgrade from v1.2 to v1.3 your ``config.json`` file needs to be updated, this
 
 The migration process will automatically update your ``config.json`` file to v1.3, if for any reason it doesn't work a backup of your ``config.json`` file will be saved as ``config.json.bak``.
 
+v1.3.14
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 30th May 2012**
+
+Features:
+
+- can install apps to SD card on Android
+
+Bug fixes:
+
+- default value for file character encoding guess
+- handle non-ASCII command line parameters
+- playVideo callback is fired after video finishes and focus returns
+- mailto: links handled properly in modal views
+
 v1.3.13
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 22nd May 2012**
