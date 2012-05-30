@@ -31,7 +31,9 @@ There is a *general* section, for parameters which are not linked to any particu
         },
         "release": {
           "provisioning_profile": "/home/trigger/release.mobileprovision",
-          "developer_certificate": "iPhone Distribution"
+          "developer_certificate": "iPhone Distribution",
+		  "developer_certificate_path": "C:\\developer.pfx",
+		  "developer_certificate_password": "myp4ssw0rd"
         }
       }
     },
@@ -112,12 +114,14 @@ device                   --ios.device                        Either ``simulator`
 
 All other settings should be placed inside a :ref:`profile <local_conf-profiles>`: available settings are shown below:
 
-======================== =================================== ===============================================
-Profile Config Option    Command-line Option                 Meaning
-======================== =================================== ===============================================
-provisioning_profile     --ios.profile.provisioning_profile  Provisioning Profile to embed into your iOS app
-developer_certificate    --ios.profile.developer_certificate Name of certificate to sign iOS app with
-======================== =================================== ===============================================
+=============================== ============================================ =======================================================
+Profile Config Option           Command-line Option                          Meaning
+=============================== ============================================ =======================================================
+provisioning_profile            --ios.profile.provisioning_profile           Provisioning Profile to embed into your iOS app
+developer_certificate           --ios.profile.developer_certificate          Name of certificate to sign iOS app with (OS X only)
+developer_certificate_path      --ios.profile.developer_certificate_path     Path to developer certificate (Windows only)
+developer_certificate_password  --ios.profile.developer_certificate_password Password for given developer certificate (Windows only)
+=============================== ============================================ =======================================================
 
 .. _local_conf-android:
 
