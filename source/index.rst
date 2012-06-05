@@ -32,5 +32,6 @@ Your feedback is very important to us. Please send an email to support@trigger.i
    /modules/index
    /partners/index
    /tools/index
+   /standalone
    /releasing
    /release-notes

@@ -23,6 +23,8 @@ Both of these can be created and managed from the Apple iOS provisioning portal,
 
 Once these are setup you should be able to use ``forge run ios`` to install the app on your device and see log output in the terminal on your computer.
 
+.. _tools-ios-windows-certificate:
+
 Creating a signing certificate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
