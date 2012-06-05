@@ -63,7 +63,7 @@ For example, I'm using curl here to authenticate with the server on the command 
         --cookie-jar cookies.txt \
         --header 'Accept: application/json' \
         -X GET \
-        'http://127.0.0.1:8000/api/auth/hello'
+        'https://trigger.io/api/auth/hello'
     {"csrfmiddlewaretoken": "ba003de0006cd8db165ad65f9081405a", "result": "ok"}
     > export CSRF_TOKEN=ba003de0006cd8db165ad65f9081405a
     > curl \
@@ -74,7 +74,7 @@ For example, I'm using curl here to authenticate with the server on the command 
         -X POST \
         --form email=james@trigger.io \
         --form password='my password' \
-        'http://127.0.0.1:8000/api/auth/verify'
+        'https://trigger.io/api/auth/verify'
     {"result": "ok"}
 
 .. _standalone-usage:
@@ -98,7 +98,7 @@ To package your app, use the ``/standalone/package`` endpoint::
         --form and_keyalias=androiddebugkey \
         --form and_keypass=android \
         -X POST \
-        'http://127.0.0.1:8000/standalone/package'
+        'https://trigger.io/standalone/package'
     {"id": "b0a05ec7-1683-40cc-b80b-716ba5d5067a", "result": "ok"}
 
 This has started the packaging process and given you an ``id`` which you can
@@ -109,7 +109,7 @@ use to track the ongoing processing::
         --cookie-jar cookies.txt \
         --header 'Accept: application/json' \
         -X GET \
-        'http://127.0.0.1:8000/standalone/track/package/b0a05ec7-1683-40cc-b80b-716ba5d5067a'
+        'https://trigger.io/standalone/track/package/b0a05ec7-1683-40cc-b80b-716ba5d5067a'
     {"info": {"output": ""}, "state": "BUILDING", "id": "38b63a52-a35f-49fe-932a-39db3d82951a", "result": "ok"}
 
 At this point, the build has started; repeated calls to
@@ -120,10 +120,10 @@ At this point, the build has started; repeated calls to
         --cookie-jar cookies.txt \
         --header 'Accept: application/json' \
         -X GET \
-        'http://127.0.0.1:8000/standalone/track/package/b0a05ec7-1683-40cc-b80b-716ba5d5067a'
+        'https://trigger.io/standalone/track/package/b0a05ec7-1683-40cc-b80b-716ba5d5067a'
     {"info": {
         "files": {
-            "android": "http://localhost:8000/media/993100fe3aa844c3ad11575e11aeb9fc/demo-1338404961.apk"
+            "android": "https://trigger.io/media/993100fe3aa844c3ad11575e11aeb9fc/demo-1338404961.apk"
         },
         "output": "[   INFO] Forge tools running at version 3.3.0\n ..."
     },
