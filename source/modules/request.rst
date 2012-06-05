@@ -66,8 +66,7 @@ Currently supported options:
  * url
  * username
  * files (Mobile only, see :ref:`forge.file <modules-file>`)
- 
-.. important:: If you wish to send complex JavaScript objects with ``request.ajax``, you must encode them as JSON first.
+ * headers
 
 Error object properties:
  * ``statusCode``: Status code returned from the server.
@@ -84,6 +83,9 @@ Example::
     url: 'http://my.server.com/update/,
     data: {x: 1, y: "2"},
     dataType: 'json',
+    headers: {
+      'X-Header-Name': 'header value',
+    },
     success: function(data) {
       alert('Updated x to '+data.x);
     },

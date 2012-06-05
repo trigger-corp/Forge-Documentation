@@ -66,6 +66,8 @@ For the second situation, you need to create and use a release provisioning prof
 
 Therefore, our recommended approach is to use a development wildcard provisioning profile (one that works for any of your apps), right until you're ready to release to the App Store. Only at that point should you switch to your release provisioning profile.
 
+.. _releasing-ios-provisioning_profile:
+
 Creating provisioning profiles
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The Apple developer center has `good documentation <https://developer.apple.com/library/ios/#documentation/ToolsLanguages/Conceptual/DevPortalGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40011159>`_ about creating provisioning profiles, developer certificates and app IDs that should be your main reference.
