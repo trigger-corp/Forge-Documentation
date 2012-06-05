@@ -123,6 +123,8 @@ developer_certificate_path      --ios.profile.developer_certificate_path     Pat
 developer_certificate_password  --ios.profile.developer_certificate_password Password for given developer certificate (Windows only)
 =============================== ============================================ =======================================================
 
+For more information about creating provisioning profiles, see :ref:`releasing-ios-provisioning_profile`.
+
 .. _local_conf-android:
 
 android
