@@ -5,13 +5,15 @@ Parse
 
 "Add a Backend to Your Mobile App in Minutes" - `Parse <https://parse.com/>`_ allows you to add backend features to your mobile app without a server. Their back end features include a datastore, user accounts and push notifications.
 
-Parse push notifications are integrated directly Forge. Other Parse features may be accessed by using :ref:`forge.request.ajax <cross-domain>` with the `Parse REST API <https://parse.com/docs/rest>`_.
+For a small example on our blog, see `Using Parse and Trigger.io for cross-platform apps without pain in the back-end <http://trigger.io/cross-platform-application-development-blog/2012/03/23/using-parse-and-trigger-io-for-cross-platform-apps-without-pain-in-the-back-end/>`_.
+
+Parse push notifications are integrated directly Forge. Other Parse features may be accessed by using :ref:`forge.request.ajax <modules-request>` with the `Parse REST API <https://parse.com/docs/rest>`_.
 
 Configuring Push Notifications
 ------------------------------
 First you'll need to register an app at `parse.com <https://parse.com/>`_.
 
-In order for your app to communicate with the Parse servers for push notifications you must specifiy both your applicationId and clientKey in your app's :ref:`config.json <api-event>` as shown:
+In order for your app to communicate with the Parse servers for push notifications you must specifiy both your applicationId and clientKey in your app's :ref:`config.json <modules-event>` as shown:
 
 .. parsed-literal::
     "partners": {
@@ -20,6 +22,8 @@ In order for your app to communicate with the Parse servers for push notificatio
             "clientKey": "YourClientKeyZdAtirdSn02QQy6NofiU2Hfy6No"
         }
     }
+
+.. note:: This Parse configuration must go in the *partners* section of your ``config.json``, not *modules* as is the norm with normal Forge modules.
 
 API: ``forge.partners.parse``
 -----------------------------
@@ -46,6 +50,17 @@ push.subscribe
     :param function() success: Called if the request is successful
     :param function(content) error: Called with details of any error which may occur
 
+Example::
+
+    forge.partners.parse.push.subscribe("beta-testers",
+    function () {
+      forge.logging.info("subscribed to beta-tester push notifications!");
+    },
+    function (err) {
+      forge.logging.error("error subscribing to beta-tester notifications: "+
+        JSON.stringify(err));
+    });
+
 push.unsubscribe
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Mobile**
@@ -56,6 +71,17 @@ push.unsubscribe
     :param function() success: Called if the request is successful
     :param function(content) error: Called with details of any error which may occur
 
+Example::
+
+    forge.partners.parse.push.unsubscribe("beta-testers",
+    function () {
+      forge.logging.info("no more beta-tester notifications...");
+    },
+    function (err) {
+      forge.logging.error("couldn't unsubscribe from beta-tester notifications: "+
+        JSON.stringify(err));
+    });
+
 push.subscribedChannels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Mobile**
@@ -64,6 +90,17 @@ push.subscribedChannels
 
     :param function(channels) success: Called with an array of subscribed channels
     :param function(content) error: Called with details of any error which may occur
+
+Example::
+
+    forge.partners.parse.push.subscribedChannels(
+    function (channels) {
+      forge.logging.info("subscribed to: "+JSON.stringify(channels));
+    },
+    function (err) {
+      forge.logging.error("couldn't retreive subscribed channels: "+
+        JSON.stringify(err));
+    });
 
 Permissions
 -----------
