@@ -46,9 +46,9 @@ More information can be found on the `Catalyst home page <http://trigger.io/cata
 **No logging shows up in the Catalyst console**
 
 Logging calls may execute before the Catalyst console is ready.
-To display logging in Catalyst make sure you include ``window.forge.debug = true;`` at the top of your Javascript. ::
+To display logging in Catalyst make sure you include ``window.forge.enableDebug();`` at the top of your Javascript.::
 
-	window.forge.debug = true;
+	window.forge.enableDebug();
 
 This will prevent logging until the Catalyst console is ready.
 For more information check out the **Advanced usage** section of the `Catalyst homepage <http://trigger.io/catalyst/>`_.
