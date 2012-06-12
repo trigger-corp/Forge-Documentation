@@ -54,7 +54,7 @@ Authentication is a two step process - ensure that any cookies are saved between
 
   - the POST body should include ``email`` and ``password`` parameters
 
-For CSRF protection, all POST requests must include a ``csrftoken`` cookie and ``X-CSRFToken`` header. You must use the actual CSRF token returned by ``/api/auth/hello``.
+For CSRF protection, all POST requests must include ``X-CSRFToken`` and ``Referer`` headers. You must use the actual CSRF token returned by ``/api/auth/hello``.
 
 For example, I'm using curl here to authenticate with the server on the command line::
 
@@ -62,6 +62,7 @@ For example, I'm using curl here to authenticate with the server on the command 
         --cookie cookies.txt \
         --cookie-jar cookies.txt \
         --header 'Accept: application/json' \
+        --header 'Referer: https://trigger.io/' \
         -X GET \
         'https://trigger.io/api/auth/hello'
     {"csrfmiddlewaretoken": "ba003de0006cd8db165ad65f9081405a", "result": "ok"}
@@ -71,6 +72,7 @@ For example, I'm using curl here to authenticate with the server on the command 
         --cookie-jar cookies.txt \
         --header "X-CSRFToken: $CSRF_TOKEN" \
         --header 'Accept: application/json' \
+        --header 'Referer: https://trigger.io/' \
         -X POST \
         --form email=james@trigger.io \
         --form password='my password' \
@@ -92,6 +94,7 @@ To package your app, use the ``/standalone/package`` endpoint::
         --cookie-jar cookies.txt \
         --header "X-CSRFToken: $CSRF_TOKEN" \
         --header 'Accept: application/json' \
+        --header 'Referer: https://trigger.io/' \
         --form src_zip=@my_app.zip \
         --form and_keystore=@debug.keystore \
         --form and_storepass=android \
@@ -108,6 +111,7 @@ use to track the ongoing processing::
         --cookie cookies.txt \
         --cookie-jar cookies.txt \
         --header 'Accept: application/json' \
+        --header 'Referer: https://trigger.io/' \
         -X GET \
         'https://trigger.io/standalone/track/package/b0a05ec7-1683-40cc-b80b-716ba5d5067a'
     {"info": {"output": ""}, "state": "BUILDING", "id": "38b63a52-a35f-49fe-932a-39db3d82951a", "result": "ok"}
@@ -119,6 +123,7 @@ At this point, the build has started; repeated calls to
         --cookie cookies.txt \
         --cookie-jar cookies.txt \
         --header 'Accept: application/json' \
+        --header 'Referer: https://trigger.io/' \
         -X GET \
         'https://trigger.io/standalone/track/package/b0a05ec7-1683-40cc-b80b-716ba5d5067a'
     {"info": {
