@@ -49,6 +49,7 @@ Features:
 
 - better Q & A system for Trigger Toolkit
 - build for iOS on Windows and Linux: http://trigger.io/cross-platform-application-development-blog/2012/05/31/work-on-what-you-want-week-at-trigger-io/
+- iframes are allowed on iOS now - embed media players, buttons and so on
 
 Bug fixes:
 
