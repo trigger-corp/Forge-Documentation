@@ -1,36 +1,40 @@
-==========================================
-Forge Documentation
-==========================================
+.. title:: Forge Documentation
 
-Forge is a development framework which enables you to create native apps for multiple platforms from a single HTML5 codebase.
+.. pull-quote:: Forge makes app development as easy as web development
 
-Here are a few benefits of Forge:
+Creating, building, running and releasing an app is as simple as::
 
-* Single code base
-* Ability to generate mobile applications for Android and iPhone
-* Ability to generate web applications for desktop and mobile browsers
-* Ability to generate browser extensions for Chrome, Safari, Firefox, and IE
-* Rapid development
-* Reduced maintenance costs
+    > forge create
+    > forge build
+    > forge run
+    > forge package
 
-Offering simplicity was our main goal when developing Forge: we do not require you to write a single line of Objective-C or Java, or learn platform-specific APIs.
+Or we offer a `graphical Toolkit <https://trigger.io/forge/toolkit/>`_ if you prefer!
 
-Your feedback is very important to us. Please send an email to support@trigger.io with any questions or concerns.
+This documentation has a :ref:`getting started guide <forge-index>`, a reference to the available :ref:`modules <modules>`, and a couple of :ref:`tutorials <tutorials-weather-tutorial-1>`. Signing up and giving it a try is really easy: `see for yourself <https://trigger.io/>`_!
+
+.. container:: button
+
+    `Contact Us <mailto:support@trigger.io>`_
+
+.. container:: button
+
+    :ref:`Get Started <forge-index>`
 
 .. toctree::
-   :maxdepth: 2
-   
-   /getting-started
-   /faq
-   /mobile
-   /web
-   /browser
-   /tutorials/index
-   /best_practice/index
-   /features/index
-   /config
-   /modules/index
-   /partners/index
-   /tools/index
-   /releasing
-   /release-notes
+    :hidden:
+
+    /getting-started
+    /faq
+    /mobile
+    /web
+    /browser
+    /tutorials/index
+    /best_practice/index
+    /features/index
+    /config
+    /modules/index
+    /partners/index
+    /tools/index
+    /releasing
+    /release-notes
