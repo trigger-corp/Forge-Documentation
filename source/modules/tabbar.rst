@@ -5,6 +5,8 @@
 
 The ``tabbar`` module shows a fixed footer as part of your app which can show multiple "tab" buttons, these buttons can be selected by the user or activated by Javascript.
 
+To get an idea of how these footers can look, see our blog post, `How to build hybrid mobile apps combining native UI components with HTML5 <http://trigger.io/cross-platform-application-development-blog/2012/04/30/how-to-build-hybrid-mobile-apps-combining-native-ui-components-with-html5/>`_.
+
 Config
 ------
 

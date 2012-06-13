@@ -33,6 +33,8 @@ If you make certain changes to your ``config.json`` file, we may have to re-gene
 Catalyst
 --------
 
+For a screencast on Catalyst, and help on how to get started see `Screencast: Trigger.io Catalyst in action <http://trigger.io/cross-platform-application-development-blog/2012/05/04/screencast-trigger-io-catalyst-in-action-2/>`_.
+
 **Problem: Catalyst does not recognize the device**
     .. image:: /_static/android/weather/images/troubleshooting/catalyst-no-device.png
 
