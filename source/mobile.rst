@@ -37,7 +37,7 @@ Setting up an Android environment
 -----------------------------------
 In order to build your app for Android there is a minimum requirement of having Python and Java installed (you should already have Python to run any of the command line tool commands). Both commands should be installed and made available on your path.
 
-In order to run your built app, an attached phone with debug drivers installed or an active Android emulator device are required. If you do not set this up yourself the command line tools will do so automatically - simply follow any instructions given to you by the commands.
+In order to run your built app, you'll need an attached phone with debug drivers installed or an active Android emulator device. If you do not set this up yourself, the command line tools will detect this and offer to create an appropriate Android Virtual Device (AVD) for you - simply follow any instructions given to you by the commands.
 
 If you wish to manually manage your Android emulator you can use the ``--android.sdk`` flag when using ``forge run`` to point to your Android SDK location and run your own emulator AVD. All automatic installation procedures will prompt before making any changes to your system.
 
