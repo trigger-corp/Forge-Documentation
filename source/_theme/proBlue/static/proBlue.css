@@ -68,16 +68,27 @@ div.related img {
     margin: 15px 0 0 15px;
 }
 
-div.related a {
-    color: #fff;
-    margin-right: 15px;
+div.related a.api-header {
+    color: white;
+    font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    margin: 10px 10px 0 0;
+    float: right;
+    display: block;
+    background-color: #DFB309;
+    height: 30px;
+    margin-top: 10px;
+    line-height: 30px;
+    padding: 0px 20px;
+    border-top: 1px solid #FDD743;
+    border-bottom: 1px solid black;
 }
 
-span.api-header {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 30px;
-    margin-right: 10px;
-    float: right;
+div.related a.api-header:hover {
+    background-color:#DFB926;
+    text-decoration:none;
 }
 
 div.body {
@@ -100,23 +111,50 @@ div.footer a {
 }
 
 .button {
-    display: block;
+    float: right;
+}
+.button a {
     color: white !important;
     text-align: center;
-    margin: 30px 0 0 100px;
+    margin: 30px 0 0 60px;
     font-size: 24px;
+    font-weight: 200;
+    letter-spacing: 1px;
     line-height: 50px;
     height: 50px;
     background: #DFB309 url(f/bttn-lrg-action.png) no-repeat right center;
     width: 260px;
+    display: block;
+}
+.button a:hover {background-color:#DFB926;text-decoration:none;}
+
+div.container {
+    clear: both;
+}
+.index-command-demo {
+    margin-bottom: 20px;
+}
+.index-command-demo .highlight {
+    width: 50%;
+}
+.index-command-demo pre {
+    margin: 0;
+    font-size: 150%;
+}
+.index-toolkit-screen {
+    margin-bottom: 20px;
+}
+.index-toolkit-screen img {
+    width: 50%;
     float: right;
 }
 
-.button a {
-    color: white !important;
-}
-.button a:hover {
-    text-decoration: none;
+.pull-quote {
+    font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif;
+    color: #222;
+    font-size: 2em;
+    margin-bottom: 35px;
+    margin-left: 0;
 }
 
 div.sphinxsidebar {
@@ -283,7 +321,7 @@ div.body h3,
 div.body h4,
 div.body h5,
 div.body h6 {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif;
     font-weight: normal;
     margin: 24px 0 0 0;
 }

@@ -86,17 +86,17 @@ show_authors = False
 # pygments_style = 'perldoc'
 # pygments_style = 'borland'
 # pygments_style = 'colorful'
-pygments_style = 'default'
+# pygments_style = 'default'
 # pygments_style = 'murphy'
 # pygments_style = 'vs'
 # pygments_style = 'trac'
 # pygments_style = 'tango'
 # pygments_style = 'fruity' # dark, OB on black
 # pygments_style = 'pastie' # light R on white
-# pygments_style = 'friendly' #light GB on white
+pygments_style = 'friendly' #light GB on white
 # pygments_style = 'native' # dark
 
-highlight_language = 'js'
+highlight_language = 'javascript'
 
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []

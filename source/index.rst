@@ -2,20 +2,23 @@
 
 .. pull-quote:: Forge makes app development as easy as web development
 
-Creating, building, running and releasing an app is as simple as::
+.. container:: index-command-demo
 
-    > forge create
-    > forge build
-    > forge run
-    > forge package
+    Creating, building, running and releasing an app is as simple as::
 
-Or we offer a `graphical Toolkit <https://trigger.io/forge/toolkit/>`_ if you prefer!
+        > forge create
+        > forge build
+        > forge run
+        > forge package
 
-This documentation has a :ref:`getting started guide <forge-index>`, a reference to the available :ref:`modules <modules>`, and a couple of :ref:`tutorials <tutorials-weather-tutorial-1>`. Signing up and giving it a try is really easy: `see for yourself <https://trigger.io/>`_!
+.. container::
 
-.. container:: button
+    If you prefer, we also offer a graphical UI to work with your apps: the `Trigger Toolkit <https://trigger.io/forge/toolkit/>`_.
 
-    `Contact Us <mailto:support@trigger.io>`_
+    This documentation has a :ref:`getting started guide <forge-index>`, a
+    reference to the available :ref:`modules <modules>`, and a couple of
+    :ref:`tutorials <tutorials-weather-tutorial-1>`. Signing up and giving it a
+    try is really easy: see for yourself!
 
 .. container:: button
 

@@ -27,9 +27,19 @@ Forge can be used to generate both iOS and Android apps from a single codebase. 
 
 Setting up an iOS environment
 -----------------------------
-To build and run iOS apps, you need to be using a Mac computer.
+To build and run iOS apps, you can use a Mac, Windows or Linux computer. However, to use the iOS simulator, a Mac is required.
 
-To test your app locally you will need the iOS Simulator. This is included with XCode, which you can download from https://developer.apple.com/xcode/. When this is installed, start XCode and click 'Preferences' from the XCode menu to check the iOS Simulator is listed as installed under components. If not, you may install it from that window.
+For more information on how to build for iOS from a non-Mac computer, see
+:ref:`tools-ios-windows` and our `Build and test your iPhone / iPad app on
+Windows and Linux
+<http://trigger.io/cross-platform-application-development-blog/2012/06/13/new-features-test-iphone-ipad-apps-on-windows-and-linux-embed-media-players-and-widgets-updated-toolkit/>`_
+blog post.
+
+To test your app locally you can use the iOS Simulator if you have a Mac. This
+is included with XCode, which you can download from
+https://developer.apple.com/xcode/. When this is installed, start XCode and
+click 'Preferences' from the XCode menu to check the iOS Simulator is listed as
+installed under components. If not, you may install it from that window.
 
 We have found some unresponsiveness when apps 'over scroll' in iOS Simulator 5.0 so recommend installing version 4.3 too. This lagging performance is only an issue in the simulator, not in actual devices.
 
