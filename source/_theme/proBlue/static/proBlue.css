@@ -70,7 +70,7 @@ div.related img {
 
 div.related a.api-header {
     color: white;
-    font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 20px;
     font-weight: 200;
     letter-spacing: 1px;
@@ -140,13 +140,6 @@ div.container {
 .index-command-demo pre {
     margin: 0;
     font-size: 150%;
-}
-.index-toolkit-screen {
-    margin-bottom: 20px;
-}
-.index-toolkit-screen img {
-    width: 50%;
-    float: right;
 }
 
 .pull-quote {
