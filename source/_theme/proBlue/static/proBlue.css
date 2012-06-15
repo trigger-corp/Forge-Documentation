@@ -234,7 +234,7 @@ div.sphinxsidebar input[type=text]{
     padding: 0.23em 0.4em;
     color:#333;
 }
-div.sphinxsidebar input[type=submit]{
+div.sphinxsidebar #searchbox input[type=submit]{
   background-color: #168DA2;
   color:#fff;
   cursor: pointer;
