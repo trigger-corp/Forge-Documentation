@@ -8,8 +8,10 @@ for access by mobile and desktop browsers. This means you don't need to decide b
 native apps or mobile websites. Both can be created from the same HTML5 code base using the Forge
 framework.
 
-Forge web apps are built upon node.js for optimum portability. The Forge build tools handle everything
+Forge web apps are built upon Node.js for optimum portability. The Forge build tools handle everything
 required to build and deploy your code.
+
+To hear why we created this, see `Introducing ‘Build to Web’ - simple deployment of your mobile codebase as a web app <http://trigger.io/cross-platform-application-development-blog/2012/03/12/introducing-%E2%80%98build-to-web%E2%80%99-simple-deployment-of-your-mobile-codebase-as-a-web-app/>`_.
 
 Testing your web app
 --------------------

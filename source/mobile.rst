@@ -27,9 +27,19 @@ Forge can be used to generate both iOS and Android apps from a single codebase. 
 
 Setting up an iOS environment
 -----------------------------
-To build and run iOS apps, you need to be using a Mac computer.
+To build and run iOS apps, you can use a Mac, Windows or Linux computer. However, to use the iOS simulator, a Mac is required.
 
-To test your app locally you will need the iOS Simulator. This is included with XCode, which you can download from https://developer.apple.com/xcode/. When this is installed, start XCode and click 'Preferences' from the XCode menu to check the iOS Simulator is listed as installed under components. If not, you may install it from that window.
+For more information on how to build for iOS from a non-Mac computer, see
+:ref:`tools-ios-windows` and our `Build and test your iPhone / iPad app on
+Windows and Linux
+<http://trigger.io/cross-platform-application-development-blog/2012/06/13/new-features-test-iphone-ipad-apps-on-windows-and-linux-embed-media-players-and-widgets-updated-toolkit/>`_
+blog post.
+
+To test your app locally you can use the iOS Simulator if you have a Mac. This
+is included with XCode, which you can download from
+https://developer.apple.com/xcode/. When this is installed, start XCode and
+click 'Preferences' from the XCode menu to check the iOS Simulator is listed as
+installed under components. If not, you may install it from that window.
 
 We have found some unresponsiveness when apps 'over scroll' in iOS Simulator 5.0 so recommend installing version 4.3 too. This lagging performance is only an issue in the simulator, not in actual devices.
 
@@ -37,7 +47,7 @@ Setting up an Android environment
 -----------------------------------
 In order to build your app for Android there is a minimum requirement of having Python and Java installed (you should already have Python to run any of the command line tool commands). Both commands should be installed and made available on your path.
 
-In order to run your built app, an attached phone with debug drivers installed or an active Android emulator device are required. If you do not set this up yourself the command line tools will do so automatically - simply follow any instructions given to you by the commands.
+In order to run your built app, you'll need an attached phone with debug drivers installed or an active Android emulator device. If you do not set this up yourself, the command line tools will detect this and offer to create an appropriate Android Virtual Device (AVD) for you - simply follow any instructions given to you by the commands.
 
 If you wish to manually manage your Android emulator you can use the ``--android.sdk`` flag when using ``forge run`` to point to your Android SDK location and run your own emulator AVD. All automatic installation procedures will prompt before making any changes to your system.
 
