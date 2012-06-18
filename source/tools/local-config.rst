@@ -125,7 +125,7 @@ developer_certificate_password  --ios.profile.developer_certificate_password Pas
 
 For more information about creating provisioning profiles, see :ref:`releasing-ios-provisioning_profile`.
 
-.. note:: For more information about building iOS apps on Windows or Linux, see :ref:`tools-ios-windows`.
+.. note:: For more information about building iOS apps on Windows, see :ref:`tools-ios-windows`.
 
 .. _local_conf-android:
 
