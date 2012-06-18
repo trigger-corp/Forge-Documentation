@@ -1,9 +1,9 @@
 .. _tools-ios-windows:
 
-Developing iOS apps on Windows and Linux
+Developing iOS apps on Windows
 ================================================================================
 
-Forge allows the development of iOS apps on Windows and Linux without the use
+Forge allows the development of iOS apps on Windows without the use
 of an OS X machine. To do this you will need a physical iOS device (the iOS
 simulator will only run on OS X), and an iOS developer account. In order
 to sign your application (which is required to install it onto the device, even

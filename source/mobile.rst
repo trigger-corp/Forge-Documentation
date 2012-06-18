@@ -27,11 +27,11 @@ Forge can be used to generate both iOS and Android apps from a single codebase. 
 
 Setting up an iOS environment
 -----------------------------
-To build and run iOS apps, you can use a Mac, Windows or Linux computer. However, to use the iOS simulator, a Mac is required.
+To build and run iOS apps, you can use a Mac or Windows computer. However, to use the iOS simulator, a Mac is required.
 
 For more information on how to build for iOS from a non-Mac computer, see
 :ref:`tools-ios-windows` and our `Build and test your iPhone / iPad app on
-Windows and Linux
+Windows
 <http://trigger.io/cross-platform-application-development-blog/2012/06/13/new-features-test-iphone-ipad-apps-on-windows-and-linux-embed-media-players-and-widgets-updated-toolkit/>`_
 blog post.
 
