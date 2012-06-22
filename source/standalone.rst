@@ -79,7 +79,9 @@ use to track the ongoing processing::
 
     > curl \
         --header 'Accept: application/json' \
-        -X GET \
+        --data email=james@trigger.io \
+        --data password='my password' \
+        -G \
         'https://trigger.io/standalone/track/package/b0a05ec7-1683-40cc-b80b-716ba5d5067a'
     {"info": {"output": ""}, "state": "BUILDING", "id": "38b63a52-a35f-49fe-932a-39db3d82951a", "result": "ok"}
 
@@ -88,7 +90,9 @@ At this point, the build has started; repeated calls to
 
     > curl \
         --header 'Accept: application/json' \
-        -X GET \
+        --data email=james@trigger.io \
+        --data password='my password' \
+        -G \
         'https://trigger.io/standalone/track/package/b0a05ec7-1683-40cc-b80b-716ba5d5067a'
     {"info": {
         "files": {
