@@ -32,8 +32,8 @@ There is a *general* section, for parameters which are not linked to any particu
         "release": {
           "provisioning_profile": "/home/trigger/release.mobileprovision",
           "developer_certificate": "iPhone Distribution",
-		  "developer_certificate_path": "C:\\developer.pfx",
-		  "developer_certificate_password": "myp4ssw0rd"
+          "developer_certificate_path": "C:\\developer.pfx",
+          "developer_certificate_password": "myp4ssw0rd"
         }
       }
     },
@@ -124,6 +124,8 @@ developer_certificate_password  --ios.profile.developer_certificate_password Pas
 =============================== ============================================ =======================================================
 
 For more information about creating provisioning profiles, see :ref:`releasing-ios-provisioning_profile`.
+
+.. note:: For more information about building iOS apps on Windows, see :ref:`tools-ios-windows`.
 
 .. _local_conf-android:
 

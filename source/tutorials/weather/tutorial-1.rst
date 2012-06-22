@@ -149,22 +149,22 @@ Remote Debugging on Mobile
 **Goal getting started with Catalyst**
 
 As you've already seen in :ref:`mobile-getting-started` ``forge.logging.log`` prints output to console/terminal.
-You can also use remote debugging which provides some helpful tools for troubleshooting and examining the app at runtime.
+You can also use our remote debugging tool, Catalyst, which provides some helpful tools for troubleshooting and examining the app at runtime.
 
-#. Open up a browser and go to `<https://trigger.io/catalyst/>`_.
+For a screencast on Catalyst, and help on how to get started see `Screencast: Trigger.io Catalyst in action <http://trigger.io/cross-platform-application-development-blog/2012/05/04/screencast-trigger-io-catalyst-in-action-2/>`_.
+
+#. Open up a browser and go to http://trigger.io/catalyst/.
 #. On this page there will be a generated ``script`` tag which you copy and insert into the head element of your ``index.html`` file.
 #. Click on the auto-generated link which takes you to a page that looks similar to Chrome's debugging tools.
 #. Open ``src/js/weather.js`` and add the following at the **beginning** of the file::
 
-    window.forge.debug = true;
+    window.forge.enableDebug();
 
   This will ensure that Catalyst is connected and ready before the code runs, preventing any logging from being lost.
 5. Rebuild and re-run your app. In a few moments, your Catalyst tab in the browser should show the device.
 #. Check the console of the Catalyst tool: you should see your ``mountainViewForecast`` object being logged.
 
-.. note:: Catalyst is a great tool, especially for debugging mobile apps: check out the "Elements" view to inspect and modify the DOM, and the "Network" view to diagnose performance problems.
-
-.. warning:: When you are not using Catalyst, you must remove the ``window.forge.debug = true;`` statement, or your app will fail to start properly.
+.. note:: Catalyst is a great tool, especially for debugging mobile apps: check out the "Elements" view to inspect and modify the DOM, the "API" tab to see your ``forge`` calls flowing back and forth, and the "Network" view to diagnose performance problems.
 
 .. _tutorials-weather-tutorial-1-chrome-debugging:
 

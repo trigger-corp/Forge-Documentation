@@ -52,7 +52,7 @@ To build the extension, bring up your terminal, and enter the ``forge build`` co
     [WARNING] creating output directory ".template"
     [   INFO] Development build created. Use forge run to run your app.
 
-Underneath the ``development/chrome`` directory, you now have a development Chrome extension which can be installed from the ``chrome://extensions`` screen. Following these instructions, `create and load an extension <http://code.google.com/chrome/extensions/getstarted.html>`.
+Underneath the ``development/chrome`` directory, you now have a development Chrome extension which can be installed from the ``chrome://extensions`` screen. Following these instructions, `create and load an extension <http://code.google.com/chrome/extensions/getstarted.html>`_.
 
 .. warning:: Whenever you make changes to files in the ``src`` directory, you will need to rebuild the app with ``forge build``, then reload the extension by going to ``chrome://extensions`` and clicking on *Reload* in the relevant section.
 

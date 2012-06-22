@@ -1,5 +1,3 @@
-.. This folder will document how to get started using the forge website, from creating an account through to having created your first app.
-
 .. _forge-index:
 
 Getting Started with Forge
@@ -70,3 +68,14 @@ If you are already working with an app on your machine, after activating the ``f
     cd "../my-existing-app"
 
 In that directory, you should have a ``src`` directory, containing the code for your app. For further documentation, follow our :ref:`Chrome tutorial <chrome-index>`, :ref:`Mobile tutorial <mobile-index>` or see our :ref:`modules`.
+
+What next?
+--------------------------------------------------------------------------------
+By now, you have a development environment set up.
+
+From here, you could take a look at:
+
+- :ref:`mobile-index`
+- :ref:`web-index`
+- :ref:`chrome-index`
+- :ref:`tutorials-weather-tutorial-index`

@@ -13,7 +13,7 @@
 /* -- page layout ----------------------------------------------------------- */
 
 body {
-    font-family: arial, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 81.25%;
     color: #333;
     line-height: 1.67em;
@@ -45,7 +45,7 @@ div.bodywrapper {
 }
 
 hr {
-    border: 1px solid #B1B4B6;
+    border: 1px solid #b1b4b6;
 }
 
 div.document {
@@ -54,11 +54,41 @@ div.document {
     min-width: 400px;
 }
 
-span.api-header {
-    font-family: Museo, 'Trebuchet MS', Helvetica, sans-serif;
-    font-size: 36px;
-    margin: -5px 0 10px 16px;
-    display: inline-block;
+div.related {
+  background: #2A2A2A url(https://trigger.io/forge-static/css/trigger/f/bg-hatched.png) repeat top left;
+  line-height: 50px;
+  height: 50px;
+  color: #ffffff;
+  font-size: 1.1em;
+  border-bottom: 1px solid #fff; 
+}
+
+div.related img {
+    border: 0;
+    margin: 15px 0 0 15px;
+}
+
+div.related a.api-header {
+    color: white;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    margin: 10px 10px 0 0;
+    float: right;
+    display: block;
+    background-color: #DFB309;
+    height: 30px;
+    margin-top: 10px;
+    line-height: 30px;
+    padding: 0px 20px;
+    border-top: 1px solid #FDD743;
+    border-bottom: 1px solid black;
+}
+
+div.related a.api-header:hover {
+    background-color:#DFB926;
+    text-decoration:none;
 }
 
 div.body {
@@ -80,34 +110,44 @@ div.footer a {
     color: #444;
 }
 
-div.related {
-  background-color: #000;
-  line-height: 50px;
-  height: 50px;
-  color: #ffffff;
-  font-size: 1.1em;
-  border-bottom: 1px solid #fff; 
-  padding-left: 20px;
+.button {
+    float: right;
+}
+.button a {
+    color: white !important;
+    text-align: center;
+    margin: 30px 0 0 60px;
+    font-size: 24px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    line-height: 50px;
+    height: 50px;
+    background: #DFB309 url(f/bttn-lrg-action.png) no-repeat right center;
+    width: 260px;
+    display: block;
+}
+.button a:hover {background-color:#DFB926;text-decoration:none;}
+
+div.container {
+    clear: both;
+}
+.index-command-demo {
+    margin-bottom: 20px;
+}
+.index-command-demo .highlight {
+    width: 50%;
+}
+.index-command-demo pre {
+    margin: 0;
+    font-size: 150%;
 }
 
-div.related img {
-    border: 0;
-    margin-top: 15px;
-}
-
-div.related a {
-    color: #fff;
-}
-
-div.related .right {
-    font-size: 0.9em;
-}
-
-div.colorband {
-    width: 100%;
-    color: white;
-    background: #2A2A2A url(https://trigger.io/forge-static/css/trigger/f/bg-hatched.png) repeat top left;
-    padding: 20px 0;
+.pull-quote {
+    font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif;
+    color: #222;
+    font-size: 2em;
+    margin-bottom: 35px;
+    margin-left: 0;
 }
 
 div.sphinxsidebar {
@@ -125,7 +165,7 @@ div.sphinxsidebarwrapper{
 
 div.sphinxsidebar h3,
 div.sphinxsidebar h4 {
-    font-family: arial, serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: normal;
     margin: 0;
 }
@@ -172,7 +212,7 @@ div.sphinxsidebar li:hover li a {
 
 div.sphinxsidebar input {
     border: 1px solid #dadada;
-    font-family: helvetica, arial, serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 1.3em;
     padding: 0.2em 0.4em;
     -moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.1);
@@ -194,7 +234,7 @@ div.sphinxsidebar input[type=text]{
     padding: 0.23em 0.4em;
     color:#333;
 }
-div.sphinxsidebar input[type=submit]{
+div.sphinxsidebar #searchbox input[type=submit]{
   background-color: #168DA2;
   color:#fff;
   cursor: pointer;
@@ -274,7 +314,7 @@ div.body h3,
 div.body h4,
 div.body h5,
 div.body h6 {
-    font-family: arial, serif;
+    font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif;
     font-weight: normal;
     margin: 24px 0 0 0;
 }
@@ -365,7 +405,7 @@ div.body h3 tt,
 div.body h4 tt,
 div.body li a tt {
     color: #333;
-    font-family: arial, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 1em;
     font-weight: normal;
 }

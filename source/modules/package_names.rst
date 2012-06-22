@@ -3,9 +3,12 @@
 ``package_names``: Built package names
 ================================================================================
 
-This controls the package name used internally when building your app, you probably don't need to set this unless you want to replace an existing app with a Forge app.
+This controls the package name used internally when building your app; if you don't set this manually, we'll generate a package name automatically for you, which looks something like ``io.trigger.forge7faf8ebcb8a111e1910212313d1adcbe``.
 
-By default, we create a package name for your app, something like ``io.trigger.forge.appname*``. Although your users aren't going to see this value, it can sometimes be useful to be able to control it manually, for example when updating a previous app that wasn't built on Forge.
+Although your users aren't really going to see this value, it can be useful
+to be able to control it manually, for example when updating a previous app
+that wasn't built on Forge, or if you already have iOS provisioning profiles
+which don't match our generated ID.
 
 Config
 ------
