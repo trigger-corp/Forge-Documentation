@@ -41,6 +41,17 @@ To upgrade from v1.2 to v1.3 your ``config.json`` file needs to be updated, this
 
 The migration process will automatically update your ``config.json`` file to v1.3, if for any reason it doesn't work a backup of your ``config.json`` file will be saved as ``config.json.bak``.
 
+v1.3.16
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 18th June 2012**
+
+Bug fixes:
+
+- "no such file or directory" during Android tasks on some Linux setups
+- Node.js directory locking issue on Windows
+- lots of Trigger Toolkit UI tweaks and fixes
+- allow for running Forge builds on non-root mount point
+
 v1.3.15
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 11th June 2012**
