@@ -3,11 +3,18 @@
 Standalone Build API
 ================================================================================
 
-Although we expect most users to interact with Trigger.io Forge through our command-line tools and browser-based toolkit, we also offer a standlone build API to be used programmatically from other environments.
+Although we expect most users to interact with Trigger.io Forge through our
+command-line tools and browser-based toolkit, we also offer a standlone build
+API to be used programmatically from other environments.
 
-Using this build API, all of your HTML, CSS and JavaScript is uploaded to our server, along with keys and certificates required for signing purposes. Once the build is complete, the packages can be downloaded for a limited time period.
+Using this build API, all of your HTML, CSS and JavaScript is uploaded to our
+server, along with keys and certificates required for signing purposes. Once
+the build is complete, the packages can be downloaded for a limited time
+period.
 
-Due to the nature of this API, builds take a considerable time longer to complete when compared to conventional usage. If you are able to use the Trigger tooling, it is recommended to do so.
+Due to the nature of this API, builds may take longer to complete when compared
+to conventional usage. If you are able to use the Trigger tooling, it is
+recommended to do so.
 
 API details
 --------------------------------------------------------------------------------
@@ -18,6 +25,10 @@ The various fields are described below:
 =================== ================================= ======================================
 Name                Label                             Expected value
 =================== ================================= ======================================
+email               email address                     The email address you used to sign up
+                                                      to Trigger.io
+password            Trigger.io password               The password you gave when you signed
+                                                      up for Trigger.io
 src_zip             src folder zip                    A zip file containing the contents of
                                                       your src folder. The zip should not
                                                       include the src folder itself; i.e.
@@ -43,58 +54,17 @@ ios_profile         iOS provisioning_profile          A .mobileprovision file yo
 
 For example usage, see :ref:`standalone-usage`.
 
-Authentication
---------------------------------------------------------------------------------
-You must authenticate with the Trigger.io servers before you can use this API.
-
-Authentication is a two step process - ensure that any cookies are saved between these requests and any further requests:
-
-#. GET http://trigger.io/api/auth/hello
-#. POST to http://trigger.io/api/auth/verify
-
-  - the POST body should include ``email`` and ``password`` parameters
-
-For CSRF protection, all POST requests must include ``X-CSRFToken`` and ``Referer`` headers. You must use the actual CSRF token returned by ``/api/auth/hello``.
-
-For example, I'm using curl here to authenticate with the server on the command line::
-
-    > curl \
-        --cookie cookies.txt \
-        --cookie-jar cookies.txt \
-        --header 'Accept: application/json' \
-        --header 'Referer: https://trigger.io/' \
-        -X GET \
-        'https://trigger.io/api/auth/hello'
-    {"csrfmiddlewaretoken": "ba003de0006cd8db165ad65f9081405a", "result": "ok"}
-    > export CSRF_TOKEN=ba003de0006cd8db165ad65f9081405a
-    > curl \
-        --cookie cookies.txt \
-        --cookie-jar cookies.txt \
-        --header "X-CSRFToken: $CSRF_TOKEN" \
-        --header 'Accept: application/json' \
-        --header 'Referer: https://trigger.io/' \
-        -X POST \
-        --form email=james@trigger.io \
-        --form password='my password' \
-        'https://trigger.io/api/auth/verify'
-    {"result": "ok"}
-
 .. _standalone-usage:
 
 Usage
 --------------------------------------------------------------------------------
-After authentication as completed, POST requests must still include the
-established cookies and a ``X-CSRFToken`` token matching the return value from
-``/api/auth/hello``.
 
 To package your app, use the ``/standalone/package`` endpoint::
 
     > curl \
-        --cookie cookies.txt \
-        --cookie-jar cookies.txt \
-        --header "X-CSRFToken: $CSRF_TOKEN" \
         --header 'Accept: application/json' \
-        --header 'Referer: https://trigger.io/' \
+        --form email=james@trigger.io \
+        --form password='my password' \
         --form src_zip=@my_app.zip \
         --form and_keystore=@debug.keystore \
         --form and_storepass=android \
@@ -108,10 +78,7 @@ This has started the packaging process and given you an ``id`` which you can
 use to track the ongoing processing::
 
     > curl \
-        --cookie cookies.txt \
-        --cookie-jar cookies.txt \
         --header 'Accept: application/json' \
-        --header 'Referer: https://trigger.io/' \
         -X GET \
         'https://trigger.io/standalone/track/package/b0a05ec7-1683-40cc-b80b-716ba5d5067a'
     {"info": {"output": ""}, "state": "BUILDING", "id": "38b63a52-a35f-49fe-932a-39db3d82951a", "result": "ok"}
@@ -120,10 +87,7 @@ At this point, the build has started; repeated calls to
 ``/standalone/track/package`` will show when the processing has completed::
 
     > curl \
-        --cookie cookies.txt \
-        --cookie-jar cookies.txt \
         --header 'Accept: application/json' \
-        --header 'Referer: https://trigger.io/' \
         -X GET \
         'https://trigger.io/standalone/track/package/b0a05ec7-1683-40cc-b80b-716ba5d5067a'
     {"info": {
