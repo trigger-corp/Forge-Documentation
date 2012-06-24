@@ -107,7 +107,7 @@ Ok, perhaps that wasn't all too impressive - let's add some dynamic functionalit
 
     <p>Hello World, this is HTML!</p>
 
-* Open the file ``js/default.js`` and change its contents to::
+* Create the file ``js/default.js`` and change its contents to::
 
     forge.logging.info('Hello World, this is JavaScript');
 
@@ -122,7 +122,7 @@ Ok, perhaps that wasn't all too impressive - let's add some dynamic functionalit
 
 Reference app
 -------------------
-The files in `getting-started.zip <../_static/weather/getting-started.zip>`_ represent the code you should have in your src folder at this point.  If you run into any issues this is a good place to look.
+The files in `getting-started.zip </_static/weather/getting-started.zip>`_ represent the code you should have in your src folder at this point.  If you run into any issues this is a good place to look.
 
 Troubleshooting
 ---------------
