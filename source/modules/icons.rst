@@ -51,7 +51,7 @@ Config
                 },
                 "ios": {
                     "57": "icon57.png",
-                    "72": "icon72-ios.png"
+                    "72": "icon72-ios.png",
                     "114": "icon114.png",
                     "prerendered": true
                 }
