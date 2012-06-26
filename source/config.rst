@@ -1,6 +1,6 @@
 .. _config:
 
-Config File Reference
+Config file reference
 ================================================================================
 ``config.json`` is a JSON file which contains meta-data about your app. It determines basic settings for your app, such as the name users will see, as well as module config which allows various parts of Forge to be enabled or configured individually.
 

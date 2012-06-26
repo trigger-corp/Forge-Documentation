@@ -1,6 +1,6 @@
 .. _forgeignore:
 
-Excluding files and folders from your builds
+Excluding files from your builds
 --------------------------------------------
 To exclude files and folders in ``src`` from being included in the output of
 ``forge build``, you can write a set of exclusion rules in

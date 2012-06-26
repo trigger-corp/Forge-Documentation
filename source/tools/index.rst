@@ -1,6 +1,6 @@
 .. _tools-index:
 
-Forge tools reference
+Tools
 =================================================
 This section contains reference documentation on how to use our tools to
 develop applications for the Forge platform.
@@ -8,6 +8,7 @@ develop applications for the Forge platform.
 .. toctree::
    :maxdepth: 2
 
+   /config
    commands
    local-config
    proxy

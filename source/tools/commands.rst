@@ -1,7 +1,7 @@
 
 .. _command-line-notes:
 
-The Forge command line tool
+Command-line
 ===========================
 
 There are four main commands when using forge:

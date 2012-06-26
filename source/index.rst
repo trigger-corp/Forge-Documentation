@@ -27,17 +27,7 @@
 .. toctree::
     :hidden:
 
-    /getting-started
-    /faq
-    /mobile
-    /web
-    /browser
-    /tutorials/index
-    /best_practice/index
-    /features/index
-    /config
+    /getting-started/index
     /modules/index
-    /partners/index
     /tools/index
-    /releasing
-    /release-notes
+    /best_practice/index

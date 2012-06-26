@@ -1,6 +1,6 @@
 .. _best-practice-index:
 
-Best practice for app development
+Recipes
 ======================================================
 
 While Forge provides as consistent as possible an environment to develop across multiple platforms, there are still differences between different platforms and devices. This section of documentation attempts to highlight common issues you can run into and describe some of the best practices for dealing with them.
@@ -11,7 +11,17 @@ Internal documentation
 .. toctree::
   :glob:
 
-  *
+  https://trigger.io
+  example_project
+  libraries
+  /features/modal
+  native_ui
+  gmaps
+  firebase
+  screen_size
+  tips
+  /releasing
+  
   
 External resources
 ------------------

@@ -1,6 +1,6 @@
 .. _mobile-index:
 
-Forge and Mobile (iOS and Android)
+Forge and Mobile
 =================================================
 
 The following tutorial is intended to get anyone up to speed developing iOS and Android apps using Forge.

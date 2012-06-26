@@ -1,9 +1,13 @@
 .. _modules:
 
-Module Reference
+API
 ================================================================================
 
 .. toctree::
    :glob:
 
-   *
+   /modules/mobile/index
+   /modules/browser/index
+   /modules/general/index
+   /release-notes
+   
