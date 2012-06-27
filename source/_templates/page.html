@@ -10,16 +10,31 @@
 {% extends "layout.html" %}
 
 {% block relbar1 %}
-	<div class="related">
-		<a href="https://trigger.io/">
-			<img src="https://trigger.io/forge-static/css/trigger/f/logo-header-small-caps.png"/>
-		</a>
-		<a class="api-header" href="mailto:support@trigger.io">Contact Us</a>
+<header id="main-header">
+
+	<div id="searchbox">
+		<form class="search" action="{{ pathto('search') }}" method="get">
+			<label>{{ _('Search: ') }}</label>
+			<input type="text" name="q" />
+			<input type="submit" value="{{ _('Go') }}" />
+			<input type="hidden" name="check_keywords" value="yes" />
+			<input type="hidden" name="area" value="default" />
+		</form>
 	</div>
+
+	<a href="https://trigger.io" class="top-tab-trigger">Trigger.io</a>
+
+	<hgroup id="main-h">
+		<h1><a href="http://docs.trigger.io">Trigger.io Forge Documentation</a></h1>
+	</hgroup>
+
+</header>
 {% endblock %}
 
 {% block relbar2 %}{% endblock %}
 
 {% block body %}
+<div id="main">
   {{ body }}
+</div>
 {% endblock %}

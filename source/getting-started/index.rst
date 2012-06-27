@@ -1,6 +1,6 @@
 .. _getting-started:
 
-Getting Started
+Get Started
 ================================================================================
 
 .. toctree::
