@@ -51,12 +51,20 @@ div.document {
 }
 
 div.related {
-  background: #2A2A2A url(https://trigger.io/forge-static/css/trigger/f/bg-hatched.png) repeat top left;
-  line-height: 50px;
-  height: 50px;
-  color: #ffffff;
-  font-size: 1.1em;
-  border-bottom: 1px solid #fff; 
+	background: black; 
+	background-image: -ms-linear-gradient(top, #2E2E2E 0%, black 100%);
+	background-image: -moz-linear-gradient(top, #2E2E2E 0%, black 100%);
+	background-image: -o-linear-gradient(top, #2E2E2E 0%, black 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2E2E2E), color-stop(1, black));
+	background-image: -webkit-linear-gradient(top, #2E2E2E 0%, black 100%);
+	background-image: linear-gradient(top, #2E2E2E 0%,  black 100%);
+	min-width: 980px;
+	position: relative;
+	line-height: 50px;
+	height: 50px;
+	color: #ffffff;
+	font-size: 1.1em;
+	border-bottom: 1px solid #fff; 
 }
 
 div.related img {
@@ -292,8 +300,8 @@ div.body h3,
 div.body h4,
 div.body h5,
 div.body h6 {
-    /*font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif;*/
-    font-weight: normal;
+    /*font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif;
+    font-weight: normal;*/
     margin: 24px 0 0 0;
 }
  
@@ -415,7 +423,7 @@ div.body div.toctree-wrapper tt {
 
 #searchbox label {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size: 18px;
+	font-size: 16px;
 	color: white;
 	vertical-align: bottom;
 	padding-bottom: 4px;
@@ -473,4 +481,29 @@ div.body div.toctree-wrapper tt {
 	box-shadow: none;
 	text-shadow: none;
 	text-decoration: none;
+}
+
+tt span {
+	font-size: 16px;
+}
+
+#main h2 {
+	font-weight: bold;
+}
+
+#main h3 {
+	font-weight: bold;
+}
+
+#main pre {
+	font-size: 14px;
+	font-family: monospace;
+}
+
+#main .field-name, strong {
+	font-weight: bold;
+}
+
+.sphinxsidebarwrapper .toctree-l3, .sphinxsidebarwrapper .toctree-l3 span.pre {
+	font-size: 12px;
 }

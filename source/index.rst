@@ -19,8 +19,8 @@ Step 3: Start our :ref:`tutorials <forge-index>` and create apps
 Features
 --------
 
-Mobile
-~~~~~~
+Mobile - :ref:`more... <mobile_modules>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. hlist::
    :columns: 3
@@ -38,8 +38,8 @@ Mobile
    * :ref:`Topbar native UI <modules-topbar>`
    * :ref:`Tabbar native UI <modules-tabbar>`
 
-Browser add-ons
-~~~~~~~~~~~~~~~
+Browser add-ons - :ref:`more... <browser_modules>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. hlist::
    :columns: 3
@@ -50,8 +50,8 @@ Browser add-ons
    * :ref:`Messaging <modules-message>`
    * :ref:`Toolbar button <modules-button>`
 
-General
-~~~~~~~
+General - :ref:`more... <general_modules>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. hlist::
    :columns: 3
