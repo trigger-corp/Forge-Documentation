@@ -433,11 +433,11 @@ div.body div.toctree-wrapper tt {
 	height: 15px;
 }
 
-.hlist td {
+#features.section .hlist td {
 	width: 230px;
 }
 
-.hlist ul li {
+#features.section .hlist ul li {
 	list-style-type: none;
 	padding: 0px;
 	margin: 0px;
@@ -502,6 +502,22 @@ tt span {
 
 #main .field-name, strong {
 	font-weight: bold;
+}
+
+#main h1 a:hover {
+	text-decoration: underline;
+}
+
+#main ol {
+	margin-left: 50px;
+}
+
+#main dl {
+	font-size: 16px;
+}
+
+#main dd {
+	margin: 0 0 20px 50px;
 }
 
 .sphinxsidebarwrapper .toctree-l3, .sphinxsidebarwrapper .toctree-l3 span.pre {
