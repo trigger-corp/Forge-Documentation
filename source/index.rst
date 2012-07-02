@@ -4,7 +4,7 @@ Questions? Ask them on `StackOverflow <http://stackoverflow.com/questions/tagged
 =================================================================================================================================================================
 
 Quickstart
-----------
+--------------------------------------------------------------------------------
 
 .. container:: button
 
@@ -17,10 +17,10 @@ Step 2: Download the `command-line tools <https://trigger.io/forge-static/build-
 Step 3: Start our :ref:`tutorials <forge-index>` and create apps
 
 Features
---------
+--------------------------------------------------------------------------------
 
 Mobile - :ref:`more... <mobile_modules>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. hlist::
    :columns: 3
@@ -39,7 +39,7 @@ Mobile - :ref:`more... <mobile_modules>`
    * :ref:`Tabbar native UI <modules-tabbar>`
 
 Browser add-ons - :ref:`more... <browser_modules>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. hlist::
    :columns: 3
@@ -51,7 +51,7 @@ Browser add-ons - :ref:`more... <browser_modules>`
    * :ref:`Toolbar button <modules-button>`
 
 General - :ref:`more... <general_modules>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. hlist::
    :columns: 3

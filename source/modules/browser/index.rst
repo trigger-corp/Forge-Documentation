@@ -11,5 +11,4 @@ Browser add-on
    /modules/button
    /modules/gmail
    /modules/message
-   /modules/update_urls
-   
+   /modules/update_url
