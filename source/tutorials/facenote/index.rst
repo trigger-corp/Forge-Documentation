@@ -1,6 +1,6 @@
 .. _facenote-tutorial-index:
 
-Tutorial: creating a browser extension which interacts with pages
+Tutorial: creating a browser add-on which interacts with pages
 ==============================================================================
 
 .. toctree::

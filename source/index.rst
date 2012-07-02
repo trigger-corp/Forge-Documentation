@@ -1,43 +1,72 @@
 .. title:: Forge Documentation
 
-.. pull-quote:: Forge makes app development as easy as web development
+Questions? Ask them on `StackOverflow <http://stackoverflow.com/questions/tagged/trigger.io>`_ or `email us <mailto:support@trigger.io>`_.
+=================================================================================================================================================================
 
-.. container:: index-command-demo
-
-    Creating, building, running and releasing an app is as simple as::
-
-        > forge create
-        > forge build
-        > forge run
-        > forge package
-
-.. container::
-
-    If you prefer, we also offer a graphical UI to work with your apps: the `Trigger Toolkit <https://trigger.io/forge/toolkit/>`_.
-
-    This documentation has a :ref:`getting started guide <forge-index>`, a
-    reference to the available :ref:`modules <modules>`, and a couple of
-    :ref:`tutorials <tutorials-weather-tutorial-1>`. Signing up and giving it a
-    try is really easy: see for yourself!
+Quickstart
+--------------------------------------------------------------------------------
 
 .. container:: button
 
-    :ref:`Get Started <forge-index>`
+    `Sign up for free <https://trigger.io/forge>`_
+
+Step 1: `Sign up <https://trigger.io/forge>`_
+
+Step 2: Download the `command-line tools <https://trigger.io/forge-static/build-tools/forge-tools-3.3.2.zip>`_ or `UI Toolkit <https://trigger.io/forge/toolkit/>`_
+
+Step 3: Start our :ref:`tutorials <forge-index>` and create apps
+
+Features
+--------------------------------------------------------------------------------
+
+Mobile - :ref:`more... <mobile_modules>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. hlist::
+   :columns: 3
+
+   * :ref:`Address book <modules-contact>`
+   * :ref:`Camera <modules-file>`
+   * :ref:`Events <modules-event>`
+   * :ref:`Files <modules-file>`
+   * :ref:`Geolocation <modules-geolocation>`
+   * :ref:`In-app payments <modules-payments>`
+   * :ref:`Media <modules-media>`
+   * :ref:`Push notifications <partner-parse>`
+   * :ref:`SMS <modules-sms>`
+   * :ref:`Splash page <modules-launchimage>`
+   * :ref:`Topbar native UI <modules-topbar>`
+   * :ref:`Tabbar native UI <modules-tabbar>`
+
+Browser add-ons - :ref:`more... <browser_modules>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. hlist::
+   :columns: 3
+
+   * :ref:`Background page <modules-background>`
+   * :ref:`Content scripts <modules-activations>`
+   * :ref:`Gmail library <modules-gmail>`
+   * :ref:`Messaging <modules-message>`
+   * :ref:`Toolbar button <modules-button>`
+
+General - :ref:`more... <general_modules>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. hlist::
+   :columns: 3
+
+   * :ref:`Cross-domain ajax <modules-request>`
+   * :ref:`Icons <modules-icons>`
+   * :ref:`Logging <modules-logging>`
+   * :ref:`Notifications <modules-notifications>`
+   * :ref:`Platform detection <modules-is>`
+   * :ref:`Storage <modules-prefs>`
 
 .. toctree::
     :hidden:
 
-    /getting-started
-    /faq
-    /mobile
-    /web
-    /browser
-    /tutorials/index
-    /best_practice/index
-    /features/index
-    /config
+    /getting-started/index
     /modules/index
-    /partners/index
     /tools/index
-    /releasing
-    /release-notes
+    /best_practice/index

@@ -155,7 +155,7 @@ html_use_smartypants = False
 # html_sidebars = {}
 
 html_sidebars = {
-    '**': ['globaltoc.html', 'searchbox.html'],
+    '**': ['globaltoc.html'],
 }
 
 # Additional templates that should be rendered to pages, maps page names to

@@ -1,6 +1,6 @@
 .. _forge-modal:
 
-Modal views
+OAuth with modal views
 ================================================================================
 
 :ref:`Modal views<modules-tabs>` are a mobile only feature of Forge.

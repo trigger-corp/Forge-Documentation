@@ -1,5 +1,5 @@
 /*
- * :copyright: Copyright 2011 WebMynd Corp.
+ * :copyright: Copyright 2012 WebMynd Corp.
  */
 
 {% set page_width = 940 %}
@@ -10,6 +10,9 @@
 {% set strip_style = "border-top:1px solid #E5E5E5; border-bottom:1px solid #E5E5E5; font-weight:normal;" %}
 
 @import url("basic.css");
+
+/* -- from trigger-light ---------------------------------------------------- */
+
  
 /* -- page layout ----------------------------------------------------------- */
  

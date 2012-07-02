@@ -1,6 +1,6 @@
 .. _parameters-in-a-file:
 
-Storing parameters to Forge commands in a file
+Storing parameters in a file
 ==============================================
 
 As an alternative to passing parameters to the various ``forge`` commands, it is possible to store these values in a file called ``local_config.json``.

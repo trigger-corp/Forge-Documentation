@@ -1,6 +1,6 @@
 .. _best-practice-libraries:
 
-Using Javascript libraries
+Using JavaScript libraries
 ==========================
 
 It is important to remember that Forge apps are HTML5/JS based and this means they can take advantage of the vast library of Javascript tools and libraries which are freely available. This page lists some of the libraries we find most useful and some tips when using them.
