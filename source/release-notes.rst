@@ -9,8 +9,6 @@ In your ``config.json`` file, you can use a major version (like ``v1.3``), which
 
 To see the minor version used to create a particular build, look in ``.template/platform_version.txt`` in your app directory (``.template`` sits alongside ``src``).
 
-See https://trigger.io/forge/platform_versions/ for the latest information about which platforms are currently available.
-
 .. _release-notes-v1.3:
 
 v1.3 (*current version*)
