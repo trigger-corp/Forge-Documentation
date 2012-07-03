@@ -39,6 +39,14 @@ To upgrade from v1.2 to v1.3 your ``config.json`` file needs to be updated, this
 
 The migration process will automatically update your ``config.json`` file to v1.3, if for any reason it doesn't work a backup of your ``config.json`` file will be saved as ``config.json.bak``.
 
+v1.3.19
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 3rd July 2012**
+
+Bug fixes:
+
+- forge.prefs fix for Internet Explorer
+
 v1.3.18
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 3rd July 2012**
