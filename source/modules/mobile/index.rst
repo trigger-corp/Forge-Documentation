@@ -12,7 +12,7 @@ Mobile
    /modules/geolocation
    /modules/launchimage
    /modules/media
-   /modules/orientations
+   /modules/display
    /modules/package_names
    /modules/payments
    /partners/parse
