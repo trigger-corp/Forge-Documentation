@@ -39,6 +39,19 @@ To upgrade from v1.2 to v1.3 your ``config.json`` file needs to be updated, this
 
 The migration process will automatically update your ``config.json`` file to v1.3, if for any reason it doesn't work a backup of your ``config.json`` file will be saved as ``config.json.bak``.
 
+v1.3.18
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 3rd July 2012**
+
+Features:
+
+- allow ad-hoc builds to be created on iOS
+
+Bug fixes:
+
+- update to latest Parse Android SDK for push notifications fixes
+- panel sizing fix for Firefox
+
 v1.3.17
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 22nd June 2012**
