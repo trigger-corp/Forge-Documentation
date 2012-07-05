@@ -7,6 +7,7 @@ Mobile
    :glob:
 
    /modules/contact
+   /modules/barcode
    /modules/event
    /modules/file
    /modules/geolocation
