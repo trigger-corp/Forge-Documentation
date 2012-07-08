@@ -8,7 +8,7 @@ Quickstart
 
 .. container:: button
 
-    `Get started <https://trigger.io/forge>`_
+    `Get started <https://trigger.io/forge/toolkit>`_
 
 Step 1: `Install the Trigger Toolkit <https://trigger.io/forge/toolkit>`_
 
