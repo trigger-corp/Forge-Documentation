@@ -38,7 +38,17 @@ Open ``config.json`` from the ``src`` folder created above, and change the name 
 
 Building the app
 ---------------------------------
-To build the extension, bring up your terminal, and enter the ``forge build`` command::
+
+Toolkit
+~~~~~~~~
+
+To build your Chrome extension using the Toolkit, simple click on the app you wish to build from the Your Apps screen, and then the 'Chrome' link. You will see the full traceback in the console as the commands are run so you can see progress and any warnings.
+
+If you make subsequent code changes that you want to build and test on the same platform, just click 'Run again' at the bottom of the console view to rebuild it.
+
+Command-line
+~~~~~~~~~~~~~
+To build the extension, bring up your terminal, :ref:`find the location of the forge executable <command_line_setup>` for your platform, and enter the ``forge build`` command. ::
 
     $ forge build
     [   INFO] Forge tools running at version 1.0.1
@@ -97,7 +107,7 @@ to this::
     "/fb-note-demo.js"
   ]
 
-Now, rebuild your extension with ``forge build`` and reload it in Chrome. When you go to a Facebook page, you should see your own alert popup.
+Now, :ref:`rebuild your extension and reload it in Chrome <chrome-getting-started-build>`. When you go to a Facebook page, you should see your own alert popup.
 
 Reference extension
 -------------------

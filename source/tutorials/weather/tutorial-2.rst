@@ -156,7 +156,7 @@ At this point, your app should display static weather data for Mountain View, CA
 .. image:: /_static/images/part-1_weather.png
     :width: 200px
 
-Reference extension
+Reference app
 -------------------
 `part-2.zip <../../_static/weather/part-2.zip>`_ contains the code you should have in your app's src directory at this point.
 Feel free to check your code against it or use it to resume the tutorial from this point.

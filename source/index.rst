@@ -8,13 +8,13 @@ Quickstart
 
 .. container:: button
 
-    `Sign up for free <https://trigger.io/forge>`_
+    `Get started <https://trigger.io/forge>`_
 
-Step 1: `Sign up <https://trigger.io/forge>`_
+Step 1: `Install the Trigger Toolkit <https://trigger.io/forge/toolkit>`_
 
-Step 2: Download the `command-line tools <https://trigger.io/forge-static/build-tools/forge-tools-3.3.2.zip>`_ or `UI Toolkit <https://trigger.io/forge/toolkit/>`_
+Step 2: Start the Toolkit and create an account
 
-Step 3: Start our :ref:`tutorials <forge-index>` and create apps
+Step 3: Read our :ref:`tutorials <forge-index>` and create apps
 
 Features
 --------------------------------------------------------------------------------
