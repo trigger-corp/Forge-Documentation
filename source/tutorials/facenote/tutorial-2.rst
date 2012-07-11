@@ -90,7 +90,7 @@ Well, to do this we will create a small HTML snippet to be inserted into the Fac
   noteEl.appendChild(textarea);
   document.body.insertBefore(noteEl, document.body.firstChild);
 
-Rebuild your app with ``forge build``, reload the extension and on profile pages you should now see a ``<textarea>`` inserted right at the top of the page. We will cover how to *save* the note in a short while.
+Now, :ref:`rebuild your extension and reload it in Chrome <chrome-getting-started-build>`. On profile pages you should now see a ``<textarea>`` inserted right at the top of the page. We will cover how to *save* the note in a short while.
 
 Using jQuery instead of plain JavaScript
 ----------------------------------------
@@ -150,5 +150,5 @@ It's not working!
 
 Common gotchas:
 
-* remember to rebuild and reload your extension after changing any config or code
+* remember to :ref:`rebuild your extension and reload it in Chrome <chrome-getting-started-build>` after changing any config or code
 * can't figure out the problem? Get in touch at support@trigger.io!

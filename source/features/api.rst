@@ -49,7 +49,7 @@ The ``callback`` callback is similar to ``success`` in that it appears as the pe
 ``error``
 -----------
 
-The ``error`` callback is always the final parameter passed to a method. The error callback will always be called with exactly one paramter, which will be an object containing several properties.
+The ``error`` callback is always the final parameter passed to a method. The error callback will always be called with exactly one parameter, which will be an object containing several properties.
 
 The returned object will always contain:
 

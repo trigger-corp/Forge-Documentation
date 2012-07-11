@@ -1,10 +1,10 @@
 .. _best-practice-example_project:
 
-.. highlight:: js
-   :linenothreshold: 5
-
 Example Project
 ===============
+
+.. highlight:: js
+   :linenothreshold: 5
 
 We've developed a little example project, using a CSS reset,
 Backbone.js and a couple of pages with transitions.

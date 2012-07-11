@@ -9,8 +9,6 @@ In your ``config.json`` file, you can use a major version (like ``v1.3``), which
 
 To see the minor version used to create a particular build, look in ``.template/platform_version.txt`` in your app directory (``.template`` sits alongside ``src``).
 
-See https://trigger.io/forge/platform_versions/ for the latest information about which platforms are currently available.
-
 .. _release-notes-v1.3:
 
 v1.3 (*current version*)
@@ -40,6 +38,48 @@ Upgrade Instructions
 To upgrade from v1.2 to v1.3 your ``config.json`` file needs to be updated, this can be done automatically by running ``forge migrate`` with the command line tools, or choosing to migrate from Trigger Toolkit.
 
 The migration process will automatically update your ``config.json`` file to v1.3, if for any reason it doesn't work a backup of your ``config.json`` file will be saved as ``config.json.bak``.
+
+v1.3.19
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 3rd July 2012**
+
+Bug fixes:
+
+- forge.prefs fix for Internet Explorer
+
+v1.3.18
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 3rd July 2012**
+
+Features:
+
+- allow ad-hoc builds to be created on iOS
+
+Bug fixes:
+
+- update to latest Parse Android SDK for push notifications fixes
+- panel sizing fix for Firefox
+
+v1.3.17
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 22nd June 2012**
+
+Bug fixes:
+
+- a Python fix which makes us less incompatible with 2.6 - note 2.7 is still
+  the only officially supported Python version!
+- Windows Phone IE does not support setZeroTimeout
+
+v1.3.16
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 18th June 2012**
+
+Bug fixes:
+
+- "no such file or directory" during Android tasks on some Linux setups
+- Node.js directory locking issue on Windows
+- lots of Trigger Toolkit UI tweaks and fixes
+- allow for running Forge builds on non-root mount point
 
 v1.3.15
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

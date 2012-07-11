@@ -4,12 +4,8 @@
  */
  
 @import url("basic.css");
- 
-/* -- fontfaces ----------------------------------------------------------- */
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold);
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans+Mono);
+@import url(http://trigger.io/cross-platform-application-development-blog/wp-content/themes/blog/style.css);
 
-@import url(http://fonts.googleapis.com/css?family=Josefin+Sans+Std+Light);
 /* -- page layout ----------------------------------------------------------- */
 
 body {
@@ -55,12 +51,20 @@ div.document {
 }
 
 div.related {
-  background: #2A2A2A url(https://trigger.io/forge-static/css/trigger/f/bg-hatched.png) repeat top left;
-  line-height: 50px;
-  height: 50px;
-  color: #ffffff;
-  font-size: 1.1em;
-  border-bottom: 1px solid #fff; 
+	background: black; 
+	background-image: -ms-linear-gradient(top, #2E2E2E 0%, black 100%);
+	background-image: -moz-linear-gradient(top, #2E2E2E 0%, black 100%);
+	background-image: -o-linear-gradient(top, #2E2E2E 0%, black 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2E2E2E), color-stop(1, black));
+	background-image: -webkit-linear-gradient(top, #2E2E2E 0%, black 100%);
+	background-image: linear-gradient(top, #2E2E2E 0%,  black 100%);
+	min-width: 980px;
+	position: relative;
+	line-height: 50px;
+	height: 50px;
+	color: #ffffff;
+	font-size: 1.1em;
+	border-bottom: 1px solid #fff; 
 }
 
 div.related img {
@@ -110,24 +114,6 @@ div.footer a {
     color: #444;
 }
 
-.button {
-    float: right;
-}
-.button a {
-    color: white !important;
-    text-align: center;
-    margin: 30px 0 0 60px;
-    font-size: 24px;
-    font-weight: 200;
-    letter-spacing: 1px;
-    line-height: 50px;
-    height: 50px;
-    background: #DFB309 url(f/bttn-lrg-action.png) no-repeat right center;
-    width: 260px;
-    display: block;
-}
-.button a:hover {background-color:#DFB926;text-decoration:none;}
-
 div.container {
     clear: both;
 }
@@ -142,13 +128,13 @@ div.container {
     font-size: 150%;
 }
 
-.pull-quote {
+/*.pull-quote {
     font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif;
     color: #222;
     font-size: 2em;
     margin-bottom: 35px;
     margin-left: 0;
-}
+}*/
 
 div.sphinxsidebar {
     font-size: 1em;
@@ -297,12 +283,12 @@ div.sphinxsidebar a:hover {
     color: #000;
 }
 
-/*
+
 div.sphinxsidebar ul li.current:before {
     content: "▸ ";
     color: #DD4B39;
 }
-*/
+
 
 a:hover {
     text-decoration: underline;
@@ -314,8 +300,8 @@ div.body h3,
 div.body h4,
 div.body h5,
 div.body h6 {
-    font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif;
-    font-weight: normal;
+    /*font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif;
+    font-weight: normal;*/
     margin: 24px 0 0 0;
 }
  
@@ -416,4 +402,124 @@ div.body div.toctree-wrapper tt {
 
 #table-of-contents ul {
     padding-left: 2em;
+}
+
+
+/* --  new layout ----------------------------------------------------------- */
+#main-h {
+	background-image: url(forge-trans-white.png);
+	background-size: auto 80px;
+}
+
+#searchbox {
+	position: absolute;
+	right: 20px;
+	margin-top: 1px;
+}
+
+#searchbox input[type="submit"] {
+	display: none;
+}
+
+#searchbox label {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	color: white;
+	vertical-align: bottom;
+	padding-bottom: 4px;
+}
+
+#searchbox input {
+	height: 15px;
+}
+
+#features.section .hlist td {
+	width: 230px;
+}
+
+#features.section .hlist ul li {
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+.button {
+    float: right;
+	display: block;
+	max-width: 310px;
+	height: 60px;
+	line-height: 60px;
+	font-size: 30px;
+	margin: 20px auto 0 auto;
+}
+
+.button a {
+    cursor: pointer;
+	display: inline-block;
+	border: 1px solid #20ADC6;
+	border-radius: 4px;
+	background-color: #42CEE7;
+	background-image: -ms-linear-gradient(top, #42CEE7 0, #1BB8D4 100%);
+	background-image: -moz-linear-gradient(top, #42CEE7 0, 	#1BB8D4 100%);
+	background-image: -o-linear-gradient(top, #42CEE7 0, 	#1BB8D4 100%);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#42CEE7),color-stop(1, #1BB8D4));
+	background-image: -webkit-linear-gradient(top, #42CEE7 0, #1BB8D4 100%);
+	background-image: linear-gradient(to bottom, #42CEE7 0, #1BB8D4 100%);
+	-webkit-box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, .5);
+	box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, .5);
+	/*height: 40px;
+	line-height: 40px;*/
+	padding: 0 15px;
+	color: #EDEDED;
+	text-shadow: 0 -1px 0 #268C9E;
+	text-align: center;
+}
+
+.button a:hover {
+	background: #1BB8D4;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	text-shadow: none;
+	text-decoration: none;
+}
+
+tt span {
+	font-size: 16px;
+}
+
+#main h2 {
+	font-weight: bold;
+}
+
+#main h3 {
+	font-weight: bold;
+}
+
+#main pre {
+	font-size: 14px;
+	font-family: monospace;
+}
+
+#main .field-name, strong {
+	font-weight: bold;
+}
+
+#main h1 a:hover {
+	text-decoration: underline;
+}
+
+#main ol {
+	margin-left: 50px;
+}
+
+#main dl {
+	font-size: 16px;
+}
+
+#main dd {
+	margin: 0 0 20px 50px;
+}
+
+.sphinxsidebarwrapper .toctree-l3, .sphinxsidebarwrapper .toctree-l3 span.pre {
+	font-size: 12px;
 }

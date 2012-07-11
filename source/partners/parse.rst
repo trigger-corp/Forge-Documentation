@@ -1,6 +1,6 @@
 .. _partner-parse:
 
-Parse
+``push``: notifications (with Parse)
 ===============================================================================
 
 "Add a Backend to Your Mobile App in Minutes" - `Parse <https://parse.com/>`_ allows you to add backend features to your mobile app without a server. Their back end features include a datastore, user accounts and push notifications.

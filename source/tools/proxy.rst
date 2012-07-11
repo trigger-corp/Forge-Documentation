@@ -1,6 +1,6 @@
 .. _tools-proxy:
 
-Working behind a Proxy
+Working behind a proxy
 ======================
 
 With the forge command line tool
