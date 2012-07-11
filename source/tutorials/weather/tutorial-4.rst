@@ -145,7 +145,7 @@ The weather app should now be complete.
 * Build and run the code
 * Bask in all your glory, you have just written an app using Forge!
 
-Reference extension
+Reference app
 -------------------
 `part-4.zip <../../_static/weather/part-4.zip>`_ contains the code you should have in your app's src directory at this point.
 Feel free to check your code against it or use it to resume the tutorial from this point
