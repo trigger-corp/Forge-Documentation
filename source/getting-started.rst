@@ -16,6 +16,8 @@ Read the instructions on the `toolkit download page <https://trigger.io/forge/to
 
 After signing up or logging in, you will see your Your Apps. You can always return to this screen by clicking "Manage Apps" in the header. At first no apps will be listed here.
 
+.. image:: /_static/images/your-apps.png
+
 Creating your first app
 -----------------------
 

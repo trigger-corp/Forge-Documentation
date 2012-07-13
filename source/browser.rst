@@ -76,7 +76,9 @@ Building and testing Chrome extensions using Forge
 
 To build your Chrome extension using the Toolkit, simple click on the app you wish to build from the Your Apps screen, and then the 'Chrome' link. You will see the full traceback in the console as the commands are run so you can see progress and any warnings.
 
-If you make subsequent code changes that you want to build and test on the same platform, just click 'Run again' at the bottom of the console view to rebuild it.
+.. image:: /_static/images/toolkit-run.png
+
+If you make subsequent code changes that you want to build and test on the same platform, just click 'Run again' at the bottom of the console view in the app run page.
 
 Using the command-line tools, use the ``forge build`` command. When the build finishes take a look inside the ``development`` directory and you should see your generated Chrome extension.
 

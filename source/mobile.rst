@@ -38,8 +38,6 @@ https://developer.apple.com/xcode/. When this is installed, start XCode and
 click 'Preferences' from the XCode menu to check the iOS Simulator is listed as
 installed under components. If not, you may install it from that window.
 
-We have found some unresponsiveness when apps 'over scroll' in iOS Simulator 5.0 so recommend installing version 4.3 too. This lagging performance is only an issue in the simulator, not in actual devices.
-
 Setting up an Android environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In order to build your app for Android there is a minimum requirement of having Python and Java installed. Both commands should be installed and made available on your path.
@@ -49,6 +47,8 @@ If you have setup the command-line tools, you should already have Python 2.7 ins
 In order to run your built app, you'll need an attached phone with debug drivers installed or an active Android emulator device. If you do not set this up yourself, the command line tools will detect this and offer to create an appropriate Android Virtual Device (AVD) for you - simply follow any instructions given to you by the commands.
 
 If you wish to manually manage your Android emulator you can setup the Android SDK location, by clicking on your app from the Your Apps page, then clicking on 'Local config' in the top right.
+
+.. image:: /_static/images/local-config.png
 
 At the command-line, use the ``--android.sdk`` flag when using ``forge run`` to point to your Android SDK location and run your own emulator AVD. All automatic installation procedures will prompt before making any changes to your system.
 
@@ -88,7 +88,11 @@ From the Your Apps screen, simply click on the app name you wish to build.
 
 You can then click the appropriate link to build and run the app for Android or iOS. You will see the full traceback in the console as the commands are run so you can see progress and any warnings.
 
+.. image:: /_static/images/toolkit-run.png
+
 If you make subsequent code changes that you want to build and test on the same platform, just click 'Run again' at the bottom of the console view in the app run page.
+
+.. image:: /_static/images/toolkit-again.png
 
 Command-line
 ~~~~~~~~~~~~~

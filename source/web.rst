@@ -35,6 +35,8 @@ Toolkit
 
 Click on the app name that you want to run from the main Your Apps page. And then just click the 'Web' link in the Run section.
 
+.. image:: /_static/images/toolkit-run.png
+
 Once the build is complete, the app will be opened up in a new tab in your default browser. It's that simple!
 
 Command-line
@@ -58,6 +60,8 @@ Toolkit
 ~~~~~~~~~~~~~
 
 Click on the app name that you want to run from the main Your Apps page. And then just click the 'Web' link in the Package section. If it is the first time you've done this for an application, you will be prompted to either create a new Heroku app or deploy to an existing Heroku app in your account.
+
+.. image:: /_static/images/toolkit-heroku.png
 
 Once the build is complete, the app will be opened up in a new tab in your default browser.
 

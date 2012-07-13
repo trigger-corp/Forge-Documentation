@@ -1,6 +1,6 @@
 .. _modules-orientations:
 
-``orientations``: Background scripts
+``orientations``: Orientations
 ================================================================================
 
 This controls how your app will be displayed as the device is moved around. The default is to allow for any orientation, with the content being re-drawn as the screen is rotated.
