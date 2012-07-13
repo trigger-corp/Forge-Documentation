@@ -62,12 +62,6 @@ Mobile only:
 - ``buttonIcon``: Icon to show in the button to close the modal view, if ``buttonIcon`` is specified ``buttonText`` will be ignored.
 - ``buttonTint``: Colour to tint the button of the top bar in the modal view.
 
-.. js:function:: tabs.openWithOptions(options, success, error)
-
-    :param object options: Object containing url and optional properties.
-    :param function(object) success: callback to be invoked when no errors occurs
-    :param function(content) error: called with details of any error which may occur
-
 Example::
 
   forge.tabs.openWithOptions({
@@ -77,6 +71,12 @@ Example::
   }, function (data) {
     forge.logging.log(data.url);
   });
+
+.. js:function:: tabs.openWithOptions(options, success, error)
+
+    :param object options: Object containing url and optional properties.
+    :param function(object) success: callback to be invoked when no errors occurs
+    :param function(content) error: called with details of any error which may occur
 
 ``closeCurrent``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

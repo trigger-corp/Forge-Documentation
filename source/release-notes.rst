@@ -39,6 +39,28 @@ To upgrade from v1.2 to v1.3 your ``config.json`` file needs to be updated, this
 
 The migration process will automatically update your ``config.json`` file to v1.3, if for any reason it doesn't work a backup of your ``config.json`` file will be saved as ``config.json.bak``.
 
+v1.3.21
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 12th July 2012**
+
+Features:
+
+- network activity spinner / progress bar shown while loading modal views
+
+Bug fixes:
+
+- connectionStateChanged callbacks are fired at least once
+- request.ajax response contains the body data for non-200 status codes on Android
+
+v1.3.20
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 12th July 2012**
+
+Bug fixes:
+
+- re-enable running Firefox automatically
+- clean up some extra files produced by new Android SDK
+
 v1.3.19
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 3rd July 2012**
