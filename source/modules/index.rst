@@ -17,6 +17,7 @@ Mobile - :ref:`more... <mobile_modules>`
    * :ref:`Address book <modules-contact>`
    * :ref:`Camera <modules-file>`
    * :ref:`Events <modules-event>`
+   * :ref:`Facebook <modules-facebook>`
    * :ref:`Files <modules-file>`
    * :ref:`Geolocation <modules-geolocation>`
    * :ref:`In-app payments <modules-payments>`

@@ -9,6 +9,7 @@ Mobile
    /modules/contact
    /modules/barcode
    /modules/event
+   /modules/facebook
    /modules/file
    /modules/geolocation
    /modules/launchimage
