@@ -62,7 +62,7 @@ Mac users
 -------------------
 .. parsed-literal::
 
-	$ $HOME/Library/Trigger\ Toolkit/forge create
+	$ $HOME/Library/Trigger\\ Toolkit/forge create
 
 Linux users
 -------------------
