@@ -33,7 +33,7 @@ Properties and image sizes are:
                 "iphone-retina": "iphone-retina.png",
                 "ipad": "ipad.png",
                 "ipad-landscape": "ipad-landscape.png",
-				"ipad-retina": "ipad-retina.png",
+                "ipad-retina": "ipad-retina.png",
                 "ipad-landscape-retina": "ipad-landscape-retina.png",
                 "android": "android.png",
                 "android-landscape": "android-landscape.png"
