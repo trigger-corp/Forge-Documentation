@@ -49,6 +49,21 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 20th July 2012**
+
+Features:
+
+- support retina scaled images for iPad
+- integration with native Facebook SDKs
+- use ``enableHighAccuracy`` in iOS geolocation API
+
+Bug fixes:
+
+- topbar and tabbar buttons are correctly re-added after app is closed on Android
+- network activity indicator properly cleared after closing iOS modal views
+
 v1.4.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 17th July 2012**
@@ -60,18 +75,6 @@ Features:
 - barcode scanning module: :ref:`modules-barcode`
 - use Chrome manifest version 2 (see :ref:`modules-requirements`)
 - fullscreen support (:ref:`modules-display`)
-
-v1.4.1
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**Released: 20th July 2012**
-
-Features:
-
-- support retina scaled images in topbar and tabbar on iOS
-
-Bug fixes:
-
-- j
 
 .. _release-notes-v1.3:
 
