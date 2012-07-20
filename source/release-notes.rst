@@ -9,6 +9,54 @@ In your ``config.json`` file, you can use a major version (like ``v1.3``), which
 
 To see the minor version used to create a particular build, look in ``.template/platform_version.txt`` in your app directory (``.template`` sits alongside ``src``).
 
+.. _release-notes-v1.4:
+
+v1.4 (*next version*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Supported Platforms
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Android
+* iOS
+* Windows Phone
+* Chrome
+* Firefox
+* Safari
+* Internet Explorer
+* Web
+
+Changes from v1.3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The v1.4 major version changes the format of config.json slightly, putting the
+``orientations`` configuration inside a new ``display`` module.
+
+In addition, due to internal changes in how Forge apps work, you will no longer
+be able to make cross-domain requests without using the ``forge.request``
+module or `CORS <http://www.w3.org/TR/cors/>`_.
+
+.. _upgrade-1.4:
+
+Upgrade Instructions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To upgrade from v1.3 to v1.4, we provide a command which automates the process
+of updating your ``config.json`` file.
+
+If you're using the command-line tools, just run ``forge migrate``: we will
+create a backup of your current ``config.json`` file in ``src/config.json.bak``.
+
+You should also check your code is not attempting to make cross-domain XHRs:
+either use ``forge.request`` instead (recommended), or CORS if you prefer.
+
+v1.4.0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 17th July 2012**
+
+Features:
+
+- Reload
+
 .. _release-notes-v1.3:
 
 v1.3 (*current version*)
@@ -16,11 +64,13 @@ v1.3 (*current version*)
 
 Supported Platforms
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* Chrome
 * Android
 * iOS
+* Windows Phone
+* Chrome
 * Firefox
 * Safari
+* Internet Explorer
 * Web
 
 Changes from v1.2
