@@ -55,7 +55,23 @@ v1.4.0
 
 Features:
 
-- Reload
+- :ref:`Reload <modules-reload>`
+- lifecycle events (appPaused and appResumed :ref:`docs <modules-event>`)
+- barcode scanning module: :ref:`modules-barcode`
+- use Chrome manifest version 2 (see :ref:`modules-requirements`)
+- fullscreen support (:ref:`modules-display`)
+
+v1.4.1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 20th July 2012**
+
+Features:
+
+- support retina scaled images in topbar and tabbar on iOS
+
+Bug fixes:
+
+- j
 
 .. _release-notes-v1.3:
 
@@ -89,6 +105,13 @@ To upgrade from v1.2 to v1.3 your ``config.json`` file needs to be updated, this
 
 The migration process will automatically update your ``config.json`` file to v1.3, if for any reason it doesn't work a backup of your ``config.json`` file will be saved as ``config.json.bak``.
 
+v1.3.23
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 20 July 2012**
+
+Features:
+
+- migration script to upgrade to v1.4
 
 v1.3.22
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -96,7 +119,7 @@ v1.3.22
 
 Bug fixes:
 
-- launchimage on ipad is correctly sized
+- launchimage on iPad is correctly sized
 
 v1.3.21
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
