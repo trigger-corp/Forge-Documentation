@@ -18,6 +18,7 @@ Mobile
    /modules/package_names
    /modules/payments
    /partners/parse
+   /modules/reload
    /modules/requirements
    /modules/sms
    /modules/tabbar
