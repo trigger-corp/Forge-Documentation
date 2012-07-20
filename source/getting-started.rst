@@ -3,21 +3,72 @@
 Getting Started with Forge
 ==================================
 
-To use Forge, you will first need to sign up for the service at https://trigger.io/
+To use Forge, you will first need to install the toolkit from: https://trigger.io/forge/toolkit
 
-After completing the registration process, you will be prompted to download the Forge development environment. This is distributed as a zip file and can be extracted anywhere you please.
+After completing the install process, start the toolkit and you will be prompted to create an account. You can use the toolkit UI to build and test your apps or you can use the command-line tools that are bundled with the toolkit.
+
+Read on to get started with the toolkit or learn about :ref:`command_line_setup`
+
+Getting started with the toolkit
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Read the instructions on the `toolkit download page <https://trigger.io/forge/toolkit>`_ to learn how to install and start the toolkit on your platform.
+
+After signing up or logging in, you will see your Your Apps. You can always return to this screen by clicking "Manage Apps" in the header. At first no apps will be listed here.
+
+.. image:: /_static/images/your-apps.png
+
+Creating your first app
+-----------------------
+
+Click the "Create" link at the bottom-left to create a new app. You will be prompted for an name and location and then you will be returned to Your Apps where you will now see the new app listed.
+
+Congratulations, you've created your first app and are ready to build and test it.
+
+Working with an existing app
+-----------------------------------------------
+
+If you have an existing app, for example you may have cloned it from an existing Github repos or created it with the command-line tools, then you will need to import it.
+
+Simply click the "Import" link at the bottom-right of Your Apps. You will be prompted for the location and then returned to Your Apps where you will now see the app listed ready to be built and tested.
+
+What next?
+-----------------------------------------------
+By now, you have a development environment set up.
+
+From here, you could take a look at:
+
+- :ref:`mobile-index`
+- :ref:`web-index`
+- :ref:`chrome-index`
+- :ref:`tutorials-weather-tutorial-index`
+
+.. _command_line_setup:
+
+Getting started with the command-line tools
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you don't have Python installed you will need to install a recent `2.x version <https://trigger.io/forge/requirements/>`_ first (see `here <http://www.python.org/getit/>`_ for other releases and options).
 
-Windows users
--------------
-* run ``go.bat`` by double-clicking on it
+To run forge commands use the forge executable in your Toolkit installation: 
 
-Mac and Linux users
+Windows
+-------------
+.. parsed-literal::
+
+	C:\\> "C:\\Users\\<Your Username>\\AppData\\Local\\Trigger Toolkit\\forge.exe" create
+
+Mac users
 -------------------
-* open a terminal
-* change directory to wherever you extracted the zip file
-* run ``source go.sh``
+.. parsed-literal::
+
+	$ $HOME/Library/Trigger\\ Toolkit/forge create
+
+Linux users
+-------------------
+.. parsed-literal::
+
+	$ ~/TriggerToolkit/forge create
 
 .. _forge-create-app:
 
@@ -70,7 +121,7 @@ If you are already working with an app on your machine, after activating the ``f
 In that directory, you should have a ``src`` directory, containing the code for your app. For further documentation, follow our :ref:`Chrome tutorial <chrome-index>`, :ref:`Mobile tutorial <mobile-index>` or see our :ref:`modules`.
 
 What next?
---------------------------------------------------------------------------------
+-----------------------------------------------
 By now, you have a development environment set up.
 
 From here, you could take a look at:

@@ -19,6 +19,16 @@ The ``topbar`` module must be enabled in config.json as follows:
         }
     }
 
+Style Guidlines
+----------------
+
+The ``setTitleImage`` method and ``icon`` option in the ``addButton`` method allow you to specify images within the topbar element. These guidelines may help you to make them look good across devices:
+
+   * The title image will be scaled down (but not up) to fit the height of the topbar exactly. This means any padding should be included in the image, and the image should be at least 100px high.
+   * The button icons will also be scaled down (but not up) to fit the height of the button precisely. The width of the button is the width of the icon (or text) plus a small amount of padding. We'd recommend button icons are at least 64px high to make sure they always fill the button.
+   * The total width of the title and buttons is not checked by Forge, so its up to you to test everything fits, We'd recommend leaving spare space to make sure devices with unexpected screen ratios don't overlap.
+
+
 API
 ---
 

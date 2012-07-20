@@ -160,7 +160,8 @@ For a screencast on Catalyst, and help on how to get started see `Screencast: Tr
 
     window.forge.enableDebug();
 
-  This will ensure that Catalyst is connected and ready before the code runs, preventing any logging from being lost.
+This will ensure that Catalyst is connected and ready before the code runs, preventing any logging from being lost.
+
 5. Rebuild and re-run your app. In a few moments, your Catalyst tab in the browser should show the device.
 #. Check the console of the Catalyst tool: you should see your ``mountainViewForecast`` object being logged.
 
@@ -190,7 +191,7 @@ The :ref:`background <extension-concept-background>` context also receives the l
 * Click ``forge.html`` which will open up the Chrome developer tools for your background page
 * The console may not be displayed automatically, but it can be opened by pressing the Esc key or clicking the console button on the bottom left
 
-Reference extension
+Reference app
 -------------------
 `part-1.zip <../../_static/weather/part-1.zip>`_ contains the code you should have in your app's src directory at this point.
 Feel free to check your code against it or use it to resume the tutorial from this point.
