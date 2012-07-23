@@ -15,15 +15,16 @@ Mobile - :ref:`more... <mobile_modules>`
    :columns: 3
 
    * :ref:`Address book <modules-contact>`
+   * :ref:`Barcode / QR scanning<modules-barcode>`
    * :ref:`Camera <modules-file>`
+   * :ref:`Child browser <modules-tabs-open>`
    * :ref:`Events <modules-event>`
-   * :ref:`Facebook <modules-facebook>`
+   * :ref:`Facebook SDK access<modules-facebook>`
    * :ref:`Files <modules-file>`
    * :ref:`Geolocation <modules-geolocation>`
    * :ref:`In-app payments <modules-payments>`
    * :ref:`Media <modules-media>`
    * :ref:`Push notifications <partner-parse>`
-   * :ref:`Trigger Reload <modules-reload>`
    * :ref:`SMS <modules-sms>`
    * :ref:`Splash page <modules-launchimage>`
    * :ref:`Topbar native UI <modules-topbar>`
