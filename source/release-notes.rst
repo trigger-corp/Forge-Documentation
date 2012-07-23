@@ -11,7 +11,7 @@ To see the minor version used to create a particular build, look in ``.template/
 
 .. _release-notes-v1.4:
 
-v1.4 (*next version*)
+v1.4
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Supported Platforms
@@ -78,7 +78,7 @@ Features:
 
 .. _release-notes-v1.3:
 
-v1.3 (*current version*)
+v1.3
 -------------------------------------------------------------------------------
 
 Supported Platforms
@@ -391,7 +391,7 @@ Features:
 
 .. _release-notes-v1.2:
 
-v1.2 (*previous version*)
+v1.2
 -------------------------------------------------------------------------------
 
 Supported Platforms
