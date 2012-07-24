@@ -3,7 +3,7 @@
 ``reload``: Push updates to deployed apps
 =========================================
 
-.. warning:: Reload is a premium module that is fee while in beta. Contact support@trigger.io to be notified about pricing.
+.. warning:: Reload is a premium module that is free while in beta. Contact support@trigger.io to be notified about pricing.
 
 Config
 ------
