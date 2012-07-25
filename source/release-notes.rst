@@ -46,8 +46,20 @@ of updating your ``config.json`` file.
 If you're using the command-line tools, just run ``forge migrate``: we will
 create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 
+.. note:: v1.4 requires iPad retina launchimage configuration: see :ref:`the
+    module documentation <modules-launchimage>`.
+
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
+
+v1.4.2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 24th July 2012**
+
+Bug fixes:
+
+- enable use of modal views immediately after app launch on iOS
+- modules are fully disabled by default, unless explicitly enabled
 
 v1.4.1
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
