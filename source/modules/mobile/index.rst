@@ -8,6 +8,7 @@ Mobile
 
    /modules/contact
    /modules/barcode
+   /modules/display
    /modules/event
    /modules/facebook
    /modules/file
