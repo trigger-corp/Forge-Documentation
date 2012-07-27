@@ -30,7 +30,7 @@ The icons required for each platform are listed below:
 * Chrome: 16px, 48px and 128px
 * Firefox: 32px and 64px
 * Internet Explorer: TODO
-* iOS: 57px, 72px and 114px for home screen icons, 512px to be shown in iTunes.
+* iOS: 57px, 72px, 114px and 144px for home screen icons, 512px to be shown in iTunes.
 * Safari: 32px, 48px and 64px
 
 .. note:: If you specify *any* icons for a particular platform, you **must** specify all required icons!
@@ -53,6 +53,7 @@ Config
                     "57": "icon57.png",
                     "72": "icon72-ios.png",
                     "114": "icon114.png",
+					"144": "icon144.png",
                     "prerendered": true
                 }
             }

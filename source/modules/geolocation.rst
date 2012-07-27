@@ -25,7 +25,7 @@ API
 
 .. js:function:: geolocation.getCurrentPosition(options, success, error)
 
-    :param object options: request specific levels of service from the location provider
+    :param object options: request specific levels of service from the location provider, currently supports ``"enableHighAccuracy": true`` to request GPS location if available.
     :param function(position) success: called with an object matching the W3C `Position <http://dev.w3.org/geo/api/spec-source.html#coordinates>`_ specification
     :param function(error) error: called when the user chooses not to share their location with your app
 

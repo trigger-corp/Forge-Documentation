@@ -26,8 +26,11 @@ Mobile - :ref:`more... <mobile_modules>`
    :columns: 3
 
    * :ref:`Address book <modules-contact>`
+   * :ref:`Barcode / QR scanning<modules-barcode>`
    * :ref:`Camera <modules-file>`
+   * :ref:`Child browser <modules-tabs-open>`
    * :ref:`Events <modules-event>`
+   * :ref:`Facebook SDK access<modules-facebook>`
    * :ref:`Files <modules-file>`
    * :ref:`Geolocation <modules-geolocation>`
    * :ref:`In-app payments <modules-payments>`

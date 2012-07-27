@@ -7,15 +7,19 @@ Mobile
    :glob:
 
    /modules/contact
+   /modules/barcode
+   /modules/display
    /modules/event
+   /modules/facebook
    /modules/file
    /modules/geolocation
    /modules/launchimage
    /modules/media
-   /modules/orientations
+   /modules/display
    /modules/package_names
    /modules/payments
    /partners/parse
+   /modules/reload
    /modules/requirements
    /modules/sms
    /modules/tabbar
