@@ -13,6 +13,13 @@ The file must be located along side the ``src/`` directory, for example::
         src/
         local_config.json
 
+Modifying ``local_config.json``
+------------------------------
+
+You can edit the file directly using your preferred text editor. It is located in the ``src`` directory. Alternatively, you can edit it through the Toolkit UI by clicking the App config tab in the top right of the app screen:
+
+    .. image:: /_static/images/toolkit-local-config.png
+		
 Format of ``local_config.json``
 --------------------------------------------------------------------------------
 ``local_config.json`` is a JSON file which specifies various runtime parameters of the ``forge`` commands.
