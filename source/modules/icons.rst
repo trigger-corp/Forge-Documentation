@@ -29,9 +29,9 @@ The icons required for each platform are listed below:
 * Android: 36px, 48px and 72px
 * Chrome: 16px, 48px and 128px
 * Firefox: 32px and 64px
-* Internet Explorer: TODO
+* Internet Explorer: 16px ``.ico`` format
 * iOS: 57px, 72px, 114px and 144px for home screen icons, 512px to be shown in iTunes.
-* Safari: 32px, 48px and 64px
+* Safari: 32px, 48px and 64px with transparent background. See the Creating an Image section in Apple's `Safari extension guide <http://developer.apple.com/library/safari/#documentation/Tools/Conceptual/SafariExtensionGuide/AddingButtonstotheMainSafariToolbar/AddingButtonstotheMainSafariToolbar.html#//apple_ref/doc/uid/TP40009977-CH3-SW1>`_.
 
 .. note:: If you specify *any* icons for a particular platform, you **must** specify all required icons!
 

@@ -82,7 +82,7 @@ Simply run:
 
    forge package ie
 
-This will create a ``.exe`` for 32-bit and 64-bit platforms in the ``release/ie`` directory.
+This will create a ``.exe`` for 32-bit and 64-bit platforms in the ``release/ie`` directory. The 64-bit installer installs the add-on in both the 64-bit and 32-bit versions of IE.
 
 Contact us for information on how to customize and sign the installer package.
 
