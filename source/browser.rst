@@ -52,11 +52,11 @@ Hello Chrome
 * After going through the :ref:`forge-index` section you should see a ``src`` directory created. This is where all of your add-on files will be placed.
 * There will be several files and folders in the src directory: this is a basic "Hello World" app.
 * Inside the folder you should see ``config.json`` which is automatically generated. This file holds configuration settings for your add-on. You can edit this from inside the Toolkit by click on your app from the Your Apps page, then the 'Local config' link in the top-right
-* Open the file called ``background.js`` inside the ``src/js`` directory; you should see something like::
+* Create a file called ``background.js`` inside the ``src/js`` directory with this code::
 
     forge.logging.info("This is executed once per extension/browser launch");
 
-* This code will run in the :ref:`background context<addon-concept-background>`, but only if we reference it in the configuration file first.
+* We'll configure this to run in the :ref:`background context<addon-concept-background>`, by referencing it in the configuration file.
 * Open ``config.json``: note how we use the :ref:`background <modules-background>` module to use our ``background.js`` file::
 
     "background": {
