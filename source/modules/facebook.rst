@@ -28,10 +28,12 @@ API
 
 Authorize the current user with Facebook, may show a login UI if new permissions are required, or a valid login token is not available (i.e. on first login).
 
+The success callback will be called with information about the users access_token, you can store and use this token following the Facebook developer guidelines.
+
 .. js:function:: facebook.authorize([permissions, ]success, error)
 
     :param array permissions: An optional array of permissions to request
-    :param function() success: callback to be invoked when no errors occur
+    :param function(token_information) success: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
 
 ``facebook.logout``
