@@ -52,6 +52,20 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.6
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 2nd August 2012**
+
+Features:
+
+- Facebook authentication details returned as parameter to facebook.authorize
+
+Bug fixes:
+
+- ``minimum_version`` configuration on Android was causing build problems for some
+- remove dependency on Express 2.5.0 for web target
+- remove default orientation configuration and fix Android "any" mode
+
 v1.4.5
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 1st August 2012**
