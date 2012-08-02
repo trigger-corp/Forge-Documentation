@@ -5,6 +5,8 @@
 
 .. warning:: Reload is a premium module that is free while in beta. Contact support@trigger.io to be notified about pricing.
 
+The Reload module allows you to update the HTML, CSS and JavaScript in your app for your users without you needing to push an Appt Store update or your users needing to re-install the app.
+
 Config
 ------
 
@@ -16,6 +18,40 @@ The ``reload`` module must be enabled in ``config.json``, once the ``reload`` mo
             "reload": true
         }
     }
+
+.. _reload_concepts:
+
+Concepts
+--------
+
+You can reload updates via the Toolkit UI. 
+
+You can reload all of your users, or divide them into streams for A/B testing.
+
+You can use the default update behavior without altering your code at all beyond including the reload module in the configuration. Or you can use the JavaScript API described here to have finer grain control over how reloads occur in your app.
+
+How Reloads work
+~~~~~~~~~~~~~~~~
+
+When you reload a new version of your code through the Toolkit UI, users will see the new version of your code when they switch away from your app and switch back to it: we download updated files when focus is lost and apply the changes when focus is restored.
+
+You have control over this process using the JavaScript API described here, but the default behavior does not require any change to your app's logic.
+
+Streams
+~~~~~~~
+
+Streams let you segment your user base so that not everyone has to receive every update you push with Reload. This is useful for pushing regular unstable updates to developers, release candidates to beta testers and stable versions to the wider user base.
+
+By default, your users are added to the “default” stream - you can create as many streams as you want, and switch apps to different streams using using the ``switchStream`` method described below.
+
+Config versions
+~~~~~~~~~~~~~~~~
+
+ You must only reload HTML / CSS and JavaScript where it works with the minor version of the Forge platform which you originally built against.
+
+.. image:: /_static/images/reload-concepts.png
+
+If your updated JavaScript relies on Forge APIs that are only available in newer versions of the wrapper than your users currently have installed, then you will need to re-package your apps and deploy through the app stores again.
 
 API
 ---
