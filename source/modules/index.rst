@@ -25,6 +25,7 @@ Mobile - :ref:`more... <mobile_modules>`
    * :ref:`In-app payments <modules-payments>`
    * :ref:`Media <modules-media>`
    * :ref:`Push notifications <partner-parse>`
+   * :ref:`Reload <modules-reload>`
    * :ref:`SMS <modules-sms>`
    * :ref:`Splash page <modules-launchimage>`
    * :ref:`Topbar native UI <modules-topbar>`
