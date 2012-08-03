@@ -20,7 +20,6 @@ Mobile
    /modules/payments
    /partners/parse
    /modules/reload
-   /modules/requirements
    /modules/sms
    /modules/tabbar
    /modules/topbar
