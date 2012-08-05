@@ -3,8 +3,6 @@
 ``barcode``: Barcode / QR Code scanner
 =======================================
 
-.. warning:: The barcode module is a premium module that is free while in beta. Contact support@trigger.io to be notified about pricing.
-
 The ``forge.barcode`` namespace allows the user to scan a barcode using the devices camera and returns its content
 
 Config

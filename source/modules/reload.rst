@@ -3,8 +3,6 @@
 ``reload``: Push updates to deployed apps
 =========================================
 
-.. warning:: Reload is a premium module that is free while in beta. Contact support@trigger.io to be notified about pricing.
-
 The Reload module allows you to update the HTML, CSS and JavaScript in your app for your users without you needing to push an Appt Store update or your users needing to re-install the app.
 
 Config
