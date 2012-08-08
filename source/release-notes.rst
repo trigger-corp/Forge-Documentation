@@ -52,6 +52,17 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.8
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 8th August 2012**
+
+Bug fixes:
+
+- relative resource paths in CSS files on iOS
+- make AVD creation more resilient to failure
+- handle lack of JRE more gracefully
+- force IE popups to the foreground
+
 v1.4.7
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 7th August 2012**
