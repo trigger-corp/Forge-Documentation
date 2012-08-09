@@ -8,11 +8,11 @@ Quickstart
 
 .. container:: button
 
-    `Get started <https://trigger.io/forge/toolkit>`_
+    `Get started <https://trigger.io/pricing>`_
 
-Step 1: `Install the Trigger Toolkit <https://trigger.io/forge/toolkit>`_
+Step 1: `Sign up <https://trigger.io/pricing>`_
 
-Step 2: Start the Toolkit and create an account
+Step 2: `Install the Trigger Toolkit <https://trigger.io/forge/toolkit>`_
 
 Step 3: Read our :ref:`tutorials <forge-index>` and create apps
 
