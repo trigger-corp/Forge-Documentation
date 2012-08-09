@@ -3,6 +3,8 @@
 ``gmail``: Gmail library
 ========================
 
+.. warning:: The gmail module is considered deprecated and should not be used. It will be dropped in future versions of the Forge platform.
+
 This library makes it easy to create a browser extension to interact with Gmail. It is a useful alternative to creating Gmail gadgets.
 
 The Forge Gmail library allows you to interact with the following elements of the Gmail composition pane:
