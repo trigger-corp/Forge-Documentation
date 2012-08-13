@@ -52,6 +52,20 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.9
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 13th August 2012**
+
+Features:
+
+- re-use of Reload files already present on iOS device
+
+Bug fixes:
+
+- version number updated properly in IE setup scripts
+- resource loading on iOS improved using Reload
+- tools.getURL needed adjustment for Reload
+
 v1.4.8
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 8th August 2012**
