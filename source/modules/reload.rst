@@ -3,7 +3,7 @@
 ``reload``: Push updates to deployed apps
 =========================================
 
-The Reload module allows you to update the HTML, CSS and JavaScript in your app for your users without you needing to push an Appt Store update or your users needing to re-install the app.
+The Reload module allows you to update the HTML, CSS and JavaScript in your app for your users without you needing to push an App Store update or your users needing to re-install the app.
 
 Config
 ------
