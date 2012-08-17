@@ -48,9 +48,16 @@ As it is limited to ``GET`` requests and lacks the more advanced options of *for
 
   :param object options: jQuery-style parameters to control the request
 
-This function is closer to the `jQuery.ajax <http://api.jquery.com/jQuery.ajax/>`_ method than *forge.request.get*. However, the full range of jQuery options are **not supported** for this method, due to the structure of browser and mobile apps.
+.. note:: unlike jQuery, we expect the URL for the the request to be passed
+    into the options hash, *not* as a positional parameter
 
-Also, note that the ``error`` and ``success`` callbacks are **not** passed the jQuery XHR object.
+This function is closer to the `jQuery.ajax
+<http://api.jquery.com/jQuery.ajax/>`_ method than *forge.request.get*.
+However, the full range of jQuery options are **not supported** for this
+method, due to the structure of browser and mobile apps.
+
+Also, note that the ``error`` and ``success`` callbacks are **not** passed a
+jQuery XHR object.
 
 Currently supported options:
  * accepts
