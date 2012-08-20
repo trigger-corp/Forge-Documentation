@@ -12,9 +12,9 @@ Define your desired icons with ``"size": "path"`` attributes, where ``size`` is 
 You can specify different icons for different platforms as so::
 
     "android": {
-        "16": "icon16.png",
-        "32": "icon32.png",
+        "36": "icon36.png",
         "48": "icon48-android.png"
+        "72": "icon72.png"
     },
     "chrome": {
         "16": "icon16.png",
@@ -45,15 +45,15 @@ Config
         "modules": {
             "icons": {
                 "android": {
-                    "16": "icon16.png",
-                    "32": "icon32.png",
+                    "36": "icon36.png",
                     "48": "icon48-android.png"
+                    "72": "icon72.png"
                 },
                 "ios": {
                     "57": "icon57.png",
                     "72": "icon72-ios.png",
                     "114": "icon114.png",
-					"144": "icon144.png",
+                    "144": "icon144.png",
                     "prerendered": true
                 }
             }

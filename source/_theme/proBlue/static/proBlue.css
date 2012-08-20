@@ -1,5 +1,4 @@
-/**
- * Sphinx stylesheet -- default theme
+/* Sphinx stylesheet -- default theme
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  */
  
@@ -305,12 +304,12 @@ div.body h6 {
     margin: 24px 0 0 0;
 }
  
-div.body h1 { border-bottom: 1px solid #ddd; margin-top: 0; font-size: 160%; }
-div.body h2 { border-bottom: 1px solid #ddd; font-size: 130%; margin-bottom: 6px; }
-div.body h3 { font-size: 120%; }
-div.body h4 { font-size: 110%; }
-div.body h5 { font-size: 100%; }
-div.body h6 { font-size: 100%; }
+div.body h1 { border-bottom: 1px solid #ddd; margin-top: 0; font-size: 190%; }
+div.body h2 { border-bottom: 1px solid #ddd; font-size: 175%; margin-bottom: 6px; }
+div.body h3 { font-size: 165%; }
+div.body h4 { font-size: 150%; }
+div.body h5 { font-size: 140%; }
+div.body h6 { font-size: 130%; }
 
 a.headerlink {
     color: #168DA2;
@@ -379,9 +378,6 @@ pre {
 
 div.body tt {
     color: #007000;
-    font-size: 1.3em;
-    padding: 2px 2px;
-    font-size: 1.3em;
     padding: 2px 2px;
 }
 
@@ -483,10 +479,6 @@ div.body div.toctree-wrapper tt {
 	text-decoration: none;
 }
 
-tt span {
-	font-size: 16px;
-}
-
 #main h2 {
 	font-weight: bold;
 }
@@ -518,6 +510,10 @@ tt span {
 
 #main dd {
 	margin: 0 0 20px 50px;
+}
+
+#main tt {
+	font-family: Pragmata, Menlo, 'DejaVu LGC Sans Mono', 'DejaVu Sans Mono', Consolas, 'Everson Mono', 'Lucida Console', 'Andale Mono', 'Nimbus Mono L', 'Liberation Mono', FreeMono, 'Osaka Monospaced', Courier, 'New Courier', monospace;
 }
 
 .sphinxsidebarwrapper .toctree-l3, .sphinxsidebarwrapper .toctree-l3 span.pre {

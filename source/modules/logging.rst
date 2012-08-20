@@ -21,6 +21,16 @@ A setting of ``DEBUG`` means that all messages will be logged, whereas a setting
         }
     }
 
+**Platforms: Internet Explorer only**
+
+The ``logging.console`` configuration directive enables a log window for the add-on's background page.
+
+.. parsed-literal::
+            "logging": {
+                "console": true
+            },
+
+
 API
 ---
 
