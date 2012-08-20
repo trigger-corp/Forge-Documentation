@@ -17,12 +17,12 @@ Config
                     ":ref:`iphone <field-orientations_iphone>`": "portrait",
                     ":ref:`ipad <field-orientations_ipad>`": "landscape",
                     ":ref:`android <field-orientations_android>`": "landscape",
+                }, 
+                ":ref:`fullscreen <field-fullscreen>`": {
+                    "android": false,
+                    "ios": false,
+                    "wp: true
                 }
-            },
-            ":ref:`fullscreen <field-fullscreen>`": {
-                "android": false,
-                "ios": false,
-                "wp: true
             }
         }
     }
