@@ -69,3 +69,31 @@ Currently available as part of our :ref:`integration with Parse <partner-parse>`
 
     :param function(data) callback: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
+
+``appPaused.addListener``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Mobile**
+
+Triggered when the app loses focus and moves into the background. At this point what can be executed varies by platform:
+
+* Android: Any javascript can be run, but timers may not be fired until the app is resumed, this prevents unnecessary battery usage by the app.
+* iOS: A short amount of time is given for execution, it is generally best to assume that callbacks and timers may not fire until the app is resumed.
+* Windows Phone: Any javascript will be executed only when the app resumes.
+
+You should also not assume that an app that is paused will be resumed, the app may be killed at this point by the user or device without ever being resumed.
+
+.. js:function:: event.appPaused.addListener(callback, error)
+
+    :param function(data) callback: callback to be invoked when no errors occur
+    :param function(content) error: called with details of any error which may occur
+
+``appResumed.addListener``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Mobile**
+
+Triggered when the app is resumed from a previous paused state.
+
+.. js:function:: event.appResumed.addListener(callback, error)
+
+    :param function(data) callback: callback to be invoked when no errors occur
+    :param function(content) error: called with details of any error which may occur

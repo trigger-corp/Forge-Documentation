@@ -14,6 +14,7 @@ General
    /modules/parameters
    /modules/prefs
    /modules/request
+   /modules/requirements
    /modules/tabs
    /modules/tools
    

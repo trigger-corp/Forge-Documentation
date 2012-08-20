@@ -15,3 +15,4 @@ develop applications for the Forge platform.
    forgeignore
    hooks
    ios-windows
+   reload

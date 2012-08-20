@@ -242,7 +242,7 @@ Since we already have a function to populate the GUI we just pass that in as the
 
 Rebuild and run the code to see live forecast data displayed.
 
-Reference extension
+Reference app
 -------------------
 `part-3.zip <../../_static/weather/part-3.zip>`_ contains the code you should have in your app's src directory at this point.
 Feel free to check your code against it or use it to resume the tutorial from this point.

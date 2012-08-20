@@ -9,18 +9,172 @@ In your ``config.json`` file, you can use a major version (like ``v1.3``), which
 
 To see the minor version used to create a particular build, look in ``.template/platform_version.txt`` in your app directory (``.template`` sits alongside ``src``).
 
+.. _release-notes-v1.4:
+
+v1.4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Supported Platforms
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Android
+* iOS
+* Windows Phone
+* Chrome
+* Firefox
+* Safari
+* Internet Explorer
+* Web
+
+Changes from v1.3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The v1.4 major version changes the format of config.json slightly, putting the
+``orientations`` configuration inside a new ``display`` module.
+
+In addition, due to internal changes in how Forge apps work, you will no longer
+be able to make cross-domain requests without using the ``forge.request``
+module or `CORS <http://www.w3.org/TR/cors/>`_.
+
+.. _upgrade-1.4:
+
+Upgrade Instructions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To upgrade from v1.3 to v1.4, we provide a command which automates the process
+of updating your ``config.json`` file.
+
+If you're using the command-line tools, just run ``forge migrate``: we will
+create a backup of your current ``config.json`` file in ``src/config.json.bak``.
+
+.. note:: v1.4 requires iPad retina launchimage configuration: see :ref:`the
+    module documentation <modules-launchimage>`.
+
+You should also check your code is not attempting to make cross-domain XHRs:
+either use ``forge.request`` instead (recommended), or CORS if you prefer.
+
+v1.4.9
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 13th August 2012**
+
+Features:
+
+- re-use of Reload files already present on iOS device
+
+Bug fixes:
+
+- version number updated properly in IE setup scripts
+- resource loading on iOS improved using Reload
+- tools.getURL needed adjustment for Reload
+
+v1.4.8
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 8th August 2012**
+
+Bug fixes:
+
+- relative resource paths in CSS files on iOS
+- make AVD creation more resilient to failure
+- handle lack of JRE more gracefully
+- force IE popups to the foreground
+
+v1.4.7
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 7th August 2012**
+
+Bug fixes:
+
+- playback of locally bundled media files fixed on iOS
+- loading locally bundled resources in modal views fixed on iOS
+- fixed incompatibility between iOS contact module and MS Exchange
+
+v1.4.6
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 2nd August 2012**
+
+Features:
+
+- Facebook authentication details returned as parameter to facebook.authorize
+
+Bug fixes:
+
+- ``minimum_version`` configuration on Android was causing build problems for some
+- remove dependency on Express 2.5.0 for web target
+- remove default orientation configuration and fix Android "any" mode
+
+v1.4.5
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 1st August 2012**
+
+Bug fixes:
+
+- ensure focus events work properly for popup windows on IE
+
+v1.4.4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 31st July 2012**
+
+Bug fixes:
+
+- fix internal generateQueryString method on IE
+
+v1.4.3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 26th July 2012**
+
+Bug fixes:
+
+- creating modal dialogs was broken on some older versions of Android
+
+v1.4.2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 24th July 2012**
+
+Bug fixes:
+
+- enable use of modal views immediately after app launch on iOS
+- modules are fully disabled by default, unless explicitly enabled
+
+v1.4.1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 20th July 2012**
+
+Features:
+
+- support retina scaled images for iPad
+- integration with native Facebook SDKs
+- use ``enableHighAccuracy`` in iOS geolocation API
+
+Bug fixes:
+
+- topbar and tabbar buttons are correctly re-added after app is closed on Android
+- network activity indicator properly cleared after closing iOS modal views
+
+v1.4.0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 17th July 2012**
+
+Features:
+
+- :ref:`Reload <modules-reload>`
+- lifecycle events (appPaused and appResumed :ref:`docs <modules-event>`)
+- barcode scanning module: :ref:`modules-barcode`
+- use Chrome manifest version 2 (see :ref:`modules-requirements`)
+- fullscreen support (:ref:`modules-display`)
+
 .. _release-notes-v1.3:
 
-v1.3 (*current version*)
+v1.3
 -------------------------------------------------------------------------------
 
 Supported Platforms
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* Chrome
 * Android
 * iOS
+* Windows Phone
+* Chrome
 * Firefox
 * Safari
+* Internet Explorer
 * Web
 
 Changes from v1.2
@@ -38,6 +192,44 @@ Upgrade Instructions
 To upgrade from v1.2 to v1.3 your ``config.json`` file needs to be updated, this can be done automatically by running ``forge migrate`` with the command line tools, or choosing to migrate from Trigger Toolkit.
 
 The migration process will automatically update your ``config.json`` file to v1.3, if for any reason it doesn't work a backup of your ``config.json`` file will be saved as ``config.json.bak``.
+
+v1.3.23
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 20 July 2012**
+
+Features:
+
+- migration script to upgrade to v1.4
+
+v1.3.22
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 18th July 2012**
+
+Bug fixes:
+
+- launchimage on iPad is correctly sized
+
+v1.3.21
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 12th July 2012**
+
+Features:
+
+- network activity spinner / progress bar shown while loading modal views
+
+Bug fixes:
+
+- connectionStateChanged callbacks are fired at least once
+- request.ajax response contains the body data for non-200 status codes on Android
+
+v1.3.20
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 12th July 2012**
+
+Bug fixes:
+
+- re-enable running Firefox automatically
+- clean up some extra files produced by new Android SDK
 
 v1.3.19
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -284,7 +476,7 @@ Features:
 
 .. _release-notes-v1.2:
 
-v1.2 (*previous version*)
+v1.2
 -------------------------------------------------------------------------------
 
 Supported Platforms

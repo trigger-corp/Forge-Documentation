@@ -12,9 +12,9 @@ Define your desired icons with ``"size": "path"`` attributes, where ``size`` is 
 You can specify different icons for different platforms as so::
 
     "android": {
-        "16": "icon16.png",
-        "32": "icon32.png",
+        "36": "icon36.png",
         "48": "icon48-android.png"
+        "72": "icon72.png"
     },
     "chrome": {
         "16": "icon16.png",
@@ -29,9 +29,9 @@ The icons required for each platform are listed below:
 * Android: 36px, 48px and 72px
 * Chrome: 16px, 48px and 128px
 * Firefox: 32px and 64px
-* Internet Explorer: TODO
-* iOS: 57px, 72px and 114px for home screen icons, 512px to be shown in iTunes.
-* Safari: 32px, 48px and 64px
+* Internet Explorer: 16px ``.ico`` format
+* iOS: 57px, 72px, 114px and 144px for home screen icons, 512px to be shown in iTunes.
+* Safari: 32px, 48px and 64px with transparent background. See the Creating an Image section in Apple's `Safari extension guide <http://developer.apple.com/library/safari/#documentation/Tools/Conceptual/SafariExtensionGuide/AddingButtonstotheMainSafariToolbar/AddingButtonstotheMainSafariToolbar.html#//apple_ref/doc/uid/TP40009977-CH3-SW1>`_.
 
 .. note:: If you specify *any* icons for a particular platform, you **must** specify all required icons!
 
@@ -45,14 +45,15 @@ Config
         "modules": {
             "icons": {
                 "android": {
-                    "16": "icon16.png",
-                    "32": "icon32.png",
+                    "36": "icon36.png",
                     "48": "icon48-android.png"
+                    "72": "icon72.png"
                 },
                 "ios": {
                     "57": "icon57.png",
                     "72": "icon72-ios.png",
                     "114": "icon114.png",
+                    "144": "icon144.png",
                     "prerendered": true
                 }
             }

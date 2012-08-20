@@ -8,13 +8,13 @@ Quickstart
 
 .. container:: button
 
-    `Sign up for free <https://trigger.io/forge>`_
+    `Get started <https://trigger.io/pricing>`_
 
-Step 1: `Sign up <https://trigger.io/forge>`_
+Step 1: `Sign up <https://trigger.io/pricing>`_
 
-Step 2: Download the `command-line tools <https://trigger.io/forge-static/build-tools/forge-tools-3.3.2.zip>`_ or `UI Toolkit <https://trigger.io/forge/toolkit/>`_
+Step 2: `Install the Trigger Toolkit <https://trigger.io/forge/toolkit>`_
 
-Step 3: Start our :ref:`tutorials <forge-index>` and create apps
+Step 3: Read our :ref:`tutorials <forge-index>` and create apps
 
 Features
 --------------------------------------------------------------------------------
@@ -26,13 +26,17 @@ Mobile - :ref:`more... <mobile_modules>`
    :columns: 3
 
    * :ref:`Address book <modules-contact>`
+   * :ref:`Barcode / QR scanning<modules-barcode>`
    * :ref:`Camera <modules-file>`
+   * :ref:`Child browser <modules-tabs-open>`
    * :ref:`Events <modules-event>`
+   * :ref:`Facebook SDK access<modules-facebook>`
    * :ref:`Files <modules-file>`
    * :ref:`Geolocation <modules-geolocation>`
    * :ref:`In-app payments <modules-payments>`
    * :ref:`Media <modules-media>`
    * :ref:`Push notifications <partner-parse>`
+   * :ref:`Reload <modules-reload>`
    * :ref:`SMS <modules-sms>`
    * :ref:`Splash page <modules-launchimage>`
    * :ref:`Topbar native UI <modules-topbar>`

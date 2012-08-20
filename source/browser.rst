@@ -48,14 +48,15 @@ Getting Started
 
 Hello Chrome
 ~~~~~~~~~~~~
+
 * After going through the :ref:`forge-index` section you should see a ``src`` directory created. This is where all of your add-on files will be placed.
 * There will be several files and folders in the src directory: this is a basic "Hello World" app.
-* Inside the folder you should see ``config.json`` which is automatically generated. This file holds configuration settings for your add-on.
-* Open the file called ``background.js`` inside the ``src/js`` directory; you should see something like::
+* Inside the folder you should see ``config.json`` which is automatically generated. This file holds configuration settings for your add-on. You can edit this from inside the Toolkit by click on your app from the Your Apps page, then the 'Local config' link in the top-right
+* Create a file called ``background.js`` inside the ``src/js`` directory with this code::
 
     forge.logging.info("This is executed once per extension/browser launch");
 
-* This code will run in the :ref:`background context<addon-concept-background>`, but only if we reference it in the configuration file first.
+* We'll configure this to run in the :ref:`background context<addon-concept-background>`, by referencing it in the configuration file.
 * Open ``config.json``: note how we use the :ref:`background <modules-background>` module to use our ``background.js`` file::
 
     "background": {
@@ -70,30 +71,33 @@ The next sections will explain how to build and load the add-on.
 
 .. _chrome-getting-started-build:
 
-Building Chrome Extensions Using Forge
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-* Windows users open a command prompt. OSX/Linux users open terminal.
-* Navigate to the directory where you extracted the build tools
-* Windows users run ``go.bat``. OSX/Linux users run ``source go.sh``. This will ensure all dependencies are installed and start the virtual environment.
-* Run ``forge build``.
-* Whenever the configuration file changes the app needs to be rebuilt.
-* When the build finishes take a look inside the ``development`` directory and you should see your generated Chrome extension.
+Building and testing Chrome extensions using Forge
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To build your Chrome extension using the Toolkit, simple click on the app you wish to build from the Your Apps screen, and then the 'Chrome' link. You will see the full traceback in the console as the commands are run so you can see progress and any warnings.
+
+.. image:: /_static/images/toolkit-run.png
+
+If you make subsequent code changes that you want to build and test on the same platform, just click 'Run again' at the bottom of the console view in the app run page.
+
+Using the command-line tools, use the ``forge build`` command. When the build finishes take a look inside the ``development`` directory and you should see your generated Chrome extension.
 
 .. _chrome-getting-started-load-extension:
 
-Loading Chrome Extensions
-~~~~~~~~~~~~~~~~~~~~~~~~~
-* Open the Chrome browser and go to ``chrome:extensions``.
-* If **Developer mode** isn't already enabled click the ``[+]`` button at the top right.
-* Click **Load unpacked extension**.
-* Navigate to the ``development`` directory which contains the generated extension.
-* Select the ``chrome`` folder and click **OK**.
-* Expand section for your Chrome extension by clicking the ?
-* Click forge.html
-* A Chrome debugging window will appear: this is where you can debug your background scripts.
-* In the console, you should see your message::
+To test the Chrome extensions:
+
+   * Open the Chrome browser and go to ``chrome:extensions``.
+   * If **Developer mode** isn't already enabled click the ``[+]`` button at the top right.
+   * Click **Load unpacked extension**.
+   * Navigate to the ``development`` directory which contains the generated extension.
+   * Select the ``chrome`` folder and click **OK**.
+   * Expand section for your Chrome extension by clicking the ?
+   * Click forge.html
+   * A Chrome debugging window will appear: this is where you can debug your background scripts.
+   * In the console, you should see your message:
     .. image:: /_static/images/developer-tools.png
-* If you see an error, see our :ref:`faq`.
+
+If you see an error, see our :ref:`faq`.
 
 What next?
 ~~~~~~~~~~

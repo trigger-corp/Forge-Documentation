@@ -14,6 +14,7 @@ The ``button`` configuration controls the appearance and function of toolbar ico
         "modules": {
             "button": {
                 ":ref:`default_popup <field-default_popup>`": "popup.html",
+                ":ref:`default_title <field-default-title>`": "Button Title",
                 ":ref:`default_icon <field-default_icon>`": "my-default-icon.ico",
                 ":ref:`default_icons <field-default_icons>`": {
                     "firefox": "my-icon-for-firefox.ico"
@@ -25,11 +26,14 @@ The ``button`` configuration controls the appearance and function of toolbar ico
 
 .. _field-default_popup:
 
+.. _field-default-title:
+
 .. _field-default_icon:
 
 .. _field-default_icons:
 
 * ``default_popup`` should refer to a local HTML file, included in your app, which will be displayed after the button is clicked; for more information, see :ref:`part I of the tutorial <tutorials-weather-tutorial-1-setting-up-the-UI>`
+* ``default_title`` this will show as the tooltip text when users hover over the toolbar button. It is a required field for IE.
 * ``default_icon`` should refer to a local image file, included in your app, to be used as the button icon
 * ``default_icons`` allows you to override the ``default_icon`` icon, one platform at a time: the object keys should be one or more of ``chrome``, ``firefox``, ``safari`` or ``ie``
 

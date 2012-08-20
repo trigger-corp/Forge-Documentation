@@ -20,6 +20,8 @@ Properties and image sizes are:
 * ``iphone-retina``: 640x960px
 * ``ipad``: 768x1004px
 * ``ipad-landscape``: 1024x748px
+* ``ipad-retina``: 1536x2008px
+* ``ipad-landscape-retina``: 2048x1496px
 * ``android``
 * ``android-landscape``
 
@@ -31,6 +33,8 @@ Properties and image sizes are:
                 "iphone-retina": "iphone-retina.png",
                 "ipad": "ipad.png",
                 "ipad-landscape": "ipad-landscape.png",
+                "ipad-retina": "ipad-retina.png",
+                "ipad-landscape-retina": "ipad-landscape-retina.png",
                 "android": "android.png",
                 "android-landscape": "android-landscape.png"
             }

@@ -22,6 +22,29 @@ Run any command with the ``--help`` argument to see more information about the p
 
 .. _command-line-notes-arguments:
 
+Location of ``forge`` executable
+--------------------------------
+
+To run forge commands use the forge executable in your Toolkit installation: 
+
+Windows
+~~~~~~~~
+.. parsed-literal::
+
+	C:\\> "C:\\Users\\<Your Username>\\AppData\\Local\\Trigger Toolkit\\forge.exe"
+
+Mac users
+~~~~~~~~~~
+.. parsed-literal::
+
+	$ $HOME/Library/Trigger\\ Toolkit/forge
+
+Linux users
+~~~~~~~~~~~~~
+.. parsed-literal::
+
+	$ ~/TriggerToolkit/forge
+
 Command-line parameters
 ------------------------------------------
 Parameters to the ``forge`` commands can be given as command-line options, or :ref:`stored in a file <parameters-in-a-file>`.
