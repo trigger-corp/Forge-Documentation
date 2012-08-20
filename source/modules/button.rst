@@ -37,6 +37,8 @@ The ``button`` configuration controls the appearance and function of toolbar ico
 * ``default_icon`` should refer to a local image file, included in your app, to be used as the button icon
 * ``default_icons`` allows you to override the ``default_icon`` icon, one platform at a time: the object keys should be one or more of ``chrome``, ``firefox``, ``safari`` or ``ie``
 
+.. important:: Internet Explorer requires you to override the ``default_icon`` with a 16x16 bitmap in .ico format.
+
 API
 ---
 
@@ -78,7 +80,7 @@ Sets a function to be executed when the toolbar button is clicked.
 
 ``setBadge``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**Platforms: Browser only**
+**Platforms: Browser only (Not supported on Internet Explorer)**
 
 Sets a number to appear as a notification badge on the toolbar button.
 
@@ -90,7 +92,7 @@ Sets a number to appear as a notification badge on the toolbar button.
 
 ``setBadgeBackgroundColor``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**Platforms: Browser only (Not supported on Safari)**
+**Platforms: Browser only (Not supported on Safari or Internet Explorer)**
 
 Sets the background color for the badge.
 
