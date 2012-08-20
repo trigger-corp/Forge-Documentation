@@ -52,6 +52,21 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.10
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 20th August 2012**
+
+Features:
+
+- can set name of files uploaded through request.ajax
+- better Reload download logic to speed up update deployment
+
+Bug fixes:
+
+- fullscreen mode incompatible with orientation limitation on iOS
+- unicode characters in app config could cause problems in some situations
+- prerendered icons for iOS were broken
+
 v1.4.9
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 13th August 2012**
