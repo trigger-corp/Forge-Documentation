@@ -101,6 +101,22 @@ Example::
     }
   });
 
+You can control the name of uploaded files by setting the ``name`` attribute,
+e.g.::
+
+  myFile.name = 'name_of_input';
+  window.forge.ajax({
+    type: 'POST',
+    url: 'http://my.server.com/upload/,
+    files: [myFile],
+    success: function(data) {
+      alert('Uploaded file as '+myFile.name);
+    },
+    error: function(error) {
+      alert('Failed to upload file: '+error.message);
+    }
+  });
+
 Permissions
 -----------
 
