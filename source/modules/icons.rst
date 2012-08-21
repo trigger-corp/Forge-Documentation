@@ -46,7 +46,7 @@ Config
             "icons": {
                 "android": {
                     "36": "icon36.png",
-                    "48": "icon48-android.png"
+                    "48": "icon48-android.png",
                     "72": "icon72.png"
                 },
                 "ios": {
