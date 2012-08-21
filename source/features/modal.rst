@@ -44,4 +44,9 @@ To watch for a match pattern use code similar to::
 
 See :ref:`the openWithOptions API documentation<modules-tabs-openWithOptions>`.
 
-In this example the final url in the modal view will be logged, data could also be extracted from it and used to authenticate the user, such as the query string (used for OAuth 1) or the hash fragment (in OAuth 2).
+See http://developer.chrome.com/extensions/match_patterns.html for
+documentation on the Match Pattern format and semantics.
+
+In this example the final url in the modal view will be logged, data could also
+be extracted from it and used to authenticate the user, such as the query
+string (used for OAuth 1) or the hash fragment (in OAuth 2).
