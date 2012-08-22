@@ -52,6 +52,15 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.11
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 22nd August 2012**
+
+Bug fixes:
+
+- fix Facebook API regression, where authentication flows didn't return to the app
+- fix Express's zlib dependency on Heroku http://stackoverflow.com/questions/11995324/zlib-module-not-playing-nicely-with-web-deployment
+
 v1.4.10
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 20th August 2012**
