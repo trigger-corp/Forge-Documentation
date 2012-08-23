@@ -12,7 +12,8 @@ Config
     {
         "requirements": {
             "android": {
-                "minimum_version": "6"
+                "minimum_version": "6",
+                "disable_ics_acceleration": true
             },
             "ios": {
                 "minimum_version": "4.3"
@@ -29,7 +30,8 @@ Config
 Android
 ~~~~~~~
 
-The Android minimum version is the minimum Android API level you want to support, it must be between 5 and 15. More details can be found on the Android developers site: http://developer.android.com/guide/appendix/api-levels.html.
+* ``minimum version``: the minimum Android API level you want to support, it must be between 5 and 15. More details can be found on the Android developers site: http://developer.android.com/guide/appendix/api-levels.html.
+* ``disable_ics_acceleration``: Disables hardware acceleration on Android 4.0, this is a workaround to potential rendering issues which can affect some apps on this particular version of Android.
 
 iOS
 ~~~
