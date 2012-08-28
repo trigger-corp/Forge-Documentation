@@ -59,3 +59,41 @@ The fullscreen option will hide the system statusbar while your app is running a
 * ``android``: Android devices
 * ``ios``: Both iPhone and iPad devices
 * ``wp``: Windows phone devices
+
+API
+---
+
+The ``display`` module also allows you to change the orientation limitations while your app is running with the following API.
+
+``orientation.forceLandscape``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Mobile**
+
+Force the app into a landscape orientation.
+
+.. js:function:: display.orientation.forceLandscape(success, error)
+
+    :param function(value) success: callback to be invoked when no errors occur
+    :param function(content) error: called with details of any error which may occur
+
+``orientation.forcePortrait``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Mobile**
+
+Force the app into a portrait orientation.
+
+.. js:function:: display.orientation.forcePortrait(success, error)
+
+    :param function(value) success: callback to be invoked when no errors occur
+    :param function(content) error: called with details of any error which may occur
+
+``orientation.allowAny``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Mobile**
+
+Allow any app orientation.
+
+.. js:function:: display.orientation.allowAny(success, error)
+
+    :param function(value) success: callback to be invoked when no errors occur
+    :param function(content) error: called with details of any error which may occur
