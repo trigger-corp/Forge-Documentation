@@ -52,6 +52,24 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.12
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 24th August 2012**
+
+Features:
+
+- option to :ref:`disable hardware acceleration <modules/requirements>` on Ice Cream Sandwich due to some rendering issues in libraries such as KendoUI
+- iOS: automatically use distribution developer certificate with distribution provisioning profile and vice versa
+
+Bug fixes:
+
+- updated iOS app install utility for better Mountain Lion support, faster operation and increased reliability
+- Forge-based IE extensions can be disabled in IE 9
+- initial connectionStateChanged event fired even earlier
+- tabbar and topbar buttons aren't duplicated by Reload
+- content is zoomable and pannable in Android modal views
+- cookies containing double quotes work when using web target with Opera
+
 v1.4.11
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 22nd August 2012**
