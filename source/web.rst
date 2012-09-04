@@ -83,6 +83,8 @@ Deploying your web app to any node.js platform
 The web application lives in <your-app-folder>/release/web/heroku after you've packaged it. You can take
 the code from here and deploy to your favorite node.js platform like any other node.js web app.
 
+.. _web-best_practices:
+
 Best practices
 --------------
 * Use ``forge.is.web()`` in the Forge Javascript framework to detect whether your app is running in a
@@ -93,6 +95,12 @@ Best practices
   larger screen size and design your CSS accordingly.
 
 * Test often with ``forge run web``.
+
+* If your Node installation is in a non-standard location (e.g. homebrew installs it to ``/usr/local/bin/`` on OS X), you can use the ``node_path`` parameter to point us at the right place. Either use the "Local Config" section in the Toolkit, or edit ``local_config.json`` directly to add something like::
+
+    "web": {
+        "node_path": "/usr/local/bin/
+    }
 
 What do you think?
 ------------------
