@@ -86,7 +86,7 @@ Depending on your local settings, you may also need to know the exact name of yo
 
 Assuming you have a provisioning profile called ``Development.mobileprovision`` in the current directory, you would use a command like::
 
-    forge package ios --ios.profile.provisioning-profile Development.mobileprovision
+    forge package ios --ios.profile.provisioning_profile Development.mobileprovision
 
 In the ``release`` directory, there will now be an ``ios`` sub-directory, containing your IPA.
 
@@ -120,7 +120,7 @@ Running the ``forge package ios`` command again with the ``-v`` flag for verbose
 
 Here, there are two developer certificates for "James Brady" on the machine, and we have to specify the exact certificate to use with::
 
-    forge package ios --provisioning-profile Development.mobileprovision \
+    forge package ios --ios.profile.provisioning_profile Development.mobileprovision \
       --certificate "iPhone Developer: James Brady (5W89HYT9F3)"
 
 If you encounter errors about a mismatched profile ID, e.g.::
