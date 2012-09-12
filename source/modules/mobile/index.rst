@@ -23,4 +23,5 @@ Mobile
    /modules/sms
    /modules/tabbar
    /modules/topbar
+   /modules/urlhandler
    
