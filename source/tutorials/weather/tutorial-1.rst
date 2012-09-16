@@ -13,6 +13,8 @@ The code we'll be writing will work on any platform, but the configuration steps
 
 The parts that are specific to a platform will be marked with **(Mobile Only)** or **(Chrome Only)**.
 
+All the code for this tutorial is on Github: https://github.com/trigger-corp/weather-app-demo/
+
 .. contents::
    :backlinks: none
 
@@ -30,8 +32,8 @@ Preparation
 -----------
 * Firstly, if you haven't already done so, go through the :ref:`mobile-getting-started` or :ref:`chrome-getting-started` instructions.
   This will help you set up the basics and teach you how to build and run your code.
-* Remove any files in the ``src`` directory except ``config.json``, ``identity.json`` and the ``img`` and ``js`` folders (the remaining files will not be needed for the rest of this tutorial).
-* Download `resources.zip <../../_static/weather/resources.zip>`_, which contains images and other resources needed for this tutorial; extract the ``resources`` directory inside the ``src`` directory.
+* Remove any files in the ``src`` directory except ``config.json``, ``identity.json`` and the ``js`` folder (the other files will not be needed for the rest of this tutorial).
+* Sign up for API access at http://www.wunderground.com/weather/api/ - the most basic free developer account is fine.
 * Create a new javascript file called ``weather.js`` inside the ``src/js`` directory. This file will contain all of the JavaScript code for the rest of the tutorial.
 * Create a file called ``index.html`` inside the ``src`` directory. This will be the html page that displays the forecast information.
 
@@ -59,11 +61,9 @@ Notice the script tag in the head element points to ``weather.js`` file you crea
 This file does not need any code at this point.
 
 **(Chrome only)**
-For a chrome extension a :ref:`toolbar button<modules-button>` will be added near the browsers address bar which will display ``index.html`` when clicked.
-Toolbar buttons can have an image to differentiate them from other extension toolbar buttons.
-There is an icon ``sun_19.png`` inside the resources directory which is the correct size and provided specifically for this purpose.
+For a Chrome extension a :ref:`toolbar button<modules-button>` will be added near the browsers address bar which will display ``index.html`` when clicked.
 
-Open ``config.json`` and add the following configuration to the ``modules`` section to set up the toolbar button.
+Click on your App Config tab in the Toolkit or edit ``config.json`` to add the following configuration to the ``modules`` section.
 
 .. important:: JSON requires all key value pairs to be separated by commas.
     Makes sure to place proceeding or trailing commas as appropriate!
@@ -71,8 +71,7 @@ Open ``config.json`` and add the following configuration to the ``modules`` sect
 ::
 
     "button": {
-        "default_popup": "index.html",
-        "default_icon": "resources/sun_19.png"
+        "default_popup": "index.html"
     },
 
 Build and run the code
@@ -89,58 +88,46 @@ Create dummy data
 .. _tutorials-weather-tutorial-1-forecast-information:
 .. _tutorials-weather-tutorial-1-current-conditions:
 
-First, we will create some dummy data in JSON format - open ``src/js/weather.js`` and paste the following code::
+First, we will create some dummy data in a simplified version of the format that the Wunderground API will return to us - open ``src/js/weather.js`` and paste the following code::
 
-    var forecast = {
-        city: "Mountain View, CA",
-        forecast_date: "2011-08-09"
-    };
-    
-    var currentConditions = {
-        condition: "Clear",
-        temp_f: "73",
-        humidity: "Humidity: 57%",
-        icon: "resources/sunny.gif",
-        wind_condition: "Wind: N at 9 mph"
+    var geolocation = {
+        "lat": "37.776289",
+        "lon": "-122.395234"
     };
 
-.. _tutorials-weather-tutorial-1-forecast-conditions:
-
-We'll use a helper function to create daily forecast objects::
-
-    var forecastConditionMaker = function(day_of_week, low, high, icon, condition) {
-        return {
-            day_of_week: day_of_week,
-            low: low,
-            high: high,
-            icon: icon,
-            condition: condition
+    var forecast = [
+        {
+            "period": 0,
+            "icon": "partlycloudy",
+            "icon_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
+            "title": "Thursday",
+            "fcttext": "Mostly cloudy with a chance of a thunderstorm and a chance of rain."
+        },
+        {
+            "period": 1,
+            "icon": "mostlycloudy",
+            "icon_url": "http://icons-ak.wxug.com/i/c/k/mostlycloudy.gif",
+            "title": "Thursday Night",
+            "fcttext": "Mostly cloudy. Fog overnight."
+        },
+        {
+            "period": 2,
+            "icon": "partlycloudy",
+            "icon_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
+            "title": "Friday",
+            "fcttext": "Mostly cloudy in the morning, then partly cloudy."
         }
-    };
-
-    var tuesdayConditions = forecastConditionMaker("Tue", "58","72", "resources/mostly_sunny.gif","Clear");
-    var wednesdayConditions = forecastConditionMaker("Wed", "58", "72", "resources/sunny.gif", "Clear");
-    var thursdayConditions = forecastConditionMaker("Thu", "56", "72", "resources/chance_of_rain.gif", "Chance of Rain");
-    var fridayConditions = forecastConditionMaker("Fri", "58", "74", "resources/sunny.gif", "Clear");
-
-Bringing the data together, we have a dummy weather forecast for Mountain View, CA::
-
-    var mountainViewForecast = {
-        forecast: forecast,
-        currentConditions: currentConditions,
-        forecastConditions: [tuesdayConditions, wednesdayConditions, thursdayConditions, fridayConditions]
-    };
+    ];
 
 Check the data
 -----------------
 **Goal: Confirm our data has been correctly populated by using logging**
 
-At this point we've already got quite a bit of code and its worth making sure we haven't made any mistakes.
-Using ``forge.logging.log``, we can inspect all the properties of the dummy objects that we've created.
+If we need to verify that our app is showing the right forecast in the future, it would be useful to log out what data input is. We can use the logging module for this.
 
-Add this to the end of ``src/js/weather.js``::
+Add this to the end of ``js/weather.js``::
 
-    forge.logging.log(mountainViewForecast);
+    forge.logging.info(JSON.stringify(forecast));
 
 .. _tutorials-weather-tutorial-1-catalyst-debugging:
 
@@ -148,8 +135,10 @@ Remote Debugging on Mobile
 -----------------------------
 **Goal getting started with Catalyst**
 
-As you've already seen in :ref:`mobile-getting-started` ``forge.logging.log`` prints output to console/terminal.
+As you've already seen in :ref:`mobile-getting-started` ``forge.logging.info`` prints output to console/terminal.
 You can also use our remote debugging tool, Catalyst, which provides some helpful tools for troubleshooting and examining the app at runtime.
+
+If you're working with Chrome, you can just use the Chrome Developer tools by right-clicking on the popup: see the next section.
 
 For a screencast on Catalyst, and help on how to get started see `Screencast: Trigger.io Catalyst in action <http://trigger.io/cross-platform-application-development-blog/2012/05/04/screencast-trigger-io-catalyst-in-action-2/>`_.
 
@@ -163,7 +152,7 @@ For a screencast on Catalyst, and help on how to get started see `Screencast: Tr
 This will ensure that Catalyst is connected and ready before the code runs, preventing any logging from being lost.
 
 5. Rebuild and re-run your app. In a few moments, your Catalyst tab in the browser should show the device.
-#. Check the console of the Catalyst tool: you should see your ``mountainViewForecast`` object being logged.
+#. Check the console of the Catalyst tool: you should see your forecast object being logged.
 
 .. note:: Catalyst is a great tool, especially for debugging mobile apps: check out the "Elements" view to inspect and modify the DOM, the "API" tab to see your ``forge`` calls flowing back and forth, and the "Network" view to diagnose performance problems.
 
@@ -179,10 +168,10 @@ Since ``weather.js`` is running inside ``index.html`` we need to inspect that pa
 * Open up a Chrome browser and go to `<chrome:extensions>`_
 * If you have already added your Chrome extension, refresh it (Chrome caches aggressively - refreshing a few times is a good idea)
 * If you haven't added your Chrome extension yet, see :ref:`chrome-getting-started-load-extension`
-* Right click on the toolbar button that is added by the extension and click **Inspect pop-up**
+* Open your app's popup by clicking the toolbar button, right-click and pick **Inspect pop-up**
 * This will open up the Chrome developer tools for your popup in a new window
 * At the bottom is the console section, which should contain the output from ``forge.logging.log``
-* Inspect the logged properties of ``mountainViewForecast`` and make sure everything looks OK
+* Inspect the logged properties of the forecast object and make sure everything looks OK
 
 The :ref:`background <extension-concept-background>` context also receives the logging call for debugging convenience.
 
@@ -193,8 +182,7 @@ The :ref:`background <extension-concept-background>` context also receives the l
 
 Reference app
 -------------------
-`part-1.zip <../../_static/weather/part-1.zip>`_ contains the code you should have in your app's src directory at this point.
-Feel free to check your code against it or use it to resume the tutorial from this point.
+See the ``part-1`` tag in the `Github repository <https://github.com/goodgravy/weather-app-demo/tree/part-1>`_ for a reference app for this stage of the tutorial.
 
 What next?
 -------------------------------------------

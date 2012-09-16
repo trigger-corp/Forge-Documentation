@@ -3,7 +3,7 @@
 Tutorial Part 2
 ================
 
-This part of the tutorial will demonstrate how to use the Forge Ajax functionality to retrieve data from the Google weather API.
+This part of the tutorial will demonstrate how to use the Forge ``request`` module to retrieve data from the Wunderground API.
 We will then parse the data to pull the necessary information to generate our internal representation.
 
 .. contents::
@@ -16,19 +16,22 @@ This part of the tutorial is intended to:
 * Embed external scripts
 * Display dynamic data using jQuery templating
 
-Adding jQuery
---------------
-**Goal: Embedding jQuery libraries**
+Adding external libraries
+--------------------------------------------------------------------------------
+**Goal: Embedding jQuery and Mustache libraries**
 
-jQuery provides a lot of helpful functionality and in order to display the forecast information we will use Mustache Templates.
-If you've looked in the ``resources`` directory you might have noticed the jQuery and Mustache libraries. To use these simply append the following script tags in the head of ``index.html`` before the ``js/weather.js`` script tag:
+jQuery provides a lot of helpful functionality, and in order to display the forecast information we will use Mustache Templates.
+
+Download the jQuery and Mustache from their project pages and save them in the ``js`` directory.
+
+To use these libraries in your app simply append the following script tags in the head of ``index.html`` before the ``js/weather.js`` script tag:
 
 .. code-block:: html
 
-    <script type="text/javascript" src="resources/jquery.min.js"></script>
-    <script type="text/javascript" src="resources/mustache.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/mustache.min.js"></script>
 
-It's that simple. You can now access jQuery using "$" or "jQuery" inside ``index.html`` and ``weather.js``
+It's that simple. You can now access jQuery using "$" or "jQuery" inside ``index.html`` and ``weather.js``.
 
 Displaying the Data
 -------------------
@@ -40,47 +43,24 @@ Using Mustache, it is quite simple to display the data.
 
 * Open ``index.html``
 * Remove "Weather forecast here." from the body tag
-* Append to the body tag a Mustache template to represent :ref:`forecast information <tutorials-weather-tutorial-1-forecast-information>`:
+* Append to the body tag a Mustache template to represent the forecast information:
 
 .. code-block:: html
 
     <script type="x-mustache-template" id="forecast_information_tmpl">
         <span>Forecast for {{city}}</span><br/>
         <span>{{forecast_date}}</span>
-    </script>
-
-* Next we need a template to render the :ref:`current conditions <tutorials-weather-tutorial-1-current-conditions>` object:
-
-.. code-block:: html
-
-    <script type="x-mustache-template" id="current_conditions_tmpl">
         <table>
+        {{#conditions}}
             <tr>
-                <td><img src="{{icon}}"></td>
                 <td>
-                    <div>{{condition}}</div>
-                    <div>{{temp_f}}&deg;F</div>
-                    <div>{{humidity}}</div>
-                    <div>{{wind_condition}}</div>
+                    <h2>{{title}}</h2>
+                    <img src="{{icon_url}}">
+                    <h6>{{fcttxt}}</h6>
                 </td>
             </tr>
-        </table>
-    </script>
-
-* And finally add a template for :ref:`forecast conditions <tutorials-weather-tutorial-1-forecast-conditions>`. Here, we're using `Mustache's Enumerable syntax <https://github.com/janl/mustache.js>`_ to loop through a few days' conditions:
-
-.. code-block:: html
-
-    <script type="x-mustache-template" id="forecast_conditions_tmpl">
-        {{#conditions}}
-        <td>
-            <h2>{{day_of_week}}</h2>
-            <img src="{{icon}}">
-            <h6>{{condition}}</h6>
-            <h6>Low: {{low}}&deg;F</h6>
-            <h6>High: {{high}}&deg;F</h6>
-        </td>
         {{/conditions}}
+        </table>
     </script>
 
 * Next we need designated elements where the templated information will be appended. Add the following tags following the templates inside the body element:
