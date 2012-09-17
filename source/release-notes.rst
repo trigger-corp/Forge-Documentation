@@ -52,6 +52,18 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.14
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 17th September 2012**
+
+.. warning:: To accommodate the iPhone 5, this platform version requires you to
+    set the new ``iphone-retina4`` configuration directive in the :ref:`launchimage
+    module <modules-launchimage>`.
+
+Features:
+
+- support for iOS 6 and iPhone 5
+
 v1.4.13
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 4th September 2012**

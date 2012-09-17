@@ -18,6 +18,7 @@ Properties and image sizes are:
 
 * ``iphone``: 320x480px
 * ``iphone-retina``: 640x960px
+* ``iphone-retina4``: 640x1136px - for the iPhone 5's four inch screen
 * ``ipad``: 768x1004px
 * ``ipad-landscape``: 1024x748px
 * ``ipad-retina``: 1536x2008px
@@ -31,6 +32,7 @@ Properties and image sizes are:
             "launchimage": {
                 "iphone": "iphone.png",
                 "iphone-retina": "iphone-retina.png",
+                "iphone-retina4": "iphone-retina4.png",
                 "ipad": "ipad.png",
                 "ipad-landscape": "ipad-landscape.png",
                 "ipad-retina": "ipad-retina.png",
