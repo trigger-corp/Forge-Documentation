@@ -88,36 +88,48 @@ Create dummy data
 .. _tutorials-weather-tutorial-1-forecast-information:
 .. _tutorials-weather-tutorial-1-current-conditions:
 
-First, we will create some dummy data in a simplified version of the format that the Wunderground API will return to us - open ``src/js/weather.js`` and paste the following code::
+First, we will create some dummy data in a simplified version of the format that the Wunderground API will return to us - open ``src/js/weather.js`` and paste the following code:
 
-    var geolocation = {
-        "lat": "37.776289",
-        "lon": "-122.395234"
-    };
+.. code-block:: js
 
-    var forecast = [
-        {
-            "period": 0,
-            "icon": "partlycloudy",
-            "icon_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
-            "title": "Thursday",
-            "fcttext": "Mostly cloudy with a chance of a thunderstorm and a chance of rain."
+    var weather = {
+        "current_observation": {
+            "display_location": {
+                "full": "San Francisco, CA"
+            },
+            "observation_time":"Last Updated on September 20, 3:50 AM PDT",
+            "weather": "Mostly Cloudy",
+            "temp_f": 54.4,
+            "temp_c": 12.4,     
+            "relative_humidity":"89%",
+            "wind_string":"From the WNW at 4.0 MPH",
+            "icon_url":"http://icons-ak.wxug.com/i/c/k/nt_mostlycloudy.gif"
         },
-        {
-            "period": 1,
-            "icon": "mostlycloudy",
-            "icon_url": "http://icons-ak.wxug.com/i/c/k/mostlycloudy.gif",
-            "title": "Thursday Night",
-            "fcttext": "Mostly cloudy. Fog overnight."
-        },
-        {
-            "period": 2,
-            "icon": "partlycloudy",
-            "icon_url": "http://icons-ak.wxug.com/i/c/k/partlycloudy.gif",
-            "title": "Friday",
-            "fcttext": "Mostly cloudy in the morning, then partly cloudy."
+        "forecast": {
+            "simpleforecast": {
+                "forecastday": [
+                    { "date": { "weekday_short": "Thu" },
+                      "period": 1,
+                      "high": { "fahrenheit": "64", "celsius": "18" },
+                      "low": { "fahrenheit": "54", "celsius": "12" },
+                      "conditions": "Partly Cloudy",
+                      "icon_url":"http://icons-ak.wxug.com/i/c/k/partlycloudy.gif" },
+                    { "date": { "weekday_short": "Fri" },
+                      "period": 2,
+                      "high": { "fahrenheit": "70", "celsius": "21" },
+                      "low": { "fahrenheit": "54", "celsius": "12" },
+                      "conditions": "Mostly Cloudy",
+                      "icon_url":"http://icons-ak.wxug.com/i/c/k/mostlycloudy.gif" },
+                    { "date": { "weekday_short": "Sat" },
+                      "period": 3,
+                      "high": { "fahrenheit": "70", "celsius": "21" },
+                      "low": { "fahrenheit": "52", "celsius": "11" },
+                      "conditions": "Partly Cloudy",
+                      "icon_url":"http://icons-ak.wxug.com/i/c/k/partlycloudy.gif" }
+                ]
+            }
         }
-    ];
+    };
 
 Check the data
 -----------------
@@ -125,9 +137,11 @@ Check the data
 
 If we need to verify that our app is showing the right forecast in the future, it would be useful to log out what data input is. We can use the logging module for this.
 
-Add this to the end of ``js/weather.js``::
+Add this to the end of ``js/weather.js``:
 
-    forge.logging.info(JSON.stringify(forecast));
+.. code-block:: js
+
+    forge.logging.info(JSON.stringify(weather));
 
 .. _tutorials-weather-tutorial-1-catalyst-debugging:
 
@@ -145,7 +159,9 @@ For a screencast on Catalyst, and help on how to get started see `Screencast: Tr
 #. Open up a browser and go to http://trigger.io/catalyst/.
 #. On this page there will be a generated ``script`` tag which you copy and insert into the head element of your ``index.html`` file.
 #. Click on the auto-generated link which takes you to a page that looks similar to Chrome's debugging tools.
-#. Open ``src/js/weather.js`` and add the following at the **beginning** of the file::
+#. Open ``src/js/weather.js`` and add the following at the **beginning** of the file:
+
+.. code-block:: js
 
     window.forge.enableDebug();
 
