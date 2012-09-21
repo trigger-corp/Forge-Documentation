@@ -160,10 +160,11 @@ At this point, your app should display static weather data for San Francisco, CA
     :width: 200px
 
 Reference app
--------------------
-`part-2.zip <../../_static/weather/part-2.zip>`_ contains the code you should have in your app's src directory at this point.
-Feel free to check your code against it or use it to resume the tutorial from this point.
+-------------
+See the ``part-2`` tag in the `Github repository <https://github.com/trigger-corp/weather-app-demo/tree/part-2>`_ for a reference app for this stage of the tutorial.
+
+`part-2.zip <https://github.com/trigger-corp/weather-app-demo/zipball/part-2>`_
 
 What next?
-------------------------------------
+----------
 Continue on to :ref:`weather-tutorial-3`!

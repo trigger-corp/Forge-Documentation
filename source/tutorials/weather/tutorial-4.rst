@@ -36,7 +36,6 @@ Populating City Selection
 .. code-block:: js
 
     $(function(){
-        // places I've been
         var cities = [ 
             { name: "London", code: "UK/London" },
             { name: "San Francisco", code: "CA/San_Francisco" },
@@ -159,9 +158,10 @@ The weather app should now be complete.
 * Bask in all your glory, you have just written an app using Forge!
 
 Reference app
--------------------
-`part-4.zip <../../_static/weather/part-4.zip>`_ contains the code you should have in your app's src directory at this point.
-Feel free to check your code against it or use it to resume the tutorial from this point
+-------------
+See the ``part-4`` tag in the `Github repository <https://github.com/trigger-corp/weather-app-demo/tree/part-4>`_ for a reference app for this stage of the tutorial.
+
+`part-4.zip <https://github.com/trigger-corp/weather-app-demo/zipball/part-4>`_
 
 What's next?
 ------------

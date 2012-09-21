@@ -212,8 +212,9 @@ Rebuild and run the code to see live forecast data displayed.
 
 Reference app
 -------------
-`part-3.zip <../../_static/weather/part-3.zip>`_ contains the code you should have in your app's src directory at this point.
-Feel free to check your code against it or use it to resume the tutorial from this point.
+See the ``part-3`` tag in the `Github repository <https://github.com/trigger-corp/weather-app-demo/tree/part-3>`_ for a reference app for this stage of the tutorial.
+
+`part-3.zip <https://github.com/trigger-corp/weather-app-demo/zipball/part-3>`_
 
 What next?
 ----------

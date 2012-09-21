@@ -49,12 +49,12 @@ Open ``index.html`` in your favorite editor and add the following:
 
     <!DOCTYPE html>
     <html>
-     <head>
-      <script type="text/javascript" src="js/weather.js"></script>
-     </head>
-     <body>
-      Weather forecast here.
-     </body>
+        <head>
+            <script type="text/javascript" src="js/weather.js"></script>
+        </head>
+        <body>
+            Weather forecast here.
+       </body>
     </html>
 
 Notice the script tag in the head element points to ``weather.js`` file you created earlier.
@@ -197,9 +197,11 @@ The :ref:`background <extension-concept-background>` context also receives the l
 * The console may not be displayed automatically, but it can be opened by pressing the Esc key or clicking the console button on the bottom left
 
 Reference app
--------------------
-See the ``part-1`` tag in the `Github repository <https://github.com/goodgravy/weather-app-demo/tree/part-1>`_ for a reference app for this stage of the tutorial.
+-------------
+See the ``part-1`` tag in the `Github repository <https://github.com/trigger-corp/weather-app-demo/tree/part-1>`_ for a reference app for this stage of the tutorial.
+
+`part-1.zip <https://github.com/trigger-corp/weather-app-demo/zipball/part-1>`_
 
 What next?
--------------------------------------------
+----------
 Continue on to :ref:`weather-tutorial-2`!
