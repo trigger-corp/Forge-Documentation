@@ -23,8 +23,8 @@ Remove Test Dummy Code
 In this part of the tutorial we are going to be fetching live data, so we can remove the dummy data.
 Open ``weather.js`` and ...
 
-* Remove ``mountainViewForecast``, ``forecast``, ``currentConditions``, ``tuesdayConditions``, ``wednesdayConditions``, ``thursdayConditions``, ``fridayConditions`` vars and the ``forecastConditionMaker`` function
-* Remove the ``forge.logging.log(mountainViewForecast)`` call
+* Remove the ``var weather = { ... }`` declaration
+* Remove the ``forge.logging.log(weather)`` call
 * Remove ``populateWeatherConditions`` invocation from the document ready listener
   (Note you do not need to remove the entire jQuery document ready listener as it will be used again in the following sections)
 
@@ -32,62 +32,92 @@ Understanding the Data
 ----------------------
 **Goal: Gain an understanding of what data is available and how it's structured**
 
-In order to see what the returned data will look like, you can try the following link: http://www.google.com/ig/api?weather=cityOrZip.
-Replace ``cityOrZip`` by a zip code or a city name with any spaces replaced by ``+``.
+If you have not done so already sign up for API access at http://www.wunderground.com/weather/api/ and make a note of your API key.
 
-For example to look up weather in New York City, you could use http://www.google.com/ig/api?weather=New+York.
+To request a forecast which includes current conditions from the Weather Underground API you will specify an URL using the following format:
 
-The data returned should look something like the following:
+http://api.wunderground.com/api/API_KEY/conditions/forecast/q/STATE/CITY_NAME.json
 
-.. code-block:: xml
+Replace ``API_KEY`` by your Weather Underground API key, ``STATE`` by the two-letter abbreviation of the city's state and ``CITY_NAME`` by a city name with any spaces replaced by an underscore (``_``).
 
-    <xml_api_reply version="1">
-        <weather module_id="0" tab_id="0" mobile_row="0" mobile_zipped="1" row="0" section="0">
-            <forecast_information>
-                <city data="New York, NY"/>
-                <postal_code data="New York"/>
-                <latitude_e6 data=""/>
-                <longitude_e6 data=""/>
-                <forecast_date data="2011-08-22"/>
-                <current_date_time data="2011-08-22 16:51:00 +0000"/>
-                <unit_system data="US"/>
-            </forecast_information>
-            <current_conditions>
-                <condition data="Mostly Cloudy"/>
-                <temp_f data="75"/>
-                <temp_c data="24"/>
-                <humidity data="Humidity: 46%"/>
-                <icon data="/ig/images/weather/mostly_cloudy.gif"/>
-                <wind_condition data="Wind: NW at 13 mph"/>
-            </current_conditions>
-            <forecast_conditions>
-                <day_of_week data="Mon"/>
-                <low data="61"/>
-                <high data="81"/>
-                <icon data="/ig/images/weather/mostly_sunny.gif"/>
-                <condition data="Mostly Sunny"/>
-            </forecast_conditions>
-            ...
-            <forecast_conditions>
-                <day_of_week data="Thu"/>
-                <low data="68"/>
-                <high data="83"/>
-                <icon data="/ig/images/weather/chance_of_storm.gif"/>
-                <condition data="Chance of Storm"/>
-            </forecast_conditions>
-        </weather>
-    </xml_api_reply>
+For example to look up weather in New York City, you could use:
+
+http://api.wunderground.com/api/API_KEY/conditions/forecast/q/NY/New_York.json
+
+The data returned will be JSON formatted with an identical structure as our sample data from the first tutorial though with much more detail.
+
+Our ``forecast_information_tmpl`` template is populated from the ``current_observation.display_location`` and ``current_observation.observation_time`` sections:
+
+.. code-block:: js
+
+    ...
+    "current_observation": {
+        ...
+        "display_location": {
+            "full":"New York, NY",
+            "latitude":"40.75013351",
+            "longitude":"-73.99700928",
+            "elevation":"17.00000000"
+        },
+        "station_id":"KNYNEWYO62",
+        "observation_time":"Last Updated on September 21, 4:30 AM EDT",
+        ...
+
+The ``current_conditions_tmpl`` template is populated from variables in the ``current_observation`` section:
+
+.. code-block:: js
+
+    ...
+    "current_observation": {
+        ...
+        "weather":"Mostly Cloudy",
+        "temp_f":63.7,
+        "temp_c":17.6,
+        "relative_humidity":"74%",
+        "wind_string":"Calm",
+        "icon_url":"http://icons-ak.wxug.com/i/c/k/nt_mostlycloudy.gif",
+        ...        
+
+Finally, the ``forecast_conditions_tmpl`` template is populated from variables in the ``current_observation.forecast.simple_forecast`` section:
+
+.. code-block:: js
+
+    ...
+    "current_observation": {
+        ...
+    },
+    "forecast":{
+        "txt_forecast": {
+        ...
+        },
+        "simpleforecast": {
+            "forecastday": [
+                {"date":{
+                    "weekday_short":"Fri",
+                },
+                 "period":1,
+                 "high": {
+                     "fahrenheit":"72",
+                     "celsius":"22"
+                 },
+                 "low": {
+                     "fahrenheit":"64",
+                     "celsius":"18"
+                 },
+                 ...
 
 .. _tutorials-weather-tutorial-3-permissions:
 
 Adding Permissions
 -------------------
-Since we are retreiving data from a 3rd party, we need to enable the :ref:`request<modules-request>` module and list the URLs we want to access at run-time.
+Since we are retrieving data from a 3rd party, we need to enable the :ref:`request<modules-request>` module and list the URLs we want to access at run-time.
 
-Open ``config.json`` and add the request module configuration to the ``modules`` object::
+Open ``config.json`` and add the request module configuration to the ``modules`` object:
+
+.. code-block:: js
 
     "requests": {
-        "permissions": ["http://www.google.com/*"]
+        "permissions": ["http://api.wunderground.com/api/*"]
     }
 
 The items in the ``permissions`` array are match patterns: see http://code.google.com/chrome/extensions/match_patterns.html.
@@ -98,155 +128,94 @@ Fetching Data
 -------------
 **Goal: Using forge.request.ajax**
 
-Now that you have a feel for what the returned data looks like, let's add a function to ``weather.js`` that will retrieve this data::
+Now that you have a feel for what the returned data looks like, let's add a function to ``weather.js`` that will retrieve this data:
+
+.. code-block:: js
 
     function getWeatherInfo(location) {
-        forge.logging.info('[getWeatherInfo] getting weather for for '+location);
+        var api_key = "YOUR_API_KEY";
+        forge.logging.info("[getWeatherInfo] getting weather for for " + location);
         forge.request.ajax({
-            url:"http://www.google.com/ig/api?weather="+encodeURIComponent(location),
-            dataType: 'xml',
-            success: function (data){
-                forge.logging.info('[getWeatherInfo] success');
+            url: "http://api.wunderground.com/api/" + api_key +
+                    "/conditions/forecast/q/" + location + ".json",
+            dataType: "json",
+            success: function (data) {
+                forge.logging.info("[getWeatherInfo] success");
             },
             error: function (error) {
-                forge.logging.error('[getWeatherInfo] '+JSON.stringify(error));
+                forge.logging.error("[getWeatherInfo] " + JSON.stringify(error));
             }
-        })
+        });
     };
-
-``encodeURIComponent`` is a built-in Javascript function to prepare strings to be used in URLs.
 
 ``forge.request.ajax`` is similar to the behaviour of jQuery's ``$.ajax``, where we specify the url, dataType to be returned, success and error callbacks.
 
 The returned data is a Document object which can be easily parsed with jQuery.
 
+Remember to specify your weather underground API key or the API request will fail!
+
+.. code-block:: js
+
+    var api_key = "YOUR_API_KEY";
+
 At this point the function doesn't actually do anything with the data but you can test to see if the ajax call succeeded.
-For example to look up the forecast in Boston add the following code to the document ready listener::
+For example to look up the forecast in San Francisco add the following code to the document ready listener:
+
+.. code-block:: js
 
     $(function() {
-        getWeatherInfo('Boston');
+        getWeatherInfo("CA/San_Francisco");
     });
 
 You can verify that this call is working by checking the console output. Expect to see log output like::
 
-    [FORGE] '[getWeatherInfo] getting weather for for Boston'
+    [FORGE] '[getWeatherInfo] getting weather for for CA/San_Francisco'
     [FORGE] '[getWeatherInfo] success'
 
 - **(Mobile Only)** Check either the command prompt/terminal or console of :ref:`Catalyst <tutorials-weather-tutorial-1-catalyst-debugging>`
 - **(Chrome Only)** Check the console of the :ref:`pop-up<tutorials-weather-tutorial-1-chrome-debugging>`
 
-Parsing the Data
-----------------
-**Goal: Extract data to populate internal weather forecast representation**
 
-Now we are going to add some more functions to ``weather.js`` which will extract information from the data we retrieve.
+Fetching and Populating Data for a US City
+------------------------------------------
 
-First, a utility function to transform XML from the Google API into equivalent JSON::
+Alter the ``getWeatherInfo`` function to take an extra callback parameter that will be called if the retrieval was successful. The code should now look like:
 
-    var xmlToJson = function(doc, keys) {
-        /** Transforms an XML document into JSON
-    
-        doc is a document
-        keys is an array of strings, specifying the names of XML nodes to pull from the document
-        */
-        var result = {};
-    
-        for (var counter=0; counter<keys.length; counter+=1) {
-            result[keys[counter]] = $(keys[counter], doc).attr('data');
-        }
-        return result;
-    }
+.. code-block:: js
 
-Secondly, include this helper function to re-point references to icons at the right location::
-
-    function formatImgSrc(imgURL) {
-        return 'resources/'+/[a-z_]*.gif/.exec(imgURL)[0];
-    };
-
-Next, we'll use ``xmlToJson`` to pull data out of the XML response and into objects with the same structure as the dummy JSON we had originally::
-
-    function buildForecastInformation(forecastInformation) {
-        forge.logging.log('[buildForecastInformation] building internal forecast information object');
-    
-        return xmlToJson(forecastInformation, ['city', 'forecast_date']);
-    };
-    
-    function buildCurrentCondition(currentCondition) {
-        forge.logging.log('building current conditions object');
-        
-        var currentCondition = xmlToJson(currentCondition, ['condition', 'temp_f', 'humidity', 'icon', 'wind_condition']);
-        currentCondition['icon'] = formatImgSrc(currentCondition['icon']);
-        
-        return currentCondition;
-    };
-    
-    function buildForecastConditions(forecastConditions) {
-        var convertedForecastConditions = [];
-        $(forecastConditions).each(function(index, element) {
-            convertedForecastConditions.push(buildForecastCondition(element));
-        });
-        return convertedForecastConditions;
-    };
-    
-    function buildForecastCondition(forecastCondition) {
-        forge.logging.log('[buildForecastCondition] building forecast condition');
-        
-        var forecastCondition = xmlToJson(forecastCondition, ['day_of_week', 'low', 'high', 'icon', 'condition']);
-        forecastCondition['icon'] = formatImgSrc(forecastCondition['icon']);
-        
-        return forecastCondition;
-    };
-
-We can use these functions to create a full weather forecast objects::
-
-    function buildWeather(parsedData) {
-        forge.logging.log('[buildWeather] converting data to internal representation');
-        
-        var forecastInformation = buildForecastInformation($('forecast_information', parsedData));
-        var currentConditions = buildCurrentCondition($('current_conditions', parsedData))
-        var forecastConditions = buildForecastConditions($('forecast_conditions', parsedData));
-        
-        return {
-            forecast: forecastInformation,
-            currentConditions: currentConditions,
-            forecastConditions: forecastConditions
-        }
-    };
-
-Getting and Parsing Data for a US City
---------------------------------------
-
-Alter the ``getWeatherInfo`` function to take an extra callback parameter that will be called if the retrieval was successful. The code should now look like::
-
-    function getWeatherInfo(location, callback){
-        forge.logging.log('[getWeatherInfo] getting weather for for '+location);
+    function getWeatherInfo(location, callback) {
+        var api_key = "YOUR_API_KEY";
+        forge.logging.info("[getWeatherInfo] getting weather for for " + location);
         forge.request.ajax({
-            url:"http://www.google.com/ig/api?weather="+encodeURIComponent(location),
-            dataType: 'xml',
-            success: function(data, textStatus, jqXHR){
-                forge.logging.log('[getWeatherInfo] success');
-                var weatherObj = buildWeather(data);
-                callback(weatherObj);
+            url: "http://api.wunderground.com/api/" + api_key +
+                    "/conditions/forecast/q/" + location + ".json",
+            dataType: "json",
+            success: function (data) {
+                forge.logging.info("[getWeatherInfo] success");
+                callback(data);
             },
-            error: function(jqXHR, textStatus, errorThrown){
-                forge.logging.log('ERROR! [getWeatherInfo] '+textStatus);
+            error: function (error) {
+                forge.logging.error("[getWeatherInfo] " + JSON.stringify(error));
             }
-        })
+        });
     };
 
-Since we already have a function to populate the GUI we just pass that in as the callback to ``getWeatherInfo``\ .The new call would look like::
+Since we already have a function to populate the GUI we just pass that in as the callback to ``getWeatherInfo``\ .The new call would look like:
+
+.. code-block:: js
 
     $(function(){
-        getWeatherInfo('Boston', populateWeatherConditions);
+        getWeatherInfo("CA/San_Francisco", populateWeatherConditions);
     });
 
 Rebuild and run the code to see live forecast data displayed.
 
 Reference app
--------------------
-`part-3.zip <../../_static/weather/part-3.zip>`_ contains the code you should have in your app's src directory at this point.
-Feel free to check your code against it or use it to resume the tutorial from this point.
+-------------
+See the ``part-3`` tag in the `Github repository <https://github.com/trigger-corp/weather-app-demo/tree/part-3>`_ for a reference app for this stage of the tutorial.
+
+`part-3.zip <https://github.com/trigger-corp/weather-app-demo/zipball/part-3>`_
 
 What next?
-----------------------------
+----------
 Continue on to the last part: :ref:`weather-tutorial-4`!
