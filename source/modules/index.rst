@@ -62,5 +62,6 @@ General - :ref:`more... <general_modules>`
    /modules/mobile/index
    /modules/browser/index
    /modules/general/index
+   /modules/native/index
    /release-notes
-   
+   	
