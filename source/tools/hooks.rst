@@ -7,12 +7,14 @@ To allow custom steps to be added to the Forge build process the Forge tools sup
 
 Hooks types are defined by the file extension of the hook, the following hook types are currently supported:
 
-- ``.py`` - Python hooks will be run by executing ``python hook.py``.
-- ``.js`` - Node hooks will be run by executing ``node hook.js``.
-- ``.sh`` - Shell hooks will be run by executing ``./hook.sh`` and will not work on Windows.
-- ``.bat`` - Windows batch file hooks will be run by executing ``hook.bat`` and will only work on Windows.
+- ``.py`` - Python hooks will be run by executing ``python hook.py <target>``.
+- ``.js`` - Node hooks will be run by executing ``node hook.js <target>``.
+- ``.sh`` - Shell hooks will be run by executing ``./hook.sh <target>`` and will not work on Windows.
+- ``.bat`` - Windows batch file hooks will be run by executing ``hook.bat <target>`` and will only work on Windows.
 
 .. important:: For ``.sh`` hooks, you must use a `hashbang <http://en.wikipedia.org/wiki/Shebang_(Unix)>`_ as the first line, or your hook will fail to execute.
+
+.. note:: ``<target>`` will be replaced with the platform currently being built, i.e. ``ios`` or ``android``.
 
 Available hooks are:
 
