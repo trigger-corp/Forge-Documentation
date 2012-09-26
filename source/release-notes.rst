@@ -65,6 +65,8 @@ Bug fixes:
 
 - non-ASCII characters in some config fields were causing build problems
 - can run Firefox extensions automatically on Linux
+- Android landscape launchimages properly used
+- ``null`` values in multipart/form-data requests are not sent to server
 
 v1.4.14
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
