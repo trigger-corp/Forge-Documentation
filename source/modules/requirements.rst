@@ -16,7 +16,8 @@ Config
                 "disable_ics_acceleration": true
             },
             "ios": {
-                "minimum_version": "4.3"
+                "minimum_version": "4.3",
+                "device_family": "iphone"
             },
             "chrome": {
                 "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
@@ -30,13 +31,14 @@ Config
 Android
 ~~~~~~~
 
-* ``minimum version``: the minimum Android API level you want to support, it must be between 5 and 15. More details can be found on the Android developers site: http://developer.android.com/guide/appendix/api-levels.html.
+* ``minimum_version``: the minimum Android API level you want to support, it must be between 5 and 15. More details can be found on the Android developers site: http://developer.android.com/guide/appendix/api-levels.html.
 * ``disable_ics_acceleration``: Disables hardware acceleration on Android 4.0, this is a workaround to potential rendering issues which can affect some apps on this particular version of Android.
 
 iOS
 ~~~
 
-The iOS version is the minimum iOS version you want to support, between 4.0 and 5.1.
+* ``minimum_version``: The iOS version is the minimum iOS version you want to support, between 4.0 and 5.1.
+* ``device_family``: Used to limit the types of device which can run the app, must be one of ``any``, ``iphone`` or ``ipad``.
 
 Chrome
 ~~~~~~

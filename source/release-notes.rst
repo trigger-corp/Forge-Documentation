@@ -52,6 +52,20 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.15
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 25th September 2012**
+
+Features:
+
+- register custom URL schemes: :ref:`modules-urlhandler`
+- beta of custom native plugins complete :ref:`native_plugins`
+
+Bug fixes:
+
+- non-ASCII characters in some config fields were causing build problems
+- can run Firefox extensions automatically on Linux
+
 v1.4.14
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 17th September 2012**
