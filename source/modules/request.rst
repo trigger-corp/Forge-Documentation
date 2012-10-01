@@ -73,6 +73,7 @@ Currently supported options:
  * url
  * username
  * files (Mobile only, see :ref:`forge.file <modules-file>`)
+ * fileUploadMethod
  * headers
 
 Error object properties:
@@ -116,6 +117,23 @@ e.g.::
       alert('Failed to upload file: '+error.message);
     }
   });
+
+If you need to POST an image as the whole request body, use
+``fileUploadMethod``. E.g.::
+
+  window.forge.ajax({
+    type: 'POST',
+    url: 'http://my.server.com/upload_image/,
+    fileUploadMethod: "raw",
+    success: function(data) {
+      alert('Uploaded image');
+    }
+  });
+
+In this example, the ``Content-Type`` header will be set to ``image/jpeg`` and
+the POST body will consist of just the image data with no extra encoding. This
+is useful in conjunction with services like `Parse
+<https://www.parse.com/tutorials/saving-images>`_.
 
 Permissions
 -----------
