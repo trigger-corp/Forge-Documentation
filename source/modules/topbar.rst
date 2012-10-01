@@ -101,7 +101,7 @@ Add a button with an icon to the top bar. The first parameter is an object descr
 - ``icon``: An icon to be shown on the button.
 - ``text``: Text to be shown on the button, either ``text`` or ``icon`` must be set.
 - ``type``: Create a special type of button, the only option currently is ``"back"`` which means the button will cause the webview to go back when pressed.
-- ``style``: Use a predefined style for the button, currently this can only be ``"done"`` which will style a positive action. This may not work if a tint is set for the topbar.
+- ``style``: Use a predefined style for the button, currently this can either be ``"done"`` which will style a positive action (which may be overriden by ``tint``), or ``"back"`` to show a back arrow style button on iOS.
 - ``position``: The position to display the button, either ``left`` or ``right``. If not specified the first free space will be used.
 - ``tint``: The color of the button, defined as an array similar to ``setTint``.
 
