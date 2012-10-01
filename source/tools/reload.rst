@@ -21,3 +21,11 @@ You can also see your configurations here - how many unique users we have detect
 
 Once you have built and tested new code that you wish to deploy, you can click the 'Push to stream' link from this view in order to push the update.
 
+Using reload from the command line
+----------------------------------
+
+Some of the functionality of reload can be accessed via the command line, which allows automation of certain tasks, such as pushing an update. The commands available are:
+
+* ``forge reload list``: This will list all available streams for your app
+* ``forge reload create <streamname>``: This will create a stream called ``<streamname>`` which can then be pushed to.
+* ``forge reload push <streamname>``: This will push the last build to ``<streamname>``, it is likely you will want to run ``forge build reload`` directly before this command in order to build your current ``src`` folder.
