@@ -19,6 +19,7 @@ Hooks types are defined by the file extension of the hook, the following hook ty
 Available hooks are:
 
 - ``prebuild`` - The prebuild hook executes within the ``src`` directory before a build is run, however any changes will not affect the ``src`` directory contents after the build is finished, only the built apps. This allows preprocessing of files to occur.
+- ``postbuild`` - The postbuild hook executes within the the ``development`` folder once a build has completed, any changes made at this point will affect ``forge run`` and ``forge package`` until another build is run.
 
 Examples
 ~~~~~~~~

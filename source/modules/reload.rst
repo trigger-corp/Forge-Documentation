@@ -71,7 +71,7 @@ Gives ``true`` or ``false`` depending on whether there is a ``reload`` update av
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Mobile**
 
-Forces the application to check for, and if available download a ``reload`` update. The update will then be applied if ``applyNow`` is called, or if not the next time the app is closed or loses focus.
+Forces the application to check for, and if available download a ``reload`` update. The update will then be applied the next time the app is closed or loses focus.
 
 .. js:function:: reload.update(success, error)
 
@@ -82,12 +82,7 @@ Forces the application to check for, and if available download a ``reload`` upda
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Mobile**
 
-Immediately applies a downloaded ``reload`` update if one is ready to be applied. This means any assets that make up the app may be changed from the point of the ``success`` callback firing. In this situation it is up to the app to refresh/reload any resources that may have changed.
-
-.. js:function:: reload.applyNow(success, error)
-
-    :param function() success: Update has been applied
-    :param function(content) error: called with details of any error which may occur
+.. warning:: This method is deprecated and does not do anything any more. Reload updates can only be applied by the user closing or switching from the app. This is due to a bug in iOS's webkit implementation.
 
 ``switchStream``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -114,11 +109,10 @@ The following things will cause ``reload`` to download new update files if avail
 
 Assuming an update has been fully downloaded and is ready to apply the following things will replace the apps assets files with the new update:
 
-* A call to ``forge.reload.applyNow()``.
 * On all platforms when the app is relaunched (i.e. when it has been quit and opened again).
 * On iOS and Android when the app is restored from the background.
 
-If updates are applied during launching or restoring an app ``index.html`` will be reloaded with the new update files. If ``forge.reload.applyNow()`` is called manually then it is up to the app to perform any refresh required.
+If updates are applied during launching or restoring an app ``index.html`` will be reloaded with the new update files.
 
 Notes
 -----

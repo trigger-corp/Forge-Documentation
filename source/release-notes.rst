@@ -14,7 +14,7 @@ To see the minor version used to create a particular build, look in ``.template/
 v1.4
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Supported Platforms
+Supported Targets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Android
 * iOS
@@ -51,6 +51,26 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
+
+v1.4.16
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 1st October 2012**
+
+.. warning:: Due to a bug to do with resource caching in iOS 6, we've been
+    forced to remove the ``applyNow`` method from the Reload module.
+
+Features:
+
+- more intelligent diff made during Reload update: faster and less bandwidth consumed
+- ability to build for iPad or iPhone/iPod only: :ref:`modules-requirements`
+- post-build hooks: :ref:`tools-hooks`
+- hooks are passed the currently-building target as first command-line argument
+- build and run iOS apps from Linux :ref:`tools-ios-linux`
+
+Bug fixes:
+
+- fix json2.js operation on IE9 running in IE7 compatability mode
+- ability to set the same cookie several times in one request on web target
 
 v1.4.15
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -252,7 +272,7 @@ Features:
 v1.3
 -------------------------------------------------------------------------------
 
-Supported Platforms
+Supported Targets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Android
 * iOS
@@ -423,7 +443,7 @@ v1.3.11
 Features:
 
 - disable icon glossiness on iOS (:ref:`docs <modules-icons>`)
-- ``file.getLocal`` and ``file.string`` support in non-mobile platforms (:ref:`docs <modules-file>`)
+- ``file.getLocal`` and ``file.string`` support in non-mobile targets (:ref:`docs <modules-file>`)
 - `Catalyst <http://trigger.io/catalyst/>`_ shows waiting message until debugger has connected
 
 Bug fixes:
@@ -565,7 +585,7 @@ Features:
 v1.2
 -------------------------------------------------------------------------------
 
-Supported Platforms
+Supported Targets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * Chrome
 * Android
