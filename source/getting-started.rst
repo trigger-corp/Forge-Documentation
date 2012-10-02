@@ -77,10 +77,6 @@ Creating your first app
 
 .. note:: If you have an existing app you'd like to work with, see :ref:`forge-existing-app`.
 
-At this point, you should have a command terminal open that looks something like::
-
-  (forge-environment)
-
 To keep each of your apps separate, we expect that you will want to work on them in different directories. In the terminal, we'll create a new directory and move into it::
 
     mkdir "../demo-app"
@@ -88,7 +84,7 @@ To keep each of your apps separate, we expect that you will want to work on them
 
 Now, we'll create our app, with the ``forge create`` command::
 
-  (forge-environment) forge create
+  $ forge create
   [   INFO] Forge tools running at version 1
   Enter app name: 
 
@@ -96,7 +92,7 @@ At this point a descriptive name for your new app: if you're planning on followi
 
 If this is the first time you're running this command, you will be prompted to log in with the email address and password that you signed up with at the Forge website::
 
-  (forge-environment) forge create 
+  $ forge create 
   [   INFO] Forge tools running at version 2.3.1
   Enter app name: Weather Demo
   Your email address: james@trigger.io
@@ -104,7 +100,6 @@ If this is the first time you're running this command, you will be prompted to l
   [   INFO] authenticating as "james@trigger.io"
   [   INFO] authentication successful
   [   INFO] fetching initial project template
-  (forge-environment)
 
 At this point, you're ready to edit your app and start running builds!
 
@@ -114,7 +109,7 @@ If you're starting your app in Chrome, take a look at our :ref:`Chrome tutorial 
 
 Working with an existing app
 -----------------------------------------------
-If you are already working with an app on your machine, after activating the ``forge-environment``, simply change directory to where the app is::
+If you are already working with an app on your machine, simply change directory to where the app is::
 
     cd "../my-existing-app"
 

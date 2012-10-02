@@ -30,7 +30,7 @@ Preparation
 -----------
 * Firstly, if you haven't already done so, go through the :ref:`mobile-getting-started` or :ref:`chrome-getting-started` instructions.
   This will help you set up the basics and teach you how to build and run your code.
-* Remove any files in the ``src`` directory except ``config.json``, ``identity.json`` and the ``img`` and ``js`` folders (the remaining files will not be needed for the rest of this tutorial).
+* Remove any files in the ``src`` directory except ``config.json``, ``identity.json`` and the ``js`` folders (the remaining files will not be needed for the rest of this tutorial).
 * Download `resources.zip <../../_static/weather/resources.zip>`_, which contains images and other resources needed for this tutorial; extract the ``resources`` directory inside the ``src`` directory.
 * Create a new javascript file called ``weather.js`` inside the ``src/js`` directory. This file will contain all of the JavaScript code for the rest of the tutorial.
 * Create a file called ``index.html`` inside the ``src`` directory. This will be the html page that displays the forecast information.

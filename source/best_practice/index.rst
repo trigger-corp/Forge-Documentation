@@ -14,5 +14,6 @@ Recipes
   Sync data with Firebase <http://trigger.io/cross-platform-application-development-blog/2012/06/19/easily-sync-data-between-your-mobile-and-web-apps-using-firebase-and-trigger-io/>
   Example app: backbone.js, zepto<example_project>
   Example app: Salesforce APIs and JQM <http://trigger.io/cross-platform-application-development-blog/2012/07/18/how-to-build-a-mobile-app-for-force-com-using-jquery-mobile-and-push-notifications/>
+  Webinar: best practices for setting up your mobile build & test environment <https://vimeo.com/48927158>
   tips
   /releasing

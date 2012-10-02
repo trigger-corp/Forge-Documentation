@@ -50,7 +50,7 @@ If you wish to manually manage your Android emulator you can setup the Android S
 
 .. image:: /_static/images/local-config.png
 
-At the command-line, use the ``--android.sdk`` flag when using ``forge run`` to point to your Android SDK location and run your own emulator AVD. All automatic installation procedures will prompt before making any changes to your system.
+At the command-line, use the ``--android.sdk`` flag when using ``forge run android`` to point to your Android SDK location and run your own emulator AVD. All automatic installation procedures will prompt before making any changes to your system.
 
 .. important:: There is a bug in the Android 2.3 emulator that will render your apps unusable: if you manage your own Android AVD you **must** use an Android 2.2 level AVD.
 
@@ -102,7 +102,7 @@ At the command-line you must use two commands ``forge build`` and ``forge run`` 
 To build your app:
 
 * Navigate to your app directory
-* Run ``forge build`` to create your iOS and Android apps. 
+* Run ``forge build ios`` and ``forge build android`` to create your iOS and Android apps. 
 * Whenever the configuration file changes the entire app needs to be rebuilt.
 * When the build finishes take a look inside the ``development`` directory and you should see ``android`` and ``ios`` directories
 

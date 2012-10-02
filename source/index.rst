@@ -29,6 +29,7 @@ Mobile - :ref:`more... <mobile_modules>`
    * :ref:`Barcode / QR scanning<modules-barcode>`
    * :ref:`Camera <modules-file>`
    * :ref:`Child browser <modules-tabs-open>`
+   * :ref:`Custom URL schemes <modules-urlhandler>`
    * :ref:`Events <modules-event>`
    * :ref:`Facebook SDK access<modules-facebook>`
    * :ref:`Files <modules-file>`
