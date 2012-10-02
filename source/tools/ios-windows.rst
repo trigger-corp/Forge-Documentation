@@ -8,7 +8,7 @@ of an OS X machine. To do this you will need a physical iOS device (the iOS
 simulator will only run on OS X), and an iOS developer account. In order
 to sign your application (which is required to install it onto the device, even
 for testing), we provide a remote signing service, which your app will be sent
-to, signed and returned as part of the ``forge run`` and ``forge package``
+to, signed and returned as part of the ``forge run ios`` and ``forge package ios``
 command.
 
 Setting up Forge to run iOS apps

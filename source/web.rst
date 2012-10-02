@@ -42,7 +42,7 @@ Once the build is complete, the app will be opened up in a new tab in your defau
 Command-line
 ~~~~~~~~~~~~~
 
-Running ``forge build`` from your app's root directory creates the code for your web application alongside
+Running ``forge build web`` from your app's root directory creates the code for your web application alongside
 your mobile apps in just a few seconds (see
 `Building the Code <http://docs.trigger.io/en/v1.2/android/getting-started.html#building-the-code>`_
 if this is your first time building a Forge app).
@@ -71,7 +71,7 @@ You can link this to your domain name by following instructions on the Heroku si
 Command-line
 ~~~~~~~~~~~~~
 
-* Return to your app directory and run ``forge build`` to ensure your latest changes are included in the
+* Return to your app directory and run ``forge build web`` to ensure your latest changes are included in the
   generated web app.
 * Run ``forge package web``. If it is the first time you've done this for an application, the command line tool
   will ask if you want to create a new Heroku app or deploy to an existing Heroku app in your account.

@@ -80,7 +80,7 @@ To build your Chrome extension using the Toolkit, simple click on the app you wi
 
 If you make subsequent code changes that you want to build and test on the same platform, just click 'Run again' at the bottom of the console view in the app run page.
 
-Using the command-line tools, use the ``forge build`` command. When the build finishes take a look inside the ``development`` directory and you should see your generated Chrome extension.
+Using the command-line tools, use the ``forge build chrome`` command. When the build finishes take a look inside the ``development`` directory and you should see your generated Chrome extension.
 
 .. _chrome-getting-started-load-extension:
 

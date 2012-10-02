@@ -48,9 +48,9 @@ If you make subsequent code changes that you want to build and test on the same 
 
 Command-line
 ~~~~~~~~~~~~~
-To build the extension, bring up your terminal, :ref:`find the location of the forge executable <command_line_setup>` for your platform, and enter the ``forge build`` command. ::
+To build the extension, bring up your terminal, :ref:`find the location of the forge executable <command_line_setup>` for your platform, and enter the ``forge build chrome`` command. ::
 
-    $ forge build
+    $ forge build chrome
     [   INFO] Forge tools running at version 1.0.1
     [   INFO] configuration has changed: creating new templates
     [   INFO] starting new build
@@ -64,7 +64,7 @@ To build the extension, bring up your terminal, :ref:`find the location of the f
 
 Underneath the ``development/chrome`` directory, you now have a development Chrome extension which can be installed from the ``chrome://extensions`` screen. Following these instructions, `create and load an extension <http://code.google.com/chrome/extensions/getstarted.html>`_.
 
-.. warning:: Whenever you make changes to files in the ``src`` directory, you will need to rebuild the app with ``forge build``, then reload the extension by going to ``chrome://extensions`` and clicking on *Reload* in the relevant section.
+.. warning:: Whenever you make changes to files in the ``src`` directory, you will need to rebuild the app with ``forge build chrome``, then reload the extension by going to ``chrome://extensions`` and clicking on *Reload* in the relevant section.
 
 Activating on the right pages
 ----------------------------------
