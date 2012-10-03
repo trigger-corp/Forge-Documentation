@@ -71,6 +71,7 @@ Bug fixes:
 
 - fix json2.js operation on IE9 running in IE7 compatability mode
 - ability to set the same cookie several times in one request on web target
+- localStorage and webSql databases are persisted correctly
 
 v1.4.15
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
