@@ -11,6 +11,14 @@ There are four main commands when using forge:
 * ``forge run``
 * ``forge package``
 
+Reload has a number of commands which can be run from the command line:
+
+* ``forge reload list``
+* ``forge reload create``
+* ``forge reload push``
+
+These are explained in more detail in :ref:`reload`.
+
 There are also some additional commands which may be used:
 
 * ``forge check``: Perform some sanity checks on the app, including parsing the Javascript to check for syntax errors.
