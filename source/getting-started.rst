@@ -48,9 +48,9 @@ From here, you could take a look at:
 Getting started with the command-line tools
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you don't have Python installed you will need to install a recent `2.x version <https://trigger.io/forge/requirements/>`_ first (see `here <http://www.python.org/getit/>`_ for other releases and options).
+To run forge commands use the forge executable in your Toolkit installation. 
 
-To run forge commands use the forge executable in your Toolkit installation: 
+.. note:: It is recommended that you add the directory that the forge executable is in to your path, otherwise you will have to use the full path to the forge executable each time you want to run any ``forge`` command.
 
 Windows
 -------------
