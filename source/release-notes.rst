@@ -123,7 +123,7 @@ v1.4.12
 
 Features:
 
-- option to :ref:`disable hardware acceleration <modules/requirements>` on Ice Cream Sandwich due to some rendering issues in libraries such as KendoUI
+- option to :ref:`disable hardware acceleration <modules-requirements>` on Ice Cream Sandwich due to some rendering issues in libraries such as KendoUI
 - iOS: automatically use distribution developer certificate with distribution provisioning profile and vice versa
 
 Bug fixes:

@@ -10,7 +10,7 @@ General
    /modules/icons
    /modules/is
    /modules/logging
-   /modules/notifications
+   /modules/notification
    /modules/parameters
    /modules/prefs
    /modules/request

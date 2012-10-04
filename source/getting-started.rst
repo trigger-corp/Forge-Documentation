@@ -46,7 +46,7 @@ From here, you could take a look at:
 .. _command_line_setup:
 
 Getting started with the command-line tools
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To run forge commands use the forge executable in your Toolkit installation. 
 
