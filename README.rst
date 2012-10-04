@@ -1,5 +1,5 @@
 How to generate the documentation
-===========================================
+============================================
 
 First, create a virtual Python environment::
 
