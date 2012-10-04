@@ -3,7 +3,7 @@
 Tutorial Part 2
 ================
 
-This part of the tutorial will demonstrate how to use the Forge Ajax functionality to retrieve data from the Google weather API.
+This part of the tutorial will demonstrate how to use the Forge ``request`` module to retrieve data from the Wunderground API.
 We will then parse the data to pull the necessary information to generate our internal representation.
 
 .. contents::
@@ -16,19 +16,22 @@ This part of the tutorial is intended to:
 * Embed external scripts
 * Display dynamic data using jQuery templating
 
-Adding jQuery
---------------
-**Goal: Embedding jQuery libraries**
+Adding external libraries
+--------------------------------------------------------------------------------
+**Goal: Embedding jQuery and Mustache libraries**
 
-jQuery provides a lot of helpful functionality and in order to display the forecast information we will use Mustache Templates.
-If you've looked in the ``resources`` directory you might have noticed the jQuery and Mustache libraries. To use these simply append the following script tags in the head of ``index.html`` before the ``js/weather.js`` script tag:
+jQuery provides a lot of helpful functionality, and in order to display the forecast information we will use Mustache Templates.
+
+Download the jQuery and Mustache from their project pages and save them in the ``js`` directory.
+
+To use these libraries in your app simply append the following script tags in the head of ``index.html`` before the ``js/weather.js`` script tag:
 
 .. code-block:: html
 
-    <script type="text/javascript" src="resources/jquery.min.js"></script>
-    <script type="text/javascript" src="resources/mustache.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/mustache.min.js"></script>
 
-It's that simple. You can now access jQuery using "$" or "jQuery" inside ``index.html`` and ``weather.js``
+It's that simple. You can now access jQuery using "$" or "jQuery" inside ``index.html`` and ``weather.js``.
 
 Displaying the Data
 -------------------
@@ -40,13 +43,13 @@ Using Mustache, it is quite simple to display the data.
 
 * Open ``index.html``
 * Remove "Weather forecast here." from the body tag
-* Append to the body tag a Mustache template to represent :ref:`forecast information <tutorials-weather-tutorial-1-forecast-information>`:
+* Append to the body tag a Mustache template to represent the :ref:`forecast information <tutorials-weather-tutorial-1-forecast-information>`:
 
 .. code-block:: html
 
     <script type="x-mustache-template" id="forecast_information_tmpl">
-        <span>Forecast for {{city}}</span><br/>
-        <span>{{forecast_date}}</span>
+        <h1>Forecast for {{display_location.full}}</h1>
+        <p>{{observation_time}}</p>
     </script>
 
 * Next we need a template to render the :ref:`current conditions <tutorials-weather-tutorial-1-current-conditions>` object:
@@ -56,12 +59,12 @@ Using Mustache, it is quite simple to display the data.
     <script type="x-mustache-template" id="current_conditions_tmpl">
         <table>
             <tr>
-                <td><img src="{{icon}}"></td>
+                <td><img src="{{icon_url}}" /></td>
                 <td>
-                    <div>{{condition}}</div>
+                    <div>{{weather}}</div>
                     <div>{{temp_f}}&deg;F</div>
-                    <div>{{humidity}}</div>
-                    <div>{{wind_condition}}</div>
+                    <div>Humidity: {{relative_humidity}}</div>
+                    <div>Wind: {{wind_string}}</div>
                 </td>
             </tr>
         </table>
@@ -72,56 +75,56 @@ Using Mustache, it is quite simple to display the data.
 .. code-block:: html
 
     <script type="x-mustache-template" id="forecast_conditions_tmpl">
-        {{#conditions}}
+        {{#forecastday}}
         <td>
-            <h2>{{day_of_week}}</h2>
-            <img src="{{icon}}">
-            <h6>{{condition}}</h6>
-            <h6>Low: {{low}}&deg;F</h6>
-            <h6>High: {{high}}&deg;F</h6>
+            <h2>{{date.weekday_short}}</h2>
+            <img src="{{icon_url}}">
+            <div>{{conditions}}</div>
+            <div>Low: {{low.fahrenheit}}&deg;F</div>
+            <div>High: {{high.fahrenheit}}&deg;F</div>
         </td>
-        {{/conditions}}
+        {{/forecastday}}
     </script>
 
 * Next we need designated elements where the templated information will be appended. Add the following tags following the templates inside the body element:
 
 .. code-block:: html
 
-    <div id="forecast_information"></div>
-    
-    <div id="current_conditions"></div>
-    
-    <div id="forecast_conditions">
+    <header id="forecast_information"></header>
+
+    <section id="current_conditions"></section>
+
+    <section id="forecast_conditions">
         <table>
             <tr>
             </tr>
         </table>
-    </div>
+    </section>
 
 * Now open ``weather.js`` and add the following JavaScript code which will template and append the data:
 
 .. code-block:: js
 
-    function populateWeatherConditions (weatherCondition) {
+    function populateWeatherConditions (weather) {
         var tmpl, output;
-        forge.logging.log('beginning populating weather conditions');
-        
-        tmpl = $('#forecast_information_tmpl').html();
-        output = Mustache.to_html(tmpl, weatherCondition.forecast);
-        $('#forecast_information').append(output);
-        forge.logging.log('finished populating forecast information');
-        
-        tmpl = $('#current_conditions_tmpl').html();
-        output = Mustache.to_html(tmpl, weatherCondition.currentConditions);
-        $('#current_conditions').append(output);
-        forge.logging.log('finished populating current conditions');
-        
-        tmpl = $('#forecast_conditions_tmpl').html();
-        output = Mustache.to_html(tmpl, {conditions: weatherCondition.forecastConditions});
-        $('#forecast_conditions table tr').append(output);
-        forge.logging.log('finished populating forecast conditions');
-        
-        forge.logging.log('finished populating weather conditions');
+        forge.logging.log("[populateWeatherConditions] beginning populating weather conditions");
+
+        tmpl = $("#forecast_information_tmpl").html();
+        output = Mustache.to_html(tmpl, weather.current_observation);
+        $("#forecast_information").append(output);
+        forge.logging.log("[populateWeatherConditions] finished populating forecast information");
+
+        tmpl = $("#current_conditions_tmpl").html();
+        output = Mustache.to_html(tmpl, weather.current_observation);
+        $("#current_conditions").append(output);
+        forge.logging.log("[populateWeatherConditions] finished populating current conditions");
+
+        tmpl = $("#forecast_conditions_tmpl").html();
+        output = Mustache.to_html(tmpl, weather.forecast.simpleforecast);
+        $("#forecast_conditions table tr").append(output);
+        forge.logging.log("[populateWeatherConditions] finished populating forecast conditions");
+
+        forge.logging.log("[populateWeatherConditions] finished populating weather conditions");
     };
 
 * Finally add a jQuery.ready listener inside ``weather.js`` which will kick things off when the page finishes loading:
@@ -129,7 +132,7 @@ Using Mustache, it is quite simple to display the data.
 .. code-block:: js
 
     $(function () {
-        populateWeatherConditions(mountainViewForecast);
+        populateWeatherConditions(weather);
     });
 
 .. _weather-tutorial-1-ready-listener:
@@ -144,23 +147,24 @@ When you click on the toolbar button you should see the weather forecast display
 Adding CSS
 -----------
 You can make the display a bit more pleasant by adding some custom CSS.
-The ``resources`` directory contains a file called ``style.css`` which you can use for this purpose.
+The ``css`` directory contains a file called ``style.css`` which you can use for this purpose.
 Link this file in the head element of ``index.html`` to add some basic styling to the Weather App:
 
 .. code-block:: html
 
-    <link rel="stylesheet" type="text/css" href="resources/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
-At this point, your app should display static weather data for Mountain View, CA when it is opened.
+At this point, your app should display static weather data for San Francisco, CA when it is opened.
 
 .. image:: /_static/images/part-1_weather.png
     :width: 200px
 
 Reference app
--------------------
-`part-2.zip <../../_static/weather/part-2.zip>`_ contains the code you should have in your app's src directory at this point.
-Feel free to check your code against it or use it to resume the tutorial from this point.
+-------------
+See the ``part-2`` tag in the `Github repository <https://github.com/trigger-corp/weather-app-demo/tree/part-2>`_ for a reference app for this stage of the tutorial.
+
+`part-2.zip <https://github.com/trigger-corp/weather-app-demo/zipball/part-2>`_
 
 What next?
-------------------------------------
+----------
 Continue on to :ref:`weather-tutorial-3`!

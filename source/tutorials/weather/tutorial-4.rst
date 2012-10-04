@@ -30,15 +30,29 @@ Populating City Selection
 -----------------------------
 **Goal: Running code which modifies page content**
 
-* Open ``weather.js`` and remove ``getWeatherInfo('Boston', populateWeatherConditions);`` from the document ready listener.
-* In the document ready listener, we will populate a drop-down with some example cities::
+* Open ``weather.js`` and remove ``getWeatherInfo("CA/San_Francisco", populateWeatherConditions);`` from the document ready listener.
+* In the document ready listener, we will populate a drop-down with some example cities:
+
+.. code-block:: js
 
     $(function(){
-        // places I've been
-        var cities = ['Boston', 'New York', 'Washington DC', 'Tampa', 'Houston', 'Montreal',
-            'Los Angeles', 'Miami', 'West Palm Beach']; //and a few others
-        cities.forEach(function(city){
-            $('#city_menu').append('<option>'+city+'</option>');
+        var cities = [ 
+            { name: "London", code: "UK/London" },
+            { name: "San Francisco", code: "CA/San_Francisco" },
+            { name: "Cape Town", code: "ZA/Cape_Town" },
+            { name: "Barcelona", code: "ES/Barcelona" },
+            { name: "Boston", code: "NY/Boston" },
+            { name: "New York", code: "NY/New_York" },
+            { name: "Washington DC", code: "DC/Washington" },
+            { name: "Tampa", code: "FL/Tampa" },
+            { name: "Houston", code: "AL/Houston" },
+            { name: "Montreal", code: "CYUL" },
+            { name: "Los Angeles", code: "CA/Los_Angeles" },
+            { name: "Miami", code: "FL/Miami" },
+            { name: "West Palm Beach", code: "FL/West_Palm_Beach" } 
+        ];
+        cities.forEach(function(city) { 
+            $("#city_menu").append("<option value='" + city.code + "'>" + city.name + "</option>");
         });
     });
 
@@ -51,43 +65,45 @@ The ``emptyContent`` function is simply clears the old weather information from 
 
 .. note:: If you decided to have a different layout this function will need to be specific to your custom display.
 
-::
+.. code-block:: js
 
-    function emptyContent(){
-        forge.logging.log('removing old data');
-        $('#forecast_information').empty();
-        $('#current_conditions').empty();
-        $('#forecast_conditions table tr').empty();
-        
-        forge.logging.log('finished emptying content');
+    function emptyContent() {
+        forge.logging.log("[emptyContent] removing old data");
+        $("#forecast_information").empty();
+        $("#current_conditions").empty();
+        $("#forecast_conditions table tr").empty();
+
+        forge.logging.log("[emptyContent] finished emptying content");
     };
 
 This function should be called every time new data is about to be displayed, which is handled by the ``populateWeatherConditions``.
-Add the call to ``emptyContent`` at the top of the ``populateWeatherConditions`` function, which should then look like::
+Add the call to ``emptyContent`` at the top of the ``populateWeatherConditions`` function, which should then look like:
 
-    function populateWeatherConditions(weatherCondition) {
+.. code-block:: js
+
+    function populateWeatherConditions (weather) {
         var tmpl, output;
-        
-        emptyContent();
-        
-        forge.logging.log('beginning populating weather conditions');
-        
-        tmpl = $('#forecast_information_tmpl').html();
-        output = Mustache.to_html(tmpl, weatherCondition.forecast);
-        $('#forecast_information').append(output);
-        forge.logging.log('finished populating forecast information');
-        
-        tmpl = $('#current_conditions_tmpl').html();
-        output = Mustache.to_html(tmpl, weatherCondition.currentConditions);
-        $('#current_conditions').append(output);
-        forge.logging.log('finished populating current conditions');
-        
-        tmpl = $('#forecast_conditions_tmpl').html();
-        output = Mustache.to_html(tmpl, {conditions: weatherCondition.forecastConditions});
-        $('#forecast_conditions table tr').append(output);
-        forge.logging.log('finished populating forecast conditions');
-        
-        forge.logging.log('finished populating weather conditions');
+
+        emptyContent(); 
+
+        forge.logging.log("[populateWeatherConditions] beginning populating weather conditions");
+
+        tmpl = $("#forecast_information_tmpl").html();
+        output = Mustache.to_html(tmpl, weather.current_observation);
+        $("#forecast_information").append(output);
+        forge.logging.log("[populateWeatherConditions] finished populating forecast information");
+
+        tmpl = $("#current_conditions_tmpl").html();
+        output = Mustache.to_html(tmpl, weather.current_observation);
+        $("#current_conditions").append(output);
+        forge.logging.log("[populateWeatherConditions] finished populating current conditions");
+
+        tmpl = $("#forecast_conditions_tmpl").html();
+        output = Mustache.to_html(tmpl, weather.forecast.simpleforecast);
+        $("#forecast_conditions table tr").append(output);
+        forge.logging.log("[populateWeatherConditions] finished populating forecast conditions");
+
+        forge.logging.log("[populateWeatherConditions] finished populating weather conditions");
     };
 
 Remembering the previous location
@@ -98,11 +114,13 @@ The following code should be placed inside of the document ready listener.
 
 When a city is selected from the drop-down list, we want to remember it to use it as the default city when the app is restarted.
 
-To do that, we listen for changes to the ``city_menu`` element::
+To do that, we listen for changes to the ``city_menu`` element:
 
-    $('#city_menu').change(function() {
-        var city = $("#city_menu option:selected").html();
-        forge.prefs.set('city', city);
+.. code-block:: js
+
+    $("#city_menu").change(function() {
+        var city = $("#city_menu option:selected").val();
+        forge.prefs.set("city", city);
         getWeatherInfo(city, populateWeatherConditions);
     });
 
@@ -117,26 +135,20 @@ When the application first runs we want to check if a city has already been save
 - the first time the app is run, this preference will be ``null``, meaning its value has not been set
 - if a city has been saved previously, it is selected in the drop-down list
 
-::
+.. code-block:: js
 
-    forge.prefs.get('city',
-        function(resource) {
-            if (resource) {
-                // user has previously selected a city
-                var city = resource;
-            } else {
-                // no previous selection
-                var city = 'Boston';
-            }
-
-            $('#city_menu').val(city);
-            $('#city_menu').change();
-        },
-        function (error) {
-            forge.logging.error('failed when retrieving city preferences');
-            $('#city_menu').val('Boston'); //default;
+    forge.prefs.get("city", function(resource) {
+        if (resource) { // user has previously selected a city
+            var city = resource;
+        } else { // no previous selection
+            var city = "CA/San_Francisco";
         }
-    );
+        $("#city_menu").val(city);
+        $("#city_menu").change();
+    }, function (error) {
+        forge.logging.error("failed when retrieving city preferences");
+        $("#city_menu").val("CA/San_Francisco"); // default;
+    });
 
 See :ref:`forge.prefs.get<api-prefs-get>`.
 
@@ -146,9 +158,10 @@ The weather app should now be complete.
 * Bask in all your glory, you have just written an app using Forge!
 
 Reference app
--------------------
-`part-4.zip <../../_static/weather/part-4.zip>`_ contains the code you should have in your app's src directory at this point.
-Feel free to check your code against it or use it to resume the tutorial from this point
+-------------
+See the ``part-4`` tag in the `Github repository <https://github.com/trigger-corp/weather-app-demo/tree/part-4>`_ for a reference app for this stage of the tutorial.
+
+`part-4.zip <https://github.com/trigger-corp/weather-app-demo/zipball/part-4>`_
 
 What's next?
 ------------
