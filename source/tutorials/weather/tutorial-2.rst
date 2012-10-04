@@ -3,8 +3,7 @@
 Tutorial Part 2
 ================
 
-This part of the tutorial will demonstrate how to use the Forge ``request`` module to retrieve data from the Wunderground API.
-We will then parse the data to pull the necessary information to generate our internal representation.
+In this part of the tutorial, we'll explore one way to take the raw weather data and display it in a HTML interface.
 
 .. contents::
    :backlinks: none
@@ -14,7 +13,7 @@ Goal
 This part of the tutorial is intended to:
 
 * Embed external scripts
-* Display dynamic data using jQuery templating
+* Display dynamic data using jQuery and Mustache templating
 
 Adding external libraries
 --------------------------------------------------------------------------------
@@ -70,7 +69,7 @@ Using Mustache, it is quite simple to display the data.
         </table>
     </script>
 
-* And finally add a template for :ref:`forecast conditions <tutorials-weather-tutorial-1-forecast-conditions>`. Here, we're using `Mustache's Enumerable syntax <https://github.com/janl/mustache.js>`_ to loop through a few days' conditions:
+* And finally add a template for the daily forecast data. Here, we're using `Mustache's Enumerable syntax <https://github.com/janl/mustache.js>`_ to loop through a few days' conditions:
 
 .. code-block:: html
 
@@ -147,7 +146,7 @@ When you click on the toolbar button you should see the weather forecast display
 Adding CSS
 -----------
 You can make the display a bit more pleasant by adding some custom CSS.
-The ``css`` directory contains a file called ``style.css`` which you can use for this purpose.
+Create a ``css`` directory and download `style.css <https://raw.github.com/trigger-corp/weather-app-demo/part-2/css/style.css>`_ into it.
 Link this file in the head element of ``index.html`` to add some basic styling to the Weather App:
 
 .. code-block:: html

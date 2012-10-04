@@ -119,8 +119,6 @@ To test your app on  Android:
 
 .. image:: /_static/android/weather/images/windows-forge-run-android.png
 
-If something goes wrong take a look at our :ref:`faq`.
-
 Dynamic Hello
 --------------
 **Goal: Running dynamic JavaScript code and using logging**
@@ -148,9 +146,9 @@ Reference app
 -------------------
 The files in `getting-started.zip <_static/weather/getting-started.zip>`_ represent the code you should have in your src folder at this point.  If you run into any issues this is a good place to look.
 
-Troubleshooting
----------------
-Hopefully you've made it this far without any issues, but if there are any problems at this point, see our :ref:`faq`.
+It's not working!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+You can always contact us at support@trigger.io, or ask a question on `StackOverflow <http://stackoverflow.com/questions/tagged/trigger.io>`_.
 
 What next?
 ----------------------------------

@@ -30,7 +30,8 @@ This part of the tutorial is intended to:
 
 Preparation
 -----------
-* Firstly, if you haven't already done so, go through the :ref:`mobile-getting-started` or :ref:`chrome-getting-started` instructions.
+
+* Firstly, if you haven't already done so, go through the :ref:`getting started on mobile <mobile-getting-started>` or :ref:`getting started on Chrome <chrome-getting-started>` instructions.
   This will help you set up the basics and teach you how to build and run your code.
 * Remove any files in the ``src`` directory except ``config.json``, ``identity.json`` and the ``js`` folder (the other files will not be needed for the rest of this tutorial).
 * Sign up for API access at http://www.wunderground.com/weather/api/ - the most basic free developer account is fine.
@@ -149,7 +150,7 @@ Remote Debugging on Mobile
 -----------------------------
 **Goal getting started with Catalyst**
 
-As you've already seen in :ref:`mobile-getting-started` ``forge.logging.info`` prints output to console/terminal.
+As you've already seen in :ref:`getting started on mobile <mobile-getting-started>` ``forge.logging.info`` prints output to console/terminal.
 You can also use our remote debugging tool, Catalyst, which provides some helpful tools for troubleshooting and examining the app at runtime.
 
 If you're working with Chrome, you can just use the Chrome Developer tools by right-clicking on the popup: see the next section.
@@ -183,7 +184,7 @@ Since ``weather.js`` is running inside ``index.html`` we need to inspect that pa
 
 * Open up a Chrome browser and go to `<chrome:extensions>`_
 * If you have already added your Chrome extension, refresh it (Chrome caches aggressively - refreshing a few times is a good idea)
-* If you haven't added your Chrome extension yet, see :ref:`chrome-getting-started-load-extension`
+* If you haven't added your Chrome extension yet, see :ref:`loading an extension in Chrome <chrome-getting-started-load-extension>`
 * Open your app's popup by clicking the toolbar button, right-click and pick **Inspect pop-up**
 * This will open up the Chrome developer tools for your popup in a new window
 * At the bottom is the console section, which should contain the output from ``forge.logging.log``

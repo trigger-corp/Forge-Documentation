@@ -95,9 +95,11 @@ To test the Chrome extensions:
    * Click forge.html
    * A Chrome debugging window will appear: this is where you can debug your background scripts.
    * In the console, you should see your message:
-    .. image:: /_static/images/developer-tools.png
+     .. image:: /_static/images/developer-tools.png
 
-If you see an error, see our :ref:`faq`.
+It's not working!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+You can always contact us at support@trigger.io, or ask a question on `StackOverflow <http://stackoverflow.com/questions/tagged/trigger.io>`_.
 
 What next?
 ~~~~~~~~~~

@@ -46,7 +46,6 @@ Using our own demo apps and learnings from our mobile customers over the past 6 
    * `Sync data with Firebase <http://trigger.io/cross-platform-application-development-blog/2012/06/19/easily-sync-data-between-your-mobile-and-web-apps-using-firebase-and-trigger-io/>`_
    * :ref:`best-practice-screen-size`
    * :ref:`forge-cache`
-   * :ref:`best-practice-tips`
    * :ref:`releasing`
 
 

@@ -20,12 +20,10 @@ One option is to have it show up as a popup that appears when a user clicks a to
 To configure this, simply add the following button configuration to the ``modules`` section in ``config.json`` directory::
 
     "button": {
-        "default_popup": "index.html",
-        "default_icon": "resources/sun_19.png"
+        "default_popup": "index.html"
     },
 
 - the *default_popup* setting points to the HTML file that should be displayed when the toolbar button is clicked
-- *default_icon* is simply the image to use for the toolbar button which helps it differentiate from other extensions
 
 If you want to know more about the configuration file, see the :ref:`Config File Reference<config>`.
 

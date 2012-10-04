@@ -46,7 +46,7 @@ From here, you could take a look at:
 .. _command_line_setup:
 
 Getting started with the command-line tools
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you don't have Python installed you will need to install a recent `2.x version <https://trigger.io/forge/requirements/>`_ first (see `here <http://www.python.org/getit/>`_ for other releases and options).
 

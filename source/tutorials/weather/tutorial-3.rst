@@ -2,7 +2,7 @@
 
 Tutorial Part 3
 ================
-This part of the tutorial will demonstrate how to use the Forge Ajax functionality to retrieve data from the Google weather API.
+This part of the tutorial will demonstrate how to use the Forge :ref:`request <module-request>` module to retrieve data from the Wunderground API. We will then parse the data to pull the necessary information to generate our internal representation.
 We will then parse the data to pull the necessary information to generate our internal representation.
 
 .. contents::
@@ -112,7 +112,7 @@ Adding Permissions
 -------------------
 Since we are retrieving data from a 3rd party, we need to enable the :ref:`request<modules-request>` module and list the URLs we want to access at run-time.
 
-Open ``config.json`` and add the request module configuration to the ``modules`` object:
+Either look at the App Config section in the Toolkit, or edit ``config.json`` to add this request module configuration to the ``modules`` object:
 
 .. code-block:: js
 

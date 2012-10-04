@@ -9,7 +9,7 @@ Features
 --------
 
 Mobile - :ref:`more... <mobile_modules>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. hlist::
    :columns: 3
@@ -33,7 +33,7 @@ Mobile - :ref:`more... <mobile_modules>`
    * :ref:`Tabbar native UI <modules-tabbar>`
 
 Browser add-ons - :ref:`more... <browser_modules>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. hlist::
    :columns: 3
@@ -45,7 +45,7 @@ Browser add-ons - :ref:`more... <browser_modules>`
    * :ref:`Toolbar button <modules-button>`
 
 General - :ref:`more... <general_modules>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. hlist::
    :columns: 3

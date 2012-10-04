@@ -55,9 +55,9 @@ Make a Facebook Graph API call. See https://developers.facebook.com/docs/referen
 
 .. js:function:: facebook.api(path, [[method, ]params, ]success, error)
 
-	:param string path: API path to call, i.e. ``"me/posts"``
-	:param string method: Type of request, i.e. ``"GET"``
-	:param object params: Additional parameters for the request, i.e. ``{limit: 5}``
+    :param string path: API path to call, i.e. ``"me/posts"``
+    :param string method: Type of request, i.e. ``"GET"``
+    :param object params: Additional parameters for the request, i.e. ``{limit: 5}``
     :param function(response) success: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
 
@@ -69,7 +69,7 @@ Display a Facebook dialog UI. See https://developers.facebook.com/docs/reference
 
 .. js:function:: facebook.api(params, success, error)
 
-	:param object params: Dictionary of paramters, must include ``method``
+    :param object params: Dictionary of paramters, must include ``method``
     :param function(response) success: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
 
