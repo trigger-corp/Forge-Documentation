@@ -8,9 +8,10 @@ Getting setup
 
 Getting setup to develop native plugins is fairly simple, but there are some prerequistes you need to install:
 
-1. You will need Xcode 4.5, this is available as a free download in the OS X App Store
-2. Download the ForgeInspector project through your toolkit (you can find it on the Forge tab of any of your apps when you have plugins enabled).
-3. Open this project in Xcode.
+1. You will need a Mac running OS X
+2. You will need Xcode 4.5, this is available as a free download in the OS X App Store
+3. Download the ForgeInspector project through your toolkit (you can find it on the Forge tab of any of your apps when you have plugins enabled).
+4. Open this project in Xcode.
 
 At this point you can run the project, it includes an app which can list native methods exposed to Javascript and allows you to call them with sample data. It also includes a small example plugin called ``alert`` which allows you to show native alert style dialogs. It is probably a good idea to try out this plugin to get a feel for the layout of a plugin before you get started.
 
