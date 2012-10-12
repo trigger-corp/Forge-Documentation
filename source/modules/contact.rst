@@ -35,11 +35,54 @@ Prompts the user to select a contact and returns a contact object.
     :param function(contact) success: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
 
+``selectAll``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Mobile**
+
+Returns a list of all the available contact IDs and contact name.
+
+Due to performance limitations on Android devices, this method is unable to
+return the full list of fully populated contact names; our recommended pattern
+is to use this method to get the list of all available contact IDs, then lazily
+load the more detailed full contact information with the ``selectById`` method.
+
+.. js:function:: contact.selectAll(success, error)
+
+    :param function(contactList) success: callback to be invoked when no errors occur
+    :param function(content) error: called with details of any error which may occur
+
+``selectById``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Mobile**
+
+Returns more detailed information about a contact whose contact ID we already
+know.
+
+.. js:function:: contact.selectById(id, success, error)
+
+    :param function(contact) success: callback to be invoked when no errors occur
+    :param function(content) error: called with details of any error which may occur
+
 
 Contact object
 --------------
 
-Below is an example of a returned contact object, with details for some field types.
+When using ``selectAll``, the returned contacts list would look something like::
+
+    [
+        {
+            ":ref:`id <field-contact-id>`": "14894",
+            ":ref:`displayName <field-contact-displayName>`": "Mr Joe Bloggs"
+        },
+        {
+            ":ref:`id <field-contact-id>`": "481516",
+            ":ref:`displayName <field-contact-displayName>`": "Mr John Locke"
+        },
+        ...
+    ]
+
+Below is an example of a contact object returned from ``select`` or
+``selectById``, with details for some field types.
 
 .. parsed-literal::
 
@@ -119,28 +162,33 @@ Below is an example of a returned contact object, with details for some field ty
 Fields
 ~~~~~~
 
-This section includes more detailed information on the contents of fields with non-obvious content.
+This section includes more detailed information on the contents of fields with
+non-obvious content.
 
 .. _field-contact-id:
 
 id
 '''''''''''''
 
-This is a unique identifier for the contact, and is guaranteed to be the same if the user selects the same contact again.
+This is a unique identifier for the contact, and is guaranteed to be the same
+if the user selects the same contact again.
 
 .. _field-contact-displayName:
 
 displayName
 '''''''''''''
 
-This is a formatted version of the contacts name which can be used for display. On iOS this is generated from the various parts of the name, on Android this is stored as a separate value.
+This is a formatted version of the contacts name which can be used for display.
+On iOS this is generated from the various parts of the name, on Android this is
+stored as a separate value.
 
 .. _field-contact-name:
 
 name
 '''''''''''''
 
-This is an object containing the various parts of the contacts name, including a formatted version which is used as the previous displayName value.
+This is an object containing the various parts of the contacts name, including
+a formatted version which is used as the previous displayName value.
 
 .. _field-contact-nickname:
 
@@ -154,28 +202,34 @@ A string value containing a nickname for the contact
 phoneNumbers
 '''''''''''''
 
-An array of objects containing details of a contacts phone numbers. Each number has a ``value``, a ``type`` (such as ``home`` or ``work``) and also a ``pref`` property, which is unsupport on Android and iOS so is always false.
+An array of objects containing details of a contacts phone numbers. Each number
+has a ``value``, a ``type`` (such as ``home`` or ``work``) and also a ``pref``
+property, which is unsupport on Android and iOS so is always false.
 
 .. _field-contact-emails:
 
 emails
 '''''''''''''
 
-Similarly this property is an array of objects describing a contacts emails, with ``value``, ``type`` and ``pref`` (which is also always false).
+Similarly this property is an array of objects describing a contacts emails,
+with ``value``, ``type`` and ``pref`` (which is also always false).
 
 .. _field-contact-addresses:
 
 addresses
 '''''''''''''
 
-An array of objects describing a contacts addresses, ``formatted`` contains a string generated from the other properties which can be used to display the address. Each object also contains a ``pref`` property which is always false.
+An array of objects describing a contacts addresses, ``formatted`` contains a
+string generated from the other properties which can be used to display the
+address. Each object also contains a ``pref`` property which is always false.
 
 .. _field-contact-ims:
 
 ims
 '''''''''''''
 
-Contains an array of Instant Messaging details for a contact, formatted similarly to phoneNumbers and emails.
+Contains an array of Instant Messaging details for a contact, formatted
+similarly to phoneNumbers and emails.
 
 .. _field-contact-organizations:
 
@@ -205,7 +259,9 @@ A string which can contain arbitrary information about the contact.
 photos
 '''''''''''''
 
-Contains an array of thumbnail photos associated with the contact, each photo has a value which contains a ``data:`` uri of the image. The ``type`` and ``pref`` properties are not used.
+Contains an array of thumbnail photos associated with the contact, each photo
+has a value which contains a ``data:`` uri of the image. The ``type`` and
+``pref`` properties are not used.
 
 Contains at most 1 photo on iOS.
 
@@ -221,9 +277,11 @@ Not available on iOS or Android.
 urls
 '''''''''''''
 
-Contains an array of URLs related to the contact, formatted similarly to phoneNumbers and emails.
+Contains an array of URLs related to the contact, formatted similarly to
+phoneNumbers and emails.
 
 Permissions
 -----------
 
-On Android this module will add the ``READ_CONTACTS`` permission to your app, users will be prompted to accept this when they install your app.
+On Android this module will add the ``READ_CONTACTS`` permission to your app,
+users will be prompted to accept this when they install your app.
