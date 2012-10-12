@@ -61,6 +61,7 @@ Features:
 - support for using Linux for iOS builds: :ref:`tools-ios-linux`
 - true native back buttons for the topbar module on iOS: :ref:`modules-topbar`
 - latest Facebook SDK for :ref:`modules-facebook`
+- new ``selectAll`` and ``selectById`` methods in :ref:`modules-contact`
 - new Facebook API to check authentication status
 - support for coloured status bar on iOS 6 (docs coming soon...)
 - ability to create and use wireless distribution manifests for iOS (docs coming soon...)
