@@ -36,6 +36,19 @@ The success callback will be called with information about the users access_toke
     :param function(token_information) success: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
 
+
+``facebook.hasAuthorized``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Mobile**
+
+Takes the same options and returns the same data as ``facebook.authorize``, but will not prompt the user for login if required. Used to only log in a user if their interaction is not required.
+
+.. js:function:: facebook.authorize([permissions, ]success, error)
+
+    :param array permissions: An optional array of permissions to request
+    :param function(token_information) success: callback to be invoked when no errors occur
+    :param function(content) error: called with details of any error which may occur
+
 ``facebook.logout``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Mobile**
@@ -87,3 +100,7 @@ Android
 
 * On Android a hash of the key used to sign your app is required by Facebook to confirm your app should be allowed to access the Facebook API. The easiest way to configure this is to simply start using the Facebook API, any API methods will return an error message which includes the hash and the URL to visit to configure it.
 
+iOS
+~~~
+
+* On iOS you must add your applications bundle id to the Facebook developer app settings page. You set a specific bundle id using the package_names module.
