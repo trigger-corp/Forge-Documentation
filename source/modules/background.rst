@@ -18,7 +18,7 @@ This field lists the files that should be included in background context.
     {
         "modules": {
             "background": {
-                "files": ["background.js"]
+                "files": ["js/background.js"]
             }
         }
     }
