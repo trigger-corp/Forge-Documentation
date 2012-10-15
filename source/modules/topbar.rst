@@ -84,6 +84,8 @@ Set the title displayed in the top bar to an image.
 
 Set a colour to tint the topbar with, in effect the topbar will become this colour with a gradient effect applied.
 
+On iOS 6 this color will also be used to tint the status bar, you can use this in combination with hiding the topbar if you only want a colored status bar and not a topbar.
+
 .. js:function:: topbar.setTint(color, success, error)
 
     :param array color: an array of four integers in the range [0,255]
