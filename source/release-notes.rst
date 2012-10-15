@@ -119,6 +119,10 @@ Features:
 
 - support for iOS 6 and iPhone 5
 
+Bug fixes:
+
+- fixed canvas ``drawImage`` crashing when using external resources
+
 v1.4.13
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 4th September 2012**
