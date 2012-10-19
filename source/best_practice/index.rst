@@ -16,3 +16,4 @@ Recipes
   Example app: Salesforce APIs and JQM <http://trigger.io/cross-platform-application-development-blog/2012/07/18/how-to-build-a-mobile-app-for-force-com-using-jquery-mobile-and-push-notifications/>
   Webinar: best practices for setting up your mobile build & test environment <https://vimeo.com/48927158>
   /releasing
+  /best_practice/wireless_distribution
