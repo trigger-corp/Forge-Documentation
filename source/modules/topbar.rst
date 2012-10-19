@@ -74,7 +74,7 @@ Set the title displayed in the top bar to an image.
 
 .. js:function:: topbar.setTitleImage(image, success, error)
 
-    :param string image: Path to image to be displayed in topbar.
+    :param string image: Path to image to be displayed in topbar: this should be relative to the ``src`` directory, e.g. ``"img/button.png"``
     :param function() success: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
 
@@ -100,7 +100,7 @@ On iOS 6 this color will also be used to tint the status bar, you can use this i
 
 Add a button with an icon to the top bar. The first parameter is an object describing the button with the following properties:
 
-- ``icon``: An icon to be shown on the button.
+- ``icon``: An icon to be shown on the button: this should be relative to the ``src`` directory, e.g. ``"img/button.png"``.
 - ``text``: Text to be shown on the button, either ``text`` or ``icon`` must be set.
 - ``type``: Create a special type of button, the only option currently is ``"back"`` which means the button will cause the webview to go back when pressed.
 - ``style``: Use a predefined style for the button, currently this can either be ``"done"`` which will style a positive action (which may be overriden by ``tint``), or ``"back"`` to show a back arrow style button on iOS.
