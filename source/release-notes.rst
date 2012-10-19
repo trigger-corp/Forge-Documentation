@@ -71,8 +71,8 @@ Features:
 - latest Facebook SDK for :ref:`modules-facebook`
 - new ``selectAll`` and ``selectById`` methods in :ref:`modules-contact`
 - new Facebook API to check authentication status
-- support for coloured status bar on iOS 6 (docs coming soon...)
-- ability to create and use wireless distribution manifests for iOS (docs coming soon...)
+- support for coloured status bar on iOS 6 (``setTint`` in :ref:`modules-topbar`)
+- ability to create and use wireless distribution manifests for iOS :ref:`best-practice-wireless-distribution`
 
 Bug fixes:
 
