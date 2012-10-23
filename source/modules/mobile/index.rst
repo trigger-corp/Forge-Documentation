@@ -12,6 +12,7 @@ Mobile
    /modules/event
    /modules/facebook
    /modules/file
+   /modules/flurry
    /modules/geolocation
    /modules/launchimage
    /modules/media
