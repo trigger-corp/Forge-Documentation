@@ -88,6 +88,20 @@ Plugins take the following structure::
                 myplugin.bundle
                 mysdk.bundle
 
+manifest.json
+~~~~~~~~~~~~~
+
+The manifest for a plugin looks something like::
+
+    {
+        "description": "Example alert box plugin", 
+        "name": "alert", 
+        "uuid": "e5ed6305192f11f4efde406c8f074dfa", 
+        "version": "1.0"
+    }
+
+All of its fields are required, a template manifest.json will be generated for you when you create your plugin in the toolkit.
+
 Testing your plugin
 -------------------
 
