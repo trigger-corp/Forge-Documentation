@@ -96,7 +96,7 @@ The ``demographics`` object should contain some or all of these keys:
 **Platforms: Mobile**
 
 Set the user's current location: we recommend you use the :ref:`geolocation
-<module-geolocation>` module to grab the coords object which should be passed
+<modules-geolocation>` module to grab the coords object which should be passed
 in. E.g.::
 
     forge.geolocation.getCurrentPosition( function (position) {
