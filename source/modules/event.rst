@@ -31,6 +31,28 @@ Triggered when the menu button is pressed on an Android device.
     :param function() callback: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
 
+``backPressed.addListener``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Android**
+
+Triggered when the back button is pressed on an Android device.
+
+.. js:function:: event.backPressed.addListener(callback, error)
+
+    :param function(closeApplication) callback: callback invoked when back button is pressed, the first argument is a function which if called will close the application.
+    :param function(content) error: called with details of any error which may occur
+
+``backPressed.preventDefault``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Android**
+
+Prevents the default action when the back button is pressed from the point this is called onwards, allowing the app to handle the event itself using ``backPressed.addListener``.
+
+.. js:function:: event.backPressed.preventDefault(success, error)
+
+    :param function() success: invoked when no errors occur
+    :param function(content) error: called with details of any error which may occur
+
 ``orientationChange.addListener``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Mobile**
