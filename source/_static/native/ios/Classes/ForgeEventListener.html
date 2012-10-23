@@ -1,0 +1,894 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>ForgeEventListener Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 840)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Forge </a></h1>
+				<a id="developerHome" href="../index.html">Trigger</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">ForgeEventListener Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/application:didFinishLaunchingWithOptions:">&nbsp;&nbsp;&nbsp;&nbsp;+ application:didFinishLaunchingWithOptions:</option>
+	
+	<option value="//api/name/application:didReceiveRemoteNotification:">&nbsp;&nbsp;&nbsp;&nbsp;+ application:didReceiveRemoteNotification:</option>
+	
+	<option value="//api/name/application:didRegisterForRemoteNotificationsWithDeviceToken:">&nbsp;&nbsp;&nbsp;&nbsp;+ application:didRegisterForRemoteNotificationsWithDeviceToken:</option>
+	
+	<option value="//api/name/application:handleOpenURL:">&nbsp;&nbsp;&nbsp;&nbsp;+ application:handleOpenURL:</option>
+	
+	<option value="//api/name/application:openURL:sourceApplication:annotation:">&nbsp;&nbsp;&nbsp;&nbsp;+ application:openURL:sourceApplication:annotation:</option>
+	
+	<option value="//api/name/application:preDidFinishLaunchingWithOptions:">&nbsp;&nbsp;&nbsp;&nbsp;+ application:preDidFinishLaunchingWithOptions:</option>
+	
+	<option value="//api/name/applicationDidEnterBackground:">&nbsp;&nbsp;&nbsp;&nbsp;+ applicationDidEnterBackground:</option>
+	
+	<option value="//api/name/applicationWillEnterForeground:">&nbsp;&nbsp;&nbsp;&nbsp;+ applicationWillEnterForeground:</option>
+	
+	<option value="//api/name/firstWebViewLoad">&nbsp;&nbsp;&nbsp;&nbsp;+ firstWebViewLoad</option>
+	
+	<option value="//api/name/preFirstWebViewLoad">&nbsp;&nbsp;&nbsp;&nbsp;+ preFirstWebViewLoad</option>
+	
+	<option value="//api/name/shouldAutorotateToInterfaceOrientation:">&nbsp;&nbsp;&nbsp;&nbsp;+ shouldAutorotateToInterfaceOrientation:</option>
+	
+	<option value="//api/name/supportedInterfaceOrientations">&nbsp;&nbsp;&nbsp;&nbsp;+ supportedInterfaceOrientations</option>
+	
+	<option value="//api/name/willRotateToInterfaceOrientation:duration:">&nbsp;&nbsp;&nbsp;&nbsp;+ willRotateToInterfaceOrientation:duration:</option>
+	
+	
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/application:didFinishLaunchingWithOptions:">application:didFinishLaunchingWithOptions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/application:didReceiveRemoteNotification:">application:didReceiveRemoteNotification:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/application:didRegisterForRemoteNotificationsWithDeviceToken:">application:didRegisterForRemoteNotificationsWithDeviceToken:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/application:handleOpenURL:">application:handleOpenURL:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/application:openURL:sourceApplication:annotation:">application:openURL:sourceApplication:annotation:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/application:preDidFinishLaunchingWithOptions:">application:preDidFinishLaunchingWithOptions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/applicationDidEnterBackground:">applicationDidEnterBackground:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/applicationWillEnterForeground:">applicationWillEnterForeground:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/firstWebViewLoad">firstWebViewLoad</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/preFirstWebViewLoad">preFirstWebViewLoad</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/shouldAutorotateToInterfaceOrientation:">shouldAutorotateToInterfaceOrientation:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/supportedInterfaceOrientations">supportedInterfaceOrientations</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/willRotateToInterfaceOrientation:duration:">willRotateToInterfaceOrientation:duration:</a></span></li>
+	
+</ul></li>
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="ForgeEventListener Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">ForgeEventListener Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">ForgeEventListener.h<br />ForgeEventListener.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Plugins can extend this class and override methods to implement event listeners.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/application:preDidFinishLaunchingWithOptions:">+&nbsp;application:preDidFinishLaunchingWithOptions:</a></code>
+		<span class="tooltip"><p>Called at the start of <a href="#//api/name/application:didFinishLaunchingWithOptions:">application:didFinishLaunchingWithOptions:</a>, before the webView is created.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/application:didFinishLaunchingWithOptions:">+&nbsp;application:didFinishLaunchingWithOptions:</a></code>
+		<span class="tooltip"><p>Called at the end of application:didFinishLaunchingWithOptions:</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/application:didRegisterForRemoteNotificationsWithDeviceToken:">+&nbsp;application:didRegisterForRemoteNotificationsWithDeviceToken:</a></code>
+		<span class="tooltip"><p>Called on application:didRegisterForRemoteNotificationsWithDeviceToken:</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/application:didReceiveRemoteNotification:">+&nbsp;application:didReceiveRemoteNotification:</a></code>
+		<span class="tooltip"><p>Called on application:didReceiveRemoteNotification:</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/applicationDidEnterBackground:">+&nbsp;applicationDidEnterBackground:</a></code>
+		<span class="tooltip"><p>Called on applicationDidEnterBackground:</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/applicationWillEnterForeground:">+&nbsp;applicationWillEnterForeground:</a></code>
+		<span class="tooltip"><p>Called on applicationWillEnterForeground:</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/preFirstWebViewLoad">+&nbsp;preFirstWebViewLoad</a></code>
+		<span class="tooltip"><p>Called before the initial page is loaded in the webView</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/firstWebViewLoad">+&nbsp;firstWebViewLoad</a></code>
+		<span class="tooltip"><p>Called once the initial page has been loaded</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/application:handleOpenURL:">+&nbsp;application:handleOpenURL:</a></code>
+		<span class="tooltip"><p>Called on application:handleOpenURL:</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/application:openURL:sourceApplication:annotation:">+&nbsp;application:openURL:sourceApplication:annotation:</a></code>
+		<span class="tooltip"><p>Called on application:openURL:sourceApplication:annotation:</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/shouldAutorotateToInterfaceOrientation:">+&nbsp;shouldAutorotateToInterfaceOrientation:</a></code>
+		<span class="tooltip"><p>Called on shouldAutorotateToInterfaceOrientation:</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/supportedInterfaceOrientations">+&nbsp;supportedInterfaceOrientations</a></code>
+		<span class="tooltip"><p>Called on supportedInterfaceOrientations</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/willRotateToInterfaceOrientation:duration:">+&nbsp;willRotateToInterfaceOrientation:duration:</a></code>
+		<span class="tooltip"><p>Called on willRotateToInterfaceOrientation:duration:</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/application:didFinishLaunchingWithOptions:" title="application:didFinishLaunchingWithOptions:"></a>
+	<h3 class="subsubtitle method-title">application:didFinishLaunchingWithOptions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called at the end of application:didFinishLaunchingWithOptions:</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)application:(UIApplication *)<em>application</em> didFinishLaunchingWithOptions:(NSDictionary *)<em>launchOptions</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ForgeEventListener.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/application:didReceiveRemoteNotification:" title="application:didReceiveRemoteNotification:"></a>
+	<h3 class="subsubtitle method-title">application:didReceiveRemoteNotification:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called on application:didReceiveRemoteNotification:</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)application:(UIApplication *)<em>application</em> didReceiveRemoteNotification:(NSDictionary *)<em>userInfo</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ForgeEventListener.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/application:didRegisterForRemoteNotificationsWithDeviceToken:" title="application:didRegisterForRemoteNotificationsWithDeviceToken:"></a>
+	<h3 class="subsubtitle method-title">application:didRegisterForRemoteNotificationsWithDeviceToken:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called on application:didRegisterForRemoteNotificationsWithDeviceToken:</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)application:(UIApplication *)<em>application</em> didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)<em>newDeviceToken</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ForgeEventListener.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/application:handleOpenURL:" title="application:handleOpenURL:"></a>
+	<h3 class="subsubtitle method-title">application:handleOpenURL:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called on application:handleOpenURL:</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSNumber *)application:(UIApplication *)<em>application</em> handleOpenURL:(NSURL *)<em>url</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="warning"><p><strong>Warning:</strong> Returning a value other than nil implies your plugin has correctly handled this event.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ForgeEventListener.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/application:openURL:sourceApplication:annotation:" title="application:openURL:sourceApplication:annotation:"></a>
+	<h3 class="subsubtitle method-title">application:openURL:sourceApplication:annotation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called on application:openURL:sourceApplication:annotation:</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSNumber *)application:(UIApplication *)<em>application</em> openURL:(NSURL *)<em>url</em> sourceApplication:(NSString *)<em>sourceApplication</em> annotation:(id)<em>annotation</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="warning"><p><strong>Warning:</strong> Returning a value other than nil implies your plugin has correctly handled this event.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ForgeEventListener.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/application:preDidFinishLaunchingWithOptions:" title="application:preDidFinishLaunchingWithOptions:"></a>
+	<h3 class="subsubtitle method-title">application:preDidFinishLaunchingWithOptions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called at the start of <a href="#//api/name/application:didFinishLaunchingWithOptions:">application:didFinishLaunchingWithOptions:</a>, before the webView is created.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)application:(UIApplication *)<em>application</em> preDidFinishLaunchingWithOptions:(NSDictionary *)<em>launchOptions</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ForgeEventListener.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/applicationDidEnterBackground:" title="applicationDidEnterBackground:"></a>
+	<h3 class="subsubtitle method-title">applicationDidEnterBackground:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called on applicationDidEnterBackground:</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)applicationDidEnterBackground:(UIApplication *)<em>application</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ForgeEventListener.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/applicationWillEnterForeground:" title="applicationWillEnterForeground:"></a>
+	<h3 class="subsubtitle method-title">applicationWillEnterForeground:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called on applicationWillEnterForeground:</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)applicationWillEnterForeground:(UIApplication *)<em>application</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ForgeEventListener.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/firstWebViewLoad" title="firstWebViewLoad"></a>
+	<h3 class="subsubtitle method-title">firstWebViewLoad</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called once the initial page has been loaded</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)firstWebViewLoad</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ForgeEventListener.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/preFirstWebViewLoad" title="preFirstWebViewLoad"></a>
+	<h3 class="subsubtitle method-title">preFirstWebViewLoad</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called before the initial page is loaded in the webView</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)preFirstWebViewLoad</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ForgeEventListener.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/shouldAutorotateToInterfaceOrientation:" title="shouldAutorotateToInterfaceOrientation:"></a>
+	<h3 class="subsubtitle method-title">shouldAutorotateToInterfaceOrientation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called on shouldAutorotateToInterfaceOrientation:</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSNumber *)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)<em>interfaceOrientation</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="warning"><p><strong>Warning:</strong> Returning a value other than nil implies your plugin has correctly handled this event.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ForgeEventListener.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/supportedInterfaceOrientations" title="supportedInterfaceOrientations"></a>
+	<h3 class="subsubtitle method-title">supportedInterfaceOrientations</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called on supportedInterfaceOrientations</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSNumber *)supportedInterfaceOrientations</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="warning"><p><strong>Warning:</strong> Returning a value other than nil implies your plugin has correctly handled this event.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ForgeEventListener.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/willRotateToInterfaceOrientation:duration:" title="willRotateToInterfaceOrientation:duration:"></a>
+	<h3 class="subsubtitle method-title">willRotateToInterfaceOrientation:duration:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called on willRotateToInterfaceOrientation:duration:</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)<em>toInterfaceOrientation</em> duration:(NSTimeInterval)<em>duration</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="warning"><p><strong>Warning:</strong> Returning a value other than nil implies your plugin has correctly handled this event.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ForgeEventListener.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 Trigger. All rights reserved. (Last updated: 2012-10-23)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
