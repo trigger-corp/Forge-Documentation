@@ -8,14 +8,14 @@ Native code sometimes requires additional resources, such as layout or image fil
 Android
 -------
 
-On Android any resources are added to the ``res/`` folder in the inspector app, to include these in plugin you should include anything you add to the ``res/`` folder to the ``android/res`` folder within your plugin.
+On Android any resources are added to the ``res/`` folder in the inspector app. To include these in the actual plugin, anything you added to the ``res/`` folder also needs to go in the ``android/res`` folder within your plugin.
 
 iOS
 ---
 
-In iOS any resources included in your plugin must be part of a bundle. 3rd party bundles can be placed in ``ios/bundles/`` in your plugin to be included, as well as in the ForgeInspector project during development.
+On iOS, any resources included in your plugin must be part of a bundle. 3rd party bundles can be placed in the ForgeInspector project during development, and in ``ios/bundles/`` in your plugin folder before uploading.
 
-Any resources not part of a 3rd party bundle must be added to your own bundle. To do this the inspector project includes a ForgeModuleResources target which can be used by for your plugin by:
+Any resources not part of a 3rd party bundle must be added to your own bundle. To do this, the inspector project includes a ForgeModuleResources target which can be used by for your plugin by:
 
 * Naming the bundle - all bundles must have a unique name, you can name your bundle by setting the ``Product Name`` for the ForgeModuleResources target.
 

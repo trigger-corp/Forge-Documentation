@@ -154,7 +154,7 @@ Example::
 ``set_in_info_plist``
 ~~~~~~~~~~~~~~~~~~~~~
 
-* ``key``: Key to add/change
+* ``key``: Key to add/change: you can use ``a.b`` to change key ``b`` nested inside ``a``
 * ``value``: Value to set it to
 
 Example::

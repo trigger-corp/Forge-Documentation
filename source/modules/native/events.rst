@@ -6,21 +6,21 @@ Events
 There are two distinct types of events in plugins:
 
 * Javascript events, which can be triggered from native code at any point, used for situations that aren't a direct response to an API method call.
-* Native events, which are points in an applications execution that plugins can hook into and execute their own code. For example plugins can execute native code on application start, without having to use any Javascript.
+* Native events, which are points in an application's execution that plugins can hook into and execute their own code. For example plugins can execute native code on application start, without having to use any Javascript.
 
 This section of the plugin docs will discuss how to handle both types of events in the various parts of a plugin.
 
 Javascript
 ----------
 
-As included in the inspector project an example of listening for a Javascript event is::
+An example of listening for a Javascript event is included in the inspector project::
 
     forge.internal.addEventListener("alert.resume", function () {
         alert("Weclome back!");
     });
 
 * Events are identified by a unique string, it is conventional to use the format ``plugin.eventName`` for this string as shown above.
-* The second parameter is a callback to be invoked whenever the event is triggered from native code, data can be passed in the first parameter to this callback.
+* The second parameter is a callback to be invoked whenever the event is triggered from native code: data can be passed in the first parameter to this callback.
 
 Android
 -------
@@ -38,7 +38,7 @@ To trigger a Javascript event from native Android code, the ``ForgeApp.event()``
 Native events
 ~~~~~~~~~~~~~
 
-To listen for native events in Android an ``EventListener`` class must be added to your plugins package. For example, ``io.trigger.forge.android.modules. This class should extend the ``ForgeEventListener`` class and implement any of the methods it wants to listen for.
+To listen for native events in Android an ``EventListener`` class must be added to your plugin's package. For example, ``io.trigger.forge.android.modules.alert.EventListener``. This class should extend the ``ForgeEventListener`` class and implement any of the methods it wants to listen for.
 
 The example EventListener from the inspector project looks like::
 
@@ -50,7 +50,10 @@ The example EventListener from the inspector project looks like::
     }
 
 * ``@Override`` on the method ensures the method exists in ForgeEventListener and is an available event.
-* If a method has a return value other than ``void`` then ``null`` should be returned unless the event has been handled by this plugin, for example, if a key press event is handled by a plugin it can return ``true`` and prevent other plugins from seeing the event.
+* If you want to prevent subsequent event listeners from receiving an event,
+  you should return a non-``null`` value. For example, if a key press event is
+  handled by a plugin it can return ``true`` and prevent other plugins from
+  seeing the event.
 
 iOS
 ---
@@ -84,4 +87,7 @@ The example EventListener from the inspector project looks like::
 
     @end
 
-* If a method has a return value other than ``void`` then ``nil`` should be returned unless the event has been handled by this plugin, for example, if a url handler event is handled by a plugin it can return ``YES`` and prevent other plugins from seeing the event.
+* If you want to prevent subsequent event listeners from receiving an event,
+  you should return a non-``nil`` value. For example, if a key press event is
+  handled by a plugin it can return ``YES`` and prevent other plugins from
+  seeing the event.
