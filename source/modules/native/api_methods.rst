@@ -31,7 +31,9 @@ Android
 
 To expose API methods in Android they must be in API.java in the package ``io.trigger.forge.android.modules.<plugin>`` where ``<plugin>`` is your plugin name.
 
-To explain the structure of an Android API method we can look at the ``alert.show`` method included in the inspector project::
+To explain the structure of an Android API method we can look at the ``alert.show`` method included in the inspector project:
+
+.. code-block:: java
 
     public static void show(final ForgeTask task, @ForgeParam("text") final String text) {
         if (text.length() == 0) {
@@ -72,7 +74,9 @@ iOS
 
 API methods are exposed in iOS by creating a class called ``<plugin>_API`` within the ForgeModule project where ``<plugin>`` is your plugin name.
 
-The structure of an API method can be seen in the example included in the inspector project::
+The structure of an API method can be seen in the example included in the inspector project:
+
+.. code-block:: objective-c
 
     + (void)show:(ForgeTask*)task text:(NSString *)text {
         if ([text length] == 0) {
