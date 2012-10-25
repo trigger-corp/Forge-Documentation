@@ -23,7 +23,7 @@ The ``flurry`` module must be enabled in ``config.json`` with API keys specified
     }
 
 By just including this configuration in your app config, basic app analytics
-information - such as sessions, active users and new users - will be availabe
+information - such as sessions, active users and new users - will be available
 in your Flurry dashboard.
 
 For more advanced analytics, you can use the API methods described below.
@@ -35,7 +35,7 @@ API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Mobile**
 
-Register a named and optionally parameterised event with Flurry. You could use this to track a user's navigation through your app, for example.
+Send a named and optionally parameterised event to Flurry. You could use this to track a user's navigation through your app, for example.
 
 .. js:function:: flurry.customEvent(name, [parameters, ]success, error)
 
