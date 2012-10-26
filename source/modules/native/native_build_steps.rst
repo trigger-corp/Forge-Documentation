@@ -3,7 +3,10 @@
 Native build steps
 ==================
 
-Plugins often need to change properties of the app which cannot be set at runtime, such as app permissions on Android, or linked system frameworks on iOS. These changes can be described in the native build steps file for each platform, and will be applied at build time for the Forge app.
+Plugins often need to change properties of the app which cannot be set at
+runtime, such as app permissions on Android, or linked system frameworks on
+iOS. These changes can be described in the native build steps file for each
+platform, and will be applied at build time for the Forge app.
 
 The build steps go in either ``android/build_steps.json`` or ``ios/build_steps.json`` in the plugin's folder. These JSON files take the following format::
 
@@ -24,7 +27,10 @@ The build steps go in either ``android/build_steps.json`` or ``ios/build_steps.j
         }
     ]
 
-This consists of an array of tasks to perform before the build is completed, the types of task that can be performed and the parameters that need to be passed to each task varies by platform and is described below.
+This consists of an array of tasks to perform before the build is completed.
+
+The types of task that can be performed and the parameters that need to be
+passed to each task varies by platform and is described below.
 
 Android
 -------
@@ -35,7 +41,7 @@ Android
 * ``permission``: the permission to add, i.e. ``android.permission.CAMERA``
 
 Example::
-    
+
     {
         "do": {
             "android_add_permission": {
@@ -48,10 +54,11 @@ Example::
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * ``feature``: the feature to request
-* ``required``: Whether or not the feature is required, ``"true"`` or ``"false"``
+* ``required``: Whether or not the feature is required, ``"true"`` or
+  ``"false"``
 
 Example::
-    
+
     {
         "do": {
             "android_add_feature": {
@@ -68,7 +75,7 @@ Example::
 * ``attributes``: Optional attributes
 
 Example::
-    
+
     {
         "do": {
             "android_add_activity": {
@@ -88,7 +95,7 @@ Example::
 * ``attributes``: Optional attributes
 
 Example::
-    
+
     {
         "do": {
             "android_add_service": {
@@ -105,7 +112,7 @@ Example::
 * ``intent_filters``: Optional intent filters
 
 Example::
-    
+
     {
         "do": {
             "android_add_service": {
@@ -126,7 +133,7 @@ iOS
 * ``framework``: the framework to add
 
 Example::
-    
+
     {
         "do": {
             "add_ios_system_framework": {
@@ -141,7 +148,7 @@ Example::
 * ``scheme``: URL scheme to handle
 
 Example::
-    
+
     {
         "do": {
             "ios_add_url_handler": {
@@ -158,7 +165,7 @@ Example::
 * ``value``: Value to set it to
 
 Example::
-    
+
     {
         "do": {
             "set_in_info_plist": {
