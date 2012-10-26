@@ -68,6 +68,8 @@ The ForgeModule subproject is used to contain the code and resources for your pl
 
 .. important:: Unless you add your plugin name to ``app_config.json``, all API calls which use it will fail!
 
+.. _native_plugins_the_basics_structure:
+
 Structure of a plugin
 ---------------------
 

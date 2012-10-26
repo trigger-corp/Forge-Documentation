@@ -14,11 +14,11 @@ Often it is useful to include external libraries in your plugin, this can be don
 Android
 -------
 
-The easiest way to include libraries for Android is to copy them into the ``libs`` folder of the inspector project. Both Java and native libraries should work fine.
+The easiest way to include libraries for Android is to copy them into the ``libs`` folder of the inspector project. Both Java and native libraries are supported: native libraries should be placed in a sub-folder to indicate the architecture they're built for - see :ref:`native_plugins_the_basics_structure`.
 
 To include the library when your app is being built, make sure to copy any files from the ``libs`` folder of the inspector project to ``android/libs`` within your plugins folder.
 
-If the code you wish to include is not as simple as including a jar then any code you include in the jar when exporting your plugin from eclipse will also be included in an app build with your plugin.
+If the library you want to include is distributed as unbuilt Java files, you can include that code in your own plugin source tree and it will be exported as part of the JAR file from Eclipse.
 
 iOS
 ---
