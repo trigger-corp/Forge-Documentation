@@ -200,6 +200,32 @@
 <parameter name="newConfig" type="android.content.res.Configuration">
 </parameter>
 </method>
+<method name="onContextItemSelected"
+ return="java.lang.Boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="item" type="android.view.MenuItem">
+</parameter>
+</method>
+<method name="onContextMenuClosed"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="menu" type="android.view.Menu">
+</parameter>
+</method>
 <method name="onCreate"
  return="void"
  abstract="false"
@@ -211,6 +237,23 @@
  visibility="public"
 >
 <parameter name="savedInstanceState" type="android.os.Bundle">
+</parameter>
+</method>
+<method name="onCreateContextMenu"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="menu" type="android.view.ContextMenu">
+</parameter>
+<parameter name="v" type="android.view.View">
+</parameter>
+<parameter name="menuInfo" type="android.view.ContextMenu.ContextMenuInfo">
 </parameter>
 </method>
 <method name="onDestroy"
@@ -239,6 +282,64 @@
 <parameter name="event" type="android.view.KeyEvent">
 </parameter>
 </method>
+<method name="onKeyLongPress"
+ return="java.lang.Boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="keyCode" type="int">
+</parameter>
+<parameter name="event" type="android.view.KeyEvent">
+</parameter>
+</method>
+<method name="onKeyMultiple"
+ return="java.lang.Boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="keyCode" type="int">
+</parameter>
+<parameter name="repeatCount" type="int">
+</parameter>
+<parameter name="event" type="android.view.KeyEvent">
+</parameter>
+</method>
+<method name="onKeyUp"
+ return="java.lang.Boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="keyCode" type="int">
+</parameter>
+<parameter name="event" type="android.view.KeyEvent">
+</parameter>
+</method>
+<method name="onLowMemory"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
 <method name="onNewIntent"
  return="void"
  abstract="false"
@@ -251,6 +352,17 @@
 >
 <parameter name="intent" type="android.content.Intent">
 </parameter>
+</method>
+<method name="onPause"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
 </method>
 <method name="onPostCreate"
  return="void"
@@ -265,8 +377,67 @@
 <parameter name="savedInstanceState" type="android.os.Bundle">
 </parameter>
 </method>
+<method name="onPostResume"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</method>
 <method name="onRestart"
  return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="onRestoreInstanceState"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="savedInstanceState" type="android.os.Bundle">
+</parameter>
+</method>
+<method name="onResume"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</method>
+<method name="onSaveInstanceState"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="outState" type="android.os.Bundle">
+</parameter>
+</method>
+<method name="onSearchRequested"
+ return="java.lang.Boolean"
  abstract="false"
  native="false"
  synchronized="false"
@@ -297,6 +468,80 @@
  deprecated="not deprecated"
  visibility="public"
 >
+</method>
+<method name="onTouchEvent"
+ return="java.lang.Boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="event" type="android.view.MotionEvent">
+</parameter>
+</method>
+<method name="onTrackballEvent"
+ return="java.lang.Boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="event" type="android.view.MotionEvent">
+</parameter>
+</method>
+<method name="onUserInteraction"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="onUserLeaveHint"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</method>
+<method name="onWindowAttributesChanged"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="params" type="android.view.WindowManager.LayoutParams">
+</parameter>
+</method>
+<method name="onWindowFocusChanged"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="hasFocus" type="boolean">
+</parameter>
 </method>
 </class>
 <class name="ForgeIntentResultHandler"
