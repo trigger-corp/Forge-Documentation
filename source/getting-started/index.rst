@@ -40,13 +40,16 @@ Using our own demo apps and learnings from our mobile customers over the past 6 
 
    * :ref:`best-practice-example_project`
    * :ref:`best-practice-libraries`
+   * `Angular.js <http://trigger.io/cross-platform-application-development-blog/2012/08/30/enhancing-angular-js-with-trigger-io-forge/>`_
    * :ref:`forge-modal`
    * `Native topbar and tabbar usage <http://trigger.io/cross-platform-application-development-blog/2012/04/30/how-to-build-hybrid-mobile-apps-combining-native-ui-components-with-html5/>`_
+   * `CSS page transitions <http://trigger.io/cross-platform-application-development-blog/2012/09/05/simple-and-fast-css-page-transitions-in-your-hybrid-mobile-app/>`_
    * `GMaps for location-based apps <http://trigger.io/cross-platform-application-development-blog/2012/05/15/how-to-build-a-location-based-hybrid-mobile-app-with-reverse-geocoding/>`_
    * `Sync data with Firebase <http://trigger.io/cross-platform-application-development-blog/2012/06/19/easily-sync-data-between-your-mobile-and-web-apps-using-firebase-and-trigger-io/>`_
    * :ref:`best-practice-screen-size`
    * :ref:`forge-cache`
    * :ref:`releasing`
+   * :ref:`best-practice-wireless-distribution`
 
 
 .. toctree::

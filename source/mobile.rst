@@ -20,31 +20,32 @@ Preparing to run mobile apps
 
 **Goal: Set up development environment**
 
-Forge can be used to generate both iOS and Android apps from a single codebase. We will explain the set up of both platforms so that you can follow the subsequent tutorial with either (or both).
+Forge can be used to generate both iOS and Android apps from a single codebase. You can follow the subsequent tutorial with either (or both).
+
+If you have a Mac we recommend you get started with the iOS Simulator. With Windows or Linux, the Android emulator or device is likely to be the simplest. Of course you can also work with the Android emulator on a Mac. Or an iOS device on any development machine but that requires that you have an `iOS developer <http://developer.apple.com>`_ account and additional setup:
+
+   * :ref:`tools-ios-windows`
+   * :ref:`tools-ios-linux`
+   * :ref:`release_mobile`
 
 Setting up an iOS environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-To build and run iOS apps, you can use a Mac or Windows computer. However, to use the iOS simulator, a Mac is required.
+To build and run iOS apps, you can use a Mac, Windows or Linux computer. However, to use the iOS simulator, a Mac is required.
 
-For more information on how to build for iOS from a non-Mac computer, see
-:ref:`tools-ios-windows` and our `Build and test your iPhone / iPad app on
-Windows
-<http://trigger.io/cross-platform-application-development-blog/2012/06/13/new-features-test-iphone-ipad-apps-on-windows-and-linux-embed-media-players-and-widgets-updated-toolkit/>`_
-blog post.
-
-To test your app locally you can use the iOS Simulator if you have a Mac. This
-is included with XCode, which you can download from
-https://developer.apple.com/xcode/. When this is installed, start XCode and
-click 'Preferences' from the XCode menu to check the iOS Simulator is listed as
+To use the iOS Simulator on a Mac, you need to install Xcode. You can download Xcode from https://developer.apple.com/xcode/. When this is installed, start XCode and
+click 'Preferences' from the XCode menu to check the iOS Simulator and command-line tools are listed as
 installed under components. If not, you may install it from that window.
+
+.. note:: you do not need to install the Xcode command-line tools just to use the iOS Simulator, but it is required for when you come to package for distribution. So we recommend you install it at the same time that you setup Xcode.
+
 
 Setting up an Android environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In order to build your app for Android there is a minimum requirement of having Python and Java installed. Both commands should be installed and made available on your path.
 
-If you have setup the command-line tools, you should already have Python 2.7 installed.
+In order to run the app, you'll need an attached phone with debug drivers installed or an active Android emulator device. You will also need to have Python and Java installed and both commands made available on your path.
 
-In order to run your built app, you'll need an attached phone with debug drivers installed or an active Android emulator device. If you do not set this up yourself, the command line tools will detect this and offer to create an appropriate Android Virtual Device (AVD) for you - simply follow any instructions given to you by the commands.
+If you do not set this up yourself, the tools will detect this and offer to create an appropriate Android Virtual Device (AVD) for you - simply follow the instructions given to you by the commands.
 
 If you wish to manually manage your Android emulator you can setup the Android SDK location, by clicking on your app from the Your Apps page, then clicking on 'Local config' in the top right.
 
@@ -52,23 +53,7 @@ If you wish to manually manage your Android emulator you can setup the Android S
 
 At the command-line, use the ``--android.sdk`` flag when using ``forge run android`` to point to your Android SDK location and run your own emulator AVD. All automatic installation procedures will prompt before making any changes to your system.
 
-.. important:: There is a bug in the Android 2.3 emulator that will render your apps unusable: if you manage your own Android AVD you **must** use an Android 2.2 level AVD.
-
-Hello Mobile
--------------
-**Goal: Adding static content**
-
-* After going through the :ref:`forge-index` section you should see a ``src`` directory created inside your app directory.
-  This is where all of your app files should be placed
-* The ``src`` directory should contain a ``config.json`` file which holds all of the configuration settings for the app. You can also edit this file from inside the Toolkit, by click on your app name in the Your Apps page and then the 'App config' link in the top right.
-* Open ``src/index.html`` in your favorite text editor
-
-* You will see the HTML for a default "Hello World" app: you can use this as a starting point for your real app.
-
-.. note:: Forge looks for index.html as the entry point of your application. **This file must be present and the name cannot be changed.**
-
-We can now generate and run the application.
-The following sections explain how to build and run the code.
+.. important:: There is a bug in the Android 2.3 emulator that will render your apps unusable - this is not a Trigger.io issue but if you manage your own Android AVD you should use an Android 2.2, 3 or 4+ AVD.
 
 .. _mobile-getting-started-build:
 .. _mobile-getting-started-run:
@@ -81,10 +66,18 @@ You can build and test your app using either the toolkit or the command-line.
 
 .. note:: If you change your HTML, CSS or JavaScript between builds, then they will take just a couple of seconds. If you change the local config (in the ``config.json``) file, a full rebuild will occur which will take longer
 
+If you run a new app straight after you've created it, you will see our default 'hello world' app appear:
+
+.. container:: div
+
+    .. image:: /_static/images/hello-world.png
+
 Toolkit
 ~~~~~~~~
 
 From the Your Apps screen, simply click on the app name you wish to build.
+
+The first time you do this, the Toolkit will perform an initial download of the resources it needs to build. This should complete in a few seconds and you will be prompted to 'Continue'.
 
 You can then click the appropriate link to build and run the app for Android or iOS. You will see the full traceback in the console as the commands are run so you can see progress and any warnings.
 
@@ -93,6 +86,8 @@ You can then click the appropriate link to build and run the app for Android or 
 If you make subsequent code changes that you want to build and test on the same platform, just click 'Run again' at the bottom of the console view in the app run page.
 
 .. image:: /_static/images/toolkit-again.png
+
+.. note:: if you are running the app for Android using the emulator, and an AVD (Android Virtual Device) is not already started when you click the run link, it can take a long time to startup. It will be faster on subsequent runs, but in general we recommend that you develop with an Android device for a faster build / test cycle.
 
 Command-line
 ~~~~~~~~~~~~~
@@ -103,8 +98,8 @@ To build your app:
 
 * Navigate to your app directory
 * Run ``forge build ios`` and ``forge build android`` to create your iOS and Android apps. 
-* Whenever the configuration file changes the entire app needs to be rebuilt.
-* When the build finishes take a look inside the ``development`` directory and you should see ``android`` and ``ios`` directories
+* Whenever the ``src/config.json`` configuration file changes the entire app needs to be rebuilt.
+* When the build finishes take a look inside the ``development`` directory and you should see ``android`` and ``ios`` sub-directories
 
 To test your app on iOS:
 
@@ -119,11 +114,24 @@ To test your app on  Android:
 
 .. image:: /_static/android/weather/images/windows-forge-run-android.png
 
+Hello Mobile
+-------------
+**Goal: Adding static content**
+
+* After going through the :ref:`forge-index` section you should see a ``src`` directory created inside your app directory.
+  This is where all of your app files should be placed
+* The ``src`` directory should contain a ``config.json`` file which holds all of the configuration settings for the app. You can also edit this file from inside the Toolkit, by click on your app name in the Your Apps page and then the 'App config' link in the top right.
+* Open ``src/index.html`` in your favorite text editor
+
+* You will see the HTML for a default "Hello World" app: you can use this as a starting point for your real app.
+
+.. note:: Forge looks for index.html as the entry point of your application. **This file must be present and the name cannot be changed.**
+
 Dynamic Hello
 --------------
 **Goal: Running dynamic JavaScript code and using logging**
 
-Ok, perhaps that wasn't all too impressive - let's add some dynamic functionality next.
+Let's add some dynamic functionality next and re-build:
 
 * Replace the contents of the ``body`` element in ``index.html`` with::
 
@@ -152,5 +160,7 @@ You can always contact us at support@trigger.io, or ask a question on `StackOver
 
 What next?
 ----------------------------------
-If everything went well and you're ready to move on to some more fancy things, why not try our
-:ref:`Mobile Weather App <tutorials-weather-tutorial-1>` tutorial?
+Next you could try our
+:ref:`Mobile Weather App <tutorials-weather-tutorial-1>` tutorial.
+
+Or if you're comfortable with the tooling and want to do something more advanced check out :ref:`our recipes and example apps  <best-practice-index>`.

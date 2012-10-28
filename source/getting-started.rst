@@ -21,7 +21,7 @@ After signing up or logging in, you will see your Your Apps. You can always retu
 Creating your first app
 -----------------------
 
-Click the "Create" link at the bottom-left to create a new app. You will be prompted for an name and location and then you will be returned to Your Apps where you will now see the new app listed.
+Click the "Create" link at the bottom-left to create a new app. You will be prompted for a name and location and then you will be returned to Your Apps where you will now see the new app listed.
 
 Congratulations, you've created your first app and are ready to build and test it.
 
@@ -103,8 +103,6 @@ If this is the first time you're running this command, you will be prompted to l
 
 At this point, you're ready to edit your app and start running builds!
 
-If you're starting your app in Chrome, take a look at our :ref:`Chrome tutorial <chrome-index>`. Or, you can also follow the same tutorial on :ref:`Mobile <mobile-index>`.
-
 .. _forge-existing-app:
 
 Working with an existing app
@@ -113,7 +111,7 @@ If you are already working with an app on your machine, simply change directory 
 
     cd "../my-existing-app"
 
-In that directory, you should have a ``src`` directory, containing the code for your app. For further documentation, follow our :ref:`Chrome tutorial <chrome-index>`, :ref:`Mobile tutorial <mobile-index>` or see our :ref:`modules`.
+In that directory, you should have a ``src`` directory, containing the code for your app.
 
 What next?
 -----------------------------------------------

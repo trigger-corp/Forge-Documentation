@@ -32,6 +32,10 @@ Mobile - :ref:`more... <mobile_modules>`
    * :ref:`Topbar native UI <modules-topbar>`
    * :ref:`Tabbar native UI <modules-tabbar>`
 
+
+Native plugins - :ref:`more... <native_plugins>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Browser add-ons - :ref:`more... <browser_modules>`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

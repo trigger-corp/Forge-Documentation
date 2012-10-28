@@ -115,6 +115,7 @@ div.footer a {
 
 div.container {
     clear: both;
+		text-align: center;
 }
 .index-command-demo {
     margin-bottom: 20px;
@@ -523,3 +524,7 @@ div.body div.toctree-wrapper tt {
 #searchbox label {line-height:27px !important; font-size:14px !important; text-transform:uppercase; padding-right:3px;}
 #searchbox input {border-radius:4px; padding:4px; border:1px solid #999; font-family:Arial, Helvetica, sans-serif; font-size:12px; width:200px; height:15px; }
 #searchbox input:focus {border-color:#1BB8D4;}
+
+#main div > img {
+	margin: auto;
+}
