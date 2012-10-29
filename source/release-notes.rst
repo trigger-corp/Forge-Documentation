@@ -52,6 +52,18 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.19
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 29th October 2012**
+
+Features:
+
+- Command-line tools bundled in Toolkit can update the Toolkit install
+- native plugins v1 - more details to come
+- Flurry analytics module: see :ref:`docs <modules-flurry>`
+- update to Firefox Addon SDK 1.10
+- ability to manually quit the app when the back button is pressed on Android - see :ref:`modules-event`
+
 v1.4.18
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 15th October 2012**
