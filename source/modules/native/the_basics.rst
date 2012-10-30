@@ -26,8 +26,10 @@ Android
    how to install this on the Android developer site:
    http://developer.android.com/sdk/installing/index.html
 #. Download the
-   ForgeInspector project through your toolkit (you can find it on the Forge
-   tab of any of your apps when you have plugins enabled).
+   ForgeInspector project through the Toolkit. You should be able to do this
+   on the Forge tab of any of your apps.If you can't see an option to
+   "Download inspector app", then contact us at support@trigger.io to get
+   into the native plugins beta.
 #. Import this project into Eclipse
 
 iOS
@@ -116,8 +118,9 @@ Structure of a plugin
 
 In order to upload a plugin you must put the files that make up a plugin, along
 with a manifest for the plugin in a particular structure in a folder. To help
-you get started the Trigger Toolkit creates an initial plugin folder and
-``manifest.json``.
+you get started, the Trigger Toolkit can create an initial plugin folder and
+``manifest.json`` for you. To do this, choose "Create new local version" after
+creating a new plugin in the Toolkit.
 
 Plugins take the following structure:
 
