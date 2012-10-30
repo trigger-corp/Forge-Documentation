@@ -70,7 +70,7 @@ v1.4.18
 
 Bug fixes:
 
-- "publish" permissions work properly with new SDK on iOS
+- "publish" permissions work properly with new Facebook SDK on iOS
 
 v1.4.17
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
