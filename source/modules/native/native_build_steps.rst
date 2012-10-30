@@ -1,7 +1,7 @@
 .. _native_plugins_native_build_steps:
 
-Native build steps
-==================
+Changing build configuration
+============================
 
 Plugins often need to change properties of the app which cannot be set at
 runtime, such as app permissions on Android, or linked system frameworks on
