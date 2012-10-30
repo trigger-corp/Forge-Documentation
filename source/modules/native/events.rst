@@ -56,7 +56,7 @@ To listen for native events in Android an ``EventListener`` class must be added
 to your plugin's package. For example,
 ``io.trigger.forge.android.modules.alert.EventListener``. This class should
 extend the ``ForgeEventListener`` class and implement any of the methods it
-wants to listen for.
+wants to listen for. See the :inline-html:`<a href="../../_static/native/android/reference/io/trigger/forge/android/core/ForgeEventListener.html">Javadoc for ForgeEventListener</a>` for the list of methods available for override as well as their meaning.
 
 The example EventListener from the inspector project looks like:
 
@@ -99,7 +99,7 @@ Native events
 To listen for native events in iOS,  a class called ``<plugin>_EventListener``
 must be created where ``<plugin>`` is your plugin name. This class should
 extend ``ForgeEventListener`` and implement any of the methods it wants to
-listen for.
+listen for. See the :inline-html:`<a href="../../_static/native/ios/Classes/ForgeEventListener.html">appledocs for ForgeEventListener</a>` for the list of methods available for override as well as their meaning.
 
 The example EventListener from the inspector project looks like:
 
