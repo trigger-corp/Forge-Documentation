@@ -59,7 +59,7 @@ v1.4.19
 Features:
 
 - Command-line tools bundled in Toolkit can update the Toolkit install
-- native plugins v1 - more details to come
+- native plugins v1 - see :ref:`native_plugins`
 - Flurry analytics module: see :ref:`docs <modules-flurry>`
 - update to Firefox Addon SDK 1.10
 - ability to manually quit the app when the back button is pressed on Android - see :ref:`modules-event`
