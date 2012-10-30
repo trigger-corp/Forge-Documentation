@@ -19,8 +19,8 @@ Javascript event. This section of the plugin docs will discuss the second type o
 are triggered by the device. If you're interested in the first type of event described, see
 :ref:`native_plugins_javascript_events`.
 
-Handling native events on Android
----------------------------------
+Android
+-------
 
 To listen for native events in Android an ``EventListener`` class must be added
 to your plugin's package. For example,
@@ -46,8 +46,8 @@ The example EventListener from the inspector project looks like:
   handled by a plugin it can return ``true`` and prevent other plugins from
   seeing the event.
 
-Handling native events on iOS
------------------------------
+iOS
+---
 
 To listen for native events in iOS,  a class called ``<plugin>_EventListener``
 must be created where ``<plugin>`` is your plugin name. This class should

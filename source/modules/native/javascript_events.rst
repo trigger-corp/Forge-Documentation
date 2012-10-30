@@ -19,8 +19,8 @@ Javascript event. This section of the plugin docs will discuss the second type o
 are triggered by the device. If you're interested in the second type of event described, see
 :ref:`native_plugins_native_events`.
 
-Listening for an event in Javascript
-------------------------------------
+Javascript
+----------
 
 An example of listening for a Javascript event is included in the inspector
 project::
@@ -35,8 +35,8 @@ project::
   triggered from native code: data can be passed in the first parameter to this
   callback.
 
-Triggering a Javascript event from Android
-------------------------------------------
+Android
+-------
 
 To trigger a Javascript event from native Android code, the
 :inline-html:`<a href="../../_static/native/android/reference/io/trigger/forge/android/core/ForgeApp.html#event(java.lang.String, org.json.JSONObject)">ForgeApp.event()</a>`
@@ -48,8 +48,8 @@ method can be called at any point. For example::
   in Javascript.
 * The second is an optional object to pass back to Javascript.
 
-Trigger a Javascript event from iOS
------------------------------------
+iOS
+---
 
 To trigger Javascript events from native iOS code, use ``[ForgeApp event]`` at
 any point. For example:
