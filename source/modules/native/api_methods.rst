@@ -3,8 +3,8 @@
 .. role:: inline-html(raw)
    :format: html
 
-API methods
-===========
+Exposing native APIs to Javascript
+==================================
 
 One use of native plugins is to expose to Javascript a number of API methods
 that run native code. To facilitate this, Forge provides a structure to

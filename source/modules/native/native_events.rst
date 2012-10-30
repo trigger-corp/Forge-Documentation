@@ -1,10 +1,10 @@
-.. _native_plugins_events:
+.. _native_plugins_native_events:
 
 .. role:: inline-html(raw)
    :format: html
 
-Events
-======
+Handling native events
+======================
 
 There are two distinct types of events in plugins:
 
@@ -14,43 +14,13 @@ There are two distinct types of events in plugins:
   can hook into and execute their own code. For example plugins can execute
   native code on application start, without having to use any Javascript.
 
-This section of the plugin docs will discuss how to handle both types of events
-in the various parts of a plugin.
+Quite frequently you'll want to handle a native event and trigger and trigger a corresponding
+Javascript event. This section of the plugin docs will discuss the second type of event, those which
+are triggered by the device. If you're interested in the first type of event described, see
+:ref:`native_plugins_javascript_events`.
 
-Javascript
-----------
-
-An example of listening for a Javascript event is included in the inspector
-project::
-
-    forge.internal.addEventListener("alert.resume", function () {
-        alert("Weclome back!");
-    });
-
-* Events are identified by a unique string, it is conventional to use the
-  format ``plugin.eventName`` for this string as shown above.
-* The second parameter is a callback to be invoked whenever the event is
-  triggered from native code: data can be passed in the first parameter to this
-  callback.
-
-Android
--------
-
-Javascript events
-~~~~~~~~~~~~~~~~~
-
-To trigger a Javascript event from native Android code, the
-:inline-html:`<a href="../../_static/native/android/reference/io/trigger/forge/android/core/ForgeApp.html#event(java.lang.String, org.json.JSONObject)">ForgeApp.event()</a>`
-method can be called at any point. For example::
-
-    ForgeApp.event("alert.resume", null);
-
-* The first parameter is the event identification string which is listened for
-  in Javascript.
-* The second is an optional object to pass back to Javascript.
-
-Native events
-~~~~~~~~~~~~~
+Handling native events on Android
+---------------------------------
 
 To listen for native events in Android an ``EventListener`` class must be added
 to your plugin's package. For example,
@@ -76,25 +46,8 @@ The example EventListener from the inspector project looks like:
   handled by a plugin it can return ``true`` and prevent other plugins from
   seeing the event.
 
-iOS
----
-
-Javascript events
-~~~~~~~~~~~~~~~~~
-
-To trigger Javascript events from native iOS code, use ``[ForgeApp event]`` at
-any point. For example:
-
-.. code-block:: objective-c
-
-    [[ForgeApp sharedApp] event:@"alert.resume" withParam:nil];
-
-* The first parameter is the event identification string which is listened for
-  in Javascript.
-* The second is an optional object to pass back to Javascript.
-
-Native events
-~~~~~~~~~~~~~
+Handling native events on iOS
+-----------------------------
 
 To listen for native events in iOS,  a class called ``<plugin>_EventListener``
 must be created where ``<plugin>`` is your plugin name. This class should

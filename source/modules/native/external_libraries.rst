@@ -1,7 +1,7 @@
 .. _native_plugins_external_libraries:
 
-External libraries
-==================
+Using external libraries
+========================
 
 Often it is useful to include external libraries in your plugin, this can be
 done on both Android and iOS.

@@ -13,7 +13,8 @@ Writing native plugins is obviously different for Android and iOS, however we ha
 
     the_basics
     api_methods
-    events
+    javascript_events
+    native_events
     external_libraries
     native_build_steps
     including_resources
