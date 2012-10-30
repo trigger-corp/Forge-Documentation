@@ -14,7 +14,11 @@ Android
 -------
 
 When using the inspector project to develop your plugin, any required resources
-should be added to the ``res/`` folder.
+should be added to the ``res/`` folder. For more information about what kind of
+resources can be added to your plugin and how they can be used with the Android
+SDK, see the `official Android docs concerning App Resources`_.
+
+.. _official Android docs concerning App Resources: http://developer.android.com/guide/topics/resources/index.html
 
 When you're ready to upload your plugin, these resources should also be copied
 into ``android/res`` within your plugin folder.
