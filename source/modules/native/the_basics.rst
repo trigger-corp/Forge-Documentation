@@ -71,7 +71,7 @@ Android
   where ``<plugin>`` is the plugin name you gave at creation time.
 * This package can contain an API.java file which is the API exposed to Javascript, see API methods.
 * It can also contain an EventListener.java to listen for native events, see
-  :ref:`Events <native_plugins_events>`.
+  :ref:`Events <native_plugins_native_events>`.
 * An example plugin is included in ``io.trigger.forge.android.modules.alert``
 * The file ``res/values/strings.xml`` contains a list of modules which will be
   enabled. By default this includes the ``alert`` example plugin, and the
@@ -100,7 +100,7 @@ test your plugin in before packaging it up to send to Trigger.io.
 * Plugins can include a ``<plugin>_API.m`` file which is the API exposed to
   Javascript. See :ref:`native_plugins_api_methods`.
 * Plugins can also contain ``<plugin>_EventListener.m``, to listen for native
-  events, see :ref:`native_plugins_events`.
+  events, see :ref:`native_plugins_native_events`.
 * An example plugin is included in ``ForgeModule/alert/alert_API.m``
 * The file ``app_config.json`` in the ForgeInspector group contains a list of
   modules which will be enabled: by default this includes the ``alert`` example
