@@ -13,13 +13,13 @@ You can specify different icons for different platforms as so::
 
     "android": {
         "36": "icon36.png",
-        "48": "icon48-android.png"
+        "48": "icon48-android.png",
         "72": "icon72.png"
     },
     "chrome": {
         "16": "icon16.png",
         "48": "icon48-chrome.png",
-        "128": "icon128.png"
+        "128": "icon128.png
     }
 
 Here, Android and Chrome will share their 16x16 pixel icon, but use different 48x48 pixel icons.
@@ -46,7 +46,7 @@ Config
             "icons": {
                 "android": {
                     "36": "icon36.png",
-                    "48": "icon48-android.png"
+                    "48": "icon48-android.png",
                     "72": "icon72.png"
                 },
                 "ios": {
