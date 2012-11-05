@@ -25,4 +25,5 @@ Mobile
    /modules/tabbar
    /modules/topbar
    /modules/urlhandler
+   /modules/ui
    
