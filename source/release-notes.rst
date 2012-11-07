@@ -52,6 +52,22 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.20
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 7th November 2012**
+
+Features:
+
+- cookies are persisted by default on Android
+- Windows Phone builds are now done against the version 8 SDK
+- launch image can be hidden manually (:ref:`docs <modules-launchimage>`)
+- support for iOS 6.1 beta
+
+Bug fixes:
+
+- fix issue where only Google contacts were returned by ``contact.selectAll``
+- modal views wouldn't close when user hit back button on Android
+
 v1.4.19
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 29th October 2012**
