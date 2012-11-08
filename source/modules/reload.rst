@@ -75,7 +75,7 @@ Forces the application to check for, and if available download a ``reload`` upda
 
 .. js:function:: reload.update(success, error)
 
-    :param function() success: Called when an update is ready to be applied
+    :param function() success: Called when an update is available and the download has started - see the ``updateReady`` event to be notified when the update is complete
     :param function(content) error: called with details of any error which may occur
 
 ``applyNow``
@@ -93,6 +93,17 @@ Switches the ``reload`` stream the app will download updates from.
 .. js:function:: reload.switchStream(stream_name, success, error)
 
     :param function() success: Stream switched
+    :param function(content) error: called with details of any error which may occur
+
+``updateReady.addListener``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Mobile**
+
+Fired when a Reload update has been downloaded and is ready to apply.
+
+.. js:function:: reload.updateReady.addListener(callback, error)
+
+    :param function() callback: an update will be applied next time the app resumes
     :param function(content) error: called with details of any error which may occur
 
 Update process
