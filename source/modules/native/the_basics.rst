@@ -69,7 +69,7 @@ Android
 
 * Plugins must contain a package ``io.trigger.forge.android.modules.<plugin>``
   where ``<plugin>`` is the plugin name you gave at creation time.
-* This package can contain an API.java file which is the API exposed to Javascript, see API methods.
+* This package **must** contain an API.java file which is the API exposed to Javascript, see API methods.
 * It can also contain an EventListener.java to listen for native events, see
   :ref:`Events <native_plugins_native_events>`.
 * An example plugin is included in ``io.trigger.forge.android.modules.alert``
@@ -97,7 +97,7 @@ test your plugin in before packaging it up to send to Trigger.io.
   you like in the ForgeInspector project.
 * Files to be included in the plugin build should be in the ForgeModule project
   and included in the ForgeModule target.
-* Plugins can include a ``<plugin>_API.m`` file which is the API exposed to
+* Plugins **must** include a ``<plugin>_API.m`` file which is the API exposed to
   Javascript. See :ref:`native_plugins_api_methods`.
 * Plugins can also contain ``<plugin>_EventListener.m``, to listen for native
   events, see :ref:`native_plugins_native_events`.
