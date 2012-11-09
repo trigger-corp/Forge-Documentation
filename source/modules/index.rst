@@ -15,6 +15,7 @@ Mobile - :ref:`more... <mobile_modules>`
    :columns: 3
 
    * :ref:`Address book <modules-contact>`
+   * :ref:`Analytics <modules-flurry>`
    * :ref:`Barcode / QR scanning<modules-barcode>`
    * :ref:`Camera <modules-file>`
    * :ref:`Child browser <modules-tabs-open>`
