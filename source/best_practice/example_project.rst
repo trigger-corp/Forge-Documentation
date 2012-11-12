@@ -1,7 +1,7 @@
 .. _best-practice-example_project:
 
-Example Project
-===============
+Example Project: backbone.js, zepto
+======================================
 
 .. highlight:: js
    :linenothreshold: 5
