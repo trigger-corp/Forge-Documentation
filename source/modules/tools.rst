@@ -30,6 +30,8 @@ A `UUID <http://en.wikipedia.org/wiki/Uuid>`_ is a globally unique token; when r
 
   :returns: a string representation of the UUID
 
+.. _tools-getURL:
+
 ``getURL``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: All**
