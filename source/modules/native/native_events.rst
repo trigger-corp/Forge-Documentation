@@ -14,7 +14,7 @@ There are two distinct types of events in plugins:
   can hook into and execute their own code. For example plugins can execute
   native code on application start, without having to use any Javascript.
 
-Quite frequently you'll want to handle a native event and trigger and trigger a corresponding
+Quite frequently you'll want to handle a native event and trigger a corresponding
 Javascript event. This section of the plugin docs will discuss the second type of event, those which
 are triggered by the device. If you're interested in the first type of event described, see
 :ref:`native_plugins_javascript_events`.
