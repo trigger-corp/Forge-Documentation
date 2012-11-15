@@ -47,7 +47,7 @@ Properties and image sizes are:
                 "ipad-landscape-retina": "ipad-landscape-retina.png",
                 "android": "android.png",
                 "android-landscape": "android-landscape.png",
-                "hide-manually"
+                "hide-manually": true
             }
         }
     }
