@@ -62,6 +62,7 @@ Features:
 - Windows Phone builds are now done against the version 8 SDK
 - launch image can be hidden manually (:ref:`docs <modules-launchimage>`)
 - support for iOS 6.1 beta
+- native date / time pickers for Android (:ref:`docs <modules-ui>`)
 
 Bug fixes:
 
