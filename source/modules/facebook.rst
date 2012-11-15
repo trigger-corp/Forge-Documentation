@@ -22,17 +22,27 @@ The ``facebook`` module must be enabled in ``config.json``
 API
 ---
 
+.. _modules-facebook-authorize:
+
 ``facebook.authorize``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Mobile**
 
 Authorize the current user with Facebook, may show a login UI if new permissions are required, or a valid login token is not available (i.e. on first login).
 
+The ``audience`` parameter is only used on iOS (due to differences in the Facebook SDK), but can be passed in on Android to no ill effect. It should be one of:
+
+* "everyone" - by default, your app's updates are public
+* "friends" - by default, the user's friends can see your your app's updates
+* "only_me" - by default, just the user can see the updates
+* "none" - no one can see the updates by default
+
 The success callback will be called with information about the users access_token, you can store and use this token following the Facebook developer guidelines.
 
 .. js:function:: facebook.authorize([permissions, ]success, error)
 
     :param array permissions: An optional array of permissions to request
+    :param array audience: Optional string indicating who should see updates by default
     :param function(token_information) success: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
 
@@ -43,9 +53,12 @@ The success callback will be called with information about the users access_toke
 
 Takes the same options and returns the same data as ``facebook.authorize``, but will not prompt the user for login if required. Used to only log in a user if their interaction is not required.
 
+For more information about the ``audience`` parameter, see the :ref:`modules-facebook-authorize`.
+
 .. js:function:: facebook.authorize([permissions, ]success, error)
 
     :param array permissions: An optional array of permissions to request
+    :param array audience: Optional string indicating who should see updates by default
     :param function(token_information) success: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
 
