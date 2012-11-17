@@ -8,9 +8,9 @@ Quickstart
 
 .. container:: button
 
-    `Get started <https://trigger.io/pricing>`_
+    `Get started <https://trigger.io/account>`_
 
-Step 1: `Sign up <https://trigger.io/pricing>`_
+Step 1: `Sign up <https://trigger.io/account>`_
 
 Step 2: `Install the Trigger Toolkit <https://trigger.io/forge/toolkit>`_
 
