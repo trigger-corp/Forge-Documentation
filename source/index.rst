@@ -37,6 +37,7 @@ Mobile - :ref:`more... <mobile_modules>`
    * :ref:`Geolocation <modules-geolocation>`
    * :ref:`In-app payments <modules-payments>`
    * :ref:`Media <modules-media>`
+   * :ref:`Native UI enhancements <modules-ui>`
    * :ref:`Offline <offline-index>`
    * :ref:`Push notifications <partner-parse>`
    * :ref:`Reload <modules-reload>`
