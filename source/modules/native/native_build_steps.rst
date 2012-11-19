@@ -37,6 +37,29 @@ passed to each task varies by platform and is described below.
    applied to the project to keep your development environment as close as
    possible to the final Forge build.
 
+General
+-------
+
+``include_dependencies``
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+This build step can contain a dictionary of dependencies and their details, each dependency must contain a ``hash``, for example::
+
+    {
+        "do": {
+            "include_dependencies": {
+                "my_library": {
+                    "hash": "0123012301230123012301230123"
+                },
+                "my_other_library": {
+                    "hash": "4567456745674567456745674567"
+                }
+            }
+        }
+    }
+
+In the future these dependencies will be selectable via the Toolkit, until then a list of currently available dependencies can be found at: :ref:`native_plugins_shared_dependencies`.
+
 Android
 -------
 
