@@ -32,6 +32,11 @@ This consists of an array of tasks to perform before the build is completed.
 The types of task that can be performed and the parameters that need to be
 passed to each task varies by platform and is described below.
 
+.. note:: After changing the build steps for either Android or iOS it is
+   important to update the inspector project, any new build steps will be
+   applied to the project to keep your development environment as close as
+   possible to the final Forge build.
+
 Android
 -------
 
