@@ -7,7 +7,6 @@ Mobile
    :glob:
 
    /modules/barcode
-   /modules/box
    /modules/contact
    /modules/display
    /modules/event
