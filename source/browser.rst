@@ -12,6 +12,7 @@ Add-ons built on the Forge platform have two main aspects:
 
 #. code to run when the browser is started
 #. code to run when a page loads
+#. code to run when a toolbar button is clicked
 
 .. _addon-concept-background:
 
@@ -54,7 +55,7 @@ Hello Chrome
 * Inside the folder you should see ``config.json`` which is automatically generated. This file holds configuration settings for your add-on. You can edit this from inside the Toolkit by click on your app from the Your Apps page, then the 'Local config' link in the top-right
 * Create a file called ``background.js`` inside the ``src/js`` directory with this code::
 
-    forge.logging.info("This is executed once per extension/browser launch");
+    forge.logging.info("This is executed once per add-on/browser launch");
 
 * We'll configure this to run in the :ref:`background context<addon-concept-background>`, by referencing it in the configuration file.
 * Open ``config.json``: note how we use the :ref:`background <modules-background>` module to use our ``background.js`` file::
@@ -67,7 +68,7 @@ Hello Chrome
 
 The next sections will explain how to build and load the add-on.
 
-.. note:: Google calls add-ons on Chrome 'extensions'. They're conceptually the same thing and different platforms have different conventions on naming. When talking about Chrome specifically, we'll use 'extensions'.
+.. note:: Google calls add-ons on Chrome 'extensions'. Add-ons and extensions are conceptually the same thing and different platforms have different conventions on naming. When talking about Chrome specifically, we'll use 'extensions'.
 
 .. _chrome-getting-started-build:
 
