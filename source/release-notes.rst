@@ -52,6 +52,19 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.21
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 21st November 2012**
+
+Features:
+
+- ability to set the background color behind Android launch images (:ref:`docs <modules-launchimage>`)
+
+Bug fixes:
+
+- incorrect data was returned for emails by the contacts API on Android
+- handle usage of unavailable APIs more gracefully
+
 v1.4.20
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 7th November 2012**
