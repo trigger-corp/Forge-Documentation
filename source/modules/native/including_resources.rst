@@ -23,9 +23,6 @@ concerning App Resources`_.
 
 .. _official Android docs concerning App Resources: http://developer.android.com/guide/topics/resources/index.html
 
-When you're ready to upload your plugin, these resources should also be copied
-into ``android/res`` within your plugin folder.
-
 .. important:: Resources must be accessed *dynamically* from your Java code:
     :inline-html:`<a href="../../_static/native/android/reference/io/trigger/forge/android/core/ForgeApp.html#getResourceId(java.lang.String, java.lang.String)">ForgeApp.getResourceId</a>`
     is a helper method which lets you access the ID for a named resource.

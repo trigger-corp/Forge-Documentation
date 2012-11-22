@@ -51,11 +51,11 @@ started.
 Updating inspector projects
 ---------------------------
 
-Some plugins will need to make changes to the Forge build process, such as including 3rd party frameworks or requesting app permissions, in order to do this additional steps can be included in a plugin which will be run when the Forge app is built. Documentation for this is available in the appropriate section of these plugin development docs.
+Some plugins will need to make changes to the Forge build process, such as including 3rd party frameworks, registering a URL handler or requesting app permissions. In order to do this, :ref:`additional steps <native_plugins_native_build_steps>` can be included in a plugin which will be run when the plugin in used in an app.
 
-When changes are made that would affect the Forge build process the inspector project will need to be updated. When inspector projects are updated any build steps and additional resources for the plugin will be applied to the new inspector, while your code will be preserved.
+When you update your plugin's build steps or change the ``platform_version`` in manifest.json, your inspector project will need to be updated.
 
-You will also need to update the inspector if changing the platform version of the plugin.
+The Toolkit will remind you automatically when an update is required, and the code and any resources for your plugin will be preserved.
 
 Structure of the inspector projects
 -----------------------------------
