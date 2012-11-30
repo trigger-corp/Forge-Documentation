@@ -52,6 +52,20 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.22
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 30th November 2012**
+
+Features:
+
+- support for IE 10 extensions
+
+Bug fixes:
+
+- Android native date picker results were off-by-one on the month
+- unicode characters in app description caused build failures on some platforms
+- running the "web" target repeatedly would cause address in use errors on OS X
+
 v1.4.21
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 21st November 2012**

@@ -1,10 +1,9 @@
 .. _parameters-in-a-file:
 
-Storing parameters in a file
-==============================================
+Local Config: settings specific to your machine
+==================================================================
 
-As an alternative to passing parameters to the various ``forge`` commands, it is possible to store these values in a file called ``local_config.json``.
-This is convenient for reuse of e.g. Keystores and Provisioning Profiles during ``forge package``.
+Configuration settings concerning things like developer certificates shouldn't be shared across a whole team. This local config is stored in a file called ``local_config.json``, and can be updated through the "Local Config" tab in the Trigger Toolkit.
 
 The file must be located along side the ``src/`` directory, for example::
 
@@ -12,6 +11,9 @@ The file must be located along side the ``src/`` directory, for example::
         development/
         src/
         local_config.json
+
+
+If you're using the command-line, all local config can be overriden with command-line switches too.
 
 Modifying ``local_config.json``
 --------------------------------------------------------------------------------
@@ -162,3 +164,18 @@ keypass                  --android.profile.keypass           Password for your k
 ======================== =================================== ===============================================
 
 We recommend using the command-line switches for ``storepass`` and ``keypass``, rather than placing them in a configuration file, for security reasons.
+
+
+.. _local_conf-ie:
+
+Internet Explorer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Use this section for settings relating to building and packaging Forge apps for Internet Explorer.
+
+=============================== ============================================ =======================================================
+Profile Config Option           Command-line Option                          Meaning
+=============================== ============================================ =======================================================
+developer_certificate           --ie.profile.developer_certificate           Filename of your developer certificate (e.g. cert.pfx)
+developer_certificate_path      --ie.profile.developer_certificate_path      Path to your developer certificate
+developer_certificate_password  --ie.profile.developer_certificate_password  Password for given developer certificate
+=============================== ============================================ =======================================================
