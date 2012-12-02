@@ -17,3 +17,4 @@ develop applications for the Forge platform.
    ios-windows
    ios-linux
    reload
+   /standalone

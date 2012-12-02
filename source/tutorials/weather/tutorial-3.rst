@@ -2,7 +2,7 @@
 
 Tutorial Part 3
 ================
-This part of the tutorial will demonstrate how to use the Forge :ref:`request <module-request>` module to retrieve data from the Wunderground API. We will then parse the data to pull the necessary information to generate our internal representation.
+This part of the tutorial will demonstrate how to use the Forge :ref:`request <modules-request>` module to retrieve data from the Wunderground API. We will then parse the data to pull the necessary information to generate our internal representation.
 We will then parse the data to pull the necessary information to generate our internal representation.
 
 .. contents::
