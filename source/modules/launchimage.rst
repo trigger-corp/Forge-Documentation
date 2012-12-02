@@ -20,7 +20,7 @@ Images to be displayed during launch as required on iOS, for further details see
 
 On Android the image will be displayed centered while the first page is loading: as Android device sizes vary a pixel perfect loading image cannot be used. The image will be proportionally scaled down to fit the screen if necessary. The solid color to use behind this launch image can be configured with the ``background-color`` configuration directive seen below.
 
-All 4 iOS images must be defined for any to be included in iOS builds. Both Android images must be defined for Android builds.
+All 7 iOS images must be defined for any to be included in iOS builds. Both Android images must be defined for Android builds.
 
 Properties and image sizes are:
 

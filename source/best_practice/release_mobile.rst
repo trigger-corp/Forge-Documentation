@@ -3,9 +3,9 @@
 Releasing your mobile apps
 =============================
 
-After you have finished using ``forge build`` and ``forge run`` to create your app, the next step is to prepare packaged output ready for submission to the app store of your choice.
+After you have finished building and testing your app, the next step is to prepare packaged output ready for submission to the app store of your choice.
 
-We help you with this process on the Android and iOS platforms with the ``forge package`` command.
+We help you with this process on the Android and iOS platforms with the ``forge package`` command at the command-line or through the Toolkit UI.
 
 Updating existing apps
 --------------------------------------------------------------------------------
@@ -13,7 +13,11 @@ If you are using Forge to update an existing app which was not built on the plat
 
 Android
 --------------------------------------------------------------------------------
-On Android, use ``forge package android``. You can run ``forge package android --help`` to see all available command line options.
+On Android, use ``forge package android``. You can run ``forge package android --help`` to see all available command line options. 
+
+You can run this command through the Toolkit UI by using the package link on your app home screen:
+
+.. image:: /_static/images/toolkit-package.png
 
 To package Android apps, you need to have created a "keystore" with which to sign your app. You should keep this keystore safe, and observe the normal password safety precautions to prevent others from being to update your own apps.
 
@@ -38,9 +42,11 @@ That command will create a file called ``my_keystore.keystore`` in the current d
 
 Creating an APK
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-After you have created your keystore, you can use ``forge package android`` to produce an APK file, ready for submission to the Android Market.
+After you have created your keystore, you need to enter the details in the Local Config tab in your Toolkit UI:
 
-For example to use the keystore we created in the previous step, we would run something like this::
+.. image:: /_static/images/local-config.png
+
+If you are working at the command-line use ``forge package android`` to produce an APK file, ready for submission to the Android Market. For example to use the keystore we created in the previous step, we would run something like this::
 
     forge package android \
       --android.profile.keystore my_keystore.keystore \
@@ -82,15 +88,21 @@ Creating an IPA
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 After you have created your provisioning profile, use ``forge package ios`` to produce an IPA file.
 
-Depending on your local settings, you may also need to know the exact name of your developer certificate: more on that below.
+You can run this command through the Toolkit UI by using the package link on your app home screen:
 
-Assuming you have a provisioning profile called ``Development.mobileprovision`` in the current directory, you would use a command like::
+.. image:: /_static/images/toolkit-package.png
+
+Before packaging, you will need to specify your provisioning profile. And depending on your local settings, you may also need to know the exact name of your developer certificate: more on that below. In the Toolkit UI do this using your Local Config tab:
+
+.. image:: /_static/images/local-config.png
+
+At the command-line, assuming you have a provisioning profile called ``Development.mobileprovision`` in the current directory, you would use a command like::
 
     forge package ios --ios.profile.provisioning_profile Development.mobileprovision
 
-In the ``release`` directory, there will now be an ``ios`` sub-directory, containing your IPA.
-
 The ``forge package ios`` prints out some useful configuration data as it runs, such as the devices this IPA will work with whether you used a Release provisioning profile and the app ID.
+
+In the ``release`` directory, there will now be an ``ios`` sub-directory, containing your IPA.
 
 Getting the IPA onto your device
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

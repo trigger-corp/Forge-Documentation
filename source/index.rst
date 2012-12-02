@@ -19,7 +19,7 @@ Step 3: Read our :ref:`tutorials <forge-index>` and create apps
 Features
 --------------------------------------------------------------------------------
 
-Mobile - :ref:`more... <mobile_modules>`
+Mobile - :ref:`see all... <mobile_modules>`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. hlist::
@@ -30,6 +30,7 @@ Mobile - :ref:`more... <mobile_modules>`
    * :ref:`Barcode / QR scanning<modules-barcode>`
    * :ref:`Camera <modules-file>`
    * :ref:`Child browser <modules-tabs-open>`
+   * :ref:`Cross-domain ajax <modules-request>`
    * :ref:`Custom URL schemes <modules-urlhandler>`
    * :ref:`Events <modules-event>`
    * :ref:`Facebook SDK access<modules-facebook>`
@@ -42,14 +43,14 @@ Mobile - :ref:`more... <mobile_modules>`
    * :ref:`Push notifications <partner-parse>`
    * :ref:`Reload <modules-reload>`
    * :ref:`SMS <modules-sms>`
-   * :ref:`Splash page <modules-launchimage>`
+   * :ref:`Storage <modules-prefs>`
    * :ref:`Topbar native UI <modules-topbar>`
    * :ref:`Tabbar native UI <modules-tabbar>`
 
-Native plugins - :ref:`more... <native_plugins>`
+Native plugins - :ref:`learn more... <native_plugins>`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Browser add-ons - :ref:`more... <browser_modules>`
+Browser add-ons - :ref:`see all... <browser_modules>`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. hlist::
@@ -57,22 +58,11 @@ Browser add-ons - :ref:`more... <browser_modules>`
 
    * :ref:`Background page <modules-background>`
    * :ref:`Content scripts <modules-activations>`
-   * :ref:`Gmail library <modules-gmail>`
+   * :ref:`Cross-domain ajax <modules-request>`
    * :ref:`Messaging <modules-message>`
+   * :ref:`Storage <modules-prefs>`
    * :ref:`Toolbar button <modules-button>`
 
-General - :ref:`more... <general_modules>`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. hlist::
-   :columns: 3
-
-   * :ref:`Cross-domain ajax <modules-request>`
-   * :ref:`Icons <modules-icons>`
-   * :ref:`Logging <modules-logging>`
-   * :ref:`Notifications <modules-notifications>`
-   * :ref:`Platform detection <modules-is>`
-   * :ref:`Storage <modules-prefs>`
 
 .. toctree::
     :hidden:
