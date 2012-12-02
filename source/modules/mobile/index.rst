@@ -6,8 +6,8 @@ Mobile
 .. toctree::
    :glob:
 
-   /modules/contact
    /modules/barcode
+   /modules/contact
    /modules/display
    /modules/event
    /modules/facebook

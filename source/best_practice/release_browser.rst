@@ -76,7 +76,7 @@ Simply run:
 
 ::
 
-   forge package ie
+   forge build ie
 
 This will create a ``.exe`` for 32-bit and 64-bit platforms in the ``release/ie`` directory. The 64-bit installer installs the add-on in both the 64-bit and 32-bit versions of IE.
 
@@ -87,36 +87,11 @@ How to sign a release
 
 First you need to obtain a Windows Code Signing Certificate. Most certificate vendors can supply this but Microsoft also maintain a list at: http://social.technet.microsoft.com/wiki/contents/articles/2592.aspx
 
-Once you have a certificate you can perform the following steps to sign your add-on and the installers:
+You will also need access to Microsoft's ``signtool.exe`` binary. This is installed by all versions of Microsoft Visual Studio including the free Express version which can be obtained from: http://www.microsoft.com/visualstudio/eng/downloads
 
-* Create a file called ``sign.bat`` in your app directory using the code below and edit the configuration variables to match your setup.
+Once you have a certificate you can perform the following step to sign your add-on and the installers::
 
-::
-
-    :: Configuration
-    SET CERTIFICATE="path\to\your\certificate.pfx"
-    SET PASSWORD="your certificate password"
-    SET NSIS="C:\Program Files (x86)\NSIS\makensis.exe"
-
-    :: Sign dll's
-    signtool sign /f "%CERTIFICATE%" /p %PASSWORD%  ^
-        /v /t http://timestamp.comodoca.com/authenticode ^
-        "development\ie\build\Win32\Release\bho32.dll"
-    signtool sign /f "%CERTIFICATE%" /p %PASSWORD%  ^
-        /v /t http://timestamp.comodoca.com/authenticode ^
-        "development\ie\build\x64\Release\bho64.dll"
-
-    :: Build installers
-    %NSIS% "development\ie\dist\setup-x86.nsi"
-    %NSIS% "development\ie\dist\setup-x64.nsi"
-
-    :: Sign installers
-    signtool sign /f "%CERTIFICATE%" /p %PASSWORD%  ^
-        /v /t http://timestamp.comodoca.com/authenticode ^
-        "development\ie\dist\*.exe"
-
-* Run ``forge build`` 
-* Run ``sign.bat``
-* Signed installers should now be available in the ``development/ie/dist`` directory
-
+  forge build ie --ie.profile.developer_certificate "your_certificate_filename.pfx" \
+                 --ie.profile.developer_certificate_path "c:\path\to\your\certificate" \
+                 --ie.profile.developer_certificate_password "your_certificate_password"
 
