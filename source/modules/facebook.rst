@@ -55,7 +55,7 @@ Takes the same options and returns the same data as ``facebook.authorize``, but 
 
 For more information about the ``audience`` parameter, see the :ref:`modules-facebook-authorize`.
 
-.. js:function:: facebook.authorize([permissions, ]success, error)
+.. js:function:: facebook.hasAuthorized([permissions, ]success, error)
 
     :param array permissions: An optional array of permissions to request
     :param array audience: Optional string indicating who should see updates by default
@@ -93,7 +93,7 @@ Make a Facebook Graph API call. See https://developers.facebook.com/docs/referen
 
 Display a Facebook dialog UI. See https://developers.facebook.com/docs/reference/javascript/FB.ui/ for further details.
 
-.. js:function:: facebook.api(params, success, error)
+.. js:function:: facebook.ui(params, success, error)
 
     :param object params: Dictionary of paramters, must include ``method``
     :param function(response) success: callback to be invoked when no errors occur

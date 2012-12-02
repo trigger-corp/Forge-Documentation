@@ -52,7 +52,7 @@ For example, in this project, we use ``$(Demo.init)`` to run the following funct
     init: function () {
         // Grab the Trigger twitter feed
         forge.request.ajax({
-            url: "https://twitter.com/statuses/user_timeline/14972793.json",
+            url: "https://api.twitter.com/1/statuses/user_timeline.json?user_id=14972793",
             dataType: "json",
             success: showIndex
         });
