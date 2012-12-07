@@ -52,6 +52,22 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.23
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 7th December 2012**
+
+Features:
+
+- server-side code signing for IE extensions
+- Android native date picker fires ``blur`` event when complete
+- during development on Windows or Linux, iOS apps are only partially code-signed for performance
+
+Bug fixes:
+
+- fullscreen display didn't work for holo theme Android devices
+- Android native date picker follows W3C spec when returning values
+- ``facebook.ui`` returns dialog outcome information on iOS
+
 v1.4.22
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 30th November 2012**
