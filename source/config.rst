@@ -1,15 +1,17 @@
 .. _config:
 
-Config file reference
+Configuration for your app
 ================================================================================
-``config.json`` is a JSON file which contains meta-data about your app. It determines basic settings for your app, such as the name users will see, as well as module config which allows various parts of Forge to be enabled or configured individually.
+The configuration of your app is stored in a file called ``config.json``. It determines basic settings for your app, such as the name users will see, as well as module config which allows various parts of Forge to be enabled or configured individually.
 
 Modifying ``config.json``
 -------------------------
 
-You can edit the file directly using your preferred text editor. It is located in the ``src`` directory. Alternatively, you can edit it through the Toolkit UI by clicking the App config tab in the top right of the app screen:
+You can edit your app config through the Toolkit UI by clicking the App config tab in the top right of the app screen:
 
 .. image:: /_static/images/toolkit-app-config.png
+
+Alternatively, you can edit ``config.json`` directly using your preferred text editor: it is located in the ``src`` directory. Be careful to maintain correct JSON syntax whilst doing this.
 
 Modules
 -------

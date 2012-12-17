@@ -1,9 +1,9 @@
 .. _parameters-in-a-file:
 
-Local Config: settings specific to your machine
+Configuration for the tools
 ==================================================================
 
-Configuration settings concerning things like developer certificates shouldn't be shared across a whole team. This local config is stored in a file called ``local_config.json``, and can be updated through the "Local Config" tab in the Trigger Toolkit.
+Configuration settings concerning things like developer certificates shouldn't be shared across a whole team. This local configuration is stored in a file called ``local_config.json``, and can be updated through the "Local Config" tab in the Trigger Toolkit.
 
 The file must be located along side the ``src/`` directory, for example::
 
@@ -18,9 +18,11 @@ If you're using the command-line, all local config can be overriden with command
 Modifying ``local_config.json``
 --------------------------------------------------------------------------------
 
-You can edit the file directly using your preferred text editor. It is located in the ``src`` directory. Alternatively, you can edit it through the Toolkit UI by clicking the App config tab in the top right of the app screen:
+You can edit your local configuration through the Toolkit UI by clicking the Local config tab in the top right of the app screen:
 
     .. image:: /_static/images/toolkit-local-config.png
+
+Alternatively, edit the file directly using your preferred text editor.
 		
 Format of ``local_config.json``
 --------------------------------------------------------------------------------
