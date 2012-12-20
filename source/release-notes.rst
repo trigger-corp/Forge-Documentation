@@ -52,6 +52,19 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.24
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 18th December 2012**
+
+Features:
+
+- support for ``simulatorsdk`` and ``simulatorfamily`` to customise iOS simulator start-up
+
+Bug fixes:
+
+- Android launchimages are scaled properly on high pixel density screens
+- HTTP 401 does not cause NullPointerException on Android when no username and password supplied
+
 v1.4.23
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 7th December 2012**
