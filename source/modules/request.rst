@@ -88,7 +88,7 @@ Example::
 
   window.forge.ajax({
     type: 'POST',
-    url: 'http://my.server.com/update/,
+    url: 'http://my.server.com/update/',
     data: {x: 1, y: "2"},
     dataType: 'json',
     headers: {
@@ -108,7 +108,7 @@ e.g.::
   myFile.name = 'name_of_input';
   window.forge.ajax({
     type: 'POST',
-    url: 'http://my.server.com/upload/,
+    url: 'http://my.server.com/upload/',
     files: [myFile],
     success: function(data) {
       alert('Uploaded file as '+myFile.name);
@@ -123,7 +123,7 @@ If you need to POST an image as the whole request body, use
 
   window.forge.ajax({
     type: 'POST',
-    url: 'http://my.server.com/upload_image/,
+    url: 'http://my.server.com/upload_image/',
     fileUploadMethod: "raw",
     success: function(data) {
       alert('Uploaded image');
