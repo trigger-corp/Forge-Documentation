@@ -93,6 +93,11 @@ Make a Facebook Graph API call. See https://developers.facebook.com/docs/referen
 
 Display a Facebook dialog UI. See https://developers.facebook.com/docs/reference/javascript/FB.ui/ for further details.
 
+Note that if the user hits "Cancel" in the dialog, your success callback will
+still be called - with ``{}`` as its parameter. This is the behaviour of the
+underlying Facebook SDK - for more information, see
+http://stackoverflow.com/a/13729707/29903.
+
 .. js:function:: facebook.ui(params, success, error)
 
     :param object params: Dictionary of paramters, must include ``method``
