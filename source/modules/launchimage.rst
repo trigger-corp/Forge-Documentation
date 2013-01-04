@@ -18,7 +18,7 @@ Config
 
 Images to be displayed during launch as required on iOS, for further details see the `Apple documentation <http://developer.apple.com/library/ios/#documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html#//apple_ref/doc/uid/TP40007072-CH6-SW12>`_.
 
-On Android the image will be displayed centered on a black background while the first page is loading, as Android device sizes vary a pixel perfect loading image cannot be used. The image will be proportionally scaled down to fit the screen if necessary.
+On Android the image will be displayed centered while the first page is loading: as Android device sizes vary a pixel perfect loading image cannot be used. The image will be proportionally scaled down to fit the screen if necessary. The solid color to use behind this launch image can be configured with the ``background-color`` configuration directive seen below.
 
 All 7 iOS images must be defined for any to be included in iOS builds. Both Android images must be defined for Android builds.
 
@@ -47,7 +47,8 @@ Properties and image sizes are:
                 "ipad-landscape-retina": "ipad-landscape-retina.png",
                 "android": "android.png",
                 "android-landscape": "android-landscape.png",
-                "hide-manually": true
+                "hide-manually": true,
+                "background-color": "#000000"
             }
         }
     }

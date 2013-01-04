@@ -35,7 +35,8 @@ API
     :param function(content) callback: called with the retrieved content body as the only argument
     :param function(content) error: called with details of any error which may occur
 
-The callback function *callback* is invoked with the content body of the requested URL as a string.
+The callback function *callback* is invoked with the content body of the requested URL. JSON-encoded content will automatically be parsed into a JavaScript object.
+
 As it is limited to ``GET`` requests and lacks the more advanced options of *forge.request.ajax*, it's recommended that *forge.request.get* is only used in very simple scenarios.
 
 .. _request_ajax:
