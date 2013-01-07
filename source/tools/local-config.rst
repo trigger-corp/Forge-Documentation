@@ -119,6 +119,8 @@ The device to use when running iOS apps is not profile-specific:
 Config Option            Command-line Option                 Meaning
 ======================== =================================== ===============================================================
 device                   --ios.device                        Either ``simulator``, ``device`` or a specific device ID
+simulatorfamily          --ios.simulatorfamily               Either ``ipad`` or ``iphone``
+simulatorsdk             --ios.simulatorsdk                  E.g. ``5.1`` or ``6.0``
 ======================== =================================== ===============================================================
 
 All other settings should be placed inside a :ref:`profile <local_conf-profiles>`: available settings are shown below:
