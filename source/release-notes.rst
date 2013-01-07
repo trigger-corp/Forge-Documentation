@@ -58,7 +58,7 @@ v1.4.24
 
 Features:
 
-- support for ``simulatorsdk`` and ``simulatorfamily`` to customise iOS simulator start-up
+- you can run the iOS simulator at a specified version with ``simulatorfamily`` and ``simulatorsdk`` - see :ref:`parameters-in-a-file`
 
 Bug fixes:
 
