@@ -1,4 +1,2053 @@
 <api>
+<package name="com.google.gson"
+>
+<interface name="ExclusionStrategy"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="shouldSkipClass"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="clazz" type="java.lang.Class&lt;?&gt;">
+</parameter>
+</method>
+<method name="shouldSkipField"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="f" type="com.google.gson.FieldAttributes">
+</parameter>
+</method>
+</interface>
+<class name="FieldAttributes"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="FieldAttributes"
+ type="com.google.gson.FieldAttributes"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="f" type="java.lang.reflect.Field">
+</parameter>
+</constructor>
+<method name="getAnnotation"
+ return="T"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="annotation" type="java.lang.Class&lt;T&gt;">
+</parameter>
+</method>
+<method name="getAnnotations"
+ return="java.util.Collection&lt;java.lang.annotation.Annotation&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDeclaredClass"
+ return="java.lang.Class&lt;?&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDeclaredType"
+ return="java.lang.reflect.Type"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDeclaringClass"
+ return="java.lang.Class&lt;?&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getName"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="hasModifier"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="modifier" type="int">
+</parameter>
+</method>
+</class>
+<class name="FieldNamingPolicy"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="com.google.gson.FieldNamingStrategy">
+</implements>
+<method name="valueOf"
+ return="com.google.gson.FieldNamingPolicy"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.google.gson.FieldNamingPolicy[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<interface name="FieldNamingStrategy"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="translateName"
+ return="java.lang.String"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="f" type="java.lang.reflect.Field">
+</parameter>
+</method>
+</interface>
+<class name="Gson"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Gson"
+ type="com.google.gson.Gson"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="fromJson"
+ return="T"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="json" type="java.lang.String">
+</parameter>
+<parameter name="classOfT" type="java.lang.Class&lt;T&gt;">
+</parameter>
+<exception name="JsonSyntaxException" type="com.google.gson.JsonSyntaxException">
+</exception>
+</method>
+<method name="fromJson"
+ return="T"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="json" type="java.lang.String">
+</parameter>
+<parameter name="typeOfT" type="java.lang.reflect.Type">
+</parameter>
+<exception name="JsonSyntaxException" type="com.google.gson.JsonSyntaxException">
+</exception>
+</method>
+<method name="fromJson"
+ return="T"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="json" type="java.io.Reader">
+</parameter>
+<parameter name="classOfT" type="java.lang.Class&lt;T&gt;">
+</parameter>
+<exception name="JsonIOException" type="com.google.gson.JsonIOException">
+</exception>
+<exception name="JsonSyntaxException" type="com.google.gson.JsonSyntaxException">
+</exception>
+</method>
+<method name="fromJson"
+ return="T"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="json" type="java.io.Reader">
+</parameter>
+<parameter name="typeOfT" type="java.lang.reflect.Type">
+</parameter>
+<exception name="JsonIOException" type="com.google.gson.JsonIOException">
+</exception>
+<exception name="JsonSyntaxException" type="com.google.gson.JsonSyntaxException">
+</exception>
+</method>
+<method name="fromJson"
+ return="T"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="reader" type="com.google.gson.stream.JsonReader">
+</parameter>
+<parameter name="typeOfT" type="java.lang.reflect.Type">
+</parameter>
+<exception name="JsonIOException" type="com.google.gson.JsonIOException">
+</exception>
+<exception name="JsonSyntaxException" type="com.google.gson.JsonSyntaxException">
+</exception>
+</method>
+<method name="fromJson"
+ return="T"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="json" type="com.google.gson.JsonElement">
+</parameter>
+<parameter name="classOfT" type="java.lang.Class&lt;T&gt;">
+</parameter>
+<exception name="JsonSyntaxException" type="com.google.gson.JsonSyntaxException">
+</exception>
+</method>
+<method name="fromJson"
+ return="T"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="json" type="com.google.gson.JsonElement">
+</parameter>
+<parameter name="typeOfT" type="java.lang.reflect.Type">
+</parameter>
+<exception name="JsonSyntaxException" type="com.google.gson.JsonSyntaxException">
+</exception>
+</method>
+<method name="getAdapter"
+ return="com.google.gson.TypeAdapter&lt;T&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="type" type="com.google.gson.reflect.TypeToken&lt;T&gt;">
+</parameter>
+</method>
+<method name="getAdapter"
+ return="com.google.gson.TypeAdapter&lt;T&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="type" type="java.lang.Class&lt;T&gt;">
+</parameter>
+</method>
+<method name="getDelegateAdapter"
+ return="com.google.gson.TypeAdapter&lt;T&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="skipPast" type="com.google.gson.TypeAdapterFactory">
+</parameter>
+<parameter name="type" type="com.google.gson.reflect.TypeToken&lt;T&gt;">
+</parameter>
+</method>
+<method name="toJson"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="src" type="java.lang.Object">
+</parameter>
+</method>
+<method name="toJson"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="src" type="java.lang.Object">
+</parameter>
+<parameter name="typeOfSrc" type="java.lang.reflect.Type">
+</parameter>
+</method>
+<method name="toJson"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="src" type="java.lang.Object">
+</parameter>
+<parameter name="writer" type="java.lang.Appendable">
+</parameter>
+<exception name="JsonIOException" type="com.google.gson.JsonIOException">
+</exception>
+</method>
+<method name="toJson"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="src" type="java.lang.Object">
+</parameter>
+<parameter name="typeOfSrc" type="java.lang.reflect.Type">
+</parameter>
+<parameter name="writer" type="java.lang.Appendable">
+</parameter>
+<exception name="JsonIOException" type="com.google.gson.JsonIOException">
+</exception>
+</method>
+<method name="toJson"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="src" type="java.lang.Object">
+</parameter>
+<parameter name="typeOfSrc" type="java.lang.reflect.Type">
+</parameter>
+<parameter name="writer" type="com.google.gson.stream.JsonWriter">
+</parameter>
+<exception name="JsonIOException" type="com.google.gson.JsonIOException">
+</exception>
+</method>
+<method name="toJson"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="jsonElement" type="com.google.gson.JsonElement">
+</parameter>
+</method>
+<method name="toJson"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="jsonElement" type="com.google.gson.JsonElement">
+</parameter>
+<parameter name="writer" type="java.lang.Appendable">
+</parameter>
+<exception name="JsonIOException" type="com.google.gson.JsonIOException">
+</exception>
+</method>
+<method name="toJson"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="jsonElement" type="com.google.gson.JsonElement">
+</parameter>
+<parameter name="writer" type="com.google.gson.stream.JsonWriter">
+</parameter>
+<exception name="JsonIOException" type="com.google.gson.JsonIOException">
+</exception>
+</method>
+<method name="toJsonTree"
+ return="com.google.gson.JsonElement"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="src" type="java.lang.Object">
+</parameter>
+</method>
+<method name="toJsonTree"
+ return="com.google.gson.JsonElement"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="src" type="java.lang.Object">
+</parameter>
+<parameter name="typeOfSrc" type="java.lang.reflect.Type">
+</parameter>
+</method>
+</class>
+<class name="GsonBuilder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="GsonBuilder"
+ type="com.google.gson.GsonBuilder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="addDeserializationExclusionStrategy"
+ return="com.google.gson.GsonBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="strategy" type="com.google.gson.ExclusionStrategy">
+</parameter>
+</method>
+<method name="addSerializationExclusionStrategy"
+ return="com.google.gson.GsonBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="strategy" type="com.google.gson.ExclusionStrategy">
+</parameter>
+</method>
+<method name="create"
+ return="com.google.gson.Gson"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="disableHtmlEscaping"
+ return="com.google.gson.GsonBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="disableInnerClassSerialization"
+ return="com.google.gson.GsonBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="enableComplexMapKeySerialization"
+ return="com.google.gson.GsonBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="excludeFieldsWithModifiers"
+ return="com.google.gson.GsonBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="modifiers" type="int...">
+</parameter>
+</method>
+<method name="excludeFieldsWithoutExposeAnnotation"
+ return="com.google.gson.GsonBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="generateNonExecutableJson"
+ return="com.google.gson.GsonBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="registerTypeAdapter"
+ return="com.google.gson.GsonBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="type" type="java.lang.reflect.Type">
+</parameter>
+<parameter name="typeAdapter" type="java.lang.Object">
+</parameter>
+</method>
+<method name="registerTypeAdapterFactory"
+ return="com.google.gson.GsonBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="factory" type="com.google.gson.TypeAdapterFactory">
+</parameter>
+</method>
+<method name="registerTypeHierarchyAdapter"
+ return="com.google.gson.GsonBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="baseType" type="java.lang.Class&lt;?&gt;">
+</parameter>
+<parameter name="typeAdapter" type="java.lang.Object">
+</parameter>
+</method>
+<method name="serializeNulls"
+ return="com.google.gson.GsonBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="serializeSpecialFloatingPointValues"
+ return="com.google.gson.GsonBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setDateFormat"
+ return="com.google.gson.GsonBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="pattern" type="java.lang.String">
+</parameter>
+</method>
+<method name="setDateFormat"
+ return="com.google.gson.GsonBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="style" type="int">
+</parameter>
+</method>
+<method name="setDateFormat"
+ return="com.google.gson.GsonBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dateStyle" type="int">
+</parameter>
+<parameter name="timeStyle" type="int">
+</parameter>
+</method>
+<method name="setExclusionStrategies"
+ return="com.google.gson.GsonBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="strategies" type="com.google.gson.ExclusionStrategy...">
+</parameter>
+</method>
+<method name="setFieldNamingPolicy"
+ return="com.google.gson.GsonBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="namingConvention" type="com.google.gson.FieldNamingPolicy">
+</parameter>
+</method>
+<method name="setFieldNamingStrategy"
+ return="com.google.gson.GsonBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="fieldNamingStrategy" type="com.google.gson.FieldNamingStrategy">
+</parameter>
+</method>
+<method name="setLongSerializationPolicy"
+ return="com.google.gson.GsonBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="serializationPolicy" type="com.google.gson.LongSerializationPolicy">
+</parameter>
+</method>
+<method name="setPrettyPrinting"
+ return="com.google.gson.GsonBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setVersion"
+ return="com.google.gson.GsonBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="ignoreVersionsAfter" type="double">
+</parameter>
+</method>
+</class>
+<interface name="InstanceCreator"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="createInstance"
+ return="T"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="type" type="java.lang.reflect.Type">
+</parameter>
+</method>
+</interface>
+<class name="JsonArray"
+ extends="com.google.gson.JsonElement"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="JsonArray"
+ type="com.google.gson.JsonArray"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="add"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="element" type="com.google.gson.JsonElement">
+</parameter>
+</method>
+<method name="addAll"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="array" type="com.google.gson.JsonArray">
+</parameter>
+</method>
+<method name="get"
+ return="com.google.gson.JsonElement"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="i" type="int">
+</parameter>
+</method>
+<method name="iterator"
+ return="java.util.Iterator&lt;com.google.gson.JsonElement&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="size"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<interface name="JsonDeserializationContext"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="deserialize"
+ return="T"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="json" type="com.google.gson.JsonElement">
+</parameter>
+<parameter name="typeOfT" type="java.lang.reflect.Type">
+</parameter>
+<exception name="JsonParseException" type="com.google.gson.JsonParseException">
+</exception>
+</method>
+</interface>
+<interface name="JsonDeserializer"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="deserialize"
+ return="T"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="json" type="com.google.gson.JsonElement">
+</parameter>
+<parameter name="typeOfT" type="java.lang.reflect.Type">
+</parameter>
+<parameter name="context" type="com.google.gson.JsonDeserializationContext">
+</parameter>
+<exception name="JsonParseException" type="com.google.gson.JsonParseException">
+</exception>
+</method>
+</interface>
+<class name="JsonElement"
+ extends="java.lang.Object"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="JsonElement"
+ type="com.google.gson.JsonElement"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getAsBigDecimal"
+ return="java.math.BigDecimal"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getAsBigInteger"
+ return="java.math.BigInteger"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getAsBoolean"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getAsByte"
+ return="byte"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getAsCharacter"
+ return="char"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getAsDouble"
+ return="double"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getAsFloat"
+ return="float"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getAsInt"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getAsJsonArray"
+ return="com.google.gson.JsonArray"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getAsJsonNull"
+ return="com.google.gson.JsonNull"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getAsJsonObject"
+ return="com.google.gson.JsonObject"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getAsJsonPrimitive"
+ return="com.google.gson.JsonPrimitive"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getAsLong"
+ return="long"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getAsNumber"
+ return="java.lang.Number"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getAsShort"
+ return="short"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getAsString"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isJsonArray"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isJsonNull"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isJsonObject"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isJsonPrimitive"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="JsonIOException"
+ extends="com.google.gson.JsonParseException"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="JsonIOException"
+ type="com.google.gson.JsonIOException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="msg" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="JsonIOException"
+ type="com.google.gson.JsonIOException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="msg" type="java.lang.String">
+</parameter>
+<parameter name="cause" type="java.lang.Throwable">
+</parameter>
+</constructor>
+<constructor name="JsonIOException"
+ type="com.google.gson.JsonIOException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="cause" type="java.lang.Throwable">
+</parameter>
+</constructor>
+</class>
+<class name="JsonNull"
+ extends="com.google.gson.JsonElement"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="JsonNull"
+ type="com.google.gson.JsonNull"
+ static="false"
+ final="false"
+ deprecated="deprecated"
+ visibility="public"
+>
+</constructor>
+<field name="INSTANCE"
+ type="com.google.gson.JsonNull"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="JsonObject"
+ extends="com.google.gson.JsonElement"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="JsonObject"
+ type="com.google.gson.JsonObject"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="add"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="property" type="java.lang.String">
+</parameter>
+<parameter name="value" type="com.google.gson.JsonElement">
+</parameter>
+</method>
+<method name="addProperty"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="property" type="java.lang.String">
+</parameter>
+<parameter name="value" type="java.lang.String">
+</parameter>
+</method>
+<method name="addProperty"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="property" type="java.lang.String">
+</parameter>
+<parameter name="value" type="java.lang.Number">
+</parameter>
+</method>
+<method name="addProperty"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="property" type="java.lang.String">
+</parameter>
+<parameter name="value" type="java.lang.Boolean">
+</parameter>
+</method>
+<method name="addProperty"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="property" type="java.lang.String">
+</parameter>
+<parameter name="value" type="java.lang.Character">
+</parameter>
+</method>
+<method name="entrySet"
+ return="java.util.Set&lt;java.util.Map.Entry&lt;java.lang.String, com.google.gson.JsonElement&gt;&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="get"
+ return="com.google.gson.JsonElement"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="memberName" type="java.lang.String">
+</parameter>
+</method>
+<method name="getAsJsonArray"
+ return="com.google.gson.JsonArray"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="memberName" type="java.lang.String">
+</parameter>
+</method>
+<method name="getAsJsonObject"
+ return="com.google.gson.JsonObject"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="memberName" type="java.lang.String">
+</parameter>
+</method>
+<method name="getAsJsonPrimitive"
+ return="com.google.gson.JsonPrimitive"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="memberName" type="java.lang.String">
+</parameter>
+</method>
+<method name="has"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="memberName" type="java.lang.String">
+</parameter>
+</method>
+<method name="remove"
+ return="com.google.gson.JsonElement"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="property" type="java.lang.String">
+</parameter>
+</method>
+</class>
+<class name="JsonParseException"
+ extends="java.lang.RuntimeException"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="JsonParseException"
+ type="com.google.gson.JsonParseException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="msg" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="JsonParseException"
+ type="com.google.gson.JsonParseException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="msg" type="java.lang.String">
+</parameter>
+<parameter name="cause" type="java.lang.Throwable">
+</parameter>
+</constructor>
+<constructor name="JsonParseException"
+ type="com.google.gson.JsonParseException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="cause" type="java.lang.Throwable">
+</parameter>
+</constructor>
+</class>
+<class name="JsonParser"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="JsonParser"
+ type="com.google.gson.JsonParser"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="parse"
+ return="com.google.gson.JsonElement"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="json" type="java.lang.String">
+</parameter>
+<exception name="JsonSyntaxException" type="com.google.gson.JsonSyntaxException">
+</exception>
+</method>
+<method name="parse"
+ return="com.google.gson.JsonElement"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="json" type="java.io.Reader">
+</parameter>
+<exception name="JsonIOException" type="com.google.gson.JsonIOException">
+</exception>
+<exception name="JsonSyntaxException" type="com.google.gson.JsonSyntaxException">
+</exception>
+</method>
+<method name="parse"
+ return="com.google.gson.JsonElement"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="json" type="com.google.gson.stream.JsonReader">
+</parameter>
+<exception name="JsonIOException" type="com.google.gson.JsonIOException">
+</exception>
+<exception name="JsonSyntaxException" type="com.google.gson.JsonSyntaxException">
+</exception>
+</method>
+</class>
+<class name="JsonPrimitive"
+ extends="com.google.gson.JsonElement"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="JsonPrimitive"
+ type="com.google.gson.JsonPrimitive"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="bool" type="java.lang.Boolean">
+</parameter>
+</constructor>
+<constructor name="JsonPrimitive"
+ type="com.google.gson.JsonPrimitive"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="number" type="java.lang.Number">
+</parameter>
+</constructor>
+<constructor name="JsonPrimitive"
+ type="com.google.gson.JsonPrimitive"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="string" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="JsonPrimitive"
+ type="com.google.gson.JsonPrimitive"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="c" type="java.lang.Character">
+</parameter>
+</constructor>
+<method name="isBoolean"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isNumber"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isString"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<interface name="JsonSerializationContext"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="serialize"
+ return="com.google.gson.JsonElement"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="src" type="java.lang.Object">
+</parameter>
+</method>
+<method name="serialize"
+ return="com.google.gson.JsonElement"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="src" type="java.lang.Object">
+</parameter>
+<parameter name="typeOfSrc" type="java.lang.reflect.Type">
+</parameter>
+</method>
+</interface>
+<interface name="JsonSerializer"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="serialize"
+ return="com.google.gson.JsonElement"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="src" type="T">
+</parameter>
+<parameter name="typeOfSrc" type="java.lang.reflect.Type">
+</parameter>
+<parameter name="context" type="com.google.gson.JsonSerializationContext">
+</parameter>
+</method>
+</interface>
+<class name="JsonStreamParser"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="java.util.Iterator">
+</implements>
+<constructor name="JsonStreamParser"
+ type="com.google.gson.JsonStreamParser"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="json" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="JsonStreamParser"
+ type="com.google.gson.JsonStreamParser"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="reader" type="java.io.Reader">
+</parameter>
+</constructor>
+<method name="hasNext"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="next"
+ return="com.google.gson.JsonElement"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="JsonParseException" type="com.google.gson.JsonParseException">
+</exception>
+</method>
+<method name="remove"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="JsonSyntaxException"
+ extends="com.google.gson.JsonParseException"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="JsonSyntaxException"
+ type="com.google.gson.JsonSyntaxException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="msg" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="JsonSyntaxException"
+ type="com.google.gson.JsonSyntaxException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="msg" type="java.lang.String">
+</parameter>
+<parameter name="cause" type="java.lang.Throwable">
+</parameter>
+</constructor>
+<constructor name="JsonSyntaxException"
+ type="com.google.gson.JsonSyntaxException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="cause" type="java.lang.Throwable">
+</parameter>
+</constructor>
+</class>
+<class name="LongSerializationPolicy"
+ extends="java.lang.Enum"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="serialize"
+ return="com.google.gson.JsonElement"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="java.lang.Long">
+</parameter>
+</method>
+<method name="valueOf"
+ return="com.google.gson.LongSerializationPolicy"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="values"
+ return="com.google.gson.LongSerializationPolicy[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="TypeAdapter"
+ extends="java.lang.Object"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="TypeAdapter"
+ type="com.google.gson.TypeAdapter"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="fromJson"
+ return="T"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="in" type="java.io.Reader">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="fromJson"
+ return="T"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="json" type="java.lang.String">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="fromJsonTree"
+ return="T"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="jsonTree" type="com.google.gson.JsonElement">
+</parameter>
+</method>
+<method name="nullSafe"
+ return="com.google.gson.TypeAdapter&lt;T&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="read"
+ return="T"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="in" type="com.google.gson.stream.JsonReader">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="toJson"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="out" type="java.io.Writer">
+</parameter>
+<parameter name="value" type="T">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="toJson"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="T">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="toJsonTree"
+ return="com.google.gson.JsonElement"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="value" type="T">
+</parameter>
+</method>
+<method name="write"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="out" type="com.google.gson.stream.JsonWriter">
+</parameter>
+<parameter name="value" type="T">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+</class>
+<interface name="TypeAdapterFactory"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="create"
+ return="com.google.gson.TypeAdapter&lt;T&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="gson" type="com.google.gson.Gson">
+</parameter>
+<parameter name="type" type="com.google.gson.reflect.TypeToken&lt;T&gt;">
+</parameter>
+</method>
+</interface>
+</package>
 <package name="io.trigger.forge.android.core"
 >
 <class name="ForgeActivity"
@@ -63,6 +2112,16 @@
 <parameter name="callback" type="java.lang.Runnable">
 </parameter>
 </method>
+<field name="hasModalView"
+ type="boolean"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
 <field name="mainLayout"
  type="android.widget.LinearLayout"
  transient="false"
@@ -85,7 +2144,7 @@
 </field>
 </class>
 <class name="ForgeApp"
- extends="java.lang.Object"
+ extends="android.app.Application"
  abstract="false"
  static="false"
  final="false"
@@ -104,11 +2163,11 @@
 >
 <parameter name="name" type="java.lang.String">
 </parameter>
-<parameter name="params" type="org.json.JSONObject">
+<parameter name="params" type="com.google.gson.JsonElement">
 </parameter>
 </method>
-<method name="getAPIMethodInfo"
- return="org.json.JSONObject"
+<method name="event"
+ return="void"
  abstract="false"
  native="false"
  synchronized="false"
@@ -117,8 +2176,19 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<exception name="JSONException" type="org.json.JSONException">
-</exception>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
+<method name="getAPIMethodInfo"
+ return="com.google.gson.JsonObject"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
 </method>
 <method name="getActivity"
  return="io.trigger.forge.android.core.ForgeActivity"
@@ -170,6 +2240,19 @@
  deprecated="not deprecated"
  visibility="public"
 >
+<method name="getSystemService"
+ return="java.lang.Object"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="java.lang.String">
+</parameter>
+</method>
 <method name="onActivityResult"
  return="void"
  abstract="false"
@@ -673,7 +2756,20 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="result" type="java.lang.Object">
+<parameter name="result" type="com.google.gson.JsonElement">
+</parameter>
+</method>
+<method name="error"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="result" type="java.lang.String">
 </parameter>
 </method>
 <method name="error"
@@ -753,7 +2849,33 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="result" type="java.lang.Object">
+<parameter name="result" type="com.google.gson.JsonElement">
+</parameter>
+</method>
+<method name="success"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="result" type="java.lang.String">
+</parameter>
+</method>
+<method name="success"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="result" type="boolean">
 </parameter>
 </method>
 <field name="callid"
@@ -767,11 +2889,21 @@
 >
 </field>
 <field name="params"
- type="org.json.JSONObject"
+ type="com.google.gson.JsonObject"
  transient="false"
  volatile="false"
  static="false"
  final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="returned"
+ type="boolean"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
  deprecated="not deprecated"
  visibility="public"
 >
