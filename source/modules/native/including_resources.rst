@@ -13,15 +13,15 @@ easily included in plugins for both.
 Android
 -------
 
-When using the inspector project to develop your plugin, any required resources
-should be added to the ``res/`` folder. For more information about what kind of
-resources can be added to your plugin and how they can be used with the Android
-SDK, see the `official Android docs concerning App Resources`_.
+To include resources they must be placed in the ``plugin/android/res`` folder,
+once there the inspector project can be updated and the resource files will be
+included.
+
+For more information about what kind of resources can be added to your plugin
+and how they can be used with the Android SDK, see the `official Android docs
+concerning App Resources`_.
 
 .. _official Android docs concerning App Resources: http://developer.android.com/guide/topics/resources/index.html
-
-When you're ready to upload your plugin, these resources should also be copied
-into ``android/res`` within your plugin folder.
 
 .. important:: Resources must be accessed *dynamically* from your Java code:
     :inline-html:`<a href="../../_static/native/android/reference/io/trigger/forge/android/core/ForgeApp.html#getResourceId(java.lang.String, java.lang.String)">ForgeApp.getResourceId</a>`
@@ -32,9 +32,9 @@ iOS
 
 On iOS, any resources included in your plugin must be part of a bundle.
 
-During development, 3rd party bundles can be added to the ForgeInspector
-project. When you're ready to upload your plugin, copy the bundle to
-``ios/bundles/`` in your plugin folder.
+3rd party bundles can be included by placing the bundles in
+``plugin/ios/bundles``. An inspector project update will then be required to
+include them in the inspector for development
 
 If you have resources such as images that you want to include in your plugin,
 you must create your own bundle. The inspector project includes a

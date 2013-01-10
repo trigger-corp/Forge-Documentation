@@ -19,3 +19,4 @@ Writing native plugins is obviously different for Android and iOS, however we ha
     native_build_steps
     including_resources
     api_docs
+    common_problems

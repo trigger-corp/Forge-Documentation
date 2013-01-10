@@ -8,13 +8,14 @@ develop applications for the Forge platform.
 .. toctree::
    :maxdepth: 2
 
-   /config
+   toolkit
    commands
+   /config
    local-config
+   reload
+   /standalone
    proxy
    forgeignore
    hooks
    ios-windows
    ios-linux
-   reload
-   /standalone
