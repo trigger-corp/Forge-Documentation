@@ -28,9 +28,10 @@ var DATA = [
       { id:26, label:"io.trigger.forge.android.core.ForgeActivity", link:"io/trigger/forge/android/core/ForgeActivity.html", type:"class" },
       { id:27, label:"io.trigger.forge.android.core.ForgeApp", link:"io/trigger/forge/android/core/ForgeApp.html", type:"class" },
       { id:28, label:"io.trigger.forge.android.core.ForgeEventListener", link:"io/trigger/forge/android/core/ForgeEventListener.html", type:"class" },
-      { id:29, label:"io.trigger.forge.android.core.ForgeIntentResultHandler", link:"io/trigger/forge/android/core/ForgeIntentResultHandler.html", type:"class" },
-      { id:30, label:"io.trigger.forge.android.core.ForgeLog", link:"io/trigger/forge/android/core/ForgeLog.html", type:"class" },
-      { id:31, label:"io.trigger.forge.android.core.ForgeParam", link:"io/trigger/forge/android/core/ForgeParam.html", type:"class" },
-      { id:32, label:"io.trigger.forge.android.core.ForgeTask", link:"io/trigger/forge/android/core/ForgeTask.html", type:"class" }
+      { id:29, label:"io.trigger.forge.android.core.ForgeFile", link:"io/trigger/forge/android/core/ForgeFile.html", type:"class" },
+      { id:30, label:"io.trigger.forge.android.core.ForgeIntentResultHandler", link:"io/trigger/forge/android/core/ForgeIntentResultHandler.html", type:"class" },
+      { id:31, label:"io.trigger.forge.android.core.ForgeLog", link:"io/trigger/forge/android/core/ForgeLog.html", type:"class" },
+      { id:32, label:"io.trigger.forge.android.core.ForgeParam", link:"io/trigger/forge/android/core/ForgeParam.html", type:"class" },
+      { id:33, label:"io.trigger.forge.android.core.ForgeTask", link:"io/trigger/forge/android/core/ForgeTask.html", type:"class" }
 
     ];

@@ -2231,6 +2231,16 @@
 <parameter name="handler" type="io.trigger.forge.android.core.ForgeIntentResultHandler">
 </parameter>
 </method>
+<field name="appConfig"
+ type="com.google.gson.JsonObject"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
 </class>
 <class name="ForgeEventListener"
  extends="java.lang.Object"
@@ -2625,6 +2635,133 @@
 >
 <parameter name="hasFocus" type="boolean">
 </parameter>
+</method>
+</class>
+<class name="ForgeFile"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ForgeFile"
+ type="io.trigger.forge.android.core.ForgeFile"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+<parameter name="path" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="ForgeFile"
+ type="io.trigger.forge.android.core.ForgeFile"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+<parameter name="file" type="com.google.gson.JsonElement">
+</parameter>
+</constructor>
+<method name="assetForUri"
+ return="android.content.res.AssetFileDescriptor"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+<parameter name="fileUri" type="android.net.Uri">
+</parameter>
+</method>
+<method name="data"
+ return="byte[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="exists"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="fd"
+ return="android.content.res.AssetFileDescriptor"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="mimeType"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="remove"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="toJSON"
+ return="com.google.gson.JsonElement"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="url"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
 </method>
 </class>
 <class name="ForgeIntentResultHandler"
