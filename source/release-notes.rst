@@ -52,6 +52,23 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.26
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 17th January 2013**
+
+.. note:: Due to the switch to using Gson, the way to return non-primitive results from native plugins has changed: see :ref:`native_plugins_native_communication`
+
+Features:
+
+- create calendar events with the :ref:`calendar module <modules-calendar>`
+- Use Gson for JSON parsing and serialisation for increased performance on Android
+
+Bug fixes:
+
+- IE activates properly on pages opened with ``target="_blank"``
+- Android datepicker activates for ``datetime-local`` inputs
+- Android datepicker results are properly zero-padded
+
 v1.4.25
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 14th January 2013**
