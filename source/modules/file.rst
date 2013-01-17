@@ -106,6 +106,20 @@ Cached files may be removed at any time by the operating system, and it is highl
     :param function(file) success: callback to be invoked when no errors occur (argument is the returned file)
     :param function(content) error: called with details of any error which may occur
 
+``saveURL``
+~~~~~~~~~~~~
+**Platforms: Mobile**
+
+Downloads a file at a specified URL and returns a file object which can be used for later access. Saves the file in a permanant location rather than in a cache location as with ``cacheURL``.
+
+.. important:: Files downloaded via this method will not be removed if you do not remove them, if the file is only going to be used temporarily then ``cacheURL`` is more appropriate.
+
+.. js:function:: file.saveURL(url, success, error)
+
+    :param string url: URL of file to save.
+    :param function(file) success: callback to be invoked when no errors occur (argument is the returned file)
+    :param function(content) error: called with details of any error which may occur
+
 ``isFile``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Mobile**

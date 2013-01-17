@@ -57,7 +57,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico" />
 <title>
 
-  ForgeJSBridge
+  ForgeFile
 
 
 </title>
@@ -140,6 +140,8 @@
               </div>
               <ul>
                 
+    <li class="api apilevel-">
+  <a href="../../../../../com/google/gson/package-summary.html">com.google.gson</a></li>
     <li class="selected api apilevel-">
   <a href="../../../../../io/trigger/forge/android/core/package-summary.html">io.trigger.forge.android.core</a></li>
               </ul><br/>
@@ -153,10 +155,9 @@
       <ul>
           <li class="api apilevel-"><a href="../../../../../io/trigger/forge/android/core/ForgeActivity.html">ForgeActivity</a></li>
           <li class="api apilevel-"><a href="../../../../../io/trigger/forge/android/core/ForgeApp.html">ForgeApp</a></li>
-          <li class="api apilevel-"><a href="../../../../../io/trigger/forge/android/core/ForgeContentProvider.html">ForgeContentProvider</a></li>
           <li class="api apilevel-"><a href="../../../../../io/trigger/forge/android/core/ForgeEventListener.html">ForgeEventListener</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../io/trigger/forge/android/core/ForgeFile.html">ForgeFile</a></li>
           <li class="api apilevel-"><a href="../../../../../io/trigger/forge/android/core/ForgeIntentResultHandler.html">ForgeIntentResultHandler</a></li>
-          <li class="selected api apilevel-"><a href="../../../../../io/trigger/forge/android/core/ForgeJSBridge.html">ForgeJSBridge</a></li>
           <li class="api apilevel-"><a href="../../../../../io/trigger/forge/android/core/ForgeLog.html">ForgeLog</a></li>
           <li class="api apilevel-"><a href="../../../../../io/trigger/forge/android/core/ForgeTask.html">ForgeTask</a></li>
       </ul>
@@ -262,7 +263,7 @@ Summary:
      
     
     class
-<h1>ForgeJSBridge</h1>
+<h1>ForgeFile</h1>
 
 
 
@@ -295,7 +296,7 @@ Summary:
         
             <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
          	
-        <td colspan="1" class="jd-inheritance-class-cell">io.trigger.forge.android.core.ForgeJSBridge</td>
+        <td colspan="1" class="jd-inheritance-class-cell">io.trigger.forge.android.core.ForgeFile</td>
     </tr>
     
 
@@ -309,6 +310,10 @@ Summary:
 
 <div class="jd-descr">
 
+
+<h2>Class Overview</h2>
+<p>Object containing information about a file with methods to access it.
+</p>
 
 
 
@@ -374,8 +379,28 @@ Summary:
             
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../io/trigger/forge/android/core/ForgeJSBridge.html#ForgeJSBridge()">ForgeJSBridge</a></span>()
+        <span class="sympad"><a href="../../../../../io/trigger/forge/android/core/ForgeFile.html#ForgeFile(android.content.Context, java.lang.String)">ForgeFile</a></span>(<a href="http://developer.android.com/reference/android/content/Context.html">Context</a> context, <a href="http://developer.android.com/reference/java/lang/String.html">String</a> path)
         
+        <div class="jd-descrdiv">Constructor to create a file object referencing a file contained in the src folder of the app</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../io/trigger/forge/android/core/ForgeFile.html#ForgeFile(android.content.Context, com.google.gson.JsonElement)">ForgeFile</a></span>(<a href="http://developer.android.com/reference/android/content/Context.html">Context</a> context, <a href="../../../../../com/google/gson/JsonElement.html">JsonElement</a> file)
+        
+        <div class="jd-descrdiv">Constructor to create a file object based on a JavaScript file object.</div>
+  
   </td></tr>
 
 
@@ -398,13 +423,121 @@ Summary:
             
             
             
+            static
             
-            
-            void
+            <a href="http://developer.android.com/reference/android/content/res/AssetFileDescriptor.html">AssetFileDescriptor</a>
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../io/trigger/forge/android/core/ForgeJSBridge.html#callJavaFromJavaScript(java.lang.String, java.lang.String, java.lang.String)">callJavaFromJavaScript</a></span>(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> callid, <a href="http://developer.android.com/reference/java/lang/String.html">String</a> method, <a href="http://developer.android.com/reference/java/lang/String.html">String</a> params)
+        <span class="sympad"><a href="../../../../../io/trigger/forge/android/core/ForgeFile.html#assetForUri(android.content.Context, android.net.Uri)">assetForUri</a></span>(<a href="http://developer.android.com/reference/android/content/Context.html">Context</a> context, <a href="http://developer.android.com/reference/android/net/Uri.html">Uri</a> fileUri)
         
+        <div class="jd-descrdiv">Take a URI and return the most direct AssetFileDescriptor possible (i.e.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            byte[]
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../io/trigger/forge/android/core/ForgeFile.html#data()">data</a></span>()
+        
+        <div class="jd-descrdiv">Access the files data</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../io/trigger/forge/android/core/ForgeFile.html#exists()">exists</a></span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            <a href="http://developer.android.com/reference/android/content/res/AssetFileDescriptor.html">AssetFileDescriptor</a>
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../io/trigger/forge/android/core/ForgeFile.html#fd()">fd</a></span>()
+        
+        <div class="jd-descrdiv">Used for efficient access to files</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            <a href="http://developer.android.com/reference/java/lang/String.html">String</a>
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../io/trigger/forge/android/core/ForgeFile.html#mimeType()">mimeType</a></span>()
+        
+        <div class="jd-descrdiv">Access the files mime-type (if available)</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../io/trigger/forge/android/core/ForgeFile.html#remove()">remove</a></span>()
+        
+        <div class="jd-descrdiv">Delete the file (if possible)</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            <a href="../../../../../com/google/gson/JsonElement.html">JsonElement</a>
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../io/trigger/forge/android/core/ForgeFile.html#toJSON()">toJSON</a></span>()
+        
+        <div class="jd-descrdiv">A JSON representation of this file object</div>
+  
   </td></tr>
 
 
@@ -419,8 +552,29 @@ Summary:
             <a href="http://developer.android.com/reference/java/lang/String.html">String</a>
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../io/trigger/forge/android/core/ForgeJSBridge.html#getObjects()">getObjects</a></span>()
+        <span class="sympad"><a href="../../../../../io/trigger/forge/android/core/ForgeFile.html#toString()">toString</a></span>()
         
+        <div class="jd-descrdiv">A string representation of this file object
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            <a href="http://developer.android.com/reference/java/lang/String.html">String</a>
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../io/trigger/forge/android/core/ForgeFile.html#url()">url</a></span>()
+        
+        <div class="jd-descrdiv">Return a String url for the file object, this should work if accessed directly from a WebView.</div>
+  
   </td></tr>
 
 
@@ -674,7 +828,7 @@ From class
 
 
 
-<a id="ForgeJSBridge()"></a>
+<a id="ForgeFile(android.content.Context, java.lang.String)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -686,8 +840,8 @@ From class
          
         
       </span>
-      <span class="sympad">ForgeJSBridge</span>
-      <span class="normal">()</span>
+      <span class="sympad">ForgeFile</span>
+      <span class="normal">(<a href="http://developer.android.com/reference/android/content/Context.html">Context</a> context, <a href="http://developer.android.com/reference/java/lang/String.html">String</a> path)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -699,7 +853,58 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Constructor to create a file object referencing a file contained in the src folder of the app</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>path</th>
+          <td>path to file relative to src folder
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="ForgeFile(android.content.Context, com.google.gson.JsonElement)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">ForgeFile</span>
+      <span class="normal">(<a href="http://developer.android.com/reference/android/content/Context.html">Context</a> context, <a href="../../../../../com/google/gson/JsonElement.html">JsonElement</a> file)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Constructor to create a file object based on a JavaScript file object.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>file</th>
+          <td>JSON file object, must contain a uri property
+</td>
+        </tr>
+      </table>
+  </div>
 
     </div>
 </div>
@@ -720,20 +925,20 @@ From class
 
 
 
-<a id="callJavaFromJavaScript(java.lang.String, java.lang.String, java.lang.String)"></a>
+<a id="assetForUri(android.content.Context, android.net.Uri)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
       <span class="normal">
         public 
+        static 
          
          
          
-         
-        void
+        <a href="http://developer.android.com/reference/android/content/res/AssetFileDescriptor.html">AssetFileDescriptor</a>
       </span>
-      <span class="sympad">callJavaFromJavaScript</span>
-      <span class="normal">(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> callid, <a href="http://developer.android.com/reference/java/lang/String.html">String</a> method, <a href="http://developer.android.com/reference/java/lang/String.html">String</a> params)</span>
+      <span class="sympad">assetForUri</span>
+      <span class="normal">(<a href="http://developer.android.com/reference/android/content/Context.html">Context</a> context, <a href="http://developer.android.com/reference/android/net/Uri.html">Uri</a> fileUri)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -745,13 +950,14 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Take a URI and return the most direct AssetFileDescriptor possible (i.e. try to avoid creating a cached copy of the file).
+</p></div>
 
     </div>
 </div>
 
 
-<a id="getObjects()"></a>
+<a id="data()"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -761,9 +967,53 @@ From class
          
          
          
-        <a href="http://developer.android.com/reference/java/lang/String.html">String</a>
+        byte[]
       </span>
-      <span class="sympad">getObjects</span>
+      <span class="sympad">data</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Access the files data</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>The bytes contained in the referenced file</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="http://developer.android.com/reference/java/io/IOException.html">IOException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="exists()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">exists</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
@@ -777,6 +1027,218 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>Whether the file referenced by this object exists
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="fd()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="http://developer.android.com/reference/android/content/res/AssetFileDescriptor.html">AssetFileDescriptor</a>
+      </span>
+      <span class="sympad">fd</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Used for efficient access to files</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>An AssetFileDescriptor for the referenced file
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="mimeType()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="http://developer.android.com/reference/java/lang/String.html">String</a>
+      </span>
+      <span class="sympad">mimeType</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Access the files mime-type (if available)</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the files mime-type
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="remove()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">remove</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Delete the file (if possible)</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>Whether or not the file was deleted
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="toJSON()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../com/google/gson/JsonElement.html">JsonElement</a>
+      </span>
+      <span class="sympad">toJSON</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>A JSON representation of this file object</p></div>
+
+    </div>
+</div>
+
+
+<a id="toString()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="http://developer.android.com/reference/java/lang/String.html">String</a>
+      </span>
+      <span class="sympad">toString</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>A string representation of this file object
+</p></div>
+
+    </div>
+</div>
+
+
+<a id="url()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="http://developer.android.com/reference/java/lang/String.html">String</a>
+      </span>
+      <span class="sympad">url</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return a String url for the file object, this should work if accessed directly from a WebView.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>Url representing this file object.
+</li></ul>
+  </div>
 
     </div>
 </div>
