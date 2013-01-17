@@ -22,7 +22,7 @@ To encode and decode this JSON data in Java we use the Gson library. This provid
   * ``ForgeTask.success`` and ``ForgeApp.event`` will also directly accept a ``String`` and create the ``JsonElement`` for you.
 
 * ``ForgeTask.params`` is of type :inline-html:`<a href="../../_static/native/android/reference/com/google/gson/JsonObject.html">JsonObject</a>`. To read the string ``test`` from ``{"test":"My Data"}`` sent from Javascript the following code could be used ``task.params.get("test").getAsString()``.
-* If accepting parameter directly using the :inline-html:`<a href="../../_static/native/android/reference/io/trigger/forge/android/core/ForgeParam.html">ForgeParam</a>` annotation then the types ``JsonObject`` and ``JsonArray`` must be used rather than ``JSONObject`` and ``JSONArray``.
+* If accepting parameters directly using the :inline-html:`<a href="../../_static/native/android/reference/io/trigger/forge/android/core/ForgeParam.html">ForgeParam</a>` annotation then the types ``JsonObject`` and ``JsonArray`` must be used rather than ``JSONObject`` and ``JSONArray``.
 * ``null`` passed to and from JavaScript is represented by ``JsonNull.INSTANCE``.
 
 iOS
@@ -30,5 +30,5 @@ iOS
 
 On iOS we use JSONKit to encode and decode JSON data. When working on iOS you should keep the following in mind:
 
-* JSONKit maps JSON on to the familiar NSNull, NSString, NSNumber, NSArray and NSDictionary objects, any time you return data to JavaScript you should return one of these types. Any time you receive data from Javascript you should expect one of these types.
+* JSONKit maps JSON on to the familiar NSNull, NSString, NSNumber, NSArray and NSDictionary objects: any time you return data to JavaScript you should return one of these types. Any time you receive data from Javascript, you should expect one of these types.
 * JavaScript booleans are encoded as NSNumber using ``[NSNumber numberWithBool:YES/NO]``
