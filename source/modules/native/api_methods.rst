@@ -83,12 +83,12 @@ Firstly, looking at the method signature:
   object, which contains information about the task as well as helper methods
   to complete the task and to return a response.
 * Additional parameters must be ``String``, ``long``, ``int``, ``double``,
-  ``JSONArray`` or ``JSONObject`` and must have a ``@ForgeParam`` annotation.
+  ``JsonArray`` or ``JsonObject`` and must have a ``@ForgeParam`` annotation.
 * :inline-html:`<a href="../../_static/native/android/reference/io/trigger/forge/android/core/ForgeParam.html">ForgeParam</a>`
   annotations pass properties with the given name from Javascript directly to
   parameters in the API method, after checking they exist and are the right
   type.
-* Parameters do not need to be specified and the full ``JSONObject`` passed
+* Parameters do not need to be specified and the full :inline-html:`<a href="../../_static/native/android/reference/com/google/gson/JsonObject.html">JsonObject</a>` passed
   from Javascript can be accessed through ``task.params``.
 
 Most of the method body is code to display the alert dialog in Android, the important lines to notice related to Forge are:

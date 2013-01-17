@@ -29,7 +29,8 @@ Android
    to do this from the plugin's toolkit page once you have a local template setup.
    If you can't see plugins in the Toolkit, then contact us at support@trigger.io
    to get into the native plugins beta.
-#. Import this project into Eclipse
+#. ``ForgeCore``, ``ForgeInspector`` and ``ForgeTemplates`` should have been downloaded to the ``inspector/an-inspector`` directory
+#. In Eclipse, go to ``File`` then ``Import Project...`` and import the ``an-inspector`` directory: all three projects will appear in Eclipse
 
 iOS
 ~~~
@@ -171,10 +172,20 @@ Testing your plugin
 -------------------
 
 An inspector app is included which allows you to view and invoke all available
-API methods. You can modify this app in the ``assets/src`` folder to test your
-plugin as you like. Simply running the inspector project through Xcode or
-Eclipse should start the app in a simulator or on a connected device for you to
-test your code.
+API methods. If necessary, you can modify this app in the ``assets/src`` folder to test your
+plugin as you like.
+
+To run the inspector app from Xcode, select the ``ForgeInspector`` target and an appropriate device or simulator:
+
+.. image:: /_static/images/plugins__forgeinspector_target.png
+  :width: 500px
+  :target: ../_static/images/plugins__forgeinspector_target.png
+
+In Eclipse, select the ``ForgeInspector`` project and choose to run it as an Android application.
+
+.. image:: /_static/images/plugins__forgeinspector_eclipse.png
+  :width: 500px
+  :target: ../_static/images/plugins__forgeinspector_eclipse.png
 
 Building/packaging your plugin 
 ------------------------------
