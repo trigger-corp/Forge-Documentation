@@ -62,6 +62,7 @@ Features:
 
 - create calendar events with the :ref:`calendar module <modules-calendar>`
 - Use Gson for JSON parsing and serialisation for increased performance on Android
+- new ``forge.file.saveURL`` API: :ref:`modules-file`
 
 Bug fixes:
 
