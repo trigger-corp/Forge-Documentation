@@ -127,7 +127,7 @@ Example::
     {
         "do": {
             "android_add_service": {
-                "activity": "com.example.sdk.MyService"
+                "service_name": "com.example.sdk.MyService"
             }
         }
     }
@@ -143,11 +143,11 @@ Example::
 
     {
         "do": {
-            "android_add_service": {
-                "activity": "com.example.sdk.MyReceiver",
-                "intent_filters": {
+            "android_add_receiver": {
+                "receiver_name": "com.example.sdk.MyReceiver",
+                "intent_filters": [{
                     "action": "android.intent.action.BOOT_COMPLETED"
-                }
+                }]
             }
         }
     }
