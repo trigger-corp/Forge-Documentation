@@ -193,10 +193,12 @@ Building/packaging your plugin
 Android
 ~~~~~~~
 
-To build and export your plugin to be included in an actual Forge app, simply
-right click the ``src`` folder and choose Export. Use the wizard to export the
-contents of the folder as a jar, and save that jar as ``android/plugin.jar`` in
-your plugin folder.
+To build and export your plugin to be included in an actual Forge app:
+
+1. Right click the ``src`` folder and choose Export...
+#. Use the wizard to export the contents of the folder as a JAR
+#. You must include the generated class files and resource in the JAR (Java source is not required)
+#. Save that jar as ``android/plugin.jar`` in your plugin folder.
 
 iOS
 ~~~
