@@ -160,7 +160,7 @@ The manifest for a plugin looks something like::
         "name": "alert", 
         "uuid": "e5ed6305192f11f4efde406c8f074dfa", 
         "version": "1.0",
-        "platform_version": "1.4.21"
+        "platform_version": "v1.4.26"
     }
 
 All of its fields are required - a template manifest.json will be generated for
