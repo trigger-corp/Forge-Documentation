@@ -33,7 +33,7 @@ The callback for this event will be invoked with two arguments, the first is an 
  * ``orderId``: A unique order ID returned from iTunes or Google Play, use this to match refunds or cancellations to purchases.
  * ``productId``: The product involved in this transaction
  * ``purchaseTime``: The date and time of purchase
- * ``purchaseState``: One of ``PURCHASED``, ``REFUNDED`` or ``CANCELED``. Gives the state of the transaction, only ``PURCHASED`` exists on iOS.
+ * ``purchaseState``: One of ``PURCHASED``, ``REFUNDED``, ``CANCELED`` or ``EXPIRED``. Gives the state of the transaction, only ``PURCHASED`` exists on iOS.
  * ``notificationId``: An internal identifier used by Forge when confirming transactions.
  * ``receipt``: Receipt information which can be sent to a server and verified with iTunes or Google Play. See the guide for more details.
  
@@ -63,6 +63,19 @@ Purchase an in-app product identified by ``productId``. The ``success`` callback
     :param function() success: Purchase approved
     :param function(content) error: called with details of any error which may occur
 
+``startSubscription``
+~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Mobile**
+
+The same as ``purchaseProduct`` but starts a subscription rather than a one-off purchase.
+
+.. js:function:: payments.startSubscription(productId, success, error)
+
+    :param string productId: product id registered with iTunes or Google Play.
+    :param function() success: Purchase approved
+    :param function(content) error: called with details of any error which may occur
+
+
 ``restoreTransactions``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Mobile**
@@ -85,6 +98,7 @@ Javascript
 
  * In order to receive asynchronous transaction details you must register a ``transactionReceived`` listener on all pages in your app: this must deal with incoming transactions and call the confirmation function when they are dealt with. Not calling the confirm function will cause transactions events to be emitted again at a later time as iTunes/Google Play will assume your app has not handled them successfully.
  * To purchase a product use ``forge.payments.purchaseProduct``. When calling ``purchaseProduct`` pass the ID of your product as created on iTunes/Google Play.
+ * To begin a subscription use ``forge.payments.startSubscription``. Similarly to ``purchaseProduct`` pass in the product ID of the package you wish to subscribe to. See the ``receipts`` section below for details on verifying subscription status.
 
 Android
 #############################################################################
@@ -121,7 +135,7 @@ When developing on iOS, there are no test product IDs - only actual products cre
 
 In order to test in-app payments on iOS you must make sure you have completed the following steps:
  * Create a specific app ID for your app in the iOS provisioning portal, and create development and distribution provisioning profiles for that app. Wildcard provisioning profiles will not work with in-app purchases.
- * Add your app to iTunes Connect and add any in-app products you want to sell. Currently the payments module support consumable and non-consumable products only, not subscriptions.
+ * Add your app to iTunes Connect and add any in-app products you want to sell.
  * :ref:`Package your app <releasing-ios-ipa>` with the *distribution* provisioning profile into an IPA and submit it to iTunes Connect; if you do not wish you submit your app for approval yet you can submit it then immediately reject the binary through iTunes Connect.
  * Run the app on a device using the *development* provisioning profile to be able to test in the sandbox with dummy transactions.
  * You cannot buy apps using a real iTunes account while testing: in order to test, you must sign out of the App Store on your device, and when using your app and prompted to login, sign in with a test user created through iTunes Connect.
@@ -132,7 +146,7 @@ In order to test in-app payments on iOS you must make sure you have completed th
 Managed products / ``restoreTransactions``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you create "managed" items on Google Play or "Non-Consumable" items on iTunes Connect then you can restore purchases the user has made at a later date, if they have reinstalled your app or moved to another device.
+If you create "managed" items on Google Play or "Non-Consumable" items on iTunes Connect (this includes subscriptions on both platforms) then you can restore purchases the user has made at a later date, if they have reinstalled your app or moved to another device.
 
 To restore transactions made on another install or another device use ``forge.payments.restoreTransactions``, calling this may cause the user to be prompted for login details, so it is best to only call it when first setting up an application, or if a user specifically requests it. Any restored transactions will be returned through the ``transactionReceived`` listener.
 
@@ -144,11 +158,15 @@ In order to confirm a purchase has been legitimately made through iTunes or Goog
 Android
 #######
 
-On Android, the ``receipt`` property of the transaction contains the ``type`` as ``android``, as well as a ``data`` property containing a JSON string with the receipt data, a ``signature`` property containing a base64 encoded signature and a ``signed`` property which is a boolean indicating whether or not the signature matches. Details on how to verify the signature can be found in the Android documentation: http://developer.android.com/guide/market/billing/billing_integrate.html#billing-signatures.
+On Android, the ``receipt`` property of the transaction contains the ``type`` as ``android``, as well as a ``data`` property containing a JSON string with the receipt data, a ``purchaseToken`` which can be used to verify subscription purchases, a ``signature`` property containing a base64 encoded signature and a ``signed`` property which is a boolean indicating whether or not the signature matches. Details on how to verify the signature can be found in the Android documentation: http://developer.android.com/guide/market/billing/billing_integrate.html#billing-signatures.
 
-The ``signature`` property is determined on the device in Java and should not be trusted if the data can be sent to a server to be verified.
+The ``signed`` property is determined on the device in Java and should not be trusted if the data can be sent to a server to be verified.
+
+To verify subscription purchases,find out when they will expire and cancel subscriptions use the android-publisher API: https://developers.google.com/android-publisher/v1/
 
 iOS
 ################################################################################
 
 On iOS the ``receipt`` property of the transaction contains the ``type`` as ``iOS`` and a ``data`` property which is a base64 encoded receipt. You can forward the receipt to iTunes in order to verify it by following the instructions provided by Apple: http://developer.apple.com/library/ios/#documentation/NetworkingInternet/Conceptual/StoreKitGuide/VerifyingStoreReceipts/VerifyingStoreReceipts.html
+
+Details on subscriptions and how to verify subscription receipts can also be found in the iOS documentation: http://developer.apple.com/library/ios/#documentation/NetworkingInternet/Conceptual/StoreKitGuide/RenewableSubscriptions/RenewableSubscriptions.html
