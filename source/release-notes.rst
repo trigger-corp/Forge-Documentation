@@ -52,6 +52,22 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.27
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 29th January 2013**
+
+Features:
+
+- Exif orientation data is used when displaying or uploading images on Android
+- launch IE as original user after extension installation
+- prefix plugin projects with name in Eclipse
+
+Bug fixes:
+
+- ``forge.request`` was interacting badly with Reload in some situations on Android
+- fix threading issues in :ref:`barcode <modules-barcode>` and `Catalyst <https://trigger.io/catalyst/>`_
+- Parse broadcast channel was broken on Android
+
 v1.4.26
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 17th January 2013**
