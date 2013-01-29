@@ -9,8 +9,8 @@ Notes
 -----
 
 - File objects are simple Javascript objects which contain at least a ``uri``. They can be serialised using JSON.stringify and safely stored in Forge preferences.
-- The ``uri`` parameter can be used directly on some platforms. This is not recommended - instead use one of the provided helper functions such as ``forge.file.URL``.
-- Image orientation is automatically handled where possible, if a camera photo contains rotation information it will be correctly rotated before it is displayed or uploaded.
+- The ``uri`` parameter can be used directly on some platforms. This is not recommended - instead use the provided helper function ``forge.file.URL``.
+- Image orientation is automatically handled where possible: if a camera photo contains rotation information it will be correctly rotated before it is displayed or uploaded.
 - Files can be uploaded by including them as an array in ``request.ajax()``. For example if ``myFile1`` and ``myFile2`` were images returned by ``file.getImage()``:
 
 ::
