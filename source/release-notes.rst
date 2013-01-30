@@ -69,6 +69,7 @@ Features:
 - Exif orientation data is used when displaying or uploading images on Android
 - launch IE as original user after extension installation
 - prefix plugin projects with name in Eclipse
+- update Parse Android SDK to version 1.1.11
 
 Bug fixes:
 
