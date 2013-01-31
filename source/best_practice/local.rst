@@ -10,7 +10,7 @@ Here we discuss how to reference your local assets from your code. You can also 
 Relative URLs
 ~~~~~~~~~~~~~~
 
-You should always use relative URLs when referencing resources. For example, with this directory structure for your ``src`` directory::
+You should always use relative URLs when referencing files in your ``src`` directory. For example, with this directory structure for your ``src`` directory::
 
     config.json
     identity.json
