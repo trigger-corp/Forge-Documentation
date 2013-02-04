@@ -78,7 +78,7 @@ Set a colour to tint active tabbar item with.
 
 Add a button with an ``icon`` and ``text`` to the tabbar. The first parameter is an object of options for the button, which can include:
 
-- ``icon`` (required): This sets the icon which will be shown on the tab, only the alpha channel of the icon will be used with the color being replaced for a consistent style: this should be relative to the ``src`` directory, e.g. ``"img/button.png"``.
+- ``icon`` (required): This sets the icon which will be shown on the tab, only the alpha channel of the icon will be used with the color being replaced for a consistent style. You can use a file object as returned by something like :ref:`forge.file.saveURL <modules-file>`, or a string path relative to the ``src`` directory, e.g. ``"img/button.png"``.
 - ``text`` (required): This sets the text which will appear below the icon on the tab.
 - ``index`` (recommended): This sets the order of the button to be added, not setting this will result in the order of the tabs not being fixed.
 
