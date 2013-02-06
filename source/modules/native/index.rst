@@ -19,5 +19,6 @@ Writing native plugins is obviously different for Android and iOS, however we ha
     external_libraries
     native_build_steps
     including_resources
+    file_objects
     api_docs
     common_problems
