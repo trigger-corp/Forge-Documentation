@@ -204,7 +204,7 @@ v1.4.18
 
 Bug fixes:
 
-- "publish" permissions work properly with new Facebook SDK on iOS
+- "publish" permissions work properly with new Facebook SDK on iOS 6
 
 v1.4.17
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -214,7 +214,7 @@ Features:
 
 - support for using Linux for iOS builds: :ref:`tools-ios-linux`
 - true native back buttons for the topbar module on iOS: :ref:`modules-topbar`
-- latest Facebook SDK for :ref:`modules-facebook`
+- update to version 3.1.1 of the Facebook SDK for iOS for :ref:`modules-facebook`
 - new ``selectAll`` and ``selectById`` methods in :ref:`modules-contact`
 - new Facebook API to check authentication status
 - support for coloured status bar on iOS 6 (``setTint`` in :ref:`modules-topbar`)
