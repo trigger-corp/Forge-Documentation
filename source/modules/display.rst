@@ -21,7 +21,7 @@ Config
                 ":ref:`fullscreen <field-fullscreen>`": {
                     "android": false,
                     "ios": false,
-                    "wp: true
+                    "wp": true
                 }
             }
         }

@@ -9,8 +9,8 @@ Notes
 -----
 
 - File objects are simple Javascript objects which contain at least a ``uri``. They can be serialised using JSON.stringify and safely stored in Forge preferences.
-- The ``uri`` parameter can be used directly on some platforms. This is not recommended - instead use one of the provided helper functions such as ``forge.file.URL``.
-- Image orientation is automatically handled where possible, if a camera photo contains rotation information it will be correctly rotated before it is displayed or uploaded.
+- The ``uri`` parameter can be used directly on some platforms. This is not recommended - instead use the provided helper function ``forge.file.URL``.
+- Image orientation is automatically handled where possible: if a camera photo contains rotation information it will be correctly rotated before it is displayed or uploaded.
 - Files can be uploaded by including them as an array in ``request.ajax()``. For example if ``myFile1`` and ``myFile2`` were images returned by ``file.getImage()``:
 
 ::
@@ -103,6 +103,20 @@ Cached files may be removed at any time by the operating system, and it is highl
 .. js:function:: file.cacheURL(url, success, error)
 
     :param string url: URL of file to cache.
+    :param function(file) success: callback to be invoked when no errors occur (argument is the returned file)
+    :param function(content) error: called with details of any error which may occur
+
+``saveURL``
+~~~~~~~~~~~~
+**Platforms: Mobile**
+
+Downloads a file at a specified URL and returns a file object which can be used for later access. Saves the file in a permanant location rather than in a cache location as with ``cacheURL``.
+
+.. important:: Files downloaded via this method will not be removed if you do not remove them, if the file is only going to be used temporarily then ``cacheURL`` is more appropriate.
+
+.. js:function:: file.saveURL(url, success, error)
+
+    :param string url: URL of file to save.
     :param function(file) success: callback to be invoked when no errors occur (argument is the returned file)
     :param function(content) error: called with details of any error which may occur
 

@@ -25,12 +25,12 @@ Android
 1. You will need Eclipse setup with the Android SDK, you can find details on
    how to install this on the Android developer site:
    http://developer.android.com/sdk/installing/index.html
-#. Download the
-   ForgeInspector project through the Toolkit. You should be able to do this
-   on the Forge tab of any of your apps.If you can't see an option to
-   "Download inspector app", then contact us at support@trigger.io to get
-   into the native plugins beta.
-#. Import this project into Eclipse
+#. Download the ForgeInspector project through the Toolkit. You should be able
+   to do this from the plugin's toolkit page once you have a local template setup.
+   If you can't see plugins in the Toolkit, then contact us at support@trigger.io
+   to get into the native plugins beta.
+#. ``ForgeCore``, ``ForgeInspector`` and ``ForgeTemplates`` should have been downloaded to the ``inspector/an-inspector`` directory
+#. In Eclipse, go to ``File`` then ``Import Project...`` and import the ``an-inspector`` directory: all three projects will appear in Eclipse
 
 iOS
 ~~~
@@ -38,8 +38,7 @@ iOS
 1. You will need a Mac running OS X
 #. You will need Xcode 4.5, this is available as a free download in the OS X
    App Store
-#. Download the ForgeInspector project through the Trigger Toolkit (you can find it on
-   the Forge tab of any of your apps when you have plugins enabled).
+#. Download the ForgeInspector project through the plugin's page in the Trigger Toolkit.
 #. Open this project in Xcode.
 
 At this point you can run the inspector project. It includes an app which can
@@ -49,6 +48,15 @@ allows you to show native alert style dialogs, and triggers an event in
 Javascript when the app is paused and resumed. It is probably a good idea to
 try out this plugin to get a feel for the layout of a plugin before you get
 started.
+
+Updating inspector projects
+---------------------------
+
+Some plugins will need to make changes to the Forge build process, such as including 3rd party frameworks, registering a URL handler or requesting app permissions. In order to do this, :ref:`additional steps <native_plugins_native_build_steps>` can be included in a plugin which will be run when the plugin in used in an app.
+
+When you update your plugin's build steps or change the ``platform_version`` in manifest.json, your inspector project will need to be updated.
+
+The Toolkit will remind you automatically when an update is required, and the code and any resources for your plugin will be preserved.
 
 Structure of the inspector projects
 -----------------------------------
@@ -73,14 +81,10 @@ Android
 * It can also contain an EventListener.java to listen for native events, see
   :ref:`Events <native_plugins_native_events>`.
 * An example plugin is included in ``io.trigger.forge.android.modules.alert``
-* The file ``res/values/strings.xml`` contains a list of modules which will be
-  enabled. By default this includes the ``alert`` example plugin, and the
-  built-in ``inspector`` module which can be used to list API methods from
-  Javascript. You must add your package name to this file if you want its
-  EventListeners and API methods to be loaded during development.
 
-.. important:: Unless you add your plugin name to ``res/values/strings.xml``,
-    all API calls which use it will fail!
+.. important:: On Android you should only need to modify files in ``src`` and
+   ``assets/src`` directly, any other changes should be done using build
+   steps.
 
 iOS
 ~~~
@@ -102,14 +106,10 @@ test your plugin in before packaging it up to send to Trigger.io.
 * Plugins can also contain ``<plugin>_EventListener.m``, to listen for native
   events, see :ref:`native_plugins_native_events`.
 * An example plugin is included in ``ForgeModule/alert/alert_API.m``
-* The file ``app_config.json`` in the ForgeInspector group contains a list of
-  modules which will be enabled: by default this includes the ``alert`` example
-  plugin and the built-in ``inspector`` module which can be used to list API
-  methods from Javascript. You must add your package name to this file if you
-  want its EventListeners and API methods to be loaded during development.
 
-.. important:: Unless you add your plugin name to ``app_config.json``, all API
-    calls which use it will fail!
+.. important:: On iOS you should only add or change files in the ForgeModule
+   project, except for ``assets/src`` in the ForgeInspector project, which can be
+   modified to test your plugin.
 
 .. _native_plugins_the_basics_structure:
 
@@ -126,23 +126,29 @@ Plugins take the following structure:
 
 .. parsed-literal::
 
-    manifest.json                       - Contains the basic properties for your plugin
-    android/                            - Folder containing all android related files
-            plugin.jar                  - Built Android code
-            build_steps.json            - Android build steps, see :ref:`native build steps <native_plugins_native_build_steps>`
-            res/                        - Android resource files, see :ref:`including resources <native_plugins_including_resources>`
-                values/
-                       myvalues.xml
-            libs/                       - Android libraries
-                 mysdk.jar
-                 arm/
-                     mynativesdk.so
-    ios/                                - Folder containing iOS related files
-        plugin.a                        - Built iOS plugin
-        build_steps.json                - iOS build steps
-        bundles/                        - iOS bundles (resources) to include
-                myplugin.bundle
-                mysdk.bundle
+    .trigger/                                - Contains code used by the Toolkit to help develop your plugin
+    plugin/                                  - The parts of your plugin that are uploaded to be used when building apps
+           manifest.json                     - Contains the basic properties for your plugin
+           android/                          - Folder containing all android related files
+                   plugin.jar                - Built Android code
+                   build_steps.json          - Android build steps, see :ref:`native build steps <native_plugins_native_build_steps>`
+                   res/                      - Android resource files, see :ref:`including resources <native_plugins_including_resources>`
+                       values/
+                              myvalues.xml
+                   libs/                     - Android libraries
+                        mysdk.jar
+                        arm/
+                            mynativesdk.so
+           ios/                              - Folder containing iOS related files
+               plugin.a                      - Built iOS plugin
+               build_steps.json              - iOS build steps
+               bundles/                      - iOS bundles (resources) to include
+                       myplugin.bundle
+                       mysdk.bundle
+    inspector/                               - Inspector projects used to develop your plugin
+              an-inspector/                  - Android inspector project
+              ios-inspector/                 - iOS inspector project
+              ios-inspector.2012-11-19       - A backup of a previous version of the iOS inspector
 
 manifest.json
 ~~~~~~~~~~~~~
@@ -153,20 +159,33 @@ The manifest for a plugin looks something like::
         "description": "Example alert box plugin", 
         "name": "alert", 
         "uuid": "e5ed6305192f11f4efde406c8f074dfa", 
-        "version": "1.0"
+        "version": "1.0",
+        "platform_version": "v1.4.26"
     }
 
 All of its fields are required - a template manifest.json will be generated for
 you when you create your plugin in the toolkit.
 
+.. note:: The platform version for your plugin does not need to match your app, you only need to update your plugins platform version if you require newer plugin feature, or if the Toolkit prompts you to.
+
 Testing your plugin
 -------------------
 
 An inspector app is included which allows you to view and invoke all available
-API methods. You can modify this app in the ``assets/src`` folder to test your
-plugin as you like. Simply running the inspector project through Xcode or
-Eclipse should start the app in a simulator or on a connected device for you to
-test your code.
+API methods. If necessary, you can modify this app in the ``assets/src`` folder to test your
+plugin as you like.
+
+To run the inspector app from Xcode, select the ``ForgeInspector`` target and an appropriate device or simulator:
+
+.. image:: /_static/images/plugins__forgeinspector_target.png
+  :width: 500px
+  :target: ../_static/images/plugins__forgeinspector_target.png
+
+In Eclipse, select the ``ForgeInspector`` project and choose to run it as an Android application.
+
+.. image:: /_static/images/plugins__forgeinspector_eclipse.png
+  :width: 500px
+  :target: ../_static/images/plugins__forgeinspector_eclipse.png
 
 Building/packaging your plugin 
 ------------------------------
@@ -174,10 +193,12 @@ Building/packaging your plugin
 Android
 ~~~~~~~
 
-To build and export your plugin to be included in an actual Forge app, simply
-right click the ``src`` folder and choose Export. Use the wizard to export the
-contents of the folder as a jar, and save that jar as ``android/plugin.jar`` in
-your plugin folder.
+To build and export your plugin to be included in an actual Forge app:
+
+1. Right click the ``src`` folder and choose Export...
+#. Use the wizard to export the contents of the folder as a JAR
+#. You must include the generated class files and resource in the JAR (Java source is not required)
+#. Save that jar as ``android/plugin.jar`` in your plugin folder.
 
 iOS
 ~~~

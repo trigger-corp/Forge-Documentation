@@ -74,7 +74,7 @@ Set the title displayed in the top bar to an image.
 
 .. js:function:: topbar.setTitleImage(image, success, error)
 
-    :param string image: Path to image to be displayed in topbar: this should be relative to the ``src`` directory, e.g. ``"img/button.png"``
+    :param file image: file object as returned by something like :ref:`forge.file.saveURL <modules-file>`, or a string path relative to the ``src`` directory, e.g. ``"img/button.png"``
     :param function() success: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
 

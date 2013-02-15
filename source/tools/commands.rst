@@ -1,10 +1,11 @@
-
 .. _command-line-notes:
 
-Command-line
+Command-line tools
 ===========================
 
-There are four main commands when using forge:
+The command-line tools are supplied to enable scripted usage of the Trigger.io Forge build service. For normal usage, it is expected that the :ref:`Trigger.io Toolkit <tools-toolkit>` will be easier and more powerful.
+
+There are four main commands when using Trigger.io:
 
 * ``forge create``
 * ``forge build``

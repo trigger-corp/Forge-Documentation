@@ -15,35 +15,34 @@ done on both Android and iOS.
 Android
 -------
 
-While using the inspector project to develop your plugin, copy any required
-libraries into the ``libs`` folder.
-
-When you're ready to upload your plugin, copy the required libraries into
-``android/libs`` within your plugin folder.
+To include libraries copy them into the ``plugin/android/libs`` folder in your
+plugin. Once in place update your inspector project through the Toolkit and
+the libraries will be included in the inspector project as they would be in a
+Forge build.
 
 Both Java and native libraries are supported: native libraries should be placed
 in a sub-folder to indicate the architecture they're built for - see
 :ref:`native_plugins_the_basics_structure`.
 
 If the library you want to include is distributed as unbuilt Java files, you
-can include that code in your own plugin source tree and it will be exported as
+can include that code in your own plugin source tree and export it as
 part of the JAR file from Eclipse.
 
 iOS
 ---
 
-On iOS, there are two two types of external libraries: system frameworks made available by Apple, and 3rd party frameworks.
+On iOS, there are two two types of external libraries: system frameworks made
+available by Apple, and 3rd party frameworks.
 
 System frameworks
 ~~~~~~~~~~~~~~~~~
 
-First, use the inspector project to test your plugin works with the system
-framework - just add the framework to the inspector project in Xcode.
-
-When you're ready to upload your plugin, to ensure the system framework is
-available to your plugin in real apps, an :ref:`add_ios_system_framework build
+To include Apple frameworks an :ref:`add_ios_system_framework build
 step <native_plugins_native_build_steps>` must be added to link with the
 framework at build time.
+
+Once added the inspector project should be updated to apply this change while
+you develop your plugin.
 
 3rd party libraries/frameworks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -59,6 +58,5 @@ minor changes they can all be included in a plugin:
   framework and add the main framework file (which will be the name of the
   framework with no file extension) and any headers to the ForgeModule
   manually.
-* If the framework contains any .bundle files you will need to add these to the
-  ForgeInspector project and also include them in the plugin (see
+* If the framework contains any .bundle files you will need to include them in the plugin (see
   :ref:`native_plugins_including_resources`).

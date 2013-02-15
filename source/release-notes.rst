@@ -52,13 +52,74 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.29
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 30th January 2013**
+
+Bug fixes:
+
+- sensible fallback if image processing fails on Android
+
+v1.4.28
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 30th January 2013**
+
+Bug fixes:
+
+- include ``ForgeFile.h`` in native plugin Inspector projects on iOS
+
+v1.4.27
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 29th January 2013**
+
+Features:
+
+- Exif orientation data is used when displaying or uploading images on Android
+- launch IE as original user after extension installation
+- prefix plugin projects with name in Eclipse
+- update Parse Android SDK to version 1.1.11
+
+Bug fixes:
+
+- ``forge.request`` was interacting badly with Reload in some situations on Android
+- fix threading issues in :ref:`barcode <modules-barcode>` and `Catalyst <https://trigger.io/catalyst/>`_
+- Parse broadcast channel was broken on Android
+
+v1.4.26
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 17th January 2013**
+
+.. note:: Due to the switch to using Gson, the way to return non-primitive results from native plugins has changed: see :ref:`native_plugins_native_communication`
+
+Features:
+
+- create calendar events with the :ref:`calendar module <modules-calendar>`
+- Use Gson for JSON parsing and serialisation for increased performance on Android
+- new ``forge.file.saveURL`` API: :ref:`modules-file`
+
+Bug fixes:
+
+- IE activates properly on pages opened with ``target="_blank"``
+- Android datepicker activates for ``datetime-local`` inputs
+- Android datepicker results are properly zero-padded
+
+v1.4.25
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 14th January 2013**
+
+Bug fixes:
+
+- support for large Android launchimages
+- fix for NumberFormatException in Android contacts module
+- ``facebook.ui`` result now has same schema as the JavaScript SDK
+
 v1.4.24
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 18th December 2012**
 
 Features:
 
-- support for ``simulatorsdk`` and ``simulatorfamily`` to customise iOS simulator start-up
+- you can run the iOS simulator at a specified version with ``simulatorfamily`` and ``simulatorsdk`` - see :ref:`parameters-in-a-file`
 
 Bug fixes:
 
@@ -143,7 +204,7 @@ v1.4.18
 
 Bug fixes:
 
-- "publish" permissions work properly with new Facebook SDK on iOS
+- "publish" permissions work properly with new Facebook SDK on iOS 6
 
 v1.4.17
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -153,7 +214,7 @@ Features:
 
 - support for using Linux for iOS builds: :ref:`tools-ios-linux`
 - true native back buttons for the topbar module on iOS: :ref:`modules-topbar`
-- latest Facebook SDK for :ref:`modules-facebook`
+- update to version 3.1.1 of the Facebook SDK for iOS for :ref:`modules-facebook`
 - new ``selectAll`` and ``selectById`` methods in :ref:`modules-contact`
 - new Facebook API to check authentication status
 - support for coloured status bar on iOS 6 (``setTint`` in :ref:`modules-topbar`)

@@ -140,6 +140,8 @@
               </div>
               <ul>
                 
+    <li class="api apilevel-">
+  <a href="../../../../../com/google/gson/package-summary.html">com.google.gson</a></li>
     <li class="selected api apilevel-">
   <a href="../../../../../io/trigger/forge/android/core/package-summary.html">io.trigger.forge.android.core</a></li>
               </ul><br/>
@@ -154,6 +156,7 @@
           <li class="api apilevel-"><a href="../../../../../io/trigger/forge/android/core/ForgeActivity.html">ForgeActivity</a></li>
           <li class="api apilevel-"><a href="../../../../../io/trigger/forge/android/core/ForgeApp.html">ForgeApp</a></li>
           <li class="api apilevel-"><a href="../../../../../io/trigger/forge/android/core/ForgeEventListener.html">ForgeEventListener</a></li>
+          <li class="api apilevel-"><a href="../../../../../io/trigger/forge/android/core/ForgeFile.html">ForgeFile</a></li>
           <li class="api apilevel-"><a href="../../../../../io/trigger/forge/android/core/ForgeIntentResultHandler.html">ForgeIntentResultHandler</a></li>
           <li class="api apilevel-"><a href="../../../../../io/trigger/forge/android/core/ForgeLog.html">ForgeLog</a></li>
           <li class="selected api apilevel-"><a href="../../../../../io/trigger/forge/android/core/ForgeTask.html">ForgeTask</a></li>
@@ -376,9 +379,21 @@ Summary:
           public
           
           final
-          <a href="http://developer.android.com/reference/org/json/JSONObject.html">JSONObject</a></td>
+          <a href="../../../../../com/google/gson/JsonObject.html">JsonObject</a></td>
           <td class="jd-linkcol"><a href="../../../../../io/trigger/forge/android/core/ForgeTask.html#params">params</a></td>
           <td class="jd-descrcol" width="100%">The parameters passed to this API call from Javascript.</td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol">
+          public
+          
+          
+          boolean</td>
+          <td class="jd-linkcol"><a href="../../../../../io/trigger/forge/android/core/ForgeTask.html#returned">returned</a></td>
+          <td class="jd-descrcol" width="100%">Whether or not the task has returned a result yet
+</td>
       </tr>
       
     
@@ -411,6 +426,40 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../io/trigger/forge/android/core/ForgeTask.html#error(java.lang.String)">error</a></span>(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> result)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../io/trigger/forge/android/core/ForgeTask.html#error(com.google.gson.JsonElement)">error</a></span>(<a href="../../../../../com/google/gson/JsonElement.html">JsonElement</a> result)
+        
+        <div class="jd-descrdiv">Return an error with data</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../../../io/trigger/forge/android/core/ForgeTask.html#error(java.lang.String, java.lang.String, java.lang.String)">error</a></span>(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> message, <a href="http://developer.android.com/reference/java/lang/String.html">String</a> type, <a href="http://developer.android.com/reference/java/lang/String.html">String</a> subtype)
         
         <div class="jd-descrdiv">Return an error in the standard template</div>
@@ -429,24 +478,6 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../io/trigger/forge/android/core/ForgeTask.html#error(java.lang.Object)">error</a></span>(<a href="http://developer.android.com/reference/java/lang/Object.html">Object</a> result)
-        
-        <div class="jd-descrdiv">Return an error with data</div>
-  
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol">
-            
-            
-            
-            
-            
-            void
-        </td>
-        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../../../io/trigger/forge/android/core/ForgeTask.html#error(java.lang.Throwable)">error</a></span>(<a href="http://developer.android.com/reference/java/lang/Throwable.html">Throwable</a> error)
         
         <div class="jd-descrdiv">Return an error with the message from a Throwable.</div>
@@ -455,7 +486,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -473,7 +504,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -491,7 +522,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -510,6 +541,22 @@ Summary:
 
 
 	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../io/trigger/forge/android/core/ForgeTask.html#success(java.lang.String)">success</a></span>(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> result)
+        
+  </td></tr>
+
+
+	 
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
@@ -520,7 +567,23 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../io/trigger/forge/android/core/ForgeTask.html#success(java.lang.Object)">success</a></span>(<a href="http://developer.android.com/reference/java/lang/Object.html">Object</a> result)
+        <span class="sympad"><a href="../../../../../io/trigger/forge/android/core/ForgeTask.html#success(boolean)">success</a></span>(boolean result)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../io/trigger/forge/android/core/ForgeTask.html#success(com.google.gson.JsonElement)">success</a></span>(<a href="../../../../../com/google/gson/JsonElement.html">JsonElement</a> result)
         
         <div class="jd-descrdiv">Return success with data</div>
   
@@ -814,7 +877,7 @@ From class
         public 
          
         final 
-        <a href="http://developer.android.com/reference/org/json/JSONObject.html">JSONObject</a>
+        <a href="../../../../../com/google/gson/JsonObject.html">JsonObject</a>
       </span>
         params
     </h4>
@@ -829,6 +892,37 @@ From class
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>The parameters passed to this API call from Javascript.
+</p></div>
+
+    
+    </div>
+</div>
+
+
+
+<a id="returned"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        boolean
+      </span>
+        returned
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Whether or not the task has returned a result yet
 </p></div>
 
     
@@ -852,6 +946,78 @@ From class
 
 <h2>Public Methods</h2>
 
+
+
+<a id="error(java.lang.String)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">error</span>
+      <span class="normal">(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> result)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="error(com.google.gson.JsonElement)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">error</span>
+      <span class="normal">(<a href="../../../../../com/google/gson/JsonElement.html">JsonElement</a> result)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return an error with data</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>result</th>
+          <td>Any JSON serializable object to be returned, requires a message property.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
 
 
 <a id="error(java.lang.String, java.lang.String, java.lang.String)"></a>
@@ -894,47 +1060,6 @@ From class
         <tr>
           <th>subtype</th>
           <td>An optional easily matched constant for particular errors that may need to be sorted programmatically.
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-<a id="error(java.lang.Object)"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">error</span>
-      <span class="normal">(<a href="http://developer.android.com/reference/java/lang/Object.html">Object</a> result)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Return an error with data</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>result</th>
-          <td>Any JSON serializable object to be returned, requires a message property.
 </td>
         </tr>
       </table>
@@ -1099,7 +1224,7 @@ From class
 </div>
 
 
-<a id="success(java.lang.Object)"></a>
+<a id="success(java.lang.String)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1112,7 +1237,69 @@ From class
         void
       </span>
       <span class="sympad">success</span>
-      <span class="normal">(<a href="http://developer.android.com/reference/java/lang/Object.html">Object</a> result)</span>
+      <span class="normal">(<a href="http://developer.android.com/reference/java/lang/String.html">String</a> result)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="success(boolean)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">success</span>
+      <span class="normal">(boolean result)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="success(com.google.gson.JsonElement)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">success</span>
+      <span class="normal">(<a href="../../../../../com/google/gson/JsonElement.html">JsonElement</a> result)</span>
     </h4>
       <div class="api-level">
         <div>

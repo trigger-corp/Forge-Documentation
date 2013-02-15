@@ -33,7 +33,7 @@ API
 
 **Platforms: All**
 
-If the preference has not been set (with :ref:`api-prefs-set`), and there is no default value for this preference, ``undefined`` is returned.
+If the preference has not been set (with :ref:`api-prefs-set`), and there is no default value for this preference, ``null`` is returned.
 
 .. _api-prefs-set:
 
