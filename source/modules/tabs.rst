@@ -24,7 +24,7 @@ API
 
 ``open``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**Platforms: All**
+**Platforms: All except web**
 
 Opens a new tab with the specified url with an option to retain focus on the calling tab.
 
@@ -41,7 +41,7 @@ On mobile this will display a :ref:`modal view <forge-modal>` and the success ca
 
 ``openWithOptions``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**Platforms: All**
+**Platforms: All except web**
 
 As ``open`` but takes an object with the following parameters:
 

@@ -73,9 +73,24 @@ Gives ``true`` or ``false`` depending on whether there is a ``reload`` update av
 
 Forces the application to check for, and if available download a ``reload`` update. The update will then be applied the next time the app is closed or loses focus.
 
+If you have previously called ``pauseUpdate``, this will override that and continue Reload updates - including any in-progress updates if applicable.
+
 .. js:function:: reload.update(success, error)
 
     :param function() success: Called when an update is available and the download has started - see the ``updateReady`` event to be notified when the update is complete
+    :param function(content) error: called with details of any error which may occur
+
+``pauseUpdate``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Mobile**
+
+If there is a Reload update in-progress (i.e. downloading files), we will halt downloading after the current file has been received.
+
+Reload updates will not be downloaded for this app until you explicitly call ``update``. Re-installing the app via the Toolkit (during development) or via an app store (in production) will also re-enable Reload updates.
+
+.. js:function:: reload.pauseUpdate(success, error)
+
+    :param function() success: called when the Reload updates have been successfully paused
     :param function(content) error: called with details of any error which may occur
 
 ``applyNow``

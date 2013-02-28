@@ -52,6 +52,23 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.31
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 28th February 2013**
+
+Features:
+
+- new ``installationInfo`` API for Parse, by popular demand: see :ref:`partner-parse`
+- pause Reload updates, and receive progress updates: see :ref:`modules-reload`
+- create file fixtures when developing native plugins: see :ref:`native_plugins_file_objects`
+- update Parse SDK to version 1.1.32
+
+Bug fixes:
+
+- benign stack trace on startup from ``urlhandler`` module
+- enhanced date inputs on Android now fire on touchend rather than touchstart (http://stackoverflow.com/questions/14551349/)
+- fix ``minimum_version`` requirement for iOS
+
 v1.4.30
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 15th February 2013**

@@ -40,6 +40,23 @@ You can try out sending a push notification from your app's control panel at `pa
 
 Parse uses channels to send push notifications to specific groups of users. By default all users are subscribed to the empty channel; if you wish to send push notifications to specific users, you can use the following methods to manage which channels a user is subscribed to.
 
+installationInfo
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Mobile**
+
+Every Parse installation has a unique ID associated with it; you can use this method to retrieve the installation ID for this user and do things like `advanced targetting of push notifications <https://parse.com/docs/push_guide#sending-queries/REST>`_.
+
+.. js:function:: parse.installationInfo(success, error)
+
+    :param function(info) success: Called if the request is successful: ``info`` will contain at least an ``id`` entry
+    :param function(content) error: Called with details of any error which may occur
+
+Example::
+
+    forge.partners.parse.installationInfo(function (info) {
+        forge.logging.info("installation: "+JSON.stringify(info));
+    });
+    
 push.subscribe
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Mobile**
