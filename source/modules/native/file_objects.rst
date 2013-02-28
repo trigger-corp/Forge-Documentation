@@ -25,8 +25,13 @@ Receiving from JavaScript
 
 When receiving a file from JavaScript it will be of type JsonObject, this can be passed into the ForgeFile constructor to access various helper fuctions for the file. For example::
 
-    ForgeFile file = new ForgeFile(task.params.get("file"));
-    byte[] fileData = file.data();
+    ForgeFile file = new ForgeFile(ForgeApp.getActivity(), task.params.get("file"));
+    byte[] fileData = null;
+    try {
+        fileData = file.data();
+    } catch (IOException e) {
+        // handle properly
+    }
 
 Further details on the ForgeFile class in Android can be found in the API docs: :inline-html:`<a href="../../_static/native/android/reference/io/trigger/forge/android/core/ForgeFile.html">ForgeFile</a>`
 
