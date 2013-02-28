@@ -3,13 +3,16 @@
 Developing iOS apps on Windows
 ================================================================================
 
-Forge allows the development of iOS apps on Windows without the use
-of an OS X machine. To do this you will need a physical iOS device (the iOS
-simulator will only run on OS X), and an iOS developer account. In order
-to sign your application (which is required to install it onto the device, even
-for testing), we provide a remote signing service, which your app will be sent
-to, signed and returned as part of the ``forge run ios`` and ``forge package ios``
-command.
+Forge allows the development of iOS apps on Windows without the use of an OS X
+machine. To do this you will need a development-enabled physical iOS device
+and an iOS developer account. In order to sign your application (which is
+required to install it onto the device, even for testing), we provide a remote
+signing service, which your app will be sent to, signed and returned as part
+of the ``forge run ios`` and ``forge package ios`` command.
+
+.. note:: Your iOS device must be enabled for development before our Windows tools can view logging output. This means attaching it to an OS X machine and selecting "Enable for development" in the Xcode organizer.
+
+	If you're not able to do this, you can still install apps onto the device, and use the iPhone Configuration Utility to view log output (http://support.apple.com/downloads/#iphone)
 
 Setting up Forge to run iOS apps
 --------------------------------
