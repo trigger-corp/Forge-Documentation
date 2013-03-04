@@ -52,6 +52,19 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.32
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 4th March 2013**
+
+Features:
+
+- support for subscription payments on Android: see :ref:`modules-payments`
+- support for using the ``forge`` APIs on trusted remote HTML pages: see :ref:`config`
+
+Bug fixes:
+
+- update to Android Parse SDK version 1.1.15 to fix http://stackoverflow.com/questions/14811733/
+
 v1.4.31
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 28th February 2013**

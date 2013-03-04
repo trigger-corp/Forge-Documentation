@@ -30,9 +30,10 @@ Below is a template of a basic ``config.json`` file with links to a detailed des
         ":ref:`version <field-version>`": "1.0",
         ":ref:`platform_version <field-platform-version>`": "v1.3",
         ":ref:`homepage <field-homepage>`": "http://example.com"",
-        ":ref:`modules <field-modules>`": {}
+        ":ref:`modules <field-modules>`": {},
         ":ref:`partners <field-partners>`": {},
         ":ref:`config_version <field-config-version>`": "2",
+        ":ref:`trusted_urls <field-trusted-urls>`": [ "http://example.com/use_forge/*" ]
     }
 
 
@@ -107,3 +108,11 @@ config_version
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 An internally used reference to keep track of changes to the Forge config file schema, you shouldn't need to change this property manually.
+
+.. _field-trusted-urls:
+
+trusted_urls
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Mobile only**
+
+An array of trusted external URL match patterns. If your navigates to a URL matching one of these patterns, JavaScript on that page will be able to use the ``forge`` APIs.
