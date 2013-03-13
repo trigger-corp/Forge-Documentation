@@ -52,6 +52,22 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.34
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 12th March 2013**
+
+Features:
+
+- can set minimum allowed iOS version to be 6.0
+
+Bug fixes:
+
+- fix slight inaccuracy when adding calendar events: :ref:`modules-calendar`
+- fix race condition where tabbar buttons could be wrongly ordered: :ref:`modules-tabbar`
+- fix modal view redirect on older versions of Android (http://stackoverflow.com/questions/15262840/)
+- fix NullPointerException in urlhandler module :ref:`modules-urlhandler` (http://stackoverflow.com/questions/13824961/)
+- fix cross-device link error (http://stackoverflow.com/questions/11578443/)
+
 v1.4.33
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 6th March 2013**
