@@ -56,10 +56,6 @@ v1.4.34
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 12th March 2013**
 
-Features:
-
-- can set minimum allowed iOS version to be 6.0
-
 Bug fixes:
 
 - fix slight inaccuracy when adding calendar events: :ref:`modules-calendar`
