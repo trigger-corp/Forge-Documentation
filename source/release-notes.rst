@@ -52,6 +52,20 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.35
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 20th March 2013**
+
+Features:
+
+- can set minimum required iOS version to be 6.0: :ref:`modules-requirements`
+- allow the `web` target Node.js app to be deployed at non-root paths (http://stackoverflow.com/questions/15070765/)
+
+Bug fixes:
+
+- fix crash in API demo (https://github.com/trigger-corp/Forge-API-Demo/issues/7)
+- fix playback of video and audio after Reload usage on iOS
+
 v1.4.34
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 12th March 2013**
