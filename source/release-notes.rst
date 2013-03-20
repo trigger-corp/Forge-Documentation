@@ -64,7 +64,7 @@ Features:
 Bug fixes:
 
 - fix crash in API demo (https://github.com/trigger-corp/Forge-API-Demo/issues/7)
-- fix playback of video and audio after Reload usage on iOS
+- fix playback of video and audio after Reload usage on iOS - note the Gotchas on :ref:`reload`!
 
 v1.4.34
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
