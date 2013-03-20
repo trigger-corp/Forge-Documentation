@@ -143,7 +143,12 @@ If updates are applied during launching or restoring an app ``index.html`` will 
 Notes
 -----
 
+* See :ref:`reload` for more information about how to use Reload
 * Updates may take some time if the user is on a slow network, however several things are done to improve this, only changed files are downloaded in an update, and if an update is interrupted part way through it will resume where it left off next time it is started.
 * On iOS updates are given 10 minutes to download each time the app is paused as this is the maximum amount of background processing time available on iOS. If an update is interrupted it will resume where it left off on the next attempt.
 * Only one update is downloaded at a time, if an update is waiting to be applied any future updates will not be downloaded until it has been applied to the app. This should never be a problem for real users but may be confusing during testing.
 * When testing the easiest way to cause an update is to leave the app by pressing the home button on the device, wait a few seconds (or look at the log output to see when the reload update is complete), and reopen the app to see the update applied.
+
+.. important:: Currently, pushing a Reload update will cause iOS devices to copy files out of the installed app bundle into a secondary area. This is due to sandboxing rules which prevent us directly accessing files in your installed app after a Reload has been completed. In order to avoid your app taking too much storage space on the device, it's recommended you distribute larger files using something like :ref:`forge.file.saveURL <modules-file>`, rather than including them in the app bundle.
+
+    We are actively looking for a way to avoid this limitation.

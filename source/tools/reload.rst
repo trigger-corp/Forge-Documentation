@@ -29,3 +29,10 @@ Some of the functionality of reload can be accessed via the command line, which 
 * ``forge reload list``: This will list all available streams for your app
 * ``forge reload create <streamname>``: This will create a stream called ``<streamname>`` which can then be pushed to.
 * ``forge reload push <streamname>``: This will push the last build to ``<streamname>``, it is likely you will want to run ``forge build reload`` directly before this command in order to build your current ``src`` folder.
+
+Gotchas
+----------------------------------
+
+Currently, pushing a Reload update will cause iOS devices to copy files out of the installed app bundle into a secondary area. This is due to sandboxing rules which prevent us directly accessing files in your installed app after a Reload has been completed. In order to avoid your app taking too much storage space on the device, it's recommended you distribute larger files using something like :ref:`forge.file.saveURL <modules-file>`, rather than including them in the app bundle.
+
+We are actively looking for a way to avoid this limitation.
