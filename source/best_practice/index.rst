@@ -11,6 +11,7 @@ Recipes
   /best_practice/ui/index
   /best_practice/integrations/index
   /best_practice/offline/index
+  Plugin development basics <https://vimeo.com/62099282>
   /releasing
   Update your apps with Reload <https://vimeo.com/53102099>
   
