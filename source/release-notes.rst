@@ -52,6 +52,18 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.37
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 3rd April 2013**
+
+- update to Parse Android SDK v1.2.3 (https://parse.com/questions/androidcontentreceivercallnotallowedexception-when-registering-for-push-notifications)
+- launch images are always hidden after 5 seconds, to prevent apps appearing to hang for slow resources
+
+Bug fixes:
+
+- file module respects Reload updates when returning local URLs: :ref:`modules-file`
+- Flurry custom events are properly sent: :ref:`modules-flurry`
+
 v1.4.36
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 27th March 2013**
