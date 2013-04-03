@@ -52,9 +52,19 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.38
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 3rd April 2013**
+
+Bug fixes:
+
+- fix for backwards compatibility: allow module configuration to set to ``false``. **NB** this *does not* disable the module, however! To disable a module, remove it from ``config.json`` or uncheck its checkbox in the Toolkit App Config.
+
 v1.4.37
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 3rd April 2013**
+
+Features:
 
 - update to Parse Android SDK v1.2.3 (https://parse.com/questions/androidcontentreceivercallnotallowedexception-when-registering-for-push-notifications)
 - launch images are always hidden after 5 seconds, to prevent apps appearing to hang for slow resources
