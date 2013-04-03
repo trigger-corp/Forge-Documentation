@@ -11,9 +11,13 @@ The ``media`` module must be enabled in ``config.json``
 .. parsed-literal::
     {
         "modules": {
-            "media": true
+            "media": {
+            	"enable_background_audio": true
+            }
         }
     }
+
+* ``enable_background_audio``: If this is true then audio players will continue to play even when the app is running in the background.
 
 API
 ---
