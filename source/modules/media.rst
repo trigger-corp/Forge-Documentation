@@ -31,3 +31,33 @@ Play a video at a URL fullscreen on the device.
     :param string url: URL to video.
     :param function() success: callback to be invoked when no errors occur
     :param function(content) error: called with details of any error which may occur
+
+``createAudioPlayer``
+~~~~~~~~~~~~~~~~~~~~~
+**Platforms: Mobile**
+
+Create a audio player object from a media file which can then be used to play the audio.
+
+The audio player object returned in the success callback has the following methods, all of which take success and error callbacks in the same manner as other Forge methods:
+
+* ``player.play(success, error)``: Begin (or resume) playing the audio file.
+* ``player.pause(success, error)``: Pause the playback of the file.
+* ``player.stop(success, error)``: Stop the playback of the file and release the audio system.
+* ``player.duration(success, error)``: Calls the success callback with the duration of the audio in seconds.
+* ``player.seek(seekTo, success, error)``: Seek to the given time (in seconds) in the audio file, if the file is playing it will continue to play after seeking.
+
+.. warning:: player.duration and player.seek do not work accurately on Android if the audio file uses a variable bitrate.
+
+Example::
+
+  forge.file.getLocal("music.mp3", function (file) {
+    forge.media.createAudioPlayer(file, function (player) {
+      player.play();
+    });
+  });
+
+.. js:function:: media.createAudioPlayer(file, success, error)
+
+    :param string file: File object created using forge.file methods representing audio object.
+    :param function(player) success: callback to be invoked when player has been created
+    :param function(content) error: called with details of any error which may occur
