@@ -64,6 +64,12 @@ v1.4.37
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 3rd April 2013**
 
+.. note:: There was significant internal refactoring in this platform version:
+    some functionality which previously worked but was not explicitly supported has
+    been removed. In particular, ``forge.ajax`` does not exist; neither do modules
+    which don't work on particular build targets (e.g. :ref:`modules-topbar` on
+    web).
+
 Features:
 
 - update to Parse Android SDK v1.2.3 (https://parse.com/questions/androidcontentreceivercallnotallowedexception-when-registering-for-push-notifications)
