@@ -18,6 +18,10 @@ recommended to do so.
 
 API details
 --------------------------------------------------------------------------------
+
+``Package``
+~~~~~~~~~~~~~~~~~~~~~~
+
 An example form is provided here: https://trigger.io/standalone/package
 
 The various fields are described below:
@@ -52,12 +56,7 @@ ios_profile         iOS provisioning_profile          A .mobileprovision file yo
                                                       portal.
 =================== ================================= ======================================
 
-For example usage, see :ref:`standalone-usage`.
-
-.. _standalone-usage:
-
-Usage
---------------------------------------------------------------------------------
+Usage:
 
 To package your app, use the ``/standalone/package`` endpoint::
 
@@ -109,3 +108,56 @@ transitioning to ``SUCCESS`` is the key point.
 
 You are able to download the generated files from the URLs specified in the
 ``files`` hash.
+
+.. _standalone-reload:
+
+``Reload``
+~~~~~~~~~~~~~~~~~~~~~~
+
+An example form is provided here: https://trigger.io/standalone/reload/push
+
+The various fields are described below:
+
+=================== ================================= ======================================
+Name                Label                             Expected value
+=================== ================================= ======================================
+email               email address                     The email address you used to sign up
+                                                      to Trigger.io
+password            Trigger.io password               The password you gave when you signed
+                                                      up for Trigger.io
+project_id          ID of your project                The ID of your project which you can
+                                                      find on your
+                                                      `account page <https://trigger.io/account>`_
+uuid                UUID of your app                  The unique identifier for your app
+                                                      which you can see in your app's
+                                                      ``src\identity.json`` file
+stream              stream to push to                 The name of the stream e.g.
+                                                      ``default``
+manifest_url        URL to your manifest file         The url to the manifest file which you
+                                                      generated. See the 
+                                                      :ref:`Reload tools <reload-manifest>` 
+                                                      docs for details
+config_json         config.json file                  The ``src/config.json`` file in your
+                                                      app directory
+=================== ================================= ======================================
+
+Usage:
+
+To push a Reload to your app, use the ``/standalone/reload/push`` endpoint.
+
+This is designed to be used with with a :ref:`3rd party CDN hosting the files to be Reloaded <reload-cdn>`::
+
+    > curl \
+        --header 'Accept: application/json' \
+        --form email=james@trigger.io \
+        --form password='my password' \
+        --form project_id='18' \
+        --form uuid='362f74be8f4e11e2843012313d00dc45' \
+        --form stream='default' \
+        --form manifest_url='http://7bda29eaef66b400b7a3-f7a161a32968fd6c080a7ab168500005.r25.cf2.rackcdn.com/bb6131eb1318e34a8cd4a0f4c2e4efb8919a3f23' \
+        --form config_json='@src/config.json' \
+        -X POST \
+        'https://trigger.io/standalone/reload/push'
+    {"result": "ok", "id": 6583, "manifest": "http://7bda29eaef66b400b7a3-f7a161a32968fd6c080a7ab168500005.r25.cf2.rackcdn.com/bb6131eb1318e34a8cd4a0f4c2e4efb8919a3f23"}
+
+At this point, the Reload has been pushed successfully and end-users will see the new files being used in their app once they have been downloaded when they next switch focus back to the app.

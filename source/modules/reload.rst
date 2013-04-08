@@ -22,11 +22,13 @@ The ``reload`` module must be enabled in ``config.json``, once the ``reload`` mo
 Concepts
 --------
 
-You can reload updates via the Toolkit UI. 
+You can reload updates via the Toolkit UI, :ref:`command-line <reload-command-line>` or :ref:`standalone build API <standalone-reload>`.
 
 You can reload all of your users, or divide them into streams for A/B testing.
 
 You can use the default update behavior without altering your code at all beyond including the reload module in the configuration. Or you can use the JavaScript API described here to have finer grain control over how reloads occur in your app.
+
+You can Reload your app with up to 250Mb of content via Trigger.io. You can Reload your app with larger content hosted in a :ref:`3rd party CDN like Rackspace Cloud Files <reload-cdn>`.
 
 How Reloads work
 ~~~~~~~~~~~~~~~~
@@ -50,6 +52,9 @@ Config versions
 .. image:: /_static/images/reload-concepts.png
 
 If your updated JavaScript relies on Forge APIs that are only available in newer versions of the wrapper than your users currently have installed, then you will need to re-package your apps and deploy through the app stores again.
+
+
+.. _reload-api:
 
 API
 ---
