@@ -50,7 +50,7 @@ The audio player object returned in the success callback has the following metho
 * ``player.duration(success, error)``: Calls the success callback with the duration of the audio in seconds.
 * ``player.seek(seekTo, success, error)``: Seek to the given time (in seconds) in the audio file, if the file is playing it will continue to play after seeking.
 
-.. warning:: player.duration and player.seek do not work accurately on Android if the audio file uses a variable bitrate.
+.. warning:: For ``player.duration`` and ``player.seek`` to work properly on Android, use 128kb/s constant bit-rate MP3 files.
 
 Example::
 
