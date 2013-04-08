@@ -52,6 +52,24 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.39
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 8th April 2013**
+
+Features:
+
+- launch images and icons are not duplicated in built apps, reducing package size
+- audio playback API: :ref:`modules-media`
+- native alert, confirm and toast dialogs: :ref:`modules-notifications`
+
+Bug fixes:
+
+- ``web`` target applications can be deployed on Node.js version 0.10
+- iOS returns ``purchaseState`` parameter in payment callback: :ref:`modules-payments` (original ``PurchaseState`` parameter kept for compatibility)
+- non-ASCII characters are handled properly in the app name
+- fixed an empty view being shown just before the launch image on Android
+- data in ``parameters`` module available as ``forge.config.modules.parameters`` once again
+
 v1.4.38
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 3rd April 2013**

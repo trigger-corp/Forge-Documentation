@@ -18,7 +18,7 @@ Modules
 
 Most of the configuration for apps is available in the form of modules, you can find a list of modules :ref:`in these docs <modules>`. Each module your app uses needs to be included in your ``config.json``, some modules can simply be given the value ``true`` to be enabled, others require their own configuration options. Each modules configuration options can be found within its documentation page.
 
-.. note:: To disable a module, uncheck its checkbox in the Toolkit App Config view, or remove it from your ``config.json`` file: setting a module's config value to ``false`` **does not** disable the module.
+.. note:: To disable a module, uncheck its checkbox in the Toolkit App Config view, or remove it from your ``config.json`` file: setting a module's config value to ``false`` **doesn't** disable the module.
 
 Field summary
 --------------------------------------------------------------------------------
