@@ -33,6 +33,9 @@ There is a *general* section, for parameters which are not linked to any particu
 .. parsed-literal::
   {
     ":ref:`general <local_conf-general>`": {
+		"reload": {
+			"external": true
+		}
     },
     ":ref:`ios <local_conf-ios>`": {
       "device": "simulator",
@@ -107,7 +110,14 @@ general
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 General parameters are configuration settings not related to any particular target.
 
-There are no settings currently used in this section.
+There is currently only one possible setting in this section to enable :ref:`Reloads from external CDNs <reload-cdn>`:
+
+.. parsed-literal::
+
+    "reload": {
+	     "external": true
+    }
+
 
 .. _local_conf-ios:
 
