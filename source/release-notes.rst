@@ -58,7 +58,6 @@ v1.4.39
 
 Features:
 
-- launch images and icons are not duplicated in built apps, reducing package size
 - audio playback API: :ref:`modules-media`
 - native alert, confirm and toast dialogs: :ref:`modules-notifications`
 

@@ -45,6 +45,14 @@ parameters:
   it is conventional to return a human readable description of the error in the
   property ``message`` of the returned object.
 
+To expose an API similar to standard Forge modules you can include JavaScript code with your plugin by placing it in ``javascript/plugin.js`` in your plugin directory. to expose the ``alert.show`` method above you could use code such as::
+
+    forge.alert = {
+        show: function (text, success, error) {
+            forge.internal.call('alert.show', {text: text}, success, error);
+        }
+    };
+
 Android
 -------
 
