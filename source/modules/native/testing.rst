@@ -66,4 +66,4 @@ Fixtures
 
 If you need to use additional resources (such as an image file) as part of your test you can place them in the ``tests/fixtures`` folder in your plugin. These files will be included in ``src/fixtures/<plugin name>/`` in the inspector app.
 
-In the inspector project it can be useful to create file objects to test with. Calling ``forge.inspector.getFixture("plugin", "file.png")`` will return a ForgeFile object for the fixture "file.png".
+If your plugin has an API which accepts a ForgeFile object as described in :ref:`native_plugins_file_objects`, it can be useful to create file objects to test with. Calling ``forge.inspector.getFixture("plugin", "file.png")`` will return a ForgeFile object for the fixture "file.png".
