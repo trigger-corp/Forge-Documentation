@@ -17,7 +17,7 @@ app through the app's config in the Toolkit.
 Downloading the inspector projects
 ----------------------------------
 
-Getting setup to develop native plugins is fairly simple, but there are some prerequistes you need to install.
+Getting setup to develop native plugins is fairly simple, but there are some prerequisites you need to install.
 
 Android
 ~~~~~~~
@@ -145,7 +145,7 @@ Plugins take the following structure:
                       plugin.js              - Javascript code for your plugin, generally used to expose your plugins API.
            tests/                            - see :ref:`Testing your plugin <native_plugins_testing>`
                  automated.js                - Automated tests for your plugin
-                 interative.js               - Tests for your plugin that require user interaction
+                 interactive.js               - Tests for your plugin that require user interaction
                  fixtures/                   - Files your tests require to run
                           test.png
     inspector/                               - Inspector projects used to develop your plugin
