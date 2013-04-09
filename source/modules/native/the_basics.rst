@@ -68,9 +68,7 @@ General
   files.
 * The ``assets/forge`` folder contains a prebuilt ``all.js`` which should not
   need to be modified.
-* The ``assets/src`` folder contains a prebuilt Forge app designed for testing
-  plugins, this allows you to run API methods from a simple web based GUI
-  within the app. You can modify this app to suit your testing needs.
+* The ``assets/src`` folder contains a prebuilt Forge app designed for testing plugins, this allows you to run API methods from a simple web based GUI within the app. You can modify this app, but when you re-generated the inspector project it will be overwritten, instead of directly editing this app it is better to write tests for your plugin.
 
 Android
 ~~~~~~~
@@ -82,8 +80,7 @@ Android
   :ref:`Events <native_plugins_native_events>`.
 * An example plugin is included in ``io.trigger.forge.android.modules.alert``
 
-.. important:: On Android you should only need to modify files in ``src`` and
-   ``assets/src`` directly, any other changes should be done using build
+.. important:: On Android you should only need to modify files in ``ForgeModule/src`` directly, any other changes should be done using build
    steps.
 
 iOS
@@ -108,8 +105,7 @@ test your plugin in before packaging it up to send to Trigger.io.
 * An example plugin is included in ``ForgeModule/alert/alert_API.m``
 
 .. important:: On iOS you should only add or change files in the ForgeModule
-   project, except for ``assets/src`` in the ForgeInspector project, which can be
-   modified to test your plugin.
+   project.
 
 .. _native_plugins_the_basics_structure:
 
@@ -145,6 +141,13 @@ Plugins take the following structure:
                bundles/                      - iOS bundles (resources) to include
                        myplugin.bundle
                        mysdk.bundle
+           javascript/
+                      plugin.js              - Javascript code for your plugin, generally used to expose your plugins API.
+           tests/                            - see :ref:`Testing your plugin <native_plugins_testing>`
+                 automated.js                - Automated tests for your plugin
+                 interative.js               - Tests for your plugin that require user interaction
+                 fixtures/                   - Files your tests require to run
+                          test.png
     inspector/                               - Inspector projects used to develop your plugin
               an-inspector/                  - Android inspector project
               ios-inspector/                 - iOS inspector project
@@ -172,8 +175,7 @@ Testing your plugin
 -------------------
 
 An inspector app is included which allows you to view and invoke all available
-API methods. If necessary, you can modify this app in the ``assets/src`` folder to test your
-plugin as you like.
+API methods, as well as run your test files.
 
 To run the inspector app from Xcode, select the ``ForgeInspector`` target and an appropriate device or simulator:
 
@@ -187,6 +189,8 @@ In Eclipse, select the ``ForgeInspector`` project and choose to run it as an And
   :width: 500px
   :target: ../_static/images/plugins__forgeinspector_eclipse.png
 
+For more detailed information on writing and running tests for your plugin see :ref:`Testing your plugin <native_plugins_testing>`.
+
 Building/packaging your plugin 
 ------------------------------
 
@@ -197,7 +201,7 @@ To build and export your plugin to be included in an actual Forge app:
 
 1. Right click the ``src`` folder and choose Export...
 #. Use the wizard to export the contents of the folder as a JAR
-#. You must include the generated class files and resource in the JAR (Java source is not required)
+#. ``Export generated class files and resources`` should be checked.
 #. Save that jar as ``android/plugin.jar`` in your plugin folder.
 
 iOS
@@ -217,11 +221,4 @@ Using the default app supplied by the inspector app, you can send messages to
 your plugin to check it responds correctly, and check that it fires the right
 Javascript events when required.
 
-You can change the app files in ``assets/src`` to add more advanced Javascript
-which interfaces with your plugin, but this Javascript is not automatically
-included in apps that you write; you will need to enable to plugin and include
-any Javascript you want to use separately.
-
-You should only copy Javascript across from ``assets/src`` into your app if
-you've customised the inspector app and want to replicate the functionality in
-your app.
+To perform more detailed tests of your plugins you should write automated or interactive test files, these will allow you to fully exercise your plugin through the inspector project.

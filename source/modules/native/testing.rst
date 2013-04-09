@@ -1,0 +1,69 @@
+.. _native_plugins_testing:
+
+Testing your plugin
+===================
+
+As well as allowing you to directly call exposed API methods the inspector project will run tests you include with your plugin. These tests are written in JavaScript and use QUnit and are split into automated and interactive sections. To run the tests simply press the appropriate button when running the inspector project.
+
+Automated tests
+---------------
+
+To include automated tests you should create a file ``tests/automated.js``, it is important that these tests complete without requring user input as they may be used to automatically test your plugin against new platform versions and in combination with other plugins in the future. These also means it is useful for you to test as much of your API as possible in these tests.
+
+An example automated test (from the ``prefs`` module) could be::
+
+    asyncTest("Set and get a pref (Number)", 1, function() {
+        var pref = "test"+Math.random();
+        var value = Math.random();
+        forge.prefs.set(pref, value, function () {
+            forge.prefs.get(pref, function (newValue) {
+                equal(newValue, value, "Preference value which was set");
+                start();
+            });
+        });
+    });
+
+Further documentation on available QUnit methods is available at: http://api.qunitjs.com/
+
+Interactive tests
+-----------------
+
+Sometimes tests require user interaction, in this case you should include them in ``tests/interactive.js``. These tests will never be run automatically, but placing them here is a good way for you to be able to test the functionality of your plugin as you develop it.
+
+To make it easier to get information from the user a helper function ``askQuestion(question, answers)`` is provided, where ``question`` is the question to ask, and ``answers`` is a mapping of answers to callback functions.
+
+An example interactive test (this time taken from the ``barcode`` module) could be::
+
+    asyncTest("Scan barcode", 1, function() {
+        askQuestion("Does this device have a camera? If yes when prompted scan a barcode", {
+            Yes: function () {
+                forge.barcode.scanWithFormat(function (barcode) {
+                    askQuestion("Is this your barcode: "+barcode.value+" and was it a: "+barcode.format, {
+                        Yes: function () {
+                            ok(true, "User claims success");
+                            start();
+                        },
+                        No: function () {
+                            ok(false, "User claims failure");
+                            start();
+                        }
+                    });
+                }, function (e) {
+                    ok(false, "API call failure: "+e.message);
+                    start();
+                });
+            },
+            No: function () {
+                ok(true, "No camera");
+                start();
+            }
+        });
+    });
+
+
+Fixtures
+--------
+
+If you need to use additional resources (such as an image file) as part of your test you can place them in the ``tests/fixtures`` folder in your plugin. These files will be included in ``src/fixtures/<plugin name>/`` in the inspector app.
+
+In the inspector project it can be useful to create file objects to test with. Calling ``forge.inspector.getFixture("plugin", "file.png")`` will return a ForgeFile object for the fixture "file.png".

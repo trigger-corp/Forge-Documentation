@@ -15,7 +15,7 @@ ForgeFile objects can be represented as simple JavaScript objects. These objects
 
 The ``file`` module has a number of methods which accept file objects.
 
-In the inspector project it can be useful to create file objects to test with. Calling ``forge.inspector.getFixture("plugin", "file.png")`` will return a file object for the file in ``src/fixtures/plugin/file.png``. In future versions of the inspector projects the fixtures folder will be automatically populated, for now you will have to create it and add any files you want to test with manually.
+For information on testing with files see :ref:`Testing your plugin <native_plugins_testing>`.
 
 Android
 -------
