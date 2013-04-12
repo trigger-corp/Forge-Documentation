@@ -3,12 +3,12 @@
 Testing your plugin
 ===================
 
-As well as allowing you to directly call exposed API methods the inspector project will run tests you include with your plugin. These tests are written in JavaScript and use QUnit and are split into automated and interactive sections. To run the tests simply press the appropriate button when running the inspector project.
+As well as allowing you to directly call exposed API methods, the Inspector project will run tests you include with your plugin. These tests are written in JavaScript, using QUnit, and are split into automated and interactive sections. To run the tests simply press the appropriate button when running the Inspector project.
 
 Automated tests
 ---------------
 
-To include automated tests you should create a file ``tests/automated.js``, it is important that these tests complete without requring user input as they may be used to automatically test your plugin against new platform versions and in combination with other plugins in the future. These also means it is useful for you to test as much of your API as possible in these tests.
+To include automated tests you should create a file ``tests/automated.js`` in your ``plugin`` folder: it is important that these tests complete without requiring user input as we may run them automatically to check compatibility with new platform versions. Test as much of your API as possible in these tests, so that we can give you early warning about incompatibility with new platform versions and other plugins.
 
 An example automated test (from the ``prefs`` module) could be::
 
@@ -23,14 +23,14 @@ An example automated test (from the ``prefs`` module) could be::
         });
     });
 
-Further documentation on available QUnit methods is available at: http://api.qunitjs.com/
+Further documentation on available QUnit methods is available at: http://api.qunitjs.com/.
 
 Interactive tests
 -----------------
 
-Sometimes tests require user interaction, in this case you should include them in ``tests/interactive.js``. These tests will never be run automatically, but placing them here is a good way for you to be able to test the functionality of your plugin as you develop it.
+Sometimes tests require user interaction - in this case you should include them in ``tests/interactive.js`` in your ``plugin`` folder. These tests will never be run automatically, but placing them here is a good way for you to be able to test the functionality of your plugin as you develop it.
 
-To make it easier to get information from the user a helper function ``askQuestion(question, answers)`` is provided, where ``question`` is the question to ask, and ``answers`` is a mapping of answers to callback functions.
+A helper function ``askQuestion(question, answers)`` is provided to make it easier to prompt the user for input: ``question`` is the question to ask, and ``answers`` is a mapping of answers to callback functions.
 
 An example interactive test (this time taken from the ``barcode`` module) could be::
 
@@ -64,6 +64,6 @@ An example interactive test (this time taken from the ``barcode`` module) could 
 Fixtures
 --------
 
-If you need to use additional resources (such as an image file) as part of your test you can place them in the ``tests/fixtures`` folder in your plugin. These files will be included in ``src/fixtures/<plugin name>/`` in the inspector app.
+If you need to use additional resources (such as an image file) as part of your test, you can place them in the ``tests/fixtures`` folder in your plugin. These files will be included in ``src/fixtures/<plugin name>/`` when you update the Inspector app.
 
 If your plugin has an API which accepts a ForgeFile object as described in :ref:`native_plugins_file_objects`, it can be useful to create file objects to test with. Calling ``forge.inspector.getFixture("plugin", "file.png")`` will return a ForgeFile object for the fixture "file.png".
