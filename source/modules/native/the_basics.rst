@@ -68,7 +68,7 @@ General
   files.
 * The ``assets/forge`` folder contains a prebuilt ``all.js`` which should not
   need to be modified.
-* The ``assets/src`` folder contains a prebuilt Forge app designed for testing plugins, this allows you to run API methods from a simple web based GUI within the app. You can modify this app, but when you re-generated the inspector project it will be overwritten, instead of directly editing this app it is better to write tests for your plugin.
+* The ``assets/src`` folder contains a prebuilt Forge app designed for testing plugins, allowing you to run API methods from a simple web based GUI within the app. It is not recommended you modify this app, as it is re-generated and overwritten when the Inspector project is updated. Instead, it is better to write tests for your plugin - see :ref:`native_plugins_testing`.
 
 Android
 ~~~~~~~
