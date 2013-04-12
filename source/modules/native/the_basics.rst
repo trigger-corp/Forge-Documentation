@@ -29,8 +29,8 @@ Android
    to do this from the plugin's toolkit page once you have a local template setup.
    If you can't see plugins in the Toolkit, then contact us at support@trigger.io
    to get into the native plugins beta.
-#. ``ForgeCore``, ``ForgeInspector`` and ``ForgeTemplates`` should have been downloaded to the ``inspector/an-inspector`` directory
-#. In Eclipse, go to ``File`` then ``Import Project...`` and import the ``an-inspector`` directory: all three projects will appear in Eclipse
+#. ``ForgeInspector`` and ``ForgeModule`` should have been downloaded to the ``inspector/an-inspector`` directory
+#. In Eclipse, go to ``File`` then ``Import Project...`` and import the ``an-inspector`` directory: both projects will appear in Eclipse
 
 iOS
 ~~~
@@ -43,11 +43,9 @@ iOS
 
 At this point you can run the inspector project. It includes an app which can
 list native methods exposed to Javascript and allows you to call them with
-sample data. It also includes a small example plugin called ``alert`` which
-allows you to show native alert style dialogs, and triggers an event in
-Javascript when the app is paused and resumed. It is probably a good idea to
-try out this plugin to get a feel for the layout of a plugin before you get
-started.
+sample data.  It also allows you to run automated and interactive tests against your API.
+
+To get you started some files for your plugin have been created with simple code examples. This includes a simple API method to show an alert and an event listener which shows a Javascript alert when you pause and resume the app.
 
 Updating inspector projects
 ---------------------------
@@ -78,7 +76,7 @@ Android
 * This package **must** contain an API.java file which is the API exposed to Javascript, see API methods.
 * It can also contain an EventListener.java to listen for native events, see
   :ref:`Events <native_plugins_native_events>`.
-* An example plugin is included in ``io.trigger.forge.android.modules.alert``
+* An example plugin is included in ``io.trigger.forge.android.modules.<plugin>``
 
 .. important:: On Android you should only need to modify files in ``ForgeModule/src`` directly, any other changes should be done using build
    steps.
@@ -102,7 +100,7 @@ test your plugin in before packaging it up to send to Trigger.io.
   Javascript. See :ref:`native_plugins_api_methods`.
 * Plugins can also contain ``<plugin>_EventListener.m``, to listen for native
   events, see :ref:`native_plugins_native_events`.
-* An example plugin is included in ``ForgeModule/alert/alert_API.m``
+* An example plugin is included in ``ForgeModule/<plugin>_API.m`` and ``ForgeModule/<plugin>_EventListener.m`` 
 
 .. important:: On iOS you should only add or change files in the ForgeModule
    project.
@@ -203,6 +201,8 @@ To build and export your plugin to be included in an actual Forge app:
 #. Use the wizard to export the contents of the folder as a JAR
 #. ``Export generated class files and resources`` should be checked.
 #. Save that jar as ``android/plugin.jar`` in your plugin folder.
+
+.. note:: If you use R.java to reference resource files you will also need to include the trigger-gen folder in your jar file.
 
 iOS
 ~~~

@@ -23,9 +23,7 @@ concerning App Resources`_.
 
 .. _official Android docs concerning App Resources: http://developer.android.com/guide/topics/resources/index.html
 
-.. important:: Resources must be accessed *dynamically* from your Java code:
-    :inline-html:`<a href="../../_static/native/android/reference/io/trigger/forge/android/core/ForgeApp.html#getResourceId(java.lang.String, java.lang.String)">ForgeApp.getResourceId</a>`
-    is a helper method which lets you access the ID for a named resource.
+.. important:: If you access resources using the R.java file you must include the trigger-gen folder in your jar file when exporting your code. This folder contains a specially generate R.java for plugins.
 
 iOS
 ---
