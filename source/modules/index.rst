@@ -23,6 +23,7 @@ Mobile - :ref:`see all... <mobile_modules>`
    * :ref:`Custom URL schemes <modules-urlhandler>`
    * :ref:`Events <modules-event>`
    * :ref:`Facebook SDK access<modules-facebook>`
+   * :ref:`Foreground camera <modules-camera>`
    * :ref:`Files <modules-file>`
    * :ref:`Geolocation <modules-geolocation>`
    * :ref:`In-app payments <modules-payments>`
