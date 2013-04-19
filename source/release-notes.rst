@@ -67,7 +67,7 @@ Bug fixes:
 - apply Reload updates asynchronously to accelerate app resumes
 - focus was being lost from iOS inputs due to automatic invocation of launchimage.hide
 - running apps on web target was failing with ``builtin_function_or_method object has no attribute __getitem__``
-- updated Facebook SDK to version 3.0.1 (to fix http://stackoverflow.com/questions/15877837/trigger-io-facebook-authorize-error-callback-not-called-when-user-presses-back)
+- updated Android Facebook SDK to version 3.0.1 (to fix http://stackoverflow.com/questions/15877837/trigger-io-facebook-authorize-error-callback-not-called-when-user-presses-back)
 
 v1.4.40
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
