@@ -3,7 +3,11 @@
 ``facebook``: Facebook SDK access
 =================================
 
-The ``forge.facebook`` namespace allows access to the native Facebook SDK, which provides similar functionality to the Javascript SDK with the additional feature of supporting SSO (Single Sign-On) between the users Facebook app and your Forge app.
+The ``forge.facebook`` namespace allows access to the `native Facebook SDK <https://developers.facebook.com/docs/sdks/>`_, which provides similar functionality to the `JavaScript SDK <https://developers.facebook.com/docs/reference/javascript/>`_ with the additional feature of supporting SSO (Single Sign-On) between the users Facebook app and your Forge app.
+
+You can see a demo app that makes use of the Facebook module `in this screencast <https://vimeo.com/62372298>`_, with the `code on Github <https://github.com/trigger-corp/scrumptious>`_.
+
+.. important:: Using the Facebook module requires you to have a Facebook account and signup to `Facebook's developer platform <https://developers.facebook.com/>`_. Your relationship with Facebook is separate from your relationship with Trigger.io. If you include the Facebook module in your app, the App Id will report information about app installs and usage to Facebook with that information also made available on your dashboard at https://developers.facebook.com. You must disclose to your users that your app passes the App Id to you and Facebook.
 
 Config
 ------
@@ -18,6 +22,8 @@ The ``facebook`` module must be enabled in ``config.json``
             }
         }
     }
+
+.. note:: To use this module you will need to setup your app in Facebook. More information can be found in the Tips section below and at https://developers.facebook.com/
 
 API
 ---
@@ -106,6 +112,8 @@ http://stackoverflow.com/a/13729707/29903.
 
 Tips
 ----
+
+For a quick tutorial on setting up your app in Facebook to enable login and open graph API calls see our `demo app build instructions <https://github.com/trigger-corp/scrumptious#preparing-your-own-version-ready-for-deployment>`_
 
 General
 ~~~~~~~
