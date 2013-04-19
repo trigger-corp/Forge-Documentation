@@ -52,6 +52,23 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.41
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 19th April 2013**
+
+Features:
+
+- new camera module: :ref:`modules-camera` - more reliable image capture on low memory Android devices
+- improved barcode module: option to turn on light, and barcode type is available - :ref:`modules-barcode`
+
+Bug fixes:
+
+- saveURL and cacheURL in :ref:`file <modules-file>` module paused JS execution on iOS
+- apply Reload updates asynchronously to accelerate app resumes
+- focus was being lost from iOS inputs due to automatic invocation of launchimage.hide
+- running apps on web target was failing with ``builtin_function_or_method object has no attribute __getitem__``
+- updated Facebook SDK to version 3.0.1 (to fix http://stackoverflow.com/questions/15877837/trigger-io-facebook-authorize-error-callback-not-called-when-user-presses-back)
+
 v1.4.40
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 9th April 2013**
