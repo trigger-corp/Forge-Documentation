@@ -6,9 +6,9 @@
 Notes
 -----
 
-- This module can be used as a drop in replacement for ``file.getImage`` on Android, unlike ``file`` this module will display the camera as part of your app. This means the user will not have the option to select an image from the gallery, or perform advanced options such as zooming or changing other camera settings. On low memory devices however this can be a more reliable method of capturing a photo.
+- This module can be used as a drop in replacement for ``file.getImage`` on Android. Unlike :ref:`modules-file`, this module will display the camera as part of your app. This means the user will not have the option to select an image from the gallery, or perform advanced options such as zooming or changing other camera settings. However, on low memory devices this can be a more reliable method of capturing a photo.
 - This module is only available on Android, on iOS the ``file`` module will perform a similar function.
-- This module uses file objects, it is recommedned you process them using the ``file`` module.
+- This module uses file objects: it is recommended you process them using the :ref:`modules-file` module.
 
 Config
 ------
@@ -29,7 +29,7 @@ API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Platforms: Android**
 
-Returns a file object for a image taken using their camera. Images are always saved in your apps "pictures" directory. The file object can be handled using the ``file`` module.
+Returns a file object for a image taken using their camera. Images are always saved in your app's "pictures" directory. The file object can be handled using the :ref:`modules-file` module.
 
 The optional parameters can contain any combination of the following:
 
