@@ -52,6 +52,19 @@ create a backup of your current ``config.json`` file in ``src/config.json.bak``.
 You should also check your code is not attempting to make cross-domain XHRs:
 either use ``forge.request`` instead (recommended), or CORS if you prefer.
 
+v1.4.42
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Released: 23rd April 2013**
+
+Features:
+
+- support for wildcard Ad Hoc provisioning profiles
+
+Bug fixes:
+
+- saveURL and cacheURL can be safely used in a tight loop - generated file names are unique
+- saveURL persists files properly on iOS (fixing regression in v1.4.41)
+
 v1.4.41
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Released: 19th April 2013**
