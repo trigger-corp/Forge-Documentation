@@ -43,12 +43,19 @@ you must create your own bundle. The inspector project includes a
 1. All bundles must have a unique name - you can name your bundle by setting the
    ``Product Name`` for the ForgeModuleResources target.
 
-.. image:: /_static/images/plugin-set-bundle-name.png
+   .. image:: /_static/images/plugin-set-bundle-name.png
 
-2. Add the required resources to the ``ForgeModule`` project and include them in
+#. Add the required resources to the ``ForgeModule`` project and include them in
    the ``ForgeModuleResources`` target.
-#. Use the named bundle to reference these resources from your native code -
-   see `Accessing a Bundle's Contents <https://developer.apple.com/library/mac/#documentation/CoreFOundation/Conceptual/CFBundles/AccessingaBundlesContents/AccessingaBundlesContents.html>`_.
+#. Use the named bundle to reference these resources from your native code, with code like this::
+
+		NSString * bundlePath = [[NSBundle mainBundle] pathForResource:@"my_bundle_name" ofType:@"bundle"];
+		NSBundle * myBundle = [NSBundle bundleWithPath:bundlePath];
+
+   For more information, see `Accessing a Bundle's Contents <https://developer.apple.com/library/mac/#documentation/CoreFOundation/Conceptual/CFBundles/AccessingaBundlesContents/AccessingaBundlesContents.html>`_.
+
 #. When building ``UniversalForgeModule`` your bundle will be output in the
    build folder: make sure to include this in ``ios/bundles/`` in your plugin
-   folder before uploading.
+   folder.
+
+#. After adding the bundle to ``ios/bundles``, you'll need to re-generate your Inspector before continuing.
