@@ -13,11 +13,11 @@ If you are using Forge to update an existing app which was not built on the plat
 
 Android
 --------------------------------------------------------------------------------
-On Android, use ``forge package android``. You can run ``forge package android --help`` to see all available command line options. 
-
-You can run this command through the Toolkit UI by using the package link on your app home screen:
+For Android, create an APK from the Toolkit by using the package link on your app home screen:
 
 .. image:: /_static/images/toolkit-package.png
+
+If you prefer the command-line tools, use ``forge package android``: add the ``--help`` switch to see all available command line options. 
 
 To package Android apps, you need to have created a "keystore" with which to sign your app. You should keep this keystore safe, and observe the normal password safety precautions to prevent others from being to update your own apps.
 
@@ -46,7 +46,7 @@ After you have created your keystore, you need to enter the details in the Local
 
 .. image:: /_static/images/local-config.png
 
-If you are working at the command-line use ``forge package android`` to produce an APK file, ready for submission to the Android Market. For example to use the keystore we created in the previous step, we would run something like this::
+Or, if you are working at the command-line, to use the keystore we created in the previous step, we would run something like this::
 
     forge package android \
       --android.profile.keystore my_keystore.keystore \
@@ -76,7 +76,7 @@ Therefore, our recommended approach is to use a development wildcard provisionin
 
 Creating provisioning profiles
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The Apple developer center has `good documentation <https://developer.apple.com/library/ios/#documentation/ToolsLanguages/Conceptual/DevPortalGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40011159>`_ about creating provisioning profiles, developer certificates and app IDs that should be your main reference.
+The Apple developer center has `good documentation <http://developer.apple.com/library/ios/#documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40012582>`_ about creating provisioning profiles, developer certificates and app IDs that should be your main reference.
 
 When working with Forge, you will want to use a development wildcard provisioning profile when in development and testing phases, and a release provisioning profile when submitting to the App Store.
 
@@ -110,6 +110,14 @@ If you used a development key, you can now use iTunes to install the IPA onto yo
 
 * drag the IPA onto the "Library" section in iTunes
 * drag the app from the "Apps" section of iTunes onto your connected device
+
+Submitting the IPA to the App Store
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If you've used a Distribution (App Store) provisioning profile to create your IPA, you can submit that IPA to the App Store for review.
+
+Refer to `Apple's Documentation <http://developer.apple.com/library/ios/#documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40012582>`_ for how to do that.
+
+You will need a Mac computer to complete this submission, because you must use Application Loader (a Mac-only program) to upload the IPA.
 
 Common problems
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
